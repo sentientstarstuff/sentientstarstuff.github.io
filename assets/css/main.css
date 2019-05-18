@@ -2894,7 +2894,7 @@ input, select, textarea {
 		background-attachment: fixed,							fixed,							fixed;
 		background-image: url("images/ag.jpg");
 		background-position: top,						center center,					center center;
-		background-size: auto,							cover,							cover;
+		background-size: contain,							cover,							cover;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
