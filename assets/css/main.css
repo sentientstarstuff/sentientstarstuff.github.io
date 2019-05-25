@@ -2380,7 +2380,11 @@ input, select, textarea {
 		ol li {
 			padding-left: 0.25em;
 		}
-
+	li {
+   		display:inline;
+    		padding: 10px 40px;
+	}
+	
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
@@ -2442,10 +2446,10 @@ input, select, textarea {
 			}
 
 		ul.actions.stacked {
-			-moz-flex-direction: row;
-			-webkit-flex-direction: row;
-			-ms-flex-direction: row;
-			flex-direction: row;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
 			margin-left: 0;
 		}
 
@@ -2484,10 +2488,10 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			ul.actions:not(.fixed) {
-				-moz-flex-direction: row;
-				-webkit-flex-direction: row;
-				-ms-flex-direction: row;
-				flex-direction: row;
+				-moz-flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
 				margin-left: 0;
 				width: 100% !important;
 			}
