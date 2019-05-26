@@ -2380,10 +2380,7 @@ input, select, textarea {
 		ol li {
 			padding-left: 0.25em;
 		}
-	li {
-   		display:inline;
-    		padding: 10px 40px;
-	}
+
 	
 	ul {
 		list-style: disc;
