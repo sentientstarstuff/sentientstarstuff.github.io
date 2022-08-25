@@ -2894,7 +2894,7 @@ input, select, textarea {
 		background-color: #4686a0;
 		color: rgba(255, 255, 255, 1.0);
 		background-attachment: fixed,							fixed,							fixed;
-		background-image: url("images/siora-unsplash.jpg");
+		background-image: url("images/ag.jpg");
 		background-position: top,						center center,					center center;
 		background-size: contain,							cover,							cover;
 		overflow: hidden;
@@ -3090,7 +3090,7 @@ input, select, textarea {
 		background-color: #4686a0;
 		color: rgba(255, 255, 255, 0.75);
 		background-attachment: fixed,							fixed,							fixed;
-		background-image: url("images/siora-unsplash.jpg");
+		background-image: url("images/ag.jpg");
 		background-position: top left,						center center,					center center;
 		background-size: auto,							cover,							cover;
 		text-align: center;
