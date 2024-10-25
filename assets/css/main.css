@@ -4144,3 +4144,23 @@ input, select, textarea {
 	.dropdown:hover .dropdown-content {
 	    display: block; /* Show dropdown on hover */
 	}
+
+
+	/* Accordion container */
+	.accordion-menu {
+	    cursor: pointer;
+	    padding: 18px;
+	    transition: 0.4s;
+	}
+	
+	/* Content hidden by default */
+	.accordion-content {
+	    display: none;
+	    padding: 10px;
+	    overflow: hidden;
+	}
+	
+	/* Open accordion */
+	.accordion-menu.active .accordion-content {
+	    display: block;
+	}
