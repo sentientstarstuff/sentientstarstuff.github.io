@@ -2668,64 +2668,91 @@ input, select, textarea {
 
 
 /* Research expanded */ 
-/* Expandable image style */
+/* ===== Expandable Image Styles (Keep these) ===== */
 .expandable-image {
-    cursor: pointer;
+    cursor: zoom-in; /* More intuitive than "pointer" */
     transition: transform 0.3s;
     max-width: 100%;
     height: auto;
+    border-radius: 4px; /* Optional: subtle rounded corners */
 }
 
 .expandable-image:hover {
     transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle hover shadow */
 }
 
-/* Modal background */
+/* ===== Modal Styles (Keep but Enhance) ===== */
 .image-modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 9999; /* Higher than template's header/sidebars */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.95); /* Slightly darker for better focus */
     text-align: center;
-    padding-top: 50px;
+    padding-top: 0; /* Changed from 50px to center vertically */
+    overflow-y: auto; /* Allows scrolling if image is tall */
+    cursor: zoom-out; /* Indicates click-to-close */
 }
 
-/* Modal image */
+/* Modern centering for modal content */
 .modal-content {
     max-width: 90%;
-    max-height: 80vh;
+    max-height: 90vh; /* Slightly larger than 80vh for more space */
+    width: auto; /* Prevents stretching */
+    height: auto;
     margin: auto;
     display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Perfect vertical centering */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border */
 }
 
-/* Close button */
+/* Close button (Keep but make more tap-friendly on mobile) */
 .close-modal {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
+    position: fixed; /* Changed from absolute for better mobile behavior */
+    top: 20px;
+    right: 20px;
+    color: #fff;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    z-index: 10000; /* Above the modal */
+    background: rgba(0, 0, 0, 0.3); /* Optional: better visibility */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
 }
 
-/* Mobile responsiveness */
+/* ===== Mobile Responsiveness (Enhanced) ===== */
 @media screen and (max-width: 736px) {
     .modal-content {
         max-width: 95%;
+        max-height: 85vh; /* More space on mobile */
     }
     
     .close-modal {
         top: 10px;
-        right: 25px;
+        right: 10px;
         font-size: 30px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
     }
 }
 
+/* ===== Optional: Prevent Body Scroll When Modal Open ===== */
+body.modal-open {
+    overflow: hidden;
+    position: fixed; /* Prevents iOS scroll jump */
+    width: 100%;
+}
 
 
 /* Icons */
