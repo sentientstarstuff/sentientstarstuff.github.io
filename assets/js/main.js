@@ -9,24 +9,25 @@
 (function($) {
 
   // ===== Image Modal Expansion =====
+ // Clicking an expandable image
     $(".expandable-image").on("click", function() {
-	var imgSrc = $(this).attr("src");
-	$("#expandedImage").attr("src", imgSrc);
-	$(".image-modal").fadeIn(200);
+        var imgSrc = $(this).attr("src");
+        $("#expandedImage").attr("src", imgSrc);
+        $(".image-modal").fadeIn(200);
     });
 
-    // Close modal when clicking X or background
+    // Close modal
     $(".close-modal, .image-modal").on("click", function(e) {
-	if ($(e.target).hasClass("image-modal") || $(e.target).hasClass("close-modal")) {
-	    $(".image-modal").fadeOut(200);
-	}
+        if ($(e.target).hasClass("image-modal") || $(e.target).hasClass("close-modal")) {
+            $(".image-modal").fadeOut(200);
+        }
     });
 
-    // Close on ESC key press
+    // Close on ESC key
     $(document).keyup(function(e) {
-	if (e.key === "Escape") {
-	    $(".image-modal").fadeOut(200);
-	}
+        if (e.key === "Escape") {
+            $(".image-modal").fadeOut(200);
+        }
     });
 
 
