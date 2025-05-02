@@ -2608,62 +2608,63 @@ input, select, textarea {
 
 /* Research */ 
 
-
-.project {
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  margin-bottom: 4em;
+/* Card Layout Style */
+.research-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.project.alt {
-  flex-direction: row-reverse;
+.project-card {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
 }
 
-.project-image {
-  flex: 1;
-  max-width: 40%;
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
 }
 
 .project-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-text {
-  flex: 1.5;
-}
-
-.project-text h2 {
-  margin-top: 0;
-  font-size: 1.5em;
-  color: #2c3e50;
-}
-
-.project-text p {
-  line-height: 1.6;
-  font-size: 1em;
-}
-
-@media screen and (max-width: 768px) {
-  .project,
-  .project.alt {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .project-image,
-  .project-text {
     max-width: 100%;
-  }
-
-  .project-text {
-    margin-top: 1em;
-  }
+    height: auto;
+    margin-bottom: 1rem;
 }
 
+/* Alternating Layout Style */
+.project-alt {
+    margin-bottom: 3rem;
+}
+
+.project-alt .row {
+    align-items: center;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 736px) {
+    .project-content {
+        flex-direction: column;
+    }
+    
+    .project-alt .row > div {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.project-status {
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
+.ongoing { background: #ffeeba; color: #856404; }
+.completed { background: #d4edda; color: #155724; }
 
 
 /* Icons */
