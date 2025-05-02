@@ -4,7 +4,33 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+
 (function($) {
+
+  // ===== Image Modal Expansion =====
+    $(".expandable-image").on("click", function() {
+	var imgSrc = $(this).attr("src");
+	$("#expandedImage").attr("src", imgSrc);
+	$(".image-modal").fadeIn(200);
+    });
+
+    // Close modal when clicking X or background
+    $(".close-modal, .image-modal").on("click", function(e) {
+	if ($(e.target).hasClass("image-modal") || $(e.target).hasClass("close-modal")) {
+	    $(".image-modal").fadeOut(200);
+	}
+    });
+
+    // Close on ESC key press
+    $(document).keyup(function(e) {
+	if (e.key === "Escape") {
+	    $(".image-modal").fadeOut(200);
+	}
+    });
+
+
+	
 
 	var	$window = $(window),
 		$body = $('body');
