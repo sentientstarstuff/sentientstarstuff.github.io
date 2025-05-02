@@ -106,6 +106,14 @@
  </div>
 </header>
 
+<!-- 
+<div class="project-image">
+    <img src="images/your-image.jpg" alt="Project image" onclick="expandImage(this)" class="expandable-image">
+    <div class="image-modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="expandedImage">
+    </div>
+</div> -->
 						
  <div class="research-projects">
     <!-- Project 1 -->
@@ -115,8 +123,13 @@
         </header>
         <div class="project-content">
             <div class="project-image">
-                <img src="images/baxter21.png" alt="dwarf satellite quenching" />
-            </div>
+                <img src="images/baxter21.png" alt="dwarf satellite quenching" onclick="expandImage(this)" class="expandable-image" />
+                <div class="image-modal" onclick="closeModal()">
+       			<span class="close-modal">&times;</span>
+       			<img class="modal-content" id="expandedImage">
+    		</div>
+	    
+	    </div>
             <div class="project-description">
                 <p>In Baxter et al. (2021), we combine supervised machine learning and statistical background subtraction to classify the star formation activity of dwarf galaxies around galaxy groups identified in the Sloan Digital Sky Survey. 
 		The figure above shows our main result, which is the inferred satellite quenched fraction, spanning three decades in stellar mass, for galaxies in groups at z<0.1. 
