@@ -2608,48 +2608,62 @@ input, select, textarea {
 
 /* Research */ 
 
+
 .project {
   display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 3em;
   align-items: center;
+  gap: 2em;
+  margin-bottom: 4em;
 }
 
-.project.alt .project-image {
-  order: 2;
+.project.alt {
+  flex-direction: row-reverse;
 }
 
 .project-image {
-  flex: 1 1 40%;
-  padding: 1em;
+  flex: 1;
+  max-width: 40%;
 }
 
 .project-image img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-text {
-  flex: 1 1 60%;
-  padding: 1em;
+  flex: 1.5;
 }
 
 .project-text h2 {
   margin-top: 0;
+  font-size: 1.5em;
+  color: #2c3e50;
+}
+
+.project-text p {
+  line-height: 1.6;
+  font-size: 1em;
 }
 
 @media screen and (max-width: 768px) {
   .project,
   .project.alt {
     flex-direction: column;
+    text-align: center;
   }
 
-  .project.alt .project-image {
-    order: 0;
+  .project-image,
+  .project-text {
+    max-width: 100%;
+  }
+
+  .project-text {
+    margin-top: 1em;
   }
 }
+
 
 
 /* Icons */
