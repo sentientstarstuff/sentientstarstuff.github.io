@@ -2667,6 +2667,67 @@ input, select, textarea {
 .completed { background: #d4edda; color: #155724; }
 
 
+/* Research expanded */ 
+/* Expandable image style */
+.expandable-image {
+    cursor: pointer;
+    transition: transform 0.3s;
+    max-width: 100%;
+    height: auto;
+}
+
+.expandable-image:hover {
+    transform: scale(1.02);
+}
+
+/* Modal background */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    text-align: center;
+    padding-top: 50px;
+}
+
+/* Modal image */
+.modal-content {
+    max-width: 90%;
+    max-height: 80vh;
+    margin: auto;
+    display: block;
+}
+
+/* Close button */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 736px) {
+    .modal-content {
+        max-width: 95%;
+    }
+    
+    .close-modal {
+        top: 10px;
+        right: 25px;
+        font-size: 30px;
+    }
+}
+
+
+
 /* Icons */
 
 	ul.icons {
