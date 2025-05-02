@@ -2605,6 +2605,53 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
+
+/* Research */ 
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3em;
+  align-items: center;
+}
+
+.project.alt .project-image {
+  order: 2;
+}
+
+.project-image {
+  flex: 1 1 40%;
+  padding: 1em;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.project-text {
+  flex: 1 1 60%;
+  padding: 1em;
+}
+
+.project-text h2 {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .project,
+  .project.alt {
+    flex-direction: column;
+  }
+
+  .project.alt .project-image {
+    order: 0;
+  }
+}
+
+
 /* Icons */
 
 	ul.icons {
