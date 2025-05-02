@@ -123,12 +123,7 @@
         </header>
         <div class="project-content">
             <div class="project-image">
-                <img src="images/baxter21.png" alt="dwarf satellite quenching" onclick="expandImage(this)" class="expandable-image" />
-                <div class="image-modal" onclick="closeModal()">
-       			<span class="close-modal">&times;</span>
-       			<img class="modal-content" id="expandedImage">
-    		</div>
-	    
+                <img src="images/baxter21.png" alt="dwarf satellite quenching" class="expandable-image" />
 	    </div>
             <div class="project-description">
                 <p>In Baxter et al. (2021), we combine supervised machine learning and statistical background subtraction to classify the star formation activity of dwarf galaxies around galaxy groups identified in the Sloan Digital Sky Survey. 
@@ -362,6 +357,13 @@ As shown in the plot above, we find that at z > 2, observationally limited sampl
 
 		</div>
 
+	    <!-- Modal goes HERE (right before scripts) -->
+	    <div class="image-modal">
+		<span class="close-modal">&times;</span>
+		<img class="modal-content" id="expandedImage">
+	    </div>
+
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -373,4 +375,5 @@ As shown in the plot above, we find that at z > 2, observationally limited sampl
 			<script src="assets/js/main.js"></script>
 
 	</body>
+					
 </html>
