@@ -114,7 +114,7 @@
                 border: 2px solid rgba(255, 255, 255, 0.15); /* Subtle outline ring */
             }
 
-            .profile-info {
+            /* .profile-info {
                 margin-bottom: 1rem;
                 font-size: 1rem;
                 line-height: 1.5;
@@ -124,7 +124,7 @@
                 display: block;
                 font-size: 1.15rem;
                 margin-bottom: 0.25rem;
-            }
+            } */
 
             .profile-right {
                 flex: 1 1 450px;
@@ -142,6 +142,78 @@
                 font-size: 1.25rem;
                 line-height: 1.75;
             }
+
+			.profile-info {
+				display: flex;
+				flex-direction: column;
+				align-items: center; /* Centered for the left sidebar column */
+				gap: 0.25rem;
+				margin-bottom: 1.25rem;
+				font-size: 0.95rem;
+				line-height: 1.4;
+			}
+
+			.profile-org {
+				font-weight: 800;
+				font-size: 1.15rem;
+				color: #ffffff;
+			}
+
+			.profile-dept {
+				font-size: 0.9rem;
+				opacity: 0.8;
+				margin-bottom: 0.35rem;
+			}
+
+			.profile-title {
+				display: inline-block;
+				font-size: 0.95rem;
+				font-weight: 600;
+				color: #a0aec0;
+			}
+
+			.profile-email {
+				margin-top: 0.5rem;
+				font-size: 0.9rem;
+				opacity: 0.9;
+				text-decoration: none !important;
+				transition: opacity 0.2s ease;
+			}
+
+			.profile-email:hover {
+				opacity: 1;
+				text-decoration: underline !important;
+			}
+
+			
+			/* Styling for the custom CV badge icon */
+			.cv-icon-badge {
+				position: relative;
+				display: inline-flex !important;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.cv-icon-badge .cv-text {
+				font-size: 0.65rem;
+				font-weight: 800;
+				font-family: system-ui, -apple-system, sans-serif;
+				letter-spacing: -0.5px;
+				background: #4a5568;
+				color: #fff;
+				padding: 1px 4px;
+				border-radius: 4px;
+				position: absolute;
+				bottom: -2px;
+				right: -4px;
+				line-height: 1;
+				border: 1.5px solid #171c26; /* Matches dark mode background */
+			}
+
+			body.light-mode .cv-icon-badge .cv-text {
+				background: #2d3748;
+				border-color: #ffffff;
+			}
 
             /* --- Waving Hand Animation --- */
             .wave {
@@ -249,15 +321,23 @@
                         <div class="profile-left">
                             <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter" />
                             
-                            <div class="profile-info">
-                                <strong>Princeton University | Department of Astrophysical Sciences</strong>
-                                <span style="opacity: 0.85;">FFPS Postdoctoral Fellow</span><br />
-                                <a href="mailto:dcbaxter@ucsd.edu" style="text-decoration: underline;">dcbaxter@ucsd.edu</a>
-                            </div>
+							<div class="profile-info">
+								<span class="profile-org">Princeton University</span>
+								<span class="profile-dept">Department of Astrophysical Sciences</span>
+								<span class="profile-title">FFPS Postdoctoral Fellow</span>
+								<a href="mailto:dcbaxter@princeton.edu" class="profile-email">
+									<i class="fa-regular fa-envelope"></i> dcbaxter@ucsd.edu
+								</a>
+							</div>
 
                             <!-- Social Icons -->
                             <ul class="profile-socials">
-                                <li><a href="CV.pdf" target="_blank" title="CV"><i class="fa-solid fa-file-cv"></i></a></li>
+								<li>
+									<a href="CV.pdf" target="_blank" title="Curriculum Vitae (CV)" class="cv-icon-badge">
+										<i class="fa-solid fa-file-lines"></i>
+										<span class="cv-text">CV</span>
+									</a>
+								</li>
                                 <li><a href="https://scholar.google.com/citations?user=AeB9S3cAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></li>
                                 <li><a href="https://github.com/sentientstarstuff" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
