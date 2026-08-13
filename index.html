@@ -92,13 +92,26 @@
                 text-align: center;
             }
 
-            .profile-left img {
+            /* .profile-left img {
                 width: 100%;
                 max-width: 240px;
                 border-radius: 12px;
                 box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
                 margin-bottom: 1.25rem;
                 display: block;
+            } */
+
+			/* --- CIRCULAR HEADSHOT STYLING --- */
+            .profile-left img {
+                width: 100%;
+                max-width: 230px;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 50% !important; /* Forces a perfect circle */
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+                margin-bottom: 1.25rem;
+                display: block;
+                border: 2px solid rgba(255, 255, 255, 0.15); /* Subtle outline ring */
             }
 
             .profile-info {
@@ -182,60 +195,6 @@
                 transform: translateY(-3px);
             }
 
-            /* --- Light Mode Styles --- */
-            body.light-mode {
-                background-color: #f4f6f9 !important;
-                color: #2e3440 !important;
-            }
-
-            body.light-mode #banner {
-                background: #eef2f7 !important;
-            }
-
-            body.light-mode .profile-container {
-                background: rgba(255, 255, 255, 0.85) !important;
-                border: 1px solid rgba(0, 0, 0, 0.08);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            }
-
-            body.light-mode .profile-right h2,
-            body.light-mode .profile-info strong,
-            body.light-mode #logo a {
-                color: #1a202c !important;
-            }
-
-            body.light-mode .profile-right p,
-            body.light-mode .profile-info span {
-                color: #4a5568 !important;
-            }
-
-            body.light-mode .profile-socials a {
-                background: rgba(0, 0, 0, 0.06);
-                color: #2d3748 !important;
-            }
-
-            body.light-mode .profile-socials a:hover {
-                background: rgba(0, 0, 0, 0.14);
-            }
-
-            .theme-toggle-btn {
-                background: transparent;
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                color: #fff;
-                padding: 0.35rem 0.75rem;
-                border-radius: 20px;
-                cursor: pointer;
-                font-size: 0.85rem;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-            }
-
-            body.light-mode .theme-toggle-btn {
-                border-color: rgba(0, 0, 0, 0.2);
-                color: #2d3748;
-            }
 
             /* Mobile Responsiveness */
             @media screen and (max-width: 736px) {
@@ -275,12 +234,6 @@
                             </ul>
                         </li>
                         <li><a href="CV.pdf" target="_blank">CV</a></li>
-                        <!-- Theme Toggle Button -->
-                        <li>
-                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-                                <i class="fa-solid fa-moon" id="theme-icon"></i>
-                            </button>
-                        </li>
                     </ul>
                 </nav>
             </header>
@@ -297,15 +250,15 @@
                             <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter" />
                             
                             <div class="profile-info">
-                                <strong>Princeton University</strong>
+                                <strong>Princeton University | Department of Astrophysical Sciences</strong>
                                 <span style="opacity: 0.85;">FFPS Postdoctoral Fellow</span><br />
                                 <a href="mailto:dcbaxter@ucsd.edu" style="text-decoration: underline;">dcbaxter@ucsd.edu</a>
                             </div>
 
                             <!-- Social Icons -->
                             <ul class="profile-socials">
-                                <li><a href="CV.pdf" target="_blank" title="CV"><i class="fa-solid fa-file-pdf"></i></a></li>
-                                <li><a href="https://scholar.google.com" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                                <li><a href="CV.pdf" target="_blank" title="CV"><i class="fa-solid fa-file-cv"></i></a></li>
+                                <li><a href="https://scholar.google.com/citations?user=AeB9S3cAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></li>
                                 <li><a href="https://github.com/sentientstarstuff" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
                                 <li><a href="https://www.instagram.com/sentientstardust/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -314,9 +267,9 @@
 
                         <!-- Right Side: Header and Bio -->
                         <div class="profile-right">
-                            <h2>Hey, I'm Devontae! <span class="wave">👋</span></h2>
+                            <h2>Hey, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
                             <p>
-                                I’m an astrophysicist who combines <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to investigate how galaxies are shaped by their <strong>cosmic neighborhoods</strong>.
+                                I’m an astrophysicist who combines data from <strong>ground- and space-based telescopes</strong> with <strong>cosmological simulations</strong> to investigate how galaxies shape and are shaped by their <strong>cosmic environments</strong>.
                             </p>
                         </div>
 
@@ -344,31 +297,6 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-        <!-- Theme Switcher JS -->
-        <script>
-          const toggleBtn = document.getElementById('theme-toggle');
-          const themeIcon = document.getElementById('theme-icon');
-          
-          const currentTheme = localStorage.getItem('theme');
-          if (currentTheme === 'light') {
-            document.body.classList.add('light-mode');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
-          }
-
-          toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            
-            let theme = 'dark';
-            if (document.body.classList.contains('light-mode')) {
-              theme = 'light';
-              themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-              themeIcon.classList.replace('fa-sun', 'fa-moon');
-            }
-            
-            localStorage.setItem('theme', theme);
-          });
-        </script>
 
         <!-- Cosmic Particle Effect Canvas JS -->
         <script>
