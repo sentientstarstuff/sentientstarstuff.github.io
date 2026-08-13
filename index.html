@@ -35,23 +35,37 @@
                 height: auto !important;
                 min-height: 0 !important;
                 max-height: none !important;
-                /* 4.5em top padding sits right beneath the fixed header with zero wasted space */
-                padding: 4.5em 2em 3em 2em !important; 
+                padding: 5em 2em 4em 2em !important; 
                 margin: 0 !important;
                 top: 0 !important;
+                background: #11141a !important; /* Deep cosmic space color */
+                overflow: hidden !important;
+            }
+
+            /* --- COSMIC CANVAS --- */
+            #cosmic-canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none; /* Mouse passes through to links */
+                z-index: 1;
             }
 
             #banner .content {
+                position: relative;
+                z-index: 2; /* Keeps text & photo on top of stars */
                 display: block !important;
                 margin: 0 auto !important;
                 padding: 0 !important;
                 transform: none !important;
                 opacity: 1 !important;
                 visibility: visible !important;
-                max-width: 1100px;
+                max-width: 1050px;
             }
 
-            /* --- CUSTOM PROFILE LAYOUT --- */
+            /* --- CUSTOM PROFILE CARD LAYOUT --- */
             .profile-container {
                 display: flex !important;
                 flex-direction: row;
@@ -61,10 +75,17 @@
                 gap: 3rem;
                 width: 100%;
                 text-align: left;
+                background: rgba(23, 28, 38, 0.75); /* Semi-transparent frosted glass look */
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                padding: 3rem 2.5rem;
+                border-radius: 16px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             }
 
             .profile-left {
-                flex: 0 0 280px;
+                flex: 0 0 260px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -73,9 +94,9 @@
 
             .profile-left img {
                 width: 100%;
-                max-width: 250px;
+                max-width: 240px;
                 border-radius: 12px;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
                 margin-bottom: 1.25rem;
                 display: block;
             }
@@ -163,12 +184,18 @@
 
             /* --- Light Mode Styles --- */
             body.light-mode {
-                background-color: #f7f9fc !important;
+                background-color: #f4f6f9 !important;
                 color: #2e3440 !important;
             }
 
             body.light-mode #banner {
-                background: #f7f9fc !important;
+                background: #eef2f7 !important;
+            }
+
+            body.light-mode .profile-container {
+                background: rgba(255, 255, 255, 0.85) !important;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             }
 
             body.light-mode .profile-right h2,
@@ -183,12 +210,12 @@
             }
 
             body.light-mode .profile-socials a {
-                background: rgba(0, 0, 0, 0.08);
+                background: rgba(0, 0, 0, 0.06);
                 color: #2d3748 !important;
             }
 
             body.light-mode .profile-socials a:hover {
-                background: rgba(0, 0, 0, 0.18);
+                background: rgba(0, 0, 0, 0.14);
             }
 
             .theme-toggle-btn {
@@ -213,9 +240,10 @@
             /* Mobile Responsiveness */
             @media screen and (max-width: 736px) {
                 #banner {
-                    padding-top: 5em !important;
+                    padding: 4.5em 1em 2em 1em !important;
                 }
                 .profile-container {
+                    padding: 2rem 1.25rem;
                     flex-direction: column;
                     align-items: center;
                     text-align: center;
@@ -257,8 +285,10 @@
                 </nav>
             </header>
 
-            <!-- Banner Content Area -->
+            <!-- Banner Content Area with Canvas Background -->
             <section id="banner">
+                <canvas id="cosmic-canvas"></canvas>
+                
                 <div class="content">
                     <div class="profile-container">
                         
@@ -304,7 +334,7 @@
 
         </div>
 
-        <!-- Scripts -->
+        <!-- Template Scripts -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.scrolly.min.js"></script>
         <script src="assets/js/jquery.dropotron.min.js"></script>
@@ -338,6 +368,141 @@
             
             localStorage.setItem('theme', theme);
           });
+        </script>
+
+        <!-- Cosmic Particle Effect Canvas JS -->
+        <script>
+        (function() {
+            const canvas = document.getElementById('cosmic-canvas');
+            const banner = document.getElementById('banner');
+            const ctx = canvas.getContext('2d');
+
+            let width, height;
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 120 };
+
+            function resize() {
+                width = canvas.width = banner.offsetWidth;
+                height = canvas.height = banner.offsetHeight;
+            }
+
+            banner.addEventListener('mousemove', (e) => {
+                const rect = banner.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+
+            banner.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            window.addEventListener('resize', () => {
+                resize();
+                init();
+            });
+
+            class Star {
+                constructor() {
+                    this.reset();
+                }
+
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 1.8 + 0.4;
+                    this.baseAlpha = Math.random() * 0.6 + 0.2;
+                    this.alpha = this.baseAlpha;
+                    this.vx = (Math.random() - 0.5) * 0.2;
+                    this.vy = (Math.random() - 0.5) * 0.2;
+                    this.twinkleSpeed = Math.random() * 0.02 + 0.005;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Wrap around canvas edges
+                    if (this.x < 0) this.x = width;
+                    if (this.x > width) this.x = 0;
+                    if (this.y < 0) this.y = height;
+                    if (this.y > height) this.y = 0;
+
+                    // Twinkle effect
+                    this.alpha += Math.sin(Date.now() * this.twinkleSpeed) * 0.008;
+                    this.alpha = Math.max(0.1, Math.min(0.8, this.alpha));
+
+                    // Mouse interaction (gently push/brighten nearby stars)
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            this.alpha = Math.min(1, this.baseAlpha + force * 0.5);
+                        }
+                    }
+                }
+
+                draw() {
+                    const isLight = document.body.classList.contains('light-mode');
+                    ctx.fillStyle = isLight 
+                        ? `rgba(50, 70, 110, ${this.alpha * 0.6})` 
+                        : `rgba(255, 255, 255, ${this.alpha})`;
+                    
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                particles = [];
+                // Scale particle count based on screen size
+                const particleCount = Math.floor((width * height) / 4500);
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Star());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw constellation connection lines for close stars
+                const isLight = document.body.classList.contains('light-mode');
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 85) {
+                            const lineAlpha = (1 - dist / 85) * 0.15;
+                            ctx.strokeStyle = isLight 
+                                ? `rgba(60, 90, 140, ${lineAlpha * 0.8})` 
+                                : `rgba(180, 210, 255, ${lineAlpha})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            resize();
+            init();
+            animate();
+        })();
         </script>
 
     </body>
