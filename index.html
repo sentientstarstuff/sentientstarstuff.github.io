@@ -19,21 +19,101 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
+            /* Override HTML5 UP banner default positioning */
+            #banner {
+                padding: 6em 2em 4em 2em !important;
+                height: auto !important;
+                min-height: 0 !important;
+                display: block !important;
+            }
+
+            #banner .content {
+                display: block !important;
+            }
+
+			/* Waving Hand Animation */
+			.wave {
+				display: inline-block;
+				animation: wave-animation 2.5s infinite;
+				transform-origin: 70% 70%; /* Pivots from the bottom-right wrist */
+			}
+
+			@keyframes wave-animation {
+				0% { transform: rotate(0deg); }
+				10% { transform: rotate(14deg); }
+				20% { transform: rotate(-8deg); }
+				30% { transform: rotate(14deg); }
+				40% { transform: rotate(-4deg); }
+				50% { transform: rotate(10deg); }
+				60% { transform: rotate(0deg); }
+				100% { transform: rotate(0deg); }
+			}
+
+
+			/* Theme Styles */
+			body.light-mode {
+				background-color: #f7f9fc !important;
+				color: #2e3440 !important;
+			}
+
+			body.light-mode #banner {
+				background: #f7f9fc !important;
+			}
+
+			body.light-mode .profile-right h2,
+			body.light-mode .profile-info strong,
+			body.light-mode #logo a {
+				color: #1a202c !important;
+			}
+
+			body.light-mode .profile-right p,
+			body.light-mode .profile-info span {
+				color: #4a5568 !important;
+			}
+
+			body.light-mode .profile-socials a {
+				background: rgba(0, 0, 0, 0.08);
+				color: #2d3748 !important;
+			}
+
+			body.light-mode .profile-socials a:hover {
+				background: rgba(0, 0, 0, 0.18);
+			}
+
+			/* Toggle Switch Styling */
+			.theme-toggle-btn {
+				background: transparent;
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				color: #fff;
+				padding: 0.35rem 0.75rem;
+				border-radius: 20px;
+				cursor: pointer;
+				font-size: 0.85rem;
+				transition: all 0.3s ease;
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+			}
+
+			body.light-mode .theme-toggle-btn {
+				border-color: rgba(0, 0, 0, 0.2);
+				color: #2d3748;
+			}
+
             /* Custom side-by-side layout styles */
             .profile-container {
-                display: flex;
+                display: flex !important;
                 flex-wrap: wrap;
                 align-items: flex-start;
-                gap: 2.5rem;
-                max-width: 1200px;
+                justify-content: center;
+                gap: 3rem;
+                max-width: 1100px;
                 margin: 0 auto;
-                padding: 2rem 1rem;
                 text-align: left;
             }
 
             .profile-left {
-                flex: 1 1 300px;
-                max-width: 350px;
+                flex: 0 1 300px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -42,38 +122,41 @@
 
             .profile-left img {
                 width: 100%;
-                max-width: 280px;
+                max-width: 260px;
                 border-radius: 12px;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-                margin-bottom: 1.5rem;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+                margin-bottom: 1.25rem;
+                display: block;
             }
 
             .profile-info {
-                margin-bottom: 1.25rem;
-                font-size: 0.95rem;
+                margin-bottom: 1rem;
+                font-size: 1rem;
                 line-height: 1.5;
             }
 
             .profile-info strong {
                 display: block;
-                font-size: 1.1rem;
-                margin-bottom: 0.25rem;
+                font-size: 1.15rem;
+                margin-bottom: 0.2rem;
             }
 
             .profile-right {
-                flex: 2 1 400px;
+                flex: 1 1 450px;
+                padding-top: 0.5rem;
             }
 
             .profile-right h2 {
-                font-size: 2.75rem;
+                font-size: 2.8rem;
                 font-weight: 800;
-                margin-bottom: 1rem;
+                margin-bottom: 1.25rem;
                 line-height: 1.2;
+                letter-spacing: -0.02em;
             }
 
             .profile-right p {
-                font-size: 1.2rem;
-                line-height: 1.7;
+                font-size: 1.25rem;
+                line-height: 1.75;
             }
 
             /* Custom Icon Bar Under Left Column */
@@ -82,27 +165,47 @@
                 justify-content: center;
                 gap: 12px;
                 flex-wrap: wrap;
-                margin-top: 0.5rem;
+                margin: 0.5rem 0 0 0;
                 padding: 0;
                 list-style: none;
+            }
+
+            .profile-socials li {
+                padding-left: 0 !important; /* Overrides template list margins */
             }
 
             .profile-socials a {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                width: 40px;
-                height: 40px;
+                width: 42px;
+                height: 42px;
                 border-radius: 50%;
-                background: rgba(255, 255, 255, 0.1);
-                color: #fff;
+                background: rgba(255, 255, 255, 0.12);
+                color: #fff !important;
                 text-decoration: none;
                 transition: background 0.3s ease, transform 0.2s ease;
+                border: none;
             }
 
             .profile-socials a:hover {
                 background: rgba(255, 255, 255, 0.3);
-                transform: translateY(-2px);
+                transform: translateY(-3px);
+            }
+
+            /* Mobile Responsiveness */
+            @media screen and (max-width: 736px) {
+                .profile-container {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+                .profile-right {
+                    text-align: center;
+                }
+                .profile-right h2 {
+                    font-size: 2.2rem;
+                }
             }
         </style>
     </head>
@@ -124,12 +227,18 @@
                             </ul>
                         </li>
                         <li><a href="CV.pdf" target="_blank">CV</a></li>
+					<!-- Theme Toggle Button -->
+							<li>
+								<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+									<i class="fa-solid fa-moon" id="theme-icon"></i>
+								</button>
+							</li>						
                     </ul>
                 </nav>
             </header>
 
             <!-- Main Banner / Landing Area -->
-            <section id="banner" style="padding: 4em 0 2em 0;">
+            <section id="banner">
                 <div class="profile-container">
                     
                     <!-- Left Column: Photo + Affiliation + Email + Socials -->
@@ -154,9 +263,9 @@
 
                     <!-- Right Column: Large Greeting & Main Bio -->
                     <div class="profile-right">
-                        <h2>Hey, I'm Devontae! 👋🏾</h2>
+                        <h2>Hey, I'm Devontae! <span class="wave">👋🏾</span></h2>
                         <p>
-                        	I’m an astrophysicist who combines <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to investigate how the growth and evolution of galaxies is shaped by their <strong>cosmic neighborhoods</strong>.
+                            I’m an astrophysicist who combines <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to investigate how galaxies are shaped by their <strong>cosmic neighborhoods</strong>.
                         </p>
                     </div>
 
@@ -182,6 +291,33 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+
+		<script>
+		const toggleBtn = document.getElementById('theme-toggle');
+		const themeIcon = document.getElementById('theme-icon');
+		
+		// Check local storage or system preference
+		const currentTheme = localStorage.getItem('theme');
+		if (currentTheme === 'light') {
+			document.body.classList.add('light-mode');
+			themeIcon.classList.replace('fa-moon', 'fa-sun');
+		}
+
+		toggleBtn.addEventListener('click', () => {
+			document.body.classList.toggle('light-mode');
+			
+			let theme = 'dark';
+			if (document.body.classList.contains('light-mode')) {
+			theme = 'light';
+			themeIcon.classList.replace('fa-moon', 'fa-sun');
+			} else {
+			themeIcon.classList.replace('fa-sun', 'fa-moon');
+			}
+			
+			// Remember preference for future page visits
+			localStorage.setItem('theme', theme);
+		});
+		</script>
 
     </body>
 </html>
