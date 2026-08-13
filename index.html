@@ -1,95 +1,187 @@
 <!DOCTYPE HTML>
-<!--
-	Upgrade landing page by including brief summary of research, position (look for examples online). Also, include
-	a dynamic background! 
--->
 <html>
-	<head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'G-RY38BXSTQB');
-	</script>
-		
-		<title>Home | Devontae C. Baxter</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload landing">
-		<div id="page-wrapper">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RY38BXSTQB');
+        </script>
+        
+        <title>Home | Devontae C. Baxter</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!-- FontAwesome CDN for Google Scholar icon support -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-					<nav id="nav">
-						<ul>
-							<!-- <li><a href="index.html">Home</a></li> -->
-							<li><a href="#" class="button primary">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="research.html">Research</a></li>
-							<!-- <li><a href="teaching.html">Teaching</a></li> -->
-							<li><a href="mentorship.html">Mentorship & Outreach</a>
-							<ul>
-					                <li><a href="CARP.html">CARP Program</a></li>
-					            	</ul>
-							</li>
-							</li>
+        <style>
+            /* Custom side-by-side layout styles */
+            .profile-container {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                gap: 2.5rem;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2rem 1rem;
+                text-align: left;
+            }
 
-							<li><a href="CV.pdf">CV</a></li>
-							<!-- <li><a href="#" class="button primary">Sign Up</a></li> -->
-						</ul>
-					</nav>
-				</header>
+            .profile-left {
+                flex: 1 1 300px;
+                max-width: 350px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
 
-			<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-						<header>
-							<h2>Hi, I'm Dr. Devontae Baxter.</h2>
-							<p>I'm an observational and computational astrophysicist investigating the formation and evolution of the largest structures in the Universe! I'm currently a Future Faculty in the Physical Sciences (FFPS) Postdoctoral Fellow at Princeton University.</p>
-<!-- 							<div style="text-align: center;">
-					        <a href="CV.pdf" class="button primary" style="padding: 0px 5px; text-decoration: none;" target="_blank">VIEW MY CV</a>
-								</div> -->
-						</header>
-						<span class="image"><img src="images/dcb-headshot.webp" alt="" /></span>
-					</div>
-				
-					<!-- <a href="#one" class="goto-next scrolly">Next</a> -->
-				</section>
+            .profile-left img {
+                width: 100%;
+                max-width: 280px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                margin-bottom: 1.5rem;
+            }
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="mailto:dcbaxter@ucsd.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://twitter.com/sentientbaryons" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<!-- <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-						<li><a href="https://www.linkedin.com/in/taebaxter/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://www.instagram.com/sentientstardust/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="https://github.com/sentientstarstuff" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<!-- <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li> -->
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+            .profile-info {
+                margin-bottom: 1.25rem;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
 
-		</div>
+            .profile-info strong {
+                display: block;
+                font-size: 1.1rem;
+                margin-bottom: 0.25rem;
+            }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+            .profile-right {
+                flex: 2 1 400px;
+            }
 
-	</body>
+            .profile-right h2 {
+                font-size: 2.75rem;
+                font-weight: 800;
+                margin-bottom: 1rem;
+                line-height: 1.2;
+            }
+
+            .profile-right p {
+                font-size: 1.2rem;
+                line-height: 1.7;
+            }
+
+            /* Custom Icon Bar Under Left Column */
+            .profile-socials {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                flex-wrap: wrap;
+                margin-top: 0.5rem;
+                padding: 0;
+                list-style: none;
+            }
+
+            .profile-socials a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                color: #fff;
+                text-decoration: none;
+                transition: background 0.3s ease, transform 0.2s ease;
+            }
+
+            .profile-socials a:hover {
+                background: rgba(255, 255, 255, 0.3);
+                transform: translateY(-2px);
+            }
+        </style>
+    </head>
+    <body class="is-preload landing">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#" class="button primary">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li>
+                            <a href="mentorship.html">Mentorship & Outreach</a>
+                            <ul>
+                                <li><a href="CARP.html">CARP Program</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="CV.pdf" target="_blank">CV</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Main Banner / Landing Area -->
+            <section id="banner" style="padding: 4em 0 2em 0;">
+                <div class="profile-container">
+                    
+                    <!-- Left Column: Photo + Affiliation + Email + Socials -->
+                    <div class="profile-left">
+                        <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter" />
+                        
+                        <div class="profile-info">
+                            <strong>Princeton University</strong>
+                            <span style="opacity: 0.85;">FFPS Postdoctoral Fellow</span><br />
+                            <a href="mailto:dcbaxter@ucsd.edu" style="text-decoration: underline;">dcbaxter@ucsd.edu</a>
+                        </div>
+
+                        <!-- Social & Link Icons -->
+                        <ul class="profile-socials">
+                            <li><a href="CV.pdf" target="_blank" title="CV"><i class="fa-solid fa-file-pdf"></i></a></li>
+                            <li><a href="https://scholar.google.com" target="_blank" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a></li>
+                            <li><a href="https://github.com/sentientstarstuff" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            <li><a href="https://www.instagram.com/sentientstardust/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Right Column: Large Greeting & Main Bio -->
+                    <div class="profile-right">
+                        <h2>Hey, I'm Devontae! 👋🏾</h2>
+                        <p>
+                        	I’m an astrophysicist who combines <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to investigate how the growth and evolution of galaxies is shaped by their <strong>cosmic neighborhoods</strong>.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <ul class="copyright">
+                    <li>&copy; Devontae C. Baxter. All rights reserved.</li>
+                    <li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
 </html>
