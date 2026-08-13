@@ -19,24 +19,37 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
-            /* --- RESET HTML5 UP BANNER POSITIONS --- */
+            /* --- OVERRIDE TEMPLATE FULLSCREEN HEIGHT --- */
+            html, body {
+                height: auto !important;
+                min-height: 100% !important;
+            }
+
+            #page-wrapper {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
             #banner {
-                position: relative !important;
-                display: block !important;
                 height: auto !important;
                 min-height: 0 !important;
-                padding: 7em 2em 4em 2em !important;
+                max-height: none !important;
+                padding: 8em 2em 4em 2em !important; /* 8em clears fixed header */
                 margin: 0 !important;
-                top: 0 !important;
+                display: block !important;
+                flex: 1 0 auto;
             }
 
             #banner .content {
                 display: block !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
+                transform: none !important;
                 opacity: 1 !important;
                 visibility: visible !important;
-                transform: none !important;
                 max-width: 1100px;
-                margin: 0 auto;
             }
 
             /* --- CUSTOM PROFILE LAYOUT --- */
@@ -198,10 +211,10 @@
                 color: #2d3748;
             }
 
-            /* Mobile Responsiveness */
+            /* Responsive Adjustments for Mobile */
             @media screen and (max-width: 736px) {
                 #banner {
-                    padding-top: 5em !important;
+                    padding-top: 6em !important;
                 }
                 .profile-container {
                     flex-direction: column;
@@ -217,10 +230,10 @@
             }
         </style>
     </head>
-    <body class="landing">
+    <body>
         <div id="page-wrapper">
 
-            <!-- Header -->
+            <!-- Header Navigation -->
             <header id="header">
                 <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
                 <nav id="nav">
@@ -235,7 +248,7 @@
                             </ul>
                         </li>
                         <li><a href="CV.pdf" target="_blank">CV</a></li>
-                        <!-- Light/Dark Toggle -->
+                        <!-- Theme Toggle Button -->
                         <li>
                             <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
                                 <i class="fa-solid fa-moon" id="theme-icon"></i>
@@ -245,12 +258,12 @@
                 </nav>
             </header>
 
-            <!-- Banner Section -->
+            <!-- Banner Content Area -->
             <section id="banner">
                 <div class="content">
                     <div class="profile-container">
                         
-                        <!-- Left Side: Headshot, Affiliation, Email, Socials -->
+                        <!-- Left Side: Photo, Details, Socials -->
                         <div class="profile-left">
                             <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter" />
                             
@@ -270,11 +283,11 @@
                             </ul>
                         </div>
 
-                        <!-- Right Side: Heading & Intro -->
+                        <!-- Right Side: Header and Bio -->
                         <div class="profile-right">
-                            <h2>Hey, I'm Devontae! <span class="wave">👋</span></h2>
+                            <h2>Hey, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
                             <p>
-                                I’m an astrophysicist who combines <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to investigate how galaxies are shaped by their <strong>cosmic neighborhoods</strong>.
+                                I’m an astrophysicist who combines data from <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to investigate how the growth and evolution of galaxies is shaped by their <strong>cosmic neighborhoods</strong>.
                             </p>
                         </div>
 
@@ -302,7 +315,7 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-        <!-- Theme Switcher Script -->
+        <!-- Theme Switcher JS -->
         <script>
           const toggleBtn = document.getElementById('theme-toggle');
           const themeIcon = document.getElementById('theme-icon');
