@@ -39,6 +39,16 @@
                 color: #ffffff;
             }
 
+            .section-heading {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin-top: 3.5rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
             /* --- QUOTE BOX --- */
             .quote-box {
                 text-align: center;
@@ -121,6 +131,93 @@
                 margin-bottom: 0.5rem;
             }
 
+            /* --- ADDITIONAL CONTRIBUTIONS SUMMARY --- */
+            .contributions-summary {
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px dashed rgba(255, 255, 255, 0.15);
+                border-radius: 12px;
+                padding: 1.5rem 2rem;
+                margin-top: 2rem;
+                margin-bottom: 3.5rem;
+                font-size: 1.1rem;
+                line-height: 1.8;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .contributions-summary a {
+                color: #60a5fa;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+                transition: color 0.2s ease;
+            }
+
+            .contributions-summary a:hover {
+                color: #93c5fd;
+            }
+
+            /* --- PUBLIC OUTREACH & LECTURES --- */
+            .outreach-card {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 2.25rem;
+                margin-bottom: 2rem;
+                transition: transform 0.2s ease, background 0.2s ease;
+            }
+
+            .outreach-card:hover {
+                background: rgba(255, 255, 255, 0.06);
+                transform: translateY(-2px);
+            }
+
+            .lecture-item {
+                margin-bottom: 1.75rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .lecture-item:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            .lecture-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-bottom: 0.35rem;
+            }
+
+            .lecture-title {
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin: 0;
+            }
+
+            .lecture-date {
+                font-size: 0.95rem;
+                color: #60a5fa;
+                font-weight: 600;
+            }
+
+            .lecture-venue {
+                font-size: 1rem;
+                font-style: italic;
+                color: rgba(255, 255, 255, 0.7);
+                margin-bottom: 0.5rem;
+            }
+
+            .lecture-description {
+                font-size: 1.05rem;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.85);
+                margin: 0;
+            }
+
             /* --- THEME TOGGLE BUTTON STYLING --- */
             .theme-toggle-btn {
                 background: transparent;
@@ -174,9 +271,15 @@
 
             /* Titles and Quotes Light Mode */
             body.light-mode .page-title,
+            body.light-mode .section-heading,
             body.light-mode .program-card-header h3,
-            body.light-mode .program-card-header h3 a {
+            body.light-mode .program-card-header h3 a,
+            body.light-mode .lecture-title {
                 color: #1a202c !important;
+            }
+
+            body.light-mode .section-heading {
+                border-bottom-color: rgba(0, 0, 0, 0.1) !important;
             }
 
             body.light-mode .program-card-header h3 a:hover {
@@ -189,19 +292,44 @@
             }
 
             /* Program Cards Light Mode */
-            body.light-mode .program-card {
+            body.light-mode .program-card,
+            body.light-mode .outreach-card {
                 background: #ffffff !important;
                 border-color: rgba(0, 0, 0, 0.1) !important;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             }
 
             body.light-mode .program-card p,
-            body.light-mode .program-card ul li {
+            body.light-mode .program-card ul li,
+            body.light-mode .lecture-description {
                 color: #2d3748 !important;
             }
 
-            body.light-mode .program-card-header i {
+            body.light-mode .program-card-header i,
+            body.light-mode .lecture-date {
                 color: #2563eb !important;
+            }
+
+            body.light-mode .contributions-summary {
+                background: rgba(0, 0, 0, 0.02) !important;
+                border-color: rgba(0, 0, 0, 0.15) !important;
+                color: #2d3748 !important;
+            }
+
+            body.light-mode .contributions-summary a {
+                color: #2563eb !important;
+            }
+
+            body.light-mode .contributions-summary a:hover {
+                color: #1d4ed8 !important;
+            }
+
+            body.light-mode .lecture-item {
+                border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+            }
+
+            body.light-mode .lecture-venue {
+                color: #4a5568 !important;
             }
 
             /* Mobile Responsive */
@@ -212,8 +340,15 @@
                 .page-title {
                     font-size: 2.2rem;
                 }
-                .program-card {
+                .section-heading {
+                    font-size: 1.6rem;
+                }
+                .program-card, .outreach-card {
                     padding: 1.5rem;
+                }
+                .lecture-header {
+                    flex-direction: column;
+                    gap: 0.2rem;
                 }
             }
         </style>
@@ -303,6 +438,43 @@
                         <p>
                             The program provides structured, formal mentorship to first-year graduate students through monthly professional development workshops and dedicated 1-on-1 mentoring to ease the transition into doctoral research.
                         </p>
+                    </div>
+
+                    <!-- Additional Program Contributions Sentence -->
+                    <div class="contributions-summary">
+                        In addition to these programs, I have also contributed as a mentor and facilitator to several other impactful initiatives, including the <a href="https://www.startastro.org/" target="_blank" rel="noopener noreferrer">STARTAstro</a> program, the <a href="https://sites.google.com/ucsd.edu/astroreach/" target="_blank" rel="noopener noreferrer">AstroReach SD</a> program for high-school students seeking to be the first in their family to pursue a college degree, and the <a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a> program bringing space science directly to K-12 students in San Diego with portable planetarium shows.
+                    </div>
+
+                    <!-- Public Outreach & Lectures Section -->
+                    <h3 class="section-heading"><i class="fa-solid fa-bullhorn" style="margin-right: 0.75rem; color: #60a5fa;"></i>Public Outreach & Lectures</h3>
+
+                    <div class="outreach-card">
+                        <p style="margin-bottom: 2rem;">
+                            Communicating astrophysics research to the public is a core priority of my work. I regularly deliver public lectures, lead stargazing sessions, and visit K-12 classrooms to bring science into the broader community.
+                        </p>
+
+                        <!-- Recent Lectures List -->
+                        <div class="lecture-item">
+                            <div class="lecture-header">
+                                <h4 class="lecture-title">[Title of Your Recent Public Lecture]</h4>
+                                <span class="lecture-date">[Date / Month Year]</span>
+                            </div>
+                            <div class="lecture-venue">[Venue / Host Organization, e.g., Astronomy on Tap / San Diego Public Library]</div>
+                            <p class="lecture-description">
+                                Delivered an accessible public presentation exploring [Key Topic / Research Area], breaking down complex astrophysical concepts for a general audience through visual demonstrations and an open Q&amp;A session.
+                            </p>
+                        </div>
+
+                        <div class="lecture-item">
+                            <div class="lecture-header">
+                                <h4 class="lecture-title">[Title of Another Recent Lecture or Talk]</h4>
+                                <span class="lecture-date">[Date / Month Year]</span>
+                            </div>
+                            <div class="lecture-venue">[Venue / Host Organization]</div>
+                            <p class="lecture-description">
+                                Presented recent findings on [Research Topic], discussing observational astronomy techniques and engaging community members in interactive discussions about space science.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
