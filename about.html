@@ -19,11 +19,11 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
-            /* --- EXPAND CONTAINER WIDTH & FIX MARGINS --- */
+            /* --- WIDENED CONTAINER (25% MORE WIDTH) --- */
             .about-container {
-                max-width: 1100px;
+                max-width: 1350px;
                 margin: 0 auto;
-                padding: 4rem 2rem;
+                padding: 4rem 2.5rem;
             }
 
             .about-header-title {
@@ -39,7 +39,7 @@
                 font-style: italic;
                 font-size: 1.25rem;
                 margin: 1.5rem auto 3.5rem auto;
-                max-width: 850px;
+                max-width: 950px;
                 padding: 1.25rem 2rem;
                 border-left: 4px solid #3b82f6;
                 background: rgba(255, 255, 255, 0.04);
@@ -49,7 +49,7 @@
 
             .story-section {
                 margin-bottom: 4rem;
-                line-height: 1.8;
+                line-height: 1.85;
                 font-size: 1.15rem;
             }
 
@@ -72,14 +72,14 @@
 
             .skate-feature img {
                 width: 100%;
-                max-width: 360px;
+                max-width: 380px;
                 border-radius: 12px;
                 box-shadow: 0 10px 25px rgba(0,0,0,0.5);
                 border: 2px solid rgba(255, 255, 255, 0.1);
             }
 
             .skate-feature-text {
-                flex: 1 1 400px;
+                flex: 1 1 450px;
             }
 
             /* --- TIMELINE STYLING --- */
@@ -130,7 +130,7 @@
             /* --- HOBBY CARDS GRID --- */
             .hobby-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                 gap: 1.5rem;
                 margin-top: 1.75rem;
             }
@@ -169,12 +169,59 @@
                 color: rgba(255, 255, 255, 0.85);
             }
 
-            /* --- LIGHT MODE COMPREHENSIVE COLOR FIXES --- */
+            /* --- THEME TOGGLE BUTTON STYLING --- */
+            .theme-toggle-btn {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: #f1f5f9;
+                padding: 0.35rem 0.75rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .theme-toggle-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            /* --- LIGHT MODE COMPREHENSIVE FIXES --- */
             body.light-mode {
                 background-color: #f4f6f9 !important;
                 color: #2e3440 !important;
             }
 
+            /* Header Nav & Logo Fixes for Light Mode */
+            body.light-mode #header {
+                background: #ffffff !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            body.light-mode #logo a,
+            body.light-mode #nav > ul > li > a,
+            body.light-mode #nav > ul > li > span {
+                color: #1a202c !important;
+            }
+
+            body.light-mode #nav ul li a.button.primary {
+                background-color: #2563eb !important;
+                color: #ffffff !important;
+            }
+
+            /* Theme Button Light Mode */
+            body.light-mode .theme-toggle-btn {
+                border-color: rgba(0, 0, 0, 0.2) !important;
+                color: #1a202c !important;
+            }
+
+            body.light-mode .theme-toggle-btn i.fa-sun {
+                color: #d97706 !important; /* Bright Amber Sun */
+            }
+
+            /* Content Area Titles & Text Light Mode */
             body.light-mode .about-header-title,
             body.light-mode .story-section h3,
             body.light-mode .timeline-title {
@@ -208,7 +255,7 @@
                 color: #2563eb !important;
             }
 
-            /* Hobby Card Light Mode Overrides */
+            /* Hobby Cards Light Mode */
             body.light-mode .hobby-card {
                 background: #ffffff !important;
                 border-color: rgba(0, 0, 0, 0.1) !important;
@@ -227,27 +274,7 @@
                 color: #2563eb !important;
             }
 
-            /* Theme Toggle Button */
-            .theme-toggle-btn {
-                background: transparent;
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                color: #fff;
-                padding: 0.35rem 0.75rem;
-                border-radius: 20px;
-                cursor: pointer;
-                font-size: 0.85rem;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-            }
-
-            body.light-mode .theme-toggle-btn {
-                border-color: rgba(0, 0, 0, 0.2);
-                color: #2d3748;
-            }
-
-            /* Responsive Adjustments */
+            /* Mobile Responsive */
             @media screen and (max-width: 736px) {
                 .about-container {
                     padding: 2rem 1.25rem;
@@ -404,7 +431,7 @@
                     </section>
 
                     <!-- CV Download Callout -->
-                    <div style="text-align: center; margin-top: 3rem;">
+                    <div style="text-align: center; margin-top: 3.5rem;">
                         <a href="CV.pdf" target="_blank" class="button primary">
                             <i class="fa-solid fa-file-invoice"></i> Download Full Curriculum Vitae (PDF)
                         </a>
