@@ -72,11 +72,11 @@
                 color: #60a5fa;
             }
 
-            /* --- RESEARCH INTEREST CARDS (FUNNEL METHOD) --- */
+            /* --- RESEARCH INTEREST CARDS WITH IMAGES --- */
             .interest-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 1.5rem;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 1.75rem;
                 margin-top: 2rem;
             }
 
@@ -84,33 +84,70 @@
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 border-radius: 12px;
-                padding: 1.75rem;
-                transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+                overflow: hidden;
+                transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
                 display: flex;
                 flex-direction: column;
             }
 
             .interest-card:hover {
-                transform: translateY(-4px);
+                transform: translateY(-5px);
                 background: rgba(255, 255, 255, 0.08);
                 border-color: rgba(96, 165, 250, 0.4);
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
             }
 
-            .interest-card i.interest-icon {
-                font-size: 2rem;
+            .interest-card-img-wrapper {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                overflow: hidden;
+            }
+
+            .interest-card-img-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            .interest-card:hover .interest-card-img-wrapper img {
+                transform: scale(1.06);
+            }
+
+            .interest-badge {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                background: rgba(15, 23, 42, 0.75);
+                backdrop-filter: blur(8px);
                 color: #60a5fa;
-                margin-bottom: 1rem;
+                border: 1px solid rgba(96, 165, 250, 0.3);
+                border-radius: 20px;
+                padding: 0.35rem 0.85rem;
+                font-size: 0.8rem;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }
+
+            .interest-card-content {
+                padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
             }
 
             .interest-card h4 {
-                font-size: 1.25rem;
+                font-size: 1.3rem;
                 font-weight: 700;
                 color: #ffffff;
-                margin-bottom: 0.75rem;
+                margin-bottom: 0.6rem;
             }
 
             .interest-card p {
-                font-size: 1rem;
+                font-size: 0.98rem;
                 line-height: 1.6;
                 color: rgba(255, 255, 255, 0.85);
                 margin: 0;
@@ -365,6 +402,12 @@
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
             }
 
+            body.light-mode .interest-badge {
+                background: rgba(255, 255, 255, 0.85);
+                color: #2563eb;
+                border-color: rgba(37, 99, 235, 0.3);
+            }
+
             body.light-mode .hub-card p {
                 color: #4a5568 !important;
             }
@@ -385,8 +428,7 @@
             body.light-mode .pub-list a,
             body.light-mode .research-section h3 i,
             body.light-mode .hub-card h4,
-            body.light-mode .hub-card i.chevron,
-            body.light-mode .interest-card i.interest-icon {
+            body.light-mode .hub-card i.chevron {
                 color: #2563eb !important;
             }
 
@@ -454,34 +496,54 @@
                     <section class="research-section">
                         <h3><i class="fa-solid fa-atom"></i> Research Interests</h3>
                         <p>
-                            Galaxies span an extraordinary spectrum of scales, shapes, and environments—from low-mass dwarf satellite galaxies to massive ellipticals in dense cosmic clusters. My research operates at the intersection of multi-wavelength observations and cosmological hydrodynamical simulations, bridging small-scale galactic astrophysics with large-scale cosmic structure. I seek to isolate the primary physical mechanisms driving galaxy transformation and environmental quenching across space and cosmic time.
+                            Galaxies span an extraordinary spectrum of scales, shapes, and environments—from low-mass dwarf satellites to massive ellipticals in dense cosmic clusters. My research operates at the intersection of multi-wavelength observations and cosmological hydrodynamical simulations, bridging small-scale galactic astrophysics with large-scale cosmic structure to isolate the primary physical mechanisms driving galaxy transformation and environmental quenching across cosmic time.
                         </p>
 
-                        <!-- Funnel Method Research Topic Cards -->
+                        <!-- Visual Cards for Core Themes -->
                         <div class="interest-grid">
+                            
+                            <!-- Card 1: Dwarf Galaxies -->
                             <div class="interest-card">
-                                <i class="fa-solid fa-circle-nodes interest-icon"></i>
-                                <h4>Dwarf Galaxies</h4>
-                                <p>
-                                    Exploring the shallow potential wells of low-mass systems ($M_* < 10^9 M_\odot$) to understand environmental quenching sensitivity, ram-pressure stripping, and satellite suppression beyond the Local Group.
-                                </p>
+                                <div class="interest-card-img-wrapper">
+                                    <img src="images/dwarf-galaxy.jpg" alt="Dwarf Galaxy image" />
+                                    <span class="interest-badge"><i class="fa-solid fa-circle-nodes"></i> Small Scales</span>
+                                </div>
+                                <div class="interest-card-content">
+                                    <h4>Dwarf Galaxies</h4>
+                                    <p>
+                                        Probing low-mass systems ($M_* < 10^9 M_\odot$) to understand environmental quenching sensitivity, ram-pressure stripping, and satellite suppression beyond the Local Group.
+                                    </p>
+                                </div>
                             </div>
 
+                            <!-- Card 2: Galaxy Groups & Clusters -->
                             <div class="interest-card">
-                                <i class="fa-solid fa-bahai interest-icon"></i>
-                                <h4>Galaxy Groups &amp; Clusters</h4>
-                                <p>
-                                    Investigating how intermediate and massive overdense environments starve galaxies of cold gas supplies, accelerating star formation suppression across the past 8 billion years ($z \sim 0 - 1.5$).
-                                </p>
+                                <div class="interest-card-img-wrapper">
+                                    <img src="images/coma-cluster.webp" alt="Coma Galaxy Cluster" />
+                                    <span class="interest-badge"><i class="fa-solid fa-bahai"></i> Dense Structures</span>
+                                </div>
+                                <div class="interest-card-content">
+                                    <h4>Galaxy Groups &amp; Clusters</h4>
+                                    <p>
+                                        Investigating how overdense environments starve galaxies of cold gas supplies, accelerating star formation suppression across the past 8 billion years ($z \sim 0 - 1.5$).
+                                    </p>
+                                </div>
                             </div>
 
+                            <!-- Card 3: The High-Redshift Universe -->
                             <div class="interest-card">
-                                <i class="fa-solid fa-meteor interest-icon"></i>
-                                <h4>The High-Redshift Universe</h4>
-                                <p>
-                                    Quantifying protocluster assembly ($z > 2$), survey completeness limits, and the formation pathways of the universe's earliest massive passive galaxies using space-based observatories like HST, JWST, and Roman.
-                                </p>
+                                <div class="interest-card-img-wrapper">
+                                    <img src="images/spiderweb-protocluster.webp" alt="Spiderweb Protocluster at high-z" />
+                                    <span class="interest-badge"><i class="fa-solid fa-meteor"></i> Cosmic Dawn</span>
+                                </div>
+                                <div class="interest-card-content">
+                                    <h4>The High-Redshift Universe</h4>
+                                    <p>
+                                        Quantifying protocluster assembly ($z > 2$), survey completeness, and early massive galaxy evolution using HST, JWST, and Roman space telescope observations.
+                                    </p>
+                                </div>
                             </div>
+
                         </div>
                     </section>
 
