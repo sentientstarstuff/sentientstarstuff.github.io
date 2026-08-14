@@ -1,159 +1,375 @@
-
-
 <!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'G-RY38BXSTQB');
-	</script>
-		
-		<title>About | Devontae C. Baxter</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="page-wrapper">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RY38BXSTQB');
+        </script>
+        
+        <title>About | Devontae C. Baxter, PhD</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-	<!-- Header -->
-    <header id="header">
-        <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="#" class="button primary">Home</a></li> -->
-                    <li><a href="#" class="button primary">About</a></li>
-                
-                <li><a href="research.html">Research</a></li>
-                
-                <!-- <li><a href="teaching.html">Teaching</a></li> -->
-                <li><a href="mentorship.html">Mentorship & Outreach</a>
-		<ul>
-		<li><a href="CARP.html">CARP Program</a></li>
-		</ul>
-		</li>
-                <!-- <li><a href="CV.pdf">CV</a></li> -->
-                <!-- <li><a href="#" class="button primary">Sign Up</a></li> -->
-            </ul>
-        </nav>
-    </header>
+        <style>
+            .about-container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 3rem 1.5rem;
+            }
 
-			<!-- Main -->
-				<div id="main" class="wrapper style1">
-					<div class="container">
+            .quote-box {
+                text-align: center;
+                font-style: italic;
+                font-size: 1.25rem;
+                margin: 1.5rem 0 3rem 0;
+                padding: 1rem 2rem;
+                border-left: 4px solid #3b82f6;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 0 8px 8px 0;
+            }
 
-						<header class="major">
-							<h2>About me</h2>
-							<blockquote>“I... a universe of atoms, an atom in the universe.” ― Richard P. Feynman</blockquote>
-						
-						
-							<p style="text-align: left;"> <b>Short bio:</b> Dr. Devontae Baxter is a NSF Astronomy & Astrophysics and UC Chancellor's Postdoctoral Fellow at UC San Diego studying the impact of environment on galaxy formation and evolution. 
-							He did his undergraduate studies at Georgia Institute of Technology, majoring in Physics with a specialization in Astrophysics and minoring in Spanish. 
-							He did his graduate studies at UC Irvine under the supervision of Professor Michael Cooper, and his thesis work centered on merging machine learning, cosmological simulations, and observations from the Sloan Digital Sky Survey, Keck, and Gemini North & South to identify the physical mechanisms driving the suppression of star formation in galaxy groups and clusters since the Universe was about half its current age. 
-							His postdoctoral work centers on understanding how the densest environments in the early universe, namely <i>galaxy protoclusters</i>, influence the suppression and enhancement of star formation and stellar mass growth. 
-							In his free time, he enjoys skateboarding, learning new languages, and spending quality time with his friends and family.
-								
-								</p>
-				
-						</header>
+            .story-section {
+                margin-bottom: 3.5rem;
+                line-height: 1.8;
+                font-size: 1.1rem;
+            }
 
+            .story-section h3 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                color: #fff;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 0.5rem;
+            }
 
-								<header>
-									<h2>Dr. Devontae C. Baxter – The Skateboarding Astrophysicist</h2>
-								</header>
-								<p><span class="image right"><img src="images/dcb-ollie.webp" alt="" /></span>Hello! I'm Devontae (Tae) Baxter, born and raised in Atlanta, Georgia. My passion for science and skateboarding ignited during my teenage years and has been with me ever since.</p>
+            .skate-feature {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                align-items: center;
+                margin: 2rem 0;
+            }
 
-<p>Before aspiring to become an astrophysicist, my dream was to travel the globe as a professional skateboarder. Although that dream didn't materialize, I'm fortunate to now utilize some of the most remarkable telescopes ever engineered, allowing me to explore the Universe's wonders while still finding time for skateboarding.</p>
+            .skate-feature img {
+                width: 100%;
+                max-width: 320px;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+            }
 
-<p>So, how did I reach this point? Well, after graduating from Stockbridge High School in 2011, I embarked on a gap year of self-discovery, mostly filled with working and frequenting my local library. During this time, I immersed myself in books by renowned science popularizers like Carl Sagan, Michio Kaku, Brian Cox, and Neil deGrasse Tyson. It was then that I realized my calling—to dedicate 
-my life to enhancing humanity's knowledge of the cosmos.</p>
-	
-<p>In 2012, facing financial constraints that limited my options for a traditional 4-year college, I officially began my academic journey at what is now Georgia State University: Perimeter College, formerly known as Georgia Perimeter Community College.</p>
+            .skate-feature-text {
+                flex: 1 1 300px;
+            }
 
-<p>In 2015, I transferred to the prestigious <a href="https://www.gatech.edu/">Georgia Institute Technology</a> (Tech), graduating with highest honors in 2017 with a B.S. in Physics and a minor in Spanish. Throughout my time at Tech, I earned accolades such as the Georgia Hope and AMC Cares Scholarships for exceptional academic performance and community service.</p>
+            /* Timeline Styling */
+            .timeline {
+                position: relative;
+                padding-left: 2rem;
+                margin: 2rem 0;
+                border-left: 2px solid rgba(255, 255, 255, 0.15);
+            }
 
-<p>After graduating from Tech, I embarked on my doctoral journey at the University of California, Irvine (UCI). Throughout my tenure at UCI, I served as a Eugene Cota-Robles, National Osterbrook Leadership (<a href="https://aas.org/nolp">NOLP</a>) Program and LSSTC Data Science Fellowship Program (<a href="https://www.lsstcorporation.org/lincc/fellowship_program">DSFP</a>) Fellow, while also conducting exciting research in galaxy evolution under the guidance of Professor <a href="http://localgroup.ps.uci.edu/cooper/index.html">Michael C. Cooper</a>. In 2023, I proudly earned my PhD in Physics, with my dissertation focusing on inferring the drivers of environmental quenching in galaxy groups and clusters through a combination of modeling and supervised machine learning.</p>
+            .timeline-item {
+                position: relative;
+                margin-bottom: 2rem;
+            }
 
+            .timeline-item::before {
+                content: '';
+                position: absolute;
+                left: -2.45rem;
+                top: 0.25rem;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #3b82f6;
+                border: 2px solid #11141a;
+            }
 
-<p>Currently, I hold the dual positions of <a href="https://new.nsf.gov/funding/opportunities/nsf-astronomy-astrophysics-postdoctoral">NSF Astronomy & Astrophysics</a> and <a href="https://facultydiversity.ucsd.edu/postdoc/">UC Chancellor's</a> Postdoctoral Fellow at the University of California, San Diego. My ongoing research interests center on understanding the role that protocluster environments play in shaping galaxy evolution.</p>
+            .timeline-date {
+                font-size: 0.85rem;
+                font-weight: 700;
+                color: #3b82f6;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
 
-<p>Beyond my research, I am deeply invested in teaching, mentorship, and outreach. I am currently leading the Computational Astrophysics Research Preparation (<a href="CARP.html">CARP</a>) program. This initiative involves hosting coding and mentorship workshops tailored for aspiring community college transfer students, aiming to equip them with programming skills and relevant mentorship for a smooth transition to a four-year institution.</p>
+            .timeline-title {
+                font-size: 1.2rem;
+                font-weight: 700;
+                margin: 0.2rem 0;
+            }
 
-<p>Outside of work, I find joy in rediscovering the beauty of existence through my daughter's eyes. Some of my interests include <a href="https://www.youtube.com/playlist?list=PL3ejDFPVvgQHBLm1DstYt5eWw67uU0bMu">skateboarding</a> (of course), continuously expanding my horizons by <a href="https://www.duolingo.com/profile/CosmicPrimate">learning new languages</a>, hiking, reading, and watching my favorite animes.</p>
+            .timeline-body {
+                font-size: 1rem;
+                opacity: 0.9;
+            }
 
-		
-<!--                                 <ul class="actions">
-									<li><a href="CV.pdf" class="button primary">VIEW MY CV</a></li>
-								</ul>
- -->
+            /* Hobbies Badges */
+            .hobby-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.25rem;
+                margin-top: 1.5rem;
+            }
 
-				<div style="text-align: center;">
-					        <a href="CV.pdf" class="button primary" style="padding: 0px 5px; text-decoration: none;" target="_blank">VIEW MY CV</a>
-						    <!-- 				    <br><br>
-				    <a href="application_form.html" class="button primary" style="padding: 10px 20px; text-decoration: none;">Application Open</a> -->
+            .hobby-card {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 10px;
+                padding: 1.25rem;
+                text-align: center;
+                transition: transform 0.2s ease;
+            }
 
-					    </div>
+            .hobby-card:hover {
+                transform: translateY(-4px);
+                background: rgba(255, 255, 255, 0.08);
+            }
 
-                                <hr />
+            .hobby-card i {
+                font-size: 1.8rem;
+                margin-bottom: 0.75rem;
+                color: #3b82f6;
+            }
 
-							<!-- <div>
-								<header>
-									<h2>Hobbies & Interests</h2>
-								</header>
+            /* Light mode overrides */
+            body.light-mode {
+                background-color: #f4f6f9 !important;
+                color: #2e3440 !important;
+            }
 
+            body.light-mode .story-section h3 {
+                color: #1a202c;
+                border-bottom-color: rgba(0, 0, 0, 0.1);
+            }
 
-                                <p><span class="image right"><img src="images/ollie.png" alt="" /></span>Some of my interests include <a href="https://www.youtube.com/playlist?list=PL3ejDFPVvgQHBLm1DstYt5eWw67uU0bMu">skateboarding</a>, 
-									<a href="https://www.duolingo.com/profile/CosmicPrimate">learning new langauges</a>, watching anime, traveling and stargazing.</p>
+            body.light-mode .quote-box {
+                background: rgba(0, 0, 0, 0.03);
+            }
 
+            body.light-mode .hobby-card {
+                background: #ffffff;
+                border-color: rgba(0, 0, 0, 0.08);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            }
 
-									<p>Outside of research, I enjoy spending time with my family, rediscoving the beauty of existence through my daughter's eys, skateboarding, reading, watching anime..</p>
+            body.light-mode .timeline {
+                border-left-color: rgba(0, 0, 0, 0.15);
+            }
 
-									<p>Outside of research, I enjoy spending time with my family, rediscoving the beauty of existence through my daughter's eys, skateboarding, reading, watching anime..</p>
+            body.light-mode .timeline-item::before {
+                border-color: #f4f6f9;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page-wrapper">
 
-									<p>Outside of research, I enjoy spending time with my family, rediscoving the beauty of existence through my daughter's eys, skateboarding, reading, watching anime..</p>
+            <!-- Header Navigation -->
+            <header id="header">
+                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#" class="button primary">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li>
+                            <a href="mentorship.html">Mentorship & Outreach</a>
+                            <ul>
+                                <li><a href="CARP.html">CARP Program</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="CV.pdf" target="_blank">CV</a></li>
+                        <li>
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                                <i class="fa-solid fa-moon" id="theme-icon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
 
-							</div>
-								<hr /> -->
+            <!-- Main Content Container -->
+            <div id="main" class="wrapper style1">
+                <div class="about-container">
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="mailto:dcbaxter@ucsd.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://twitter.com/sentientbaryons" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<!-- <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-						<li><a href="https://www.linkedin.com/in/taebaxter/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://www.instagram.com/sentientstardust/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="https://github.com/sentientstarstuff" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<!-- <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li> -->
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+                    <!-- Page Title & Feynman Quote -->
+                    <header class="major" style="text-align: center;">
+                        <h2>About Me</h2>
+                    </header>
 
-		</div>
+                    <div class="quote-box">
+                        “I... a universe of atoms, an atom in the universe.” 
+                        <br><span style="font-size: 0.9rem; opacity: 0.8;">— Richard P. Feynman</span>
+                    </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+                    <!-- Short Formal Bio -->
+                    <section class="story-section">
+                        <h3>Brief Formal Bio</h3>
+                        <p>
+                            Dr. Devontae Baxter is a Postdoctoral Fellow studying the impact of cosmic environment on galaxy formation and evolution. He completed his undergraduate studies at the Georgia Institute of Technology, majoring in Physics (Astrophysics specialization) with a minor in Spanish. He earned his PhD in Physics at UC Irvine under the supervision of Professor Michael Cooper, centered on merging machine learning, cosmological simulations, and multi-observatory datasets (SDSS, Keck, Gemini) to infer the physical mechanisms driving star-formation quenching in galaxy groups and clusters.
+                        </p>
+                    </section>
 
-	</body>
+                    <!-- Personal Journey & Skateboarding -->
+                    <section class="story-section">
+                        <h3>The Skateboarding Astrophysicist</h3>
+                        
+                        <div class="skate-feature">
+                            <img src="images/dcb-ollie.webp" alt="Devontae Baxter performing an ollie on a skateboard" />
+                            <div class="skate-feature-text">
+                                <p>
+                                    Born and raised in Atlanta, Georgia, my twin passions for science and skateboarding ignited during my teenage years. Before aspiring to explore the cosmos, my dream was to travel the globe as a professional skateboarder. 
+                                </p>
+                                <p>
+                                    While my career path shifted toward the stars, the grit, creativity, and persistence I learned on a skateboard continue to shape how I approach complex astrophysical problems. Today, I’m fortunate to utilize world-class telescopes while still finding time to skate.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p>
+                            After graduating from Stockbridge High School in 2011, I embarked on a self-discovery gap year working and reading at my local library. Immersing myself in books by Carl Sagan, Michio Kaku, Brian Cox, and Neil deGrasse Tyson sparked my calling to contribute to humanity's collective knowledge of the Universe.
+                        </p>
+                    </section>
+
+                    <!-- Academic Journey Timeline -->
+                    <section class="story-section">
+                        <h3>Academic Journey</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2023 – Present</div>
+                                <div class="timeline-title">Postdoctoral Fellow</div>
+                                <div class="timeline-body">
+                                    Holding NSF Astronomy & Astrophysics and UC Chancellor's Postdoctoral Fellowships. Investigating the role of protocluster environments in galaxy evolution and leading the <strong>CARP</strong> outreach initiative.
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-date">2017 – 2023</div>
+                                <div class="timeline-title">Ph.D. in Physics — UC Irvine</div>
+                                <div class="timeline-body">
+                                    Supervised by Prof. Michael C. Cooper. Recipient of the Eugene Cota-Robles, NOLP, and LSSTC Data Science Fellowships. Dissertation centered on machine learning and environmental quenching.
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-date">2015 – 2017</div>
+                                <div class="timeline-title">B.S. in Physics — Georgia Institute of Technology</div>
+                                <div class="timeline-body">
+                                    Graduated with Highest Honors (Minor in Spanish). Georgia HOPE and AMC Cares Scholar.
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-date">2012 – 2015</div>
+                                <div class="timeline-title">A.S. Studies — Georgia Perimeter College</div>
+                                <div class="timeline-body">
+                                    Began higher education journey at community college before transferring to Georgia Tech.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Beyond the Lab / Interests -->
+                    <section class="story-section">
+                        <h3>Beyond the Lab</h3>
+                        <p>
+                            Outside of research, teaching, and mentorship, I find joy in rediscovering the beauty of existence through my daughter's eyes. Here are a few things that keep me inspired:
+                        </p>
+
+                        <div class="hobby-grid">
+                            <div class="hobby-card">
+                                <i class="fa-solid fa-person-skateboarding"></i>
+                                <h4>Skateboarding</h4>
+                                <p style="font-size: 0.85rem; margin: 0;">Street & park skating around the city.</p>
+                            </div>
+
+                            <div class="hobby-card">
+                                <i class="fa-solid fa-language"></i>
+                                <h4>Languages</h4>
+                                <p style="font-size: 0.85rem; margin: 0;">Minored in Spanish; active language learner.</p>
+                            </div>
+
+                            <div class="hobby-card">
+                                <i class="fa-solid fa-tv"></i>
+                                <h4>Anime & Reading</h4>
+                                <p style="font-size: 0.85rem; margin: 0;">Sci-fi literature, cosmic philosophy, anime.</p>
+                            </div>
+
+                            <div class="hobby-card">
+                                <i class="fa-solid fa-mountain-sun"></i>
+                                <h4>Outdoors</h4>
+                                <p style="font-size: 0.85rem; margin: 0;">Hiking, stargazing, and family time.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- CV Download Callout -->
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="CV.pdf" target="_blank" class="button primary">
+                            <i class="fa-solid fa-file-invoice"></i> Download Full Curriculum Vitae (PDF)
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <ul class="copyright">
+                    <li>&copy; Devontae C. Baxter. All rights reserved.</li>
+                    <li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <!-- Template Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- Theme Switcher JS -->
+        <script>
+          const toggleBtn = document.getElementById('theme-toggle');
+          const themeIcon = document.getElementById('theme-icon');
+          
+          const currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+          }
+
+          toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            let theme = 'dark';
+            if (document.body.classList.contains('light-mode')) {
+              theme = 'light';
+              themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+              themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+            
+            localStorage.setItem('theme', theme);
+          });
+        </script>
+    </body>
 </html>
