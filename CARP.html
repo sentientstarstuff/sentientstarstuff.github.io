@@ -1,170 +1,637 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RY38BXSTQB');
+        </script>
+        
+        <title>CARP Workshop | Devontae C. Baxter, PhD</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'G-RY38BXSTQB');
-	</script>
-		
-		<title>CARP Workshop | Devontae C. Baxter</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="page-wrapper">
+        <style>
+            /* --- TOP PADDING & MARGIN FIXES --- */
+            #main.wrapper {
+                padding-top: 1.5em !important;
+            }
 
-		<!-- Header -->
-		<header id="header">
-			<h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-			<nav id="nav">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="research.html">Research</a></li>
-					<li><a href="mentorship.html" class="button primary">Mentorship & Outreach</a>
-					<ul>
-					<li><a href="CARP.html">CARP Program</a></li>
-					</ul>		
-					</li>
-					<!-- <li><a href="CV.pdf">CV</a></li> -->
-				</ul>
-			</nav>
-		</header>
+            .carp-container {
+                max-width: 1250px;
+                margin: 0 auto;
+                padding: 0 2rem 4rem 2rem;
+            }
 
-		<!-- Inline Banner Section -->
-		<div style="width: 100%; height: auto; text-align: center; padding-top: 80px;">
-		    <img src="images/CARP-header.webp" alt="Header Photo" fetchpriority="high" style="max-width: 70%; height: auto; display: inline-block;">
-		</div>
+            /* --- HEADER BANNER STYLING --- */
+            .banner-container {
+                width: 100%;
+                text-align: center;
+                padding-top: 80px;
+                padding-bottom: 1rem;
+            }
 
-		<!-- Main Content -->
-		<div id="main" class="wrapper style1">
-			<div class="container">
-				<header class="major">
-					<p>The CARP program offers <strong>free</strong> foundational programming skills and mentorship to junior college students in San Diego interested in astrophysics research, aiming to facilitate their transition to a four-year university.</p>
-				</header>
+            .banner-img {
+                max-width: 75%;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
 
-				<header><h2>CARP Workshop Overview</h2></header>
-				<!-- Mentorship Section -->
-				<section>
-					<header><h3>Mentorship Component</h3></header>
-					<p>Navigating the transfer from a two-year to a four-year college presents unique challenges. This segment of the CARP workshop includes activities covering the transfer process, adapting to university life, and using resources like ASSIST and UC TAP. Additionally, we discuss the benefits of mentorship and strategies for building a supportive academic community post-transfer.</p>
-				</section>
+            /* --- PAGE HEADINGS --- */
+            .page-title {
+                font-size: 2.8rem;
+                font-weight: 800;
+                text-align: center;
+                margin-top: 1rem !important;
+                margin-bottom: 0.5rem;
+                color: #ffffff;
+            }
 
-				<!-- Computational Section -->
-				<section>
-					<header><h3>Computational Component</h3></header>
-					<p>Programming skills are essential for academic research. Partnering with <a href="https://carpentries.org">The Carpentries</a>, CARP offers lessons from Software and Data Carpentry communities to teach participants the basics of Python, using techniques and tools important for astrophysics research. All of our previous lessons are available on the <a href="https://github.com/sentientstarstuff/Computational-Astrophysics-Research-Preparation/tree/main">CARP Github page</a>.</p>
-				</section>
+            .section-heading {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin-top: 3.5rem;
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
 
-				<!-- Requirements Section -->
-				<section>
-					<header><h3>Workshop Requirements</h3></header>
-					<p>Participants should bring a laptop with a Mac, Linux, or Windows operating system with administrative privileges (not a tablet or Chromebook) and pre-installed software as specified below.</p>
-				</section>
+            .section-heading i {
+                color: #60a5fa;
+            }
 
-				<!-- Eligibility Section -->
-				<section>
-					<header><h3>Who Can Attend?</h3></header>
-					<p>The CARP workshops are specifically designed for community college students with aspirations to transfer to a four-year university and engage in undergraduate research. While the worskhop has an astrophysics focus, we welcome applications from students of all majors. Applicants will be selected according to a needs-based criteria, with a preference given to students who are most likely to benefit from the content covered in this workshop.</p>
-				</section>
+            /* --- HERO INTRO BOX --- */
+            .carp-hero-box {
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(30, 58, 138, 0.2));
+                border: 1px solid rgba(96, 165, 250, 0.3);
+                border-radius: 12px;
+                padding: 1.75rem 2.25rem;
+                margin: 1.5rem auto 3rem auto;
+                text-align: center;
+                font-size: 1.25rem;
+                line-height: 1.7;
+                color: #f1f5f9;
+            }
 
-				<!-- Eligibility Information Section -->
-				<section>
-					<header><h3>Additional Eligibility Information</h3></header>
-					<p>No prior coding experience is required, though basic familiarity with astronomy topics (e.g., reference frames, proper motion) is beneficial. <b>Eligibility is primarily based on transfer intent, transfer readiness, and interest in computational research.</b></p>
-				</section>
+            .carp-hero-box strong {
+                color: #60a5fa;
+            }
 
-				<!-- Themes Section -->
-				<section>
-					<header><h3>Workshop Themes</h3></header>
-					<ul>
-						<li>Day 1: Introduction to Python & Elucidating the Transfer Process</li>
-						<li>Day 2: Data Visualization & Crafting Your Future</li>
-						<li>Day 3: Introduction to Unix Shell & High-Performance Computing</li>
-						<li>Day 4: Foundations of Astro Data Science Part I & Post-Transfer Survival Strategies</li>
-						<li>Day 5: Foundations of Astro Data Science Part II & Constructing Support Networks for Academic Success</li>
-					</ul>
-				</section>
+            /* --- CARDS GRID --- */
+            .cards-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 1.75rem;
+                margin-bottom: 2.5rem;
+            }
 
-				<!-- Group Photo Section -->
-				<section>
-					<header><h3>Meet the Previous CARP Cohorts</h3></header>
-					<p>CARP Spring 2026 Cohort</p>
-					<div class="box alt">
-						<div class="row gtr-50 gtr-uniform">
-							<div class="col-12"><span class="image fit"><img src="images/CARP-2026.webp" alt="CARP Cohort" /></span></div>
-						</div>
-					</div>
-					<p>CARP Spring 2025 Cohort</p>
-					<div class="box alt">
-						<div class="row gtr-50 gtr-uniform">
-							<div class="col-12"><span class="image fit"><img src="images/CARP-2025.webp" alt="CARP Cohort" /></span></div>
-						</div>
-					</div>
-					<p>CARP Spring 2024 Cohort</p>
-					<div class="box alt">
-						<div class="row gtr-50 gtr-uniform">
-							<div class="col-12"><span class="image fit"><img src="images/CARP-2024.webp" alt="CARP Cohort" loading="lazy" /></span></div>
-						</div>
-					</div>
-				</section>
+            .info-card {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 2rem;
+                transition: transform 0.2s ease, background 0.2s ease;
+                display: flex;
+                flex-direction: column;
+            }
 
-					<!-- Add buttons for applying and linking to the application form -->
-					<section style="text-align: center; margin: 20px 0;">
-<!-- 					    %<p><b>The application for our Spring 2025 workshop is live!</b></p> -->
-					
-						<p>Interested in applying? Provide your email below to be notified when the Spring 2026 application goes live.</p>
-					   
-					<div style="text-align: center;">
+            .info-card:hover {
+                background: rgba(255, 255, 255, 0.06);
+                transform: translateY(-2px);
+            }
 
-							<a href="https://forms.gle/RxJNfKURPZD1KV6e6" class="button primary" style="padding: 0px 5px; text-decoration: none;" target="_blank">Join Today!</a>
-						
-<!-- 					        <a href="https://forms.gle/KRXbSgWgvu5Rnh7E8" class="button primary" style="padding: 0px 5px; text-decoration: none;" target="_blank">Apply Today!</a>
-						     -->
-						<!-- 				    <br><br>
-				    <a href="application_form.html" class="button primary" style="padding: 10px 20px; text-decoration: none;">Application Open</a> -->
+            .info-card-header {
+                display: flex;
+                align-items: center;
+                gap: 0.85rem;
+                margin-bottom: 1rem;
+            }
 
-					    </div>
-					</section>
+            .info-card-header i {
+                font-size: 1.6rem;
+                color: #60a5fa;
+            }
 
+            .info-card-header h3 {
+                font-size: 1.4rem;
+                font-weight: 700;
+                margin: 0;
+                color: #ffffff;
+            }
 
+            .info-card p {
+                line-height: 1.75;
+                font-size: 1.05rem;
+                color: rgba(255, 255, 255, 0.88);
+                margin-bottom: 0;
+            }
 
-			</div>
-		</div>
+            .info-card a {
+                color: #60a5fa;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
 
-		<!-- Footer -->
-		<footer id="footer">
-			<ul class="icons">
-				<li><a href="https://twitter.com/sentientbaryons" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="https://www.linkedin.com/in/taebaxter/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-				<li><a href="https://www.instagram.com/sentientstardust/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="https://github.com/sentientstarstuff" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-			</ul>
-			<ul class="copyright">
-				<li>&copy; Devontae C. Baxter. All rights reserved.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</footer>
+            .info-card a:hover {
+                color: #93c5fd;
+            }
 
-		</div>
+            /* --- THEMES / SCHEDULE LIST --- */
+            .themes-container {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                padding: 1.5rem 2rem;
+                margin-bottom: 3.5rem;
+            }
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+            .theme-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 1.25rem;
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
 
-	</body>
+            .theme-item:last-child {
+                border-bottom: none;
+            }
+
+            .theme-badge {
+                background: rgba(96, 165, 250, 0.15);
+                color: #60a5fa;
+                border: 1px solid rgba(96, 165, 250, 0.3);
+                font-weight: 700;
+                font-size: 0.9rem;
+                padding: 0.35rem 0.85rem;
+                border-radius: 20px;
+                white-space: nowrap;
+                margin-top: 0.1rem;
+            }
+
+            .theme-content {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            /* --- COHORT GALLERY --- */
+            .cohort-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 2rem;
+                margin-bottom: 3.5rem;
+            }
+
+            .cohort-card {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                overflow: hidden;
+                transition: transform 0.2s ease;
+            }
+
+            .cohort-card:hover {
+                transform: translateY(-4px);
+            }
+
+            .cohort-card img {
+                width: 100%;
+                height: 230px;
+                object-fit: cover;
+                display: block;
+            }
+
+            .cohort-caption {
+                padding: 1rem 1.25rem;
+                text-align: center;
+                font-weight: 700;
+                font-size: 1.1rem;
+                color: #ffffff;
+                background: rgba(0, 0, 0, 0.2);
+            }
+
+            /* --- APPLICATION CTA BOX --- */
+            .cta-box {
+                background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(17, 24, 39, 0.6));
+                border: 1px solid rgba(96, 165, 250, 0.4);
+                border-radius: 16px;
+                padding: 2.5rem 2rem;
+                text-align: center;
+                margin: 2rem 0 1rem 0;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+            .cta-box h3 {
+                font-size: 1.8rem;
+                color: #ffffff;
+                margin-bottom: 0.75rem;
+                font-weight: 700;
+            }
+
+            .cta-box p {
+                font-size: 1.15rem;
+                color: rgba(255, 255, 255, 0.9);
+                max-width: 700px;
+                margin: 0 auto 1.5rem auto;
+                line-height: 1.6;
+            }
+
+            .cta-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.6rem;
+                background: #2563eb;
+                color: #ffffff !important;
+                font-size: 1.1rem;
+                font-weight: 700;
+                padding: 0.75rem 2rem;
+                border-radius: 8px;
+                text-decoration: none;
+                transition: all 0.2s ease;
+                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            }
+
+            .cta-btn:hover {
+                background: #3b82f6;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+            }
+
+            /* --- THEME TOGGLE BUTTON STYLING --- */
+            .theme-toggle-btn {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: #f1f5f9;
+                padding: 0.35rem 0.75rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .theme-toggle-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            /* --- LIGHT MODE COMPREHENSIVE OVERRIDES --- */
+            body.light-mode {
+                background-color: #f4f6f9 !important;
+                color: #2e3440 !important;
+            }
+
+            body.light-mode #header {
+                background: #ffffff !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            body.light-mode #logo a,
+            body.light-mode #nav > ul > li > a,
+            body.light-mode #nav > ul > li > span {
+                color: #1a202c !important;
+            }
+
+            body.light-mode #nav ul li a.button.primary {
+                background-color: #2563eb !important;
+                color: #ffffff !important;
+            }
+
+            body.light-mode .theme-toggle-btn {
+                border-color: rgba(0, 0, 0, 0.2) !important;
+                color: #1a202c !important;
+            }
+
+            body.light-mode .theme-toggle-btn i.fa-sun {
+                color: #d97706 !important;
+            }
+
+            body.light-mode .page-title,
+            body.light-mode .section-heading,
+            body.light-mode .info-card-header h3,
+            body.light-mode .cta-box h3,
+            body.light-mode .cohort-caption {
+                color: #1a202c !important;
+            }
+
+            body.light-mode .banner-img {
+                border-color: rgba(0, 0, 0, 0.1);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            body.light-mode .carp-hero-box {
+                background: #e0f2fe !important;
+                border-color: #93c5fd !important;
+                color: #1e293b !important;
+            }
+
+            body.light-mode .carp-hero-box strong {
+                color: #1d4ed8 !important;
+            }
+
+            body.light-mode .info-card,
+            body.light-mode .cohort-card {
+                background: #ffffff !important;
+                border-color: rgba(0, 0, 0, 0.1) !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            body.light-mode .info-card p,
+            body.light-mode .theme-content,
+            body.light-mode .cta-box p {
+                color: #2d3748 !important;
+            }
+
+            body.light-mode .info-card-header i,
+            body.light-mode .section-heading i {
+                color: #2563eb !important;
+            }
+
+            body.light-mode .info-card a {
+                color: #2563eb !important;
+            }
+
+            body.light-mode .themes-container {
+                background: #ffffff !important;
+                border-color: rgba(0, 0, 0, 0.1) !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
+
+            body.light-mode .theme-item {
+                border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+            }
+
+            body.light-mode .theme-badge {
+                background: rgba(37, 99, 235, 0.1);
+                color: #2563eb;
+                border-color: rgba(37, 99, 235, 0.3);
+            }
+
+            body.light-mode .cohort-caption {
+                background: #f8fafc !important;
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            body.light-mode .cta-box {
+                background: linear-gradient(135deg, #eff6ff, #dbeafe) !important;
+                border-color: #93c5fd !important;
+            }
+
+            /* Responsive Adjustments */
+            @media screen and (max-width: 736px) {
+                .carp-container {
+                    padding: 0 1.25rem 2rem 1.25rem;
+                }
+                .banner-container {
+                    padding-top: 70px;
+                }
+                .banner-img {
+                    max-width: 95%;
+                }
+                .page-title {
+                    font-size: 2.2rem;
+                }
+                .section-heading {
+                    font-size: 1.6rem;
+                }
+                .theme-item {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body class="is-preload">
+        <div id="page-wrapper">
+
+            <!-- Header Navigation -->
+            <header id="header">
+                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li>
+                            <a href="mentorship.html" class="button primary">Mentorship & Outreach</a>
+                            <ul>
+                                <li><a href="CARP.html">CARP Program</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li><a href="CV.pdf" target="_blank">CV</a></li> -->
+                        <li style="margin-left: 1.5rem;">
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                                <i class="fa-solid fa-moon" id="theme-icon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Banner Header Image -->
+            <div class="banner-container">
+                <img src="images/CARP-header.webp" alt="CARP Header Banner" fetchpriority="high" class="banner-img">
+            </div>
+
+            <!-- Main Content Container -->
+            <div id="main" class="wrapper style1">
+                <div class="carp-container">
+
+                    <!-- Page Header & Summary Hero -->
+                    <h2 class="page-title">Computational Astrophysics Research Preparation (CARP)</h2>
+
+                    <div class="carp-hero-box">
+                        The CARP program offers <strong>free</strong> foundational programming skills and mentorship to junior college students in San Diego interested in astrophysics research, aiming to facilitate their smooth transition to a four-year university.
+                    </div>
+
+                    <!-- Workshop Components & Details Grid -->
+                    <h3 class="section-heading">
+                        <i class="fa-solid fa-compass"></i> Workshop Components & Eligibility
+                    </h3>
+
+                    <div class="cards-grid">
+                        <!-- Card 1: Mentorship -->
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-handshake-angle"></i>
+                                <h3>Mentorship Component</h3>
+                            </div>
+                            <p>
+                                Navigating the transfer from a two-year to a four-year college presents unique challenges. This segment includes activities covering the transfer process, adapting to university life, and using resources like ASSIST and UC TAP. Additionally, we discuss strategies for building a supportive academic community post-transfer.
+                            </p>
+                        </div>
+
+                        <!-- Card 2: Computational -->
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-code"></i>
+                                <h3>Computational Component</h3>
+                            </div>
+                            <p>
+                                Programming skills are essential for academic research. Partnering with <a href="https://carpentries.org" target="_blank" rel="noopener noreferrer">The Carpentries</a>, CARP offers lessons from Software and Data Carpentry communities to teach Python basics, data visualization, and Unix tools used in astrophysics research. All curriculum materials are on the <a href="https://github.com/sentientstarstuff/Computational-Astrophysics-Research-Preparation/tree/main" target="_blank" rel="noopener noreferrer">CARP GitHub page</a>.
+                            </p>
+                        </div>
+
+                        <!-- Card 3: Requirements -->
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-laptop"></i>
+                                <h3>Workshop Requirements</h3>
+                            </div>
+                            <p>
+                                Participants should bring a laptop with a Mac, Linux, or Windows operating system with administrative privileges (not a tablet or Chromebook) and pre-installed software as specified in onboarding materials prior to the first session.
+                            </p>
+                        </div>
+
+                        <!-- Card 4: Who Can Attend? -->
+                        <div class="info-card">
+                            <div class="info-card-header">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                <h3>Who Can Attend?</h3>
+                            </div>
+                            <p>
+                                CARP workshops are tailored for community college students aspiring to transfer to a four-year university and engage in undergraduate research. While astrophysics-focused, applicants from all STEM majors are welcome! Applicants are selected based on transfer intent and potential benefit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Eligibility Box -->
+                    <div class="info-card" style="margin-bottom: 3.5rem;">
+                        <div class="info-card-header">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <h3>Additional Eligibility Information</h3>
+                        </div>
+                        <p>
+                            No prior coding experience is required, though basic familiarity with introductory astronomy topics (e.g., reference frames, proper motion) is beneficial. <strong>Eligibility is primarily based on transfer intent, transfer readiness, and interest in computational research.</strong>
+                        </p>
+                    </div>
+
+                    <!-- Themes / Schedule Section -->
+                    <h3 class="section-heading">
+                        <i class="fa-solid fa-calendar-days"></i> Workshop Themes
+                    </h3>
+
+                    <div class="themes-container">
+                        <div class="theme-item">
+                            <span class="theme-badge">Day 1</span>
+                            <div class="theme-content">Introduction to Python &amp; Elucidating the Transfer Process</div>
+                        </div>
+                        <div class="theme-item">
+                            <span class="theme-badge">Day 2</span>
+                            <div class="theme-content">Data Visualization &amp; Crafting Your Future</div>
+                        </div>
+                        <div class="theme-item">
+                            <span class="theme-badge">Day 3</span>
+                            <div class="theme-content">Introduction to Unix Shell &amp; High-Performance Computing</div>
+                        </div>
+                        <div class="theme-item">
+                            <span class="theme-badge">Day 4</span>
+                            <div class="theme-content">Foundations of Astro Data Science Part I &amp; Post-Transfer Survival Strategies</div>
+                        </div>
+                        <div class="theme-item">
+                            <span class="theme-badge">Day 5</span>
+                            <div class="theme-content">Foundations of Astro Data Science Part II &amp; Constructing Support Networks for Academic Success</div>
+                        </div>
+                    </div>
+
+                    <!-- Group Photo Gallery Section -->
+                    <h3 class="section-heading">
+                        <i class="fa-solid fa-users"></i> Meet the Previous CARP Cohorts
+                    </h3>
+
+                    <div class="cohort-grid">
+                        <div class="cohort-card">
+                            <img src="images/CARP-2026.webp" alt="CARP Spring 2026 Cohort">
+                            <div class="cohort-caption">CARP Spring 2026 Cohort</div>
+                        </div>
+                        <div class="cohort-card">
+                            <img src="images/CARP-2025.webp" alt="CARP Spring 2025 Cohort">
+                            <div class="cohort-caption">CARP Spring 2025 Cohort</div>
+                        </div>
+                        <div class="cohort-card">
+                            <img src="images/CARP-2024.webp" alt="CARP Spring 2024 Cohort" loading="lazy">
+                            <div class="cohort-caption">CARP Spring 2024 Cohort</div>
+                        </div>
+                    </div>
+
+                    <!-- Application CTA Box -->
+                    <div class="cta-box">
+                        <h3>Interested in Joining CARP?</h3>
+                        <p>Provide your email below to be notified when the Spring 2026 application goes live or to express your interest in upcoming workshops.</p>
+                        <a href="https://forms.gle/RxJNfKURPZD1KV6e6" target="_blank" rel="noopener noreferrer" class="cta-btn">
+                            <i class="fa-solid fa-paper-plane"></i> Join Today!
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+                    <li><a href="mailto:dcbaxter@ucsd.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+                    <li><a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://www.instagram.com/sentientstardust/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://github.com/sentientstarstuff" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; Devontae C. Baxter. All rights reserved.</li>
+                    <li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <!-- Template Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- Theme Switcher JS -->
+        <script>
+          const toggleBtn = document.getElementById('theme-toggle');
+          const themeIcon = document.getElementById('theme-icon');
+          
+          const currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+          }
+
+          toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            let theme = 'dark';
+            if (document.body.classList.contains('light-mode')) {
+              theme = 'light';
+              themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+              themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+            
+            localStorage.setItem('theme', theme);
+          });
+        </script>
+    </body>
 </html>
