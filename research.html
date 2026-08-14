@@ -72,7 +72,51 @@
                 color: #60a5fa;
             }
 
-            /* --- FEATURE CARDS & SUBPAGE HUBS --- */
+            /* --- RESEARCH INTEREST CARDS (FUNNEL METHOD) --- */
+            .interest-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .interest-card {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 1.75rem;
+                transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .interest-card:hover {
+                transform: translateY(-4px);
+                background: rgba(255, 255, 255, 0.08);
+                border-color: rgba(96, 165, 250, 0.4);
+            }
+
+            .interest-card i.interest-icon {
+                font-size: 2rem;
+                color: #60a5fa;
+                margin-bottom: 1rem;
+            }
+
+            .interest-card h4 {
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 0.75rem;
+            }
+
+            .interest-card p {
+                font-size: 1rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.85);
+                margin: 0;
+            }
+
+            /* --- SUBPAGE HUB CARDS --- */
             .hub-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -154,7 +198,12 @@
                 border-radius: 12px;
                 padding: 2rem;
                 margin-bottom: 2rem;
-                transition: all 0.3s ease;
+                transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+            }
+
+            .project-card:hover {
+                background: rgba(255, 255, 255, 0.07);
+                border-color: rgba(96, 165, 250, 0.3);
             }
 
             .project-card.hidden {
@@ -167,7 +216,7 @@
                 justify-content: space-between;
                 align-items: baseline;
                 gap: 1rem;
-                margin-bottom: 1rem;
+                margin-bottom: 0.75rem;
             }
 
             .project-header h4 {
@@ -178,27 +227,13 @@
             }
 
             .project-status {
-                font-size: 0.85rem;
+                font-size: 0.88rem;
                 font-weight: 700;
                 color: #60a5fa;
                 background: rgba(96, 165, 250, 0.15);
-                padding: 0.2rem 0.61rem;
+                padding: 0.25rem 0.75rem;
                 border-radius: 12px;
                 border: 1px solid rgba(96, 165, 250, 0.3);
-            }
-
-            .tag-pill {
-                display: inline-flex;
-                align-items: center;
-                background: rgba(59, 130, 246, 0.15);
-                color: #60a5fa;
-                border: 1px solid rgba(59, 130, 246, 0.3);
-                font-size: 0.78rem;
-                font-weight: 700;
-                padding: 0.2rem 0.6rem;
-                border-radius: 12px;
-                margin-right: 0.4rem;
-                margin-top: 0.5rem;
             }
 
             .project-body {
@@ -222,7 +257,7 @@
             }
 
             .project-desc p {
-                margin-bottom: 1rem;
+                margin-bottom: 1.25rem;
                 font-size: 1.05rem;
                 line-height: 1.7;
             }
@@ -248,7 +283,7 @@
                 text-decoration: underline;
             }
 
-            /* --- THEME TOGGLE BUTTON STYLING (MATCHES ABOUT PAGE) --- */
+            /* --- THEME TOGGLE BUTTON STYLING --- */
             .theme-toggle-btn {
                 background: transparent;
                 border: 1px solid rgba(255, 255, 255, 0.3);
@@ -267,7 +302,7 @@
                 background: rgba(255, 255, 255, 0.1);
             }
 
-            /* --- LIGHT MODE COMPREHENSIVE FIXES (EXACT MATCH TO ABOUT PAGE) --- */
+            /* --- LIGHT MODE COMPREHENSIVE FIXES --- */
             body.light-mode {
                 background-color: #f4f6f9 !important;
                 color: #2e3440 !important;
@@ -300,7 +335,8 @@
 
             body.light-mode .research-header-title,
             body.light-mode .research-section h3,
-            body.light-mode .project-header h4 {
+            body.light-mode .project-header h4,
+            body.light-mode .interest-card h4 {
                 color: #1a202c !important;
             }
 
@@ -311,6 +347,7 @@
             body.light-mode .research-section,
             body.light-mode .research-section p,
             body.light-mode .project-desc p,
+            body.light-mode .interest-card p,
             body.light-mode .pub-list li {
                 color: #2d3748 !important;
             }
@@ -321,7 +358,8 @@
             }
 
             body.light-mode .hub-card,
-            body.light-mode .project-card {
+            body.light-mode .project-card,
+            body.light-mode .interest-card {
                 background: #ffffff !important;
                 border-color: rgba(0, 0, 0, 0.1) !important;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
@@ -347,7 +385,8 @@
             body.light-mode .pub-list a,
             body.light-mode .research-section h3 i,
             body.light-mode .hub-card h4,
-            body.light-mode .hub-card i.chevron {
+            body.light-mode .hub-card i.chevron,
+            body.light-mode .interest-card i.interest-icon {
                 color: #2563eb !important;
             }
 
@@ -355,7 +394,7 @@
                 padding-top: 1.5em !important;
             }
 
-            /* Responsive Design */
+            /* Mobile Responsive */
             @media screen and (max-width: 736px) {
                 .research-container {
                     padding: 0 1.25rem 2rem 1.25rem;
@@ -373,7 +412,7 @@
     <body>
         <div id="page-wrapper">
 
-            <!-- Header Navigation with Right-Aligned Toggle -->
+            <!-- Header Navigation -->
             <header id="header" style="display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;">
                 <div style="display: flex; align-items: center; gap: 1.5rem;">
                     <h1 id="logo" style="margin: 0;"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
@@ -392,7 +431,7 @@
                         </li>
                     </ul>
 
-                    <!-- Right-Aligned Theme Toggle Button -->
+                    <!-- Theme Toggle Button -->
                     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" style="margin-left: 1rem;">
                         <i class="fa-solid fa-moon" id="theme-icon"></i>
                     </button>
@@ -403,7 +442,7 @@
             <div id="main" class="wrapper style1" style="padding-top: 1.5em !important;">
                 <div class="research-container" style="padding-top: 0 !important;">
 
-                    <!-- Page Title & Sagan Quote (Formatted identically to Feynman Quote) -->
+                    <!-- Page Title & Sagan Quote -->
                     <h2 class="research-header-title" style="margin-top: 0 !important;">Research Overview</h2>
 
                     <div class="quote-box">
@@ -411,26 +450,38 @@
                         <br><span style="font-size: 0.9rem; opacity: 0.85;">— Carl E. Sagan</span>
                     </div>
 
-                    <!-- Intro / Motivation -->
+                    <!-- Research Interests (Funnel Approach) -->
                     <section class="research-section">
-                        <h3><i class="fa-solid fa-atom"></i> Executive Summary</h3>
+                        <h3><i class="fa-solid fa-atom"></i> Research Interests</h3>
                         <p>
-                            Galaxies span an extraordinary spectrum of scales, shapes, and environments—from small dwarf satellite galaxies to massive ellipticals residing in dense cosmic clusters. Just as terrestrial environments shape human growth, cosmic surroundings strongly influence galaxy evolution. Observations reveal that dense, <em>overdense</em> cosmic environments efficiently transform gas-rich, star-forming galaxies into passive, "quenched" systems. However, the exact physical mechanisms driving this environmental quenching across cosmic time remain a fundamental puzzle in observational cosmology.
+                            Galaxies span an extraordinary spectrum of scales, shapes, and environments—from low-mass dwarf satellite galaxies to massive ellipticals in dense cosmic clusters. My research operates at the intersection of multi-wavelength observations and cosmological hydrodynamical simulations, bridging small-scale galactic astrophysics with large-scale cosmic structure. I seek to isolate the primary physical mechanisms driving galaxy transformation and environmental quenching across space and cosmic time.
                         </p>
-                        <p style="font-weight: 600; color: #60a5fa;">
-                            My research operates at the nexus of multi-wavelength observations and cosmological hydrodynamical simulations. I aim to isolate the astrophysics driving galaxy evolution across the smallest dwarf scales ($10^8 M_\odot$) to the largest gravitationally bound structures in the universe ($10^{15} M_\odot$), answering <em>when</em>, <em>why</em>, and <em>how</em> environmental quenching occurs.
-                        </p>
-                    </section>
 
-                    <!-- Motivation Plot Figure -->
-                    <section class="research-section">
-                        <h3><i class="fa-solid fa-chart-line"></i> Main Sequence &amp; Environmental Quenching</h3>
-                        <div style="text-align: center; margin: 2rem 0;">
-                            <img src="images/motivation-plot.webp" alt="SFR vs Mstar and Environmental Quenching Trend" style="max-width: 95%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 10px 25px rgba(0,0,0,0.4);" />
-                            <p style="font-size: 0.95rem; opacity: 0.85; margin-top: 1rem; text-align: left; line-height: 1.6;">
-                                <strong>Left Panel:</strong> The star-forming main sequence (SFMS) depicting star formation rate versus stellar mass for local galaxies from SDSS DR7 ($z < 0.1$). Color and morphology closely track offset from the main sequence. 
-                                <strong>Right Panel:</strong> Quenched fractions rise dramatically in dense cosmic environments, demonstrating that dense surroundings suppress star formation. My work isolates these specific physical mechanisms across cosmic epochs and mass regimes.
-                            </p>
+                        <!-- Funnel Method Research Topic Cards -->
+                        <div class="interest-grid">
+                            <div class="interest-card">
+                                <i class="fa-solid fa-circle-nodes interest-icon"></i>
+                                <h4>Dwarf Galaxies</h4>
+                                <p>
+                                    Exploring the shallow potential wells of low-mass systems ($M_* < 10^9 M_\odot$) to understand environmental quenching sensitivity, ram-pressure stripping, and satellite suppression beyond the Local Group.
+                                </p>
+                            </div>
+
+                            <div class="interest-card">
+                                <i class="fa-solid fa-bahai interest-icon"></i>
+                                <h4>Galaxy Groups &amp; Clusters</h4>
+                                <p>
+                                    Investigating how intermediate and massive overdense environments starve galaxies of cold gas supplies, accelerating star formation suppression across the past 8 billion years ($z \sim 0 - 1.5$).
+                                </p>
+                            </div>
+
+                            <div class="interest-card">
+                                <i class="fa-solid fa-meteor interest-icon"></i>
+                                <h4>The High-Redshift Universe</h4>
+                                <p>
+                                    Quantifying protocluster assembly ($z > 2$), survey completeness limits, and the formation pathways of the universe's earliest massive passive galaxies using space-based observatories like HST, JWST, and Roman.
+                                </p>
+                            </div>
                         </div>
                     </section>
 
@@ -471,11 +522,6 @@
                                 <h4>Environmental Quenching of Dwarf Galaxies Beyond the Local Group</h4>
                                 <span class="project-status">Baxter et al. (2021)</span>
                             </div>
-                            <div>
-                                <span class="tag-pill">z &lt; 0.1</span>
-                                <span class="tag-pill">SDSS / Machine Learning</span>
-                                <span class="tag-pill">Dwarf Satellites</span>
-                            </div>
                             <div class="project-body">
                                 <img src="images/baxter21.webp" alt="Dwarf satellite quenching plot" />
                                 <div class="project-desc">
@@ -494,11 +540,6 @@
                             <div class="project-header">
                                 <h4>Environmental Quenching in Massive Galaxy Clusters at z ~ 1</h4>
                                 <span class="project-status">Baxter et al. (2022, 2023)</span>
-                            </div>
-                            <div>
-                                <span class="tag-pill">z ~ 1.0</span>
-                                <span class="tag-pill">GOGREEN / GCLASS / TNG-300</span>
-                                <span class="tag-pill">Gas Starvation</span>
                             </div>
                             <div class="project-body">
                                 <img src="images/baxter22.webp" alt="Satellite quenching timescales plot" />
@@ -519,11 +560,6 @@
                                 <h4>Cosmic Evolution of Group Environmental Quenching Since z ~ 0.8</h4>
                                 <span class="project-status">Baxter et al. (2025a)</span>
                             </div>
-                            <div>
-                                <span class="tag-pill">z ~ 0.8</span>
-                                <span class="tag-pill">Keck / DEIMOS</span>
-                                <span class="tag-pill">Group Evolution</span>
-                            </div>
                             <div class="project-body">
                                 <img src="images/baxter25ab.webp" alt="Redshift evolution of quenching" />
                                 <div class="project-desc">
@@ -542,11 +578,6 @@
                             <div class="project-header">
                                 <h4>Quantifying Survey Incompleteness in Galaxy Protoclusters</h4>
                                 <span class="project-status">Baxter et al. (2025b)</span>
-                            </div>
-                            <div>
-                                <span class="tag-pill">z &gt; 2.0</span>
-                                <span class="tag-pill">TNG-Cluster Simulation</span>
-                                <span class="tag-pill">Protocluster Cores</span>
                             </div>
                             <div class="project-body">
                                 <img src="images/baxter25c.webp" alt="Protocluster recovery fraction plot" />
@@ -620,7 +651,7 @@
 
         <!-- Theme Switcher & Interactive Filtering Scripts -->
         <script>
-            // --- Theme Toggle Logic (Identical to About Page) ---
+            // --- Theme Toggle Logic ---
             const toggleBtn = document.getElementById('theme-toggle');
             const themeIcon = document.getElementById('theme-icon');
             
@@ -644,7 +675,7 @@
                 localStorage.setItem('theme', theme);
             });
 
-            // --- Research Project Category Filtering Logic ---
+            // --- Category Filtering Logic ---
             document.addEventListener('DOMContentLoaded', () => {
                 const filterBtns = document.querySelectorAll('.filter-btn');
                 const projectCards = document.querySelectorAll('.project-card');
