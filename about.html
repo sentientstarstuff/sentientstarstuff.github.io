@@ -287,6 +287,28 @@
                     font-size: 2.2rem;
                 }
             }
+
+			/* --- REMOVE EXCESS PADDING ABOVE 'ABOUT ME' --- */
+			#main.wrapper {
+				padding-top: 1.5em !important; /* Reduces template top padding */
+			}
+
+			.about-container {
+				max-width: 1350px;
+				margin: 0 auto;
+				padding: 0 2.5rem 4rem 2.5rem; /* Removed top padding from container */
+			}
+
+			.about-header-title {
+				font-size: 2.8rem;
+				font-weight: 800;
+				text-align: center;
+				margin-top: 0 !important; /* Prevents heading default top margin */
+				margin-bottom: 0.5rem;
+				color: #ffffff;
+			}
+
+
         </style>
     </head>
     <body>
@@ -316,17 +338,17 @@
                 </nav>
             </header>
 
-            <!-- Main Content Container -->
-            <div id="main" class="wrapper style1">
-                <div class="about-container">
+			<!-- Main Content Container -->
+			<div id="main" class="wrapper style1" style="padding-top: 1.5em !important;">
+				<div class="about-container" style="padding-top: 0 !important;">
 
-                    <!-- Page Title & Feynman Quote -->
-                    <h2 class="about-header-title">About Me</h2>
+					<!-- Page Title & Feynman Quote -->
+					<h2 class="about-header-title" style="margin-top: 0 !important;">About Me</h2>
 
-                    <div class="quote-box">
-                        “I... a universe of atoms, an atom in the universe.” 
-                        <br><span style="font-size: 0.9rem; opacity: 0.85;">— Richard P. Feynman</span>
-                    </div>
+					<div class="quote-box">
+						“I... a universe of atoms, an atom in the universe.” 
+						<br><span style="font-size: 0.9rem; opacity: 0.85;">— Richard P. Feynman</span>
+					</div>
 
                     <!-- Short Formal Bio -->
                     <section class="story-section">
