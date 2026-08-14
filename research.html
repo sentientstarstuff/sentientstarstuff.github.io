@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" data-theme="dark">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
@@ -7,7 +7,6 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-RY38BXSTQB');
         </script>       
         <title>Research | Devontae C. Baxter, PhD</title>
@@ -15,6 +14,102 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+        <!-- Dynamic Theme Styles -->
+        <style>
+            :root {
+                --bg-primary: #121824;
+                --bg-card: rgba(255, 255, 255, 0.03);
+                --border-color: rgba(255, 255, 255, 0.08);
+                --text-primary: #ffffff;
+                --text-secondary: rgba(255, 255, 255, 0.8);
+                --accent-blue: #60a5fa;
+                --badge-bg: rgba(96, 165, 250, 0.15);
+                --badge-border: rgba(96, 165, 250, 0.3);
+            }
+
+            [data-theme="light"] {
+                --bg-primary: #f8fafc;
+                --bg-card: #ffffff;
+                --border-color: rgba(0, 0, 0, 0.1);
+                --text-primary: #0f172a;
+                --text-secondary: #334155;
+                --accent-blue: #2563eb;
+                --badge-bg: rgba(37, 99, 235, 0.1);
+                --badge-border: rgba(37, 99, 235, 0.25);
+            }
+
+            /* Theme Toggle Button */
+            .theme-toggle-btn {
+                background: var(--badge-bg);
+                border: 1px solid var(--badge-border);
+                color: var(--accent-blue);
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 0.85rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                transition: all 0.2s ease;
+            }
+            .theme-toggle-btn:hover {
+                transform: translateY(-1px);
+                border-color: var(--accent-blue);
+            }
+
+            /* Research Category Filter Tabs */
+            .filter-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+
+            .filter-btn {
+                background: var(--bg-card);
+                border: 1px solid var(--border-color);
+                color: var(--text-secondary);
+                padding: 0.5rem 1.25rem;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.25s ease;
+            }
+
+            .filter-btn.active, .filter-btn:hover {
+                background: var(--badge-bg);
+                border-color: var(--badge-border);
+                color: var(--accent-blue);
+            }
+
+            /* Tag Badges for Projects */
+            .tag-pill {
+                display: inline-flex;
+                align-items: center;
+                background: var(--badge-bg);
+                color: var(--accent-blue);
+                border: 1px solid var(--badge-border);
+                font-size: 0.75rem;
+                font-weight: 700;
+                padding: 0.2rem 0.6rem;
+                border-radius: 12px;
+                margin-right: 0.4rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Project Card Grid Adaptations */
+            .project-card {
+                transition: all 0.3s ease;
+            }
+
+            .project-card.hidden {
+                display: none !important;
+            }
+        </style>
     </head>
     <body class="is-preload">
         <div id="page-wrapper">
@@ -40,6 +135,12 @@
                                 <li><a href="CARP.html">CARP Program</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                                <i class="fa-solid fa-moon" id="themeIcon"></i>
+                                <span id="themeLabel">Night Mode</span>
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -48,27 +149,27 @@
             <div id="main" class="wrapper style1">
                 <div class="container">
 
-                    <!-- Research Hero / Big Picture Motivation -->
+                    <!-- Research Hero Section -->
                     <header class="major">
                         <h2>Research Overview</h2>
                         <blockquote>“Somewhere, something incredible is waiting to be known.” ― Carl E. Sagan</blockquote>
                         <p style="text-align: left; margin-top: 1.5rem;">
-                            Galaxies span an extraordinary spectrum of scales, shapes, and environments—from small dwarf satellite galaxies to massive ellipticals residing in the centers of cosmic clusters. Just as our terrestrial environments shape human growth, cosmic surroundings strongly influence galaxy evolution. Observations show that dense, <em>overdense</em> environments efficiently transform gas-rich, star-forming galaxies into passive, "quenched" systems. However, the exact physical mechanisms driving this environmental quenching across cosmic time remain a fundamental puzzle in observational cosmology.
+                            Galaxies span an extraordinary spectrum of scales, shapes, and environments—from small dwarf satellite galaxies to massive ellipticals residing in dense cosmic clusters. Just as terrestrial environments shape human growth, cosmic surroundings strongly influence galaxy evolution. Observations reveal that dense, <em>overdense</em> cosmic environments efficiently transform gas-rich, star-forming galaxies into passive, "quenched" systems. However, the exact physical mechanisms driving this environmental quenching across cosmic time remain a fundamental puzzle in observational cosmology.
                         </p>
-                        <p style="text-align: left; font-weight: 600; color: #ffffff;">
+                        <p style="text-align: left; font-weight: 600; color: var(--accent-blue);">
                             My research operates at the nexus of multi-wavelength observations and cosmological hydrodynamical simulations. I aim to isolate the astrophysics driving galaxy evolution across the smallest dwarf scales ($10^8 M_\odot$) to the largest gravitationally bound structures in the universe ($10^{15} M_\odot$), answering <em>when</em>, <em>why</em>, and <em>how</em> environmental quenching occurs.
                         </p>
                     </header>
 
-                    <!-- Key Conceptual Figure Card -->
+                    <!-- Main Conceptual Figure Card -->
                     <div class="outreach-card" style="margin-bottom: 3.5rem;">
                         <h3 class="section-heading" style="text-align: center; margin-bottom: 1rem;">
-                            <i class="fa-solid fa-chart-line" style="margin-right: 0.75rem; color: #60a5fa;"></i> The Star-Forming Main Sequence &amp; Environmental Quenching
+                            <i class="fa-solid fa-chart-line" style="margin-right: 0.75rem; color: var(--accent-blue);"></i> The Star-Forming Main Sequence &amp; Environmental Quenching
                         </h3>
                         <div style="text-align: center;">
                             <figure style="display: inline-block; margin: 0; max-width: 100%;">
-                                <img src="images/motivation-plot.webp" alt="SFR vs Mstar and Environmental Quenching Trend" fetchpriority="high" class="expandable-image" style="max-width: 95%; height: auto; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);" />
-                                <figcaption style="font-size: 0.95em; color: rgba(255, 255, 255, 0.85); margin-top: 1rem; text-align: left; line-height: 1.6;">
+                                <img src="images/motivation-plot.webp" alt="SFR vs Mstar and Environmental Quenching Trend" fetchpriority="high" class="expandable-image" style="max-width: 95%; height: auto; border-radius: 8px; border: 1px solid var(--border-color);" />
+                                <figcaption style="font-size: 0.95em; color: var(--text-secondary); margin-top: 1rem; text-align: left; line-height: 1.6;">
                                     <strong>Left Panel:</strong> The star-forming main sequence (SFMS) depicting star formation rate versus stellar mass for local galaxies from SDSS DR7 ($z < 0.1$). Color and morphology closely track offset from the main sequence. 
                                     <strong>Right Panel:</strong> Quenched fractions rise dramatically in dense cosmic environments, demonstrating that dense surroundings suppress star formation. My work isolates these specific physical mechanisms across cosmic epochs and mass regimes.
                                 </figcaption>
@@ -76,36 +177,49 @@
                         </div>
                     </div>
 
-                    <!-- Subpage Explorer Banner Buttons -->
+                    <!-- Subpage Hub Banner Buttons -->
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem;">
-                        <a href="research-presentations.html" class="outreach-card" style="display: flex; align-items: center; justify-content: space-between; text-decoration: none; padding: 1.5rem 2rem; transition: transform 0.2s, border-color 0.2s;">
+                        <a href="research-presentations.html" class="outreach-card" style="display: flex; align-items: center; justify-content: space-between; text-decoration: none; padding: 1.5rem 2rem; transition: transform 0.2s;">
                             <div>
-                                <h4 style="margin: 0 0 0.5rem 0; color: #60a5fa; font-size: 1.2rem;"><i class="fa-solid fa-display" style="margin-right: 0.5rem;"></i> Research Presentations</h4>
-                                <p style="margin: 0; font-size: 0.95rem; color: rgba(255, 255, 255, 0.8);">Explore conference talks, seminars, and slide decks.</p>
+                                <h4 style="margin: 0 0 0.5rem 0; color: var(--accent-blue); font-size: 1.2rem;"><i class="fa-solid fa-display" style="margin-right: 0.5rem;"></i> Research Presentations</h4>
+                                <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">Explore conference talks, public lectures, and slide decks.</p>
                             </div>
-                            <i class="fa-solid fa-chevron-right" style="color: #60a5fa; font-size: 1.2rem;"></i>
+                            <i class="fa-solid fa-chevron-right" style="color: var(--accent-blue); font-size: 1.2rem;"></i>
                         </a>
 
-                        <a href="collaborations.html" class="outreach-card" style="display: flex; align-items: center; justify-content: space-between; text-decoration: none; padding: 1.5rem 2rem; transition: transform 0.2s, border-color 0.2s;">
+                        <a href="collaborations.html" class="outreach-card" style="display: flex; align-items: center; justify-content: space-between; text-decoration: none; padding: 1.5rem 2rem; transition: transform 0.2s;">
                             <div>
-                                <h4 style="margin: 0 0 0.5rem 0; color: #60a5fa; font-size: 1.2rem;"><i class="fa-solid fa-network-wired" style="margin-right: 0.5rem;"></i> Ongoing Collaborations</h4>
-                                <p style="margin: 0; font-size: 0.95rem; color: rgba(255, 255, 255, 0.8);">Learn about GOGREEN, HST-Hyperion, and survey teams.</p>
+                                <h4 style="margin: 0 0 0.5rem 0; color: var(--accent-blue); font-size: 1.2rem;"><i class="fa-solid fa-network-wired" style="margin-right: 0.5rem;"></i> Ongoing Collaborations</h4>
+                                <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">Learn about GOGREEN, HST-Hyperion, and survey teams.</p>
                             </div>
-                            <i class="fa-solid fa-chevron-right" style="color: #60a5fa; font-size: 1.2rem;"></i>
+                            <i class="fa-solid fa-chevron-right" style="color: var(--accent-blue); font-size: 1.2rem;"></i>
                         </a>
                     </div>
 
-                    <!-- Research Highlights & Projects -->
+                    <!-- Research Projects & Dynamic Filters -->
                     <h3 class="section-heading">
-                        <i class="fa-solid fa-atom" style="margin-right: 0.75rem; color: #60a5fa;"></i> Featured Research Projects
+                        <i class="fa-solid fa-atom" style="margin-right: 0.75rem; color: var(--accent-blue);"></i> Featured Research Projects
                     </h3>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="filter-container">
+                        <button class="filter-btn active" data-filter="all">All Focus Areas</button>
+                        <button class="filter-btn" data-filter="dwarfs">Dwarf Galaxies</button>
+                        <button class="filter-btn" data-filter="clusters">Galaxy Clusters &amp; Groups</button>
+                        <button class="filter-btn" data-filter="protoclusters">Protoclusters &amp; High-z</button>
+                    </div>
 
                     <div class="research-projects">
                         
-                        <!-- Project 1 -->
-                        <article class="project-card">
+                        <!-- Project 1: Dwarfs -->
+                        <article class="project-card" data-category="dwarfs">
                             <header>
                                 <h3>Environmental Quenching of Dwarf Galaxies Beyond the Local Group <span class="project-status completed">Baxter et al. (2021)</span></h3>
+                                <div>
+                                    <span class="tag-pill">z &lt; 0.1</span>
+                                    <span class="tag-pill">SDSS / Machine Learning</span>
+                                    <span class="tag-pill">Dwarf Satellites</span>
+                                </div>
                             </header>
                             <div class="project-content">
                                 <div class="project-image">
@@ -122,10 +236,15 @@
                             </div>
                         </article>
 
-                        <!-- Project 2 -->
-                        <article class="project-card">
+                        <!-- Project 2: Clusters -->
+                        <article class="project-card" data-category="clusters">
                             <header>
                                 <h3>Environmental Quenching in Massive Galaxy Clusters at z ~ 1 <span class="project-status completed">Baxter et al. (2022, 2023)</span></h3>
+                                <div>
+                                    <span class="tag-pill">z ~ 1.0</span>
+                                    <span class="tag-pill">GOGREEN / GCLASS / TNG-300</span>
+                                    <span class="tag-pill">Gas Starvation</span>
+                                </div>
                             </header>
                             <div class="project-content">
                                 <div class="project-image">
@@ -142,10 +261,15 @@
                             </div>
                         </article>
 
-                        <!-- Project 3 -->
-                        <article class="project-card">
+                        <!-- Project 3: Clusters -->
+                        <article class="project-card" data-category="clusters">
                             <header>
                                 <h3>Cosmic Evolution of Group Environmental Quenching Since z ~ 0.8 <span class="project-status completed">Baxter et al. (2025a)</span></h3>
+                                <div>
+                                    <span class="tag-pill">z ~ 0.8</span>
+                                    <span class="tag-pill">Keck / DEIMOS</span>
+                                    <span class="tag-pill">Group Evolution</span>
+                                </div>
                             </header>
                             <div class="project-content">
                                 <div class="project-image">
@@ -162,10 +286,15 @@
                             </div>
                         </article>
 
-                        <!-- Project 4 -->
-                        <article class="project-card">
+                        <!-- Project 4: Protoclusters -->
+                        <article class="project-card" data-category="protoclusters">
                             <header>
                                 <h3>Quantifying Survey Incompleteness in Galaxy Protoclusters <span class="project-status completed">Baxter et al. (2025b)</span></h3>
+                                <div>
+                                    <span class="tag-pill">z &gt; 2.0</span>
+                                    <span class="tag-pill">TNG-Cluster Simulation</span>
+                                    <span class="tag-pill">Protocluster Cores</span>
+                                </div>
                             </header>
                             <div class="project-content">
                                 <div class="project-image">
@@ -186,10 +315,10 @@
 
                     <hr />
 
-                    <!-- Publications Section -->
+                    <!-- Publications List Section -->
                     <div class="outreach-card">
                         <h3 class="section-heading">
-                            <i class="fa-solid fa-book-bookmark" style="margin-right: 0.75rem; color: #60a5fa;"></i> Lead &amp; First-Author Publications
+                            <i class="fa-solid fa-book-bookmark" style="margin-right: 0.75rem; color: var(--accent-blue);"></i> Lead &amp; First-Author Publications
                         </h3>
                         <ul style="line-height: 1.8; margin-bottom: 2rem;">
                             <li><a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260708820B/abstract" target="_blank" rel="noopener noreferrer">What Becomes of JWST/NIRCam-Selected High-Redshift Massive Galaxies?</a> — <strong>D.C. Baxter</strong> et al. (2026)</li>
@@ -202,7 +331,7 @@
                         </ul>
 
                         <h3 class="section-heading">
-                            <i class="fa-solid fa-users-viewfinder" style="margin-right: 0.75rem; color: #60a5fa;"></i> Select Co-Authored Publications
+                            <i class="fa-solid fa-users-viewfinder" style="margin-right: 0.75rem; color: var(--accent-blue);"></i> Select Co-Authored Publications
                         </h3>
                         <ul style="line-height: 1.8; margin-bottom: 2.5rem;">
                             <li><a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.114S/abstract" target="_blank" rel="noopener noreferrer">The HST-Hyperion survey: Environmental Imprints on the Stellar Mass Function at z ∼ 2.5</a> — D. Sikorsky et al. (2026)</li>
@@ -256,5 +385,62 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
+        <!-- Theme Toggle & Project Filtering Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // --- 1. Theme Switcher Logic ---
+                const themeBtn = document.getElementById('themeToggle');
+                const themeIcon = document.getElementById('themeIcon');
+                const themeLabel = document.getElementById('themeLabel');
+                const htmlEl = document.documentElement;
+
+                // Load saved preference
+                const savedTheme = localStorage.getItem('site-theme') || 'dark';
+                setTheme(savedTheme);
+
+                themeBtn.addEventListener('click', () => {
+                    const currentTheme = htmlEl.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    setTheme(newTheme);
+                });
+
+                function setTheme(theme) {
+                    htmlEl.setAttribute('data-theme', theme);
+                    localStorage.setItem('site-theme', theme);
+                    
+                    if (theme === 'light') {
+                        themeIcon.className = 'fa-solid fa-sun';
+                        themeLabel.textContent = 'Day Mode';
+                    } else {
+                        themeIcon.className = 'fa-solid fa-moon';
+                        themeLabel.textContent = 'Night Mode';
+                    }
+                }
+
+                // --- 2. Interactive Category Filter Logic ---
+                const filterBtns = document.querySelectorAll('.filter-btn');
+                const projectCards = document.querySelectorAll('.project-card');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Toggle active button class
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        const filter = btn.getAttribute('data-filter');
+
+                        // Show/Hide matching projects
+                        projectCards.forEach(card => {
+                            const category = card.getAttribute('data-category');
+                            if (filter === 'all' || category === filter) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
