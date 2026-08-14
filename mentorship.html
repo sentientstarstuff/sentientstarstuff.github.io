@@ -1,146 +1,364 @@
-
-
 <!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'G-RY38BXSTQB');
-	</script>
-		
-		<title>Mentorship | Devontae C. Baxter</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="page-wrapper">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RY38BXSTQB');
+        </script>
+        
+        <title>Mentorship & Outreach | Devontae C. Baxter, PhD</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-	<!-- Header -->
-    <header id="header">
-        <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="#" class="button primary">Home</a></li> -->
-                    <li><a href="about.html">About</a></li>
-                
-                <li><a href="research.html">Research</a></li>
-                
-                <!-- <li><a href="teaching.html">Teaching</a></li> -->
-                <li><a href="mentorship.html"  class="button primary">Mentorship & Outreach</a>
-		 <ul>
-                <li><a href="CARP.html">CARP Program</a></li>
-            	</ul>
-		</li>
-                <!-- <li><a href="CV.pdf">CV</a></li> -->
-                <!-- <li><a href="#" class="button primary">Sign Up</a></li> -->
-            </ul>
-        </nav>
-    </header>
+        <style>
+            /* --- TOP PADDING & MARGIN FIXES --- */
+            #main.wrapper {
+                padding-top: 1.5em !important;
+            }
 
-			<!-- Main -->
-				<div id="main" class="wrapper style1">
-					<div class="container">
+            .mentorship-container {
+                max-width: 1350px;
+                margin: 0 auto;
+                padding: 0 2.5rem 4rem 2.5rem;
+            }
 
-						<header class="major">
-							<h2>Mentorship & Outreach</h2>
-				
-								<blockquote>If you want to lift yourself up, lift up someone else. — Booker T. Washington</blockquote>
+            .page-title {
+                font-size: 2.8rem;
+                font-weight: 800;
+                text-align: center;
+                margin-top: 0 !important;
+                margin-bottom: 0.5rem;
+                color: #ffffff;
+            }
 
-							</header>
+            /* --- QUOTE BOX --- */
+            .quote-box {
+                text-align: center;
+                font-style: italic;
+                font-size: 1.25rem;
+                margin: 1.5rem auto 3.5rem auto;
+                max-width: 950px;
+                padding: 1.25rem 2rem;
+                border-left: 4px solid #3b82f6;
+                background: rgba(255, 255, 255, 0.04);
+                border-radius: 0 8px 8px 0;
+                color: #e2e8f0;
+            }
 
+            /* --- PROGRAM CARDS --- */
+            .program-card {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 2.25rem;
+                margin-bottom: 2.5rem;
+                transition: transform 0.2s ease, background 0.2s ease;
+            }
 
-							<header>
-								<h2><a href="CARP.html">Computational Astrophysics Research Preparation (CARP) Program</a></h2>
-							</header>
-							
+            .program-card:hover {
+                background: rgba(255, 255, 255, 0.06);
+                transform: translateY(-2px);
+            }
 
-	
-							<p><a href="CARP.html">CARP</a> is my ongoing community outreach program that organizes workshops designed for community college students in San Diego County that aspire to transfer to a four-year university and engage in undergraduate research.
-							The goal of the program is to equip participants with a robust programming foundation and provide them with relevant mentorship to facilitate their transition into the academic environment of a four-year university.
-							</p>
+            .program-card-header {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.25rem;
+            }
 
+            .program-card-header i {
+                font-size: 2rem;
+                color: #60a5fa;
+            }
 
+            .program-card-header h3 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin: 0;
+                color: #ffffff;
+            }
 
-								 <!-- <div class="box alt">
-									<div class="row gtr-50 gtr-uniform">
-										<div class="col-4 col-6-medium"><span class="image fit"><img src="images/carp.png" alt="" /></span></div>
+            .program-card-header h3 a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
 
-									</div>
-								</div> -->
+            .program-card-header h3 a:hover {
+                color: #60a5fa;
+            }
 
+            .program-card p {
+                line-height: 1.8;
+                font-size: 1.1rem;
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 1rem;
+            }
 
-							<header>
-								<h2><a href="https://www.cranephysics.org">Computational Research Access NEtwork (CRANE)</a></h2>
-							</header>
-							
+            .program-card p:last-child {
+                margin-bottom: 0;
+            }
 
-							<p><a href="https://www.cranephysics.org">CRANE</a> is a virtual nationwide data science training program led by a diverse group of graduate and postdoctoral researchers in physics and chemistry with the mission of addressing the high barrier to entry
-								 associated with computational research that results in the de facto exclusion of students that are historically underrepresented in the field. As a CRANE leader, I develop materials, lead workshops, and collaborate with
-								 other leaders to support the following goals: </p>
+            .program-card ul {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                padding-left: 1.5rem;
+            }
 
-								 <ul>
-									<li>Provide a welcoming environment for historically underrepresented students to learn and gain confidence in computational physics.</li>
-									<li>Provide students with the basics of computational physics tools and introduce them to advanced algorithms used in cutting edge research.</li>
-									<li>Provide networking opportunities. </li>
-									<li>Help students take their first steps in pursuing a computational physics career.</li>
-								</ul>
+            .program-card ul li {
+                font-size: 1.05rem;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.85);
+                margin-bottom: 0.5rem;
+            }
 
+            /* --- THEME TOGGLE BUTTON STYLING --- */
+            .theme-toggle-btn {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: #f1f5f9;
+                padding: 0.35rem 0.75rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
 
-							<header>
-								<h2><a href="https://uci-pace.github.io/index.html">Physics & Astronomy Community Excellence (PACE) Peer-Mentoring Program</a></h2>
-							</header>
-							
+            .theme-toggle-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
 
-							<p><a href="https://uci-pace.github.io/index.html">PACE</a> is a peer-mentoring program that I co-led with <a href="http://franciscojmercado.com">Dr. Francisco J. Mercado</a> during my graduate studies at UC Irvine. The goal of the 
-							  program is to provide formal mentorship to first-year graduate students in the form of monthly workshops and 1-on-1 mentoring.</p>
+            /* --- LIGHT MODE COMPREHENSIVE OVERRIDES --- */
+            body.light-mode {
+                background-color: #f4f6f9 !important;
+                color: #2e3440 !important;
+            }
 
+            /* Header & Logo Light Mode */
+            body.light-mode #header {
+                background: #ffffff !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
 
+            body.light-mode #logo a,
+            body.light-mode #nav > ul > li > a,
+            body.light-mode #nav > ul > li > span {
+                color: #1a202c !important;
+            }
 
+            body.light-mode #nav ul li a.button.primary {
+                background-color: #2563eb !important;
+                color: #ffffff !important;
+            }
 
+            body.light-mode .theme-toggle-btn {
+                border-color: rgba(0, 0, 0, 0.2) !important;
+                color: #1a202c !important;
+            }
 
-		
+            body.light-mode .theme-toggle-btn i.fa-sun {
+                color: #d97706 !important;
+            }
 
+            /* Titles and Quotes Light Mode */
+            body.light-mode .page-title,
+            body.light-mode .program-card-header h3,
+            body.light-mode .program-card-header h3 a {
+                color: #1a202c !important;
+            }
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="mailto:dcbaxter@ucsd.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://twitter.com/sentientbaryons" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						<!-- <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-						<li><a href="https://www.linkedin.com/in/taebaxter/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://www.instagram.com/sentientstardust/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="https://github.com/sentientstarstuff" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						<!-- <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li> -->
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
+            body.light-mode .program-card-header h3 a:hover {
+                color: #2563eb !important;
+            }
 
-		</div>
+            body.light-mode .quote-box {
+                background: rgba(0, 0, 0, 0.04) !important;
+                color: #2d3748 !important;
+            }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+            /* Program Cards Light Mode */
+            body.light-mode .program-card {
+                background: #ffffff !important;
+                border-color: rgba(0, 0, 0, 0.1) !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            }
 
-	</body>
+            body.light-mode .program-card p,
+            body.light-mode .program-card ul li {
+                color: #2d3748 !important;
+            }
+
+            body.light-mode .program-card-header i {
+                color: #2563eb !important;
+            }
+
+            /* Mobile Responsive */
+            @media screen and (max-width: 736px) {
+                .mentorship-container {
+                    padding: 0 1.25rem 2rem 1.25rem;
+                }
+                .page-title {
+                    font-size: 2.2rem;
+                }
+                .program-card {
+                    padding: 1.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page-wrapper">
+
+            <!-- Header Navigation -->
+            <header id="header">
+                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li>
+                            <a href="#" class="button primary">Mentorship & Outreach</a>
+                            <ul>
+                                <li><a href="CARP.html">CARP Program</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li><a href="CV.pdf" target="_blank">CV</a></li> -->
+                        <li style="margin-left: 1.5rem;">
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                                <i class="fa-solid fa-moon" id="theme-icon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Main Content Container -->
+            <div id="main" class="wrapper style1">
+                <div class="mentorship-container">
+
+                    <!-- Page Title & Quote -->
+                    <h2 class="page-title">Mentorship & Outreach</h2>
+
+                    <div class="quote-box">
+                        “If you want to lift yourself up, lift up someone else.”
+                        <br><span style="font-size: 0.9rem; opacity: 0.85;">— Booker T. Washington</span>
+                    </div>
+
+                    <!-- Program 1: CARP -->
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <h3><a href="CARP.html">Computational Astrophysics Research Preparation (CARP) Program</a></h3>
+                        </div>
+                        <p>
+                            <a href="CARP.html">CARP</a> is an ongoing community outreach initiative that organizes interactive workshops designed for community college students in San Diego County who aspire to transfer to a four-year university and engage in undergraduate research.
+                        </p>
+                        <p>
+                            The goal of the program is to equip participants with a robust programming foundation in Python and data analysis while providing personalized mentorship to facilitate a smooth, confident transition into the academic environment of a four-year institution.
+                        </p>
+                    </div>
+
+                    <!-- Program 2: CRANE -->
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <i class="fa-solid fa-network-wired"></i>
+                            <h3><a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">Computational Research Access NEtwork (CRANE)</a></h3>
+                        </div>
+                        <p>
+                            <a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">CRANE</a> is a virtual, nationwide data science training program led by a diverse team of graduate and postdoctoral researchers in physics and chemistry. CRANE addresses high barriers to entry in computational research that historically exclude underrepresented students.
+                        </p>
+                        <p>
+                            As a CRANE leader, I develop curriculum materials, lead interactive workshops, and collaborate across institutions to:
+                        </p>
+                        <ul>
+                            <li>Provide a welcoming environment for historically underrepresented students to learn and gain confidence in computational physics.</li>
+                            <li>Equip students with fundamental computational tools and introduce advanced algorithms used in cutting-edge research.</li>
+                            <li>Facilitate meaningful academic and professional networking opportunities.</li>
+                            <li>Guide students taking their first steps toward careers in computational physics and data science.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Program 3: PACE -->
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <i class="fa-solid fa-users-gear"></i>
+                            <h3><a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">Physics & Astronomy Community Excellence (PACE) Peer-Mentoring Program</a></h3>
+                        </div>
+                        <p>
+                            <a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">PACE</a> is a peer-mentoring program that I co-led with <a href="http://franciscojmercado.com" target="_blank" rel="noopener noreferrer">Dr. Francisco J. Mercado</a> during my graduate studies at UC Irvine.
+                        </p>
+                        <p>
+                            The program provides structured, formal mentorship to first-year graduate students through monthly professional development workshops and dedicated 1-on-1 mentoring to ease the transition into doctoral research.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+                    <li><a href="mailto:dcbaxter@ucsd.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+                    <li><a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://www.instagram.com/sentientstardust/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="https://github.com/sentientstarstuff" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; Devontae C. Baxter. All rights reserved.</li>
+                    <li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <!-- Template Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- Theme Switcher JS -->
+        <script>
+          const toggleBtn = document.getElementById('theme-toggle');
+          const themeIcon = document.getElementById('theme-icon');
+          
+          const currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+          }
+
+          toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            
+            let theme = 'dark';
+            if (document.body.classList.contains('light-mode')) {
+              theme = 'light';
+              themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+              themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+            
+            localStorage.setItem('theme', theme);
+          });
+        </script>
+    </body>
 </html>
