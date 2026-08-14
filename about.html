@@ -314,29 +314,32 @@
     <body>
         <div id="page-wrapper">
 
-            <!-- Header Navigation -->
-            <header id="header">
-                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-                <nav id="nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#" class="button primary">About</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li>
-                            <a href="mentorship.html">Mentorship & Outreach</a>
-                            <ul>
-                                <li><a href="CARP.html">CARP Program</a></li>
-                            </ul>
-                        <!-- </li>
-                        <li><a href="CV.pdf" target="_blank">CV</a></li>
-                        <li> -->
-                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-                                <i class="fa-solid fa-moon" id="theme-icon"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
+			<!-- Header Navigation with Right-Aligned Toggle -->
+			<header id="header" style="display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;">
+				<div style="display: flex; align-items: center; gap: 1.5rem;">
+					<h1 id="logo" style="margin: 0;"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+				</div>
+
+				<nav id="nav" style="display: flex; align-items: center; gap: 1.5rem;">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#" class="button primary">About</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li>
+							<a href="mentorship.html">Mentorship & Outreach</a>
+							<ul>
+								<li><a href="CARP.html">CARP Program</a></li>
+							</ul>
+						</li>
+						<!-- <li><a href="CV.pdf" target="_blank">CV</a></li> -->
+					</ul>
+
+					<!-- Right-Aligned Theme Toggle Button -->
+					<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" style="margin-left: 1rem;">
+						<i class="fa-solid fa-moon" id="theme-icon"></i>
+					</button>
+				</nav>
+			</header>
 
 			<!-- Main Content Container -->
 			<div id="main" class="wrapper style1" style="padding-top: 1.5em !important;">
@@ -352,7 +355,7 @@
 
                     <!-- Short Formal Bio -->
                     <section class="story-section">
-                        <h3>Brief Formal Bio</h3>
+                        <h3>Brief Bio</h3>
                         <p>
                             Dr. Devontae Baxter is a Future Faculty in the Physical Sciences (FFPS) Postdoctoral Fellow at Princeton University investigating the intricate interplay between galaxies and their local and large-scale environments. He completed his undergraduate studies at the Georgia Institute of Technology, majoring in Physics with a minor in Spanish. He earned his PhD in Physics at UC Irvine under the supervision of Professor Michael Cooper, where his thesis focused on merging machine learning and statistical techniques with multi-wavelength observations and cosmological simulations to elucidate the physical mechanisms driving the suppression of star formation in galaxy groups and clusters.
                         </p>
