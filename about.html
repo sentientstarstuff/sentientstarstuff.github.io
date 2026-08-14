@@ -19,59 +19,70 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
+            /* --- EXPAND CONTAINER WIDTH & FIX MARGINS --- */
             .about-container {
-                max-width: 900px;
+                max-width: 1100px;
                 margin: 0 auto;
-                padding: 3rem 1.5rem;
+                padding: 4rem 2rem;
+            }
+
+            .about-header-title {
+                font-size: 2.8rem;
+                font-weight: 800;
+                text-align: center;
+                margin-bottom: 0.5rem;
+                color: #ffffff;
             }
 
             .quote-box {
                 text-align: center;
                 font-style: italic;
                 font-size: 1.25rem;
-                margin: 1.5rem 0 3rem 0;
-                padding: 1rem 2rem;
+                margin: 1.5rem auto 3.5rem auto;
+                max-width: 850px;
+                padding: 1.25rem 2rem;
                 border-left: 4px solid #3b82f6;
-                background: rgba(255, 255, 255, 0.03);
+                background: rgba(255, 255, 255, 0.04);
                 border-radius: 0 8px 8px 0;
+                color: #e2e8f0;
             }
 
             .story-section {
-                margin-bottom: 3.5rem;
+                margin-bottom: 4rem;
                 line-height: 1.8;
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
 
             .story-section h3 {
                 font-size: 1.8rem;
                 font-weight: 700;
-                margin-bottom: 1rem;
-                color: #fff;
-                border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+                margin-bottom: 1.25rem;
+                color: #ffffff;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.12);
                 padding-bottom: 0.5rem;
             }
 
             .skate-feature {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 2rem;
+                gap: 2.5rem;
                 align-items: center;
                 margin: 2rem 0;
             }
 
             .skate-feature img {
                 width: 100%;
-                max-width: 320px;
+                max-width: 360px;
                 border-radius: 12px;
                 box-shadow: 0 10px 25px rgba(0,0,0,0.5);
                 border: 2px solid rgba(255, 255, 255, 0.1);
             }
 
             .skate-feature-text {
-                flex: 1 1 300px;
+                flex: 1 1 400px;
             }
 
-            /* Timeline Styling */
+            /* --- TIMELINE STYLING --- */
             .timeline {
                 position: relative;
                 padding-left: 2rem;
@@ -81,7 +92,7 @@
 
             .timeline-item {
                 position: relative;
-                margin-bottom: 2rem;
+                margin-bottom: 2.25rem;
             }
 
             .timeline-item::before {
@@ -97,39 +108,40 @@
             }
 
             .timeline-date {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
                 font-weight: 700;
-                color: #3b82f6;
+                color: #60a5fa;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
             }
 
             .timeline-title {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 font-weight: 700;
                 margin: 0.2rem 0;
+                color: #ffffff;
             }
 
             .timeline-body {
-                font-size: 1rem;
+                font-size: 1.05rem;
                 opacity: 0.9;
             }
 
-            /* Hobbies Badges */
+            /* --- HOBBY CARDS GRID --- */
             .hobby-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1.25rem;
-                margin-top: 1.5rem;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1.5rem;
+                margin-top: 1.75rem;
             }
 
             .hobby-card {
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 10px;
-                padding: 1.25rem;
+                border-radius: 12px;
+                padding: 1.5rem;
                 text-align: center;
-                transition: transform 0.2s ease;
+                transition: transform 0.2s ease, background 0.2s ease;
             }
 
             .hobby-card:hover {
@@ -138,38 +150,115 @@
             }
 
             .hobby-card i {
-                font-size: 1.8rem;
+                font-size: 2rem;
                 margin-bottom: 0.75rem;
-                color: #3b82f6;
+                color: #60a5fa;
             }
 
-            /* Light mode overrides */
+            .hobby-card h4 {
+                font-size: 1.15rem;
+                font-weight: 700;
+                margin-bottom: 0.4rem;
+                color: #ffffff;
+            }
+
+            .hobby-card p {
+                font-size: 0.92rem;
+                line-height: 1.5;
+                margin: 0;
+                color: rgba(255, 255, 255, 0.85);
+            }
+
+            /* --- LIGHT MODE COMPREHENSIVE COLOR FIXES --- */
             body.light-mode {
                 background-color: #f4f6f9 !important;
                 color: #2e3440 !important;
             }
 
+            body.light-mode .about-header-title,
+            body.light-mode .story-section h3,
+            body.light-mode .timeline-title {
+                color: #1a202c !important;
+            }
+
             body.light-mode .story-section h3 {
-                color: #1a202c;
-                border-bottom-color: rgba(0, 0, 0, 0.1);
+                border-bottom-color: rgba(0, 0, 0, 0.12) !important;
+            }
+
+            body.light-mode .story-section,
+            body.light-mode .story-section p,
+            body.light-mode .timeline-body {
+                color: #2d3748 !important;
             }
 
             body.light-mode .quote-box {
-                background: rgba(0, 0, 0, 0.03);
-            }
-
-            body.light-mode .hobby-card {
-                background: #ffffff;
-                border-color: rgba(0, 0, 0, 0.08);
-                box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+                background: rgba(0, 0, 0, 0.04) !important;
+                color: #2d3748 !important;
             }
 
             body.light-mode .timeline {
-                border-left-color: rgba(0, 0, 0, 0.15);
+                border-left-color: rgba(0, 0, 0, 0.15) !important;
             }
 
             body.light-mode .timeline-item::before {
-                border-color: #f4f6f9;
+                border-color: #f4f6f9 !important;
+            }
+
+            body.light-mode .timeline-date {
+                color: #2563eb !important;
+            }
+
+            /* Hobby Card Light Mode Overrides */
+            body.light-mode .hobby-card {
+                background: #ffffff !important;
+                border-color: rgba(0, 0, 0, 0.1) !important;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            }
+
+            body.light-mode .hobby-card h4 {
+                color: #1a202c !important;
+            }
+
+            body.light-mode .hobby-card p {
+                color: #4a5568 !important;
+            }
+
+            body.light-mode .hobby-card i {
+                color: #2563eb !important;
+            }
+
+            /* Theme Toggle Button */
+            .theme-toggle-btn {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: #fff;
+                padding: 0.35rem 0.75rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            body.light-mode .theme-toggle-btn {
+                border-color: rgba(0, 0, 0, 0.2);
+                color: #2d3748;
+            }
+
+            /* Responsive Adjustments */
+            @media screen and (max-width: 736px) {
+                .about-container {
+                    padding: 2rem 1.25rem;
+                }
+                .skate-feature {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .about-header-title {
+                    font-size: 2.2rem;
+                }
             }
         </style>
     </head>
@@ -205,13 +294,11 @@
                 <div class="about-container">
 
                     <!-- Page Title & Feynman Quote -->
-                    <header class="major" style="text-align: center;">
-                        <h2>About Me</h2>
-                    </header>
+                    <h2 class="about-header-title">About Me</h2>
 
                     <div class="quote-box">
                         “I... a universe of atoms, an atom in the universe.” 
-                        <br><span style="font-size: 0.9rem; opacity: 0.8;">— Richard P. Feynman</span>
+                        <br><span style="font-size: 0.9rem; opacity: 0.85;">— Richard P. Feynman</span>
                     </div>
 
                     <!-- Short Formal Bio -->
@@ -293,25 +380,25 @@
                             <div class="hobby-card">
                                 <i class="fa-solid fa-person-skateboarding"></i>
                                 <h4>Skateboarding</h4>
-                                <p style="font-size: 0.85rem; margin: 0;">Street & park skating around the city.</p>
+                                <p>Street & park skating around the city.</p>
                             </div>
 
                             <div class="hobby-card">
                                 <i class="fa-solid fa-language"></i>
                                 <h4>Languages</h4>
-                                <p style="font-size: 0.85rem; margin: 0;">Minored in Spanish; active language learner.</p>
+                                <p>Minored in Spanish; active language learner.</p>
                             </div>
 
                             <div class="hobby-card">
                                 <i class="fa-solid fa-tv"></i>
                                 <h4>Anime & Reading</h4>
-                                <p style="font-size: 0.85rem; margin: 0;">Sci-fi literature, cosmic philosophy, anime.</p>
+                                <p>Sci-fi literature, cosmic philosophy, anime.</p>
                             </div>
 
                             <div class="hobby-card">
                                 <i class="fa-solid fa-mountain-sun"></i>
                                 <h4>Outdoors</h4>
-                                <p style="font-size: 0.85rem; margin: 0;">Hiking, stargazing, and family time.</p>
+                                <p>Hiking, stargazing, and family time.</p>
                             </div>
                         </div>
                     </section>
