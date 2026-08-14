@@ -49,6 +49,10 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
+            .first-heading {
+                margin-top: 1rem;
+            }
+
             /* --- QUOTE BOX --- */
             .quote-box {
                 text-align: center;
@@ -171,8 +175,8 @@
             }
 
             .lecture-item {
-                margin-bottom: 1.75rem;
-                padding-bottom: 1.5rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1.75rem;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             }
 
@@ -208,14 +212,44 @@
                 font-size: 1rem;
                 font-style: italic;
                 color: rgba(255, 255, 255, 0.7);
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.75rem;
             }
 
             .lecture-description {
                 font-size: 1.05rem;
                 line-height: 1.7;
                 color: rgba(255, 255, 255, 0.85);
-                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            /* --- LECTURE BUTTONS --- */
+            .lecture-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                margin-top: 1rem;
+            }
+
+            .lecture-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+                font-weight: 600;
+                padding: 0.4rem 0.9rem;
+                border-radius: 6px;
+                background: rgba(96, 165, 250, 0.12);
+                color: #60a5fa !important;
+                border: 1px solid rgba(96, 165, 250, 0.3);
+                text-decoration: none;
+                transition: all 0.2s ease;
+            }
+
+            .lecture-btn:hover {
+                background: rgba(96, 165, 250, 0.25);
+                border-color: #60a5fa;
+                color: #ffffff !important;
+                transform: translateY(-1px);
             }
 
             /* --- THEME TOGGLE BUTTON STYLING --- */
@@ -332,6 +366,17 @@
                 color: #4a5568 !important;
             }
 
+            body.light-mode .lecture-btn {
+                background: rgba(37, 99, 235, 0.08);
+                color: #2563eb !important;
+                border-color: rgba(37, 99, 235, 0.3);
+            }
+
+            body.light-mode .lecture-btn:hover {
+                background: #2563eb;
+                color: #ffffff !important;
+            }
+
             /* Mobile Responsive */
             @media screen and (max-width: 736px) {
                 .mentorship-container {
@@ -392,6 +437,11 @@
                         <br><span style="font-size: 0.9rem; opacity: 0.85;">— Booker T. Washington</span>
                     </div>
 
+                    <!-- Programming & Mentoring Initiatives Heading -->
+                    <h3 class="section-heading first-heading">
+                        <i class="fa-solid fa-code-branch" style="margin-right: 0.75rem; color: #60a5fa;"></i>Programming & Mentoring Initiatives
+                    </h3>
+
                     <!-- Program 1: CARP -->
                     <div class="program-card">
                         <div class="program-card-header">
@@ -442,18 +492,20 @@
 
                     <!-- Additional Program Contributions Sentence -->
                     <div class="contributions-summary">
-                        In addition to these programs, I have also contributed as a mentor and facilitator to several other impactful initiatives, including the <a href="https://www.startastro.org/" target="_blank" rel="noopener noreferrer">STARTAstro</a> program, the <a href="https://sites.google.com/ucsd.edu/astroreach/" target="_blank" rel="noopener noreferrer">AstroReach SD</a> program for high-school students seeking to be the first in their family to pursue a college degree, and the <a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a> program bringing space science directly to K-12 students in San Diego with portable planetarium shows.
+                        In addition to these programs, I have also contributed to several other impactful initiatives, including the <a href="https://www.startastro.org/" target="_blank" rel="noopener noreferrer">STARTAstro</a> program, the <a href="https://sites.google.com/ucsd.edu/astroreach/" target="_blank" rel="noopener noreferrer">AstroReach SD</a> program for high-school students seeking to be the first in their family to pursue a college degree, and the <a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a> program bringing space science directly to K-12 students in San Diego with portable planetarium shows.
                     </div>
 
                     <!-- Public Outreach & Lectures Section -->
-                    <h3 class="section-heading"><i class="fa-solid fa-bullhorn" style="margin-right: 0.75rem; color: #60a5fa;"></i>Public Outreach & Lectures</h3>
+                    <h3 class="section-heading">
+                        <i class="fa-solid fa-bullhorn" style="margin-right: 0.75rem; color: #60a5fa;"></i>Public Outreach & Lectures
+                    </h3>
 
                     <div class="outreach-card">
                         <p style="margin-bottom: 2rem;">
                             Communicating astrophysics research to the public is a core priority of my work. I regularly deliver public lectures, lead stargazing sessions, and visit K-12 classrooms to bring science into the broader community.
                         </p>
 
-                        <!-- Recent Lectures List -->
+                        <!-- Lecture Item 1 -->
                         <div class="lecture-item">
                             <div class="lecture-header">
                                 <h4 class="lecture-title">[Title of Your Recent Public Lecture]</h4>
@@ -463,8 +515,17 @@
                             <p class="lecture-description">
                                 Delivered an accessible public presentation exploring [Key Topic / Research Area], breaking down complex astrophysical concepts for a general audience through visual demonstrations and an open Q&amp;A session.
                             </p>
+                            <div class="lecture-buttons">
+                                <a href="https://drive.google.com/your-pdf-link-here" target="_blank" rel="noopener noreferrer" class="lecture-btn">
+                                    <i class="fa-solid fa-file-pdf"></i> PDF Presentation
+                                </a>
+                                <a href="https://your-recording-or-event-link-here" target="_blank" rel="noopener noreferrer" class="lecture-btn">
+                                    <i class="fa-solid fa-video"></i> Talk Recording
+                                </a>
+                            </div>
                         </div>
 
+                        <!-- Lecture Item 2 -->
                         <div class="lecture-item">
                             <div class="lecture-header">
                                 <h4 class="lecture-title">[Title of Another Recent Lecture or Talk]</h4>
@@ -474,6 +535,14 @@
                             <p class="lecture-description">
                                 Presented recent findings on [Research Topic], discussing observational astronomy techniques and engaging community members in interactive discussions about space science.
                             </p>
+                            <div class="lecture-buttons">
+                                <a href="https://drive.google.com/your-pdf-link-here" target="_blank" rel="noopener noreferrer" class="lecture-btn">
+                                    <i class="fa-solid fa-file-pdf"></i> PDF Presentation
+                                </a>
+                                <a href="https://your-event-website-link-here" target="_blank" rel="noopener noreferrer" class="lecture-btn">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Event Page
+                                </a>
+                            </div>
                         </div>
                     </div>
 
