@@ -1,635 +1,405 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-RY38BXSTQB');
-        </script>
-        
-        <title>Home | Devontae C. Baxter, PhD</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-
-        <!-- FontAwesome CDN for Google Scholar icon support -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-        <style>
-            /* --- KILL TEMPLATE GHOST SPACERS & FORCE TOP ALIGNMENT --- */
-            #banner::before,
-            #banner::after,
-            #banner .content::before,
-            #banner .content::after {
-                display: none !important;
-                content: none !important;
-                height: 0 !important;
-            }
-
-            #banner {
-                position: relative !important;
-                display: block !important;
-                height: auto !important;
-                min-height: 0 !important;
-                max-height: none !important;
-                padding: 5em 2em 4em 2em !important; 
-                margin: 0 !important;
-                top: 0 !important;
-                background: #11141a !important; /* Deep cosmic space color */
-                overflow: hidden !important;
-                transition: background 0.3s ease;
-            }
-
-            /* --- COSMIC CANVAS --- */
-            #cosmic-canvas {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none; /* Mouse passes through to links */
-                z-index: 1;
-            }
-
-            #banner .content {
-                position: relative;
-                z-index: 2; /* Keeps text & photo on top of stars */
-                display: block !important;
-                margin: 0 auto !important;
-                padding: 0 !important;
-                transform: none !important;
-                opacity: 1 !important;
-                visibility: visible !important;
-                max-width: 1050px;
-            }
-
-            /* --- CUSTOM PROFILE CARD LAYOUT --- */
-            .profile-container {
-                display: flex !important;
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: stretch !important; /* Forces right side to match left side height */
-                justify-content: center;
-                gap: 3rem;
-                width: 100%;
-                text-align: left;
-                background: rgba(23, 28, 38, 0.75); /* Semi-transparent frosted glass look */
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                padding: 3rem 2.5rem;
-                border-radius: 16px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-                transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .profile-left {
-                flex: 0 0 260px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            /* --- CIRCULAR HEADSHOT STYLING --- */
-            .profile-left img {
-                width: 100%;
-                max-width: 230px;
-                aspect-ratio: 1 / 1;
-                object-fit: cover;
-                border-radius: 50% !important; /* Forces a perfect circle */
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-                margin-bottom: 1.25rem;
-                display: block;
-                border: 2px solid rgba(255, 255, 255, 0.15); /* Subtle outline ring */
-                transition: border-color 0.3s ease;
-            }
-
-            .profile-right {
-                flex: 1 1 450px;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: center !important; /* Centers heading & bio vertically */
-                align-self: stretch !important;    /* Ensures full vertical height */
-                padding: 0.5rem 0;
-            }
-
-            .profile-right h2 {
-                font-size: 2.8rem;
-                font-weight: 800;
-                margin-top: 0 !important;
-                margin-bottom: 1rem !important;
-                line-height: 1.2;
-                color: #ffffff;
-            }
-
-            .profile-right p {
-                font-size: 1.25rem;
-                line-height: 1.75;
-                margin-bottom: 0 !important;
-            }
-
-            .profile-info {
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Centered for the left sidebar column */
-                gap: 0.25rem;
-                margin-bottom: 1.25rem;
-                font-size: 0.95rem;
-                line-height: 1.4;
-            }
-
-            .profile-org {
-                font-weight: 800;
-                font-size: 1.15rem;
-                color: #ffffff;
-            }
-
-            .profile-dept {
-                font-size: 0.9rem;
-                opacity: 0.8;
-                margin-bottom: 0.35rem;
-            }
-
-            .profile-title {
-                display: inline-block;
-                font-size: 0.95rem;
-                font-weight: 600;
-                color: #a0aec0;
-            }
-
-            .profile-email {
-                margin-top: 0.5rem;
-                font-size: 0.9rem;
-                opacity: 0.9;
-                text-decoration: none !important;
-                transition: opacity 0.2s ease, color 0.2s ease;
-            }
-
-            .profile-email:hover {
-                opacity: 1;
-                text-decoration: underline !important;
-            }
-
-            /* Styling for the custom CV badge icon */
-            .cv-icon-badge {
-                position: relative;
-                display: inline-flex !important;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .cv-icon-badge .cv-text {
-                font-size: 0.65rem;
-                font-weight: 800;
-                font-family: system-ui, -apple-system, sans-serif;
-                letter-spacing: -0.5px;
-                background: #4a5568;
-                color: #fff;
-                padding: 1px 4px;
-                border-radius: 4px;
-                position: absolute;
-                bottom: -2px;
-                right: -4px;
-                line-height: 1;
-                border: 1.5px solid #171c26; /* Matches dark mode background */
-            }
-
-            body.light-mode .cv-icon-badge .cv-text {
-                background: #2d3748;
-                border-color: #ffffff;
-            }
-
-            /* --- Waving Hand Animation --- */
-            .wave {
-                display: inline-block;
-                animation: wave-animation 2.5s infinite;
-                transform-origin: 70% 70%;
-            }
-
-            @keyframes wave-animation {
-                0% { transform: rotate(0deg); }
-                10% { transform: rotate(14deg); }
-                20% { transform: rotate(-8deg); }
-                30% { transform: rotate(14deg); }
-                40% { transform: rotate(-4deg); }
-                50% { transform: rotate(10deg); }
-                60% { transform: rotate(0deg); }
-                100% { transform: rotate(0deg); }
-            }
-
-            /* --- Custom Social Icons --- */
-            .profile-socials {
-                display: flex;
-                justify-content: center;
-                gap: 12px;
-                flex-wrap: wrap;
-                margin: 0.5rem 0 0 0;
-                padding: 0;
-                list-style: none;
-            }
-
-            .profile-socials li {
-                padding-left: 0 !important;
-            }
-
-            .profile-socials a {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 42px;
-                height: 42px;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.15);
-                color: #fff !important;
-                text-decoration: none;
-                transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
-                border: none;
-            }
-
-            .profile-socials a:hover {
-                background: rgba(255, 255, 255, 0.35);
-                transform: translateY(-3px);
-            }
-
-            .profile-socials a i.ai {
-                font-size: 1.15rem;
-                line-height: 1;
-            }
-
-            /* --- THEME TOGGLE BUTTON STYLING --- */
-            .theme-toggle-btn {
-                background: transparent;
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                color: #f1f5f9;
-                padding: 0.35rem 0.75rem;
-                border-radius: 20px;
-                cursor: pointer;
-                font-size: 0.9rem;
-                transition: all 0.3s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-            }
-
-            .theme-toggle-btn:hover {
-                background: rgba(255, 255, 255, 0.1);
-            }
-
-            /* --- LIGHT MODE COMPREHENSIVE FIXES --- */
-            body.light-mode {
-                background-color: #f4f6f9 !important;
-                color: #2e3440 !important;
-            }
-
-            body.light-mode #header {
-                background: #ffffff !important;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            }
-
-            body.light-mode #logo a,
-            body.light-mode #nav > ul > li > a,
-            body.light-mode #nav > ul > li > span {
-                color: #1a202c !important;
-            }
-
-            body.light-mode #nav ul li a.button.primary {
-                background-color: #2563eb !important;
-                color: #ffffff !important;
-            }
-
-            body.light-mode .theme-toggle-btn {
-                border-color: rgba(0, 0, 0, 0.2) !important;
-                color: #1a202c !important;
-            }
-
-            body.light-mode .theme-toggle-btn i.fa-sun {
-                color: #d97706 !important;
-            }
-
-            body.light-mode #banner {
-                background: #f0f4f9 !important;
-            }
-
-            body.light-mode .profile-container {
-                background: rgba(255, 255, 255, 0.88) !important;
-                border-color: rgba(0, 0, 0, 0.1) !important;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
-            }
-
-            body.light-mode .profile-org,
-            body.light-mode .profile-right h2 {
-                color: #1a202c !important;
-            }
-
-            body.light-mode .profile-dept,
-            body.light-mode .profile-title,
-            body.light-mode .profile-right p {
-                color: #2d3748 !important;
-            }
-
-            body.light-mode .profile-email {
-                color: #2563eb !important;
-            }
-
-            body.light-mode .profile-left img {
-                border-color: rgba(0, 0, 0, 0.15) !important;
-            }
-
-            body.light-mode .profile-socials a {
-                background: rgba(0, 0, 0, 0.07) !important;
-                color: #1a202c !important;
-            }
-
-            body.light-mode .profile-socials a:hover {
-                background: rgba(37, 99, 235, 0.15) !important;
-                color: #2563eb !important;
-            }
-
-            /* Mobile Responsiveness */
-            @media screen and (max-width: 736px) {
-                #banner {
-                    padding: 4.5em 1em 2em 1em !important;
-                }
-                .profile-container {
-                    padding: 2rem 1.25rem;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                }
-                .profile-right {
-                    text-align: center;
-                }
-                .profile-right h2 {
-                    font-size: 2.2rem;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div id="page-wrapper">
-
-            <!-- Header Navigation -->
-            <header id="header" style="display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;">
-                <div style="display: flex; align-items: center; gap: 1.5rem;">
-                    <h1 id="logo" style="margin: 0;"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-                </div>
-
-                <nav id="nav" style="display: flex; align-items: center; gap: 1.5rem;">
-                    <ul>
-                        <li><a href="#" class="button primary">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li>
-                            <a href="mentorship.html">Mentorship &amp; Outreach</a>
-                            <ul>
-                                <li><a href="CARP.html">CARP Program</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <!-- Theme Toggle Button -->
-                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" style="margin-left: 1rem;">
-                        <i class="fa-solid fa-moon" id="theme-icon"></i>
-                    </button>
-                </nav>
-            </header>
-
-            <!-- Banner Content Area with Canvas Background -->
-            <section id="banner">
-                <canvas id="cosmic-canvas"></canvas>
-                
-                <div class="content">
-                    <div class="profile-container">
-                        
-                        <!-- Left Side: Photo, Details, Socials -->
-                        <div class="profile-left">
-                            <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter" />
-                            
-                            <div class="profile-info">
-                                <span class="profile-org">Princeton University</span>
-                                <span class="profile-dept">Department of Astrophysical Sciences</span>
-                                <span class="profile-title">FFPS Postdoctoral Fellow</span>
-                                <a href="mailto:dcbaxter@princeton.edu" class="profile-email">
-                                    <i class="fa-regular fa-envelope"></i> dcbaxter@princeton.edu
-                                </a>
-                            </div>
-
-                            <!-- Social Icons -->
-                            <ul class="profile-socials">
-                                <!-- CV -->
-                                <li><a href="CV.pdf" target="_blank" title="Curriculum Vitae (CV)"><i class="ai ai-cv ai-3x"></i></a></li>
-                                
-                                <!-- NASA ADS -->
-                                <li><a href="https://ui.adsabs.harvard.edu/public-libraries/jFJRwpWtSMqBBCSsXhm8-w" target="_blank" title="NASA ADS"><i class="ai ai-ads ai-3x"></i></a></li>
-                            
-                                <!-- Google Scholar -->
-                                <li><a href="https://scholar.google.com/citations?user=AeB9S3cAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar ai-3x"></i></a></li>
-                                
-                                <!-- ORCID -->
-                                <li><a href="https://orcid.org/0000-0002-8209-2783" target="_blank" title="ORCID"><i class="ai ai-orcid ai-3x"></i></a></li>
-                                
-                                <!-- LinkedIn -->
-                                <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Right Side: Header and Bio -->
-                        <div class="profile-right">
-                            <h2>Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
-                            <p>
-                                I’m an <strong>observational and computational astrophysicist</strong>. My research combines data from <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to uncover the <strong>drivers of galaxy growth and transformation</strong>. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer id="footer">
-                <ul class="copyright">
-                    <li>&copy; Devontae C. Baxter. All rights reserved.</li>
-                    <li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
-                </ul>
-            </footer>
-
-        </div>
-
-        <!-- Template Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/jquery.dropotron.min.js"></script>
-        <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-
-        <!-- Theme Switcher JS -->
-        <script>
-            const toggleBtn = document.getElementById('theme-toggle');
-            const themeIcon = document.getElementById('theme-icon');
-            
-            const currentTheme = localStorage.getItem('theme');
-            if (currentTheme === 'light') {
-                document.body.classList.add('light-mode');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            }
-
-            toggleBtn.addEventListener('click', () => {
-                document.body.classList.toggle('light-mode');
-                
-                let theme = 'dark';
-                if (document.body.classList.contains('light-mode')) {
-                    theme = 'light';
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                } else {
-                    themeIcon.classList.replace('fa-sun', 'fa-moon');
-                }
-                
-                localStorage.setItem('theme', theme);
-            });
-        </script>
-
-        <!-- Cosmic Particle Effect Canvas JS -->
-        <script>
-        (function() {
-            const canvas = document.getElementById('cosmic-canvas');
-            const banner = document.getElementById('banner');
-            const ctx = canvas.getContext('2d');
-
-            let width, height;
-            let particles = [];
-            let mouse = { x: null, y: null, radius: 120 };
-
-            function resize() {
-                width = canvas.width = banner.offsetWidth;
-                height = canvas.height = banner.offsetHeight;
-            }
-
-            banner.addEventListener('mousemove', (e) => {
-                const rect = banner.getBoundingClientRect();
-                mouse.x = e.clientX - rect.left;
-                mouse.y = e.clientY - rect.top;
-            });
-
-            banner.addEventListener('mouseleave', () => {
-                mouse.x = null;
-                mouse.y = null;
-            });
-
-            window.addEventListener('resize', () => {
-                resize();
-                init();
-            });
-
-            class Star {
-                constructor() {
-                    this.reset();
-                }
-
-                reset() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.size = Math.random() * 1.8 + 0.4;
-                    this.baseAlpha = Math.random() * 0.6 + 0.2;
-                    this.alpha = this.baseAlpha;
-                    this.vx = (Math.random() - 0.5) * 0.2;
-                    this.vy = (Math.random() - 0.5) * 0.2;
-                    this.twinkleSpeed = Math.random() * 0.02 + 0.005;
-                }
-
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-
-                    // Wrap around canvas edges
-                    if (this.x < 0) this.x = width;
-                    if (this.x > width) this.x = 0;
-                    if (this.y < 0) this.y = height;
-                    if (this.y > height) this.y = 0;
-
-                    // Twinkle effect
-                    this.alpha += Math.sin(Date.now() * this.twinkleSpeed) * 0.008;
-                    this.alpha = Math.max(0.1, Math.min(0.8, this.alpha));
-
-                    // Mouse interaction (gently push/brighten nearby stars)
-                    if (mouse.x !== null && mouse.y !== null) {
-                        const dx = mouse.x - this.x;
-                        const dy = mouse.y - this.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < mouse.radius) {
-                            const force = (mouse.radius - dist) / mouse.radius;
-                            this.alpha = Math.min(1, this.baseAlpha + force * 0.5);
-                        }
-                    }
-                }
-
-                draw() {
-                    const isLight = document.body.classList.contains('light-mode');
-                    ctx.fillStyle = isLight 
-                        ? `rgba(50, 70, 110, ${this.alpha * 0.6})` 
-                        : `rgba(255, 255, 255, ${this.alpha})`;
-                    
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-
-            function init() {
-                particles = [];
-                // Scale particle count based on screen size
-                const particleCount = Math.floor((width * height) / 4500);
-                for (let i = 0; i < particleCount; i++) {
-                    particles.push(new Star());
-                }
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-
-                // Draw constellation connection lines for close stars
-                const isLight = document.body.classList.contains('light-mode');
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < 85) {
-                            const lineAlpha = (1 - dist / 85) * 0.15;
-                            ctx.strokeStyle = isLight 
-                                ? `rgba(60, 90, 140, ${lineAlpha * 0.8})` 
-                                : `rgba(180, 210, 255, ${lineAlpha})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                particles.forEach(p => {
-                    p.update();
-                    p.draw();
-                });
-
-                requestAnimationFrame(animate);
-            }
-
-            resize();
-            init();
-            animate();
-        })();
-        </script>
-
-    </body>
-</html>
+<style>
+    /* --- KILL TEMPLATE GHOST SPACERS & FORCE TOP ALIGNMENT --- */
+    #banner::before,
+    #banner::after,
+    #banner .content::before,
+    #banner .content::after {
+        display: none !important;
+        content: none !important;
+        height: 0 !important;
+    }
+
+    #banner {
+        position: relative !important;
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 5em 2em 4em 2em !important; 
+        margin: 0 !important;
+        top: 0 !important;
+        background: #11141a !important; /* Deep cosmic space color */
+        overflow: hidden !important;
+        transition: background 0.3s ease;
+    }
+
+    /* --- COSMIC CANVAS --- */
+    #cosmic-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Mouse passes through to links */
+        z-index: 1;
+    }
+
+    #banner .content {
+        position: relative;
+        z-index: 2; /* Keeps text & photo on top of stars */
+        display: block !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        max-width: 1050px;
+    }
+
+    /* --- CUSTOM PROFILE CARD LAYOUT --- */
+    .profile-container {
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch !important;
+        justify-content: center;
+        gap: 3rem;
+        width: 100%;
+        text-align: left;
+        background: rgba(23, 28, 38, 0.75);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 3rem 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-left {
+        flex: 0 0 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* --- CIRCULAR HEADSHOT STYLING --- */
+    .profile-left img {
+        width: 100%;
+        max-width: 230px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 50% !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1.25rem;
+        display: block;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        transition: border-color 0.3s ease;
+    }
+
+    .profile-right {
+        flex: 1 1 450px;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-self: stretch !important;
+        padding: 0.5rem 0;
+    }
+
+    .profile-right h2 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-top: 0 !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2;
+        color: #ffffff;
+    }
+
+    .profile-right p {
+        font-size: 1.25rem;
+        line-height: 1.75;
+        margin-bottom: 0 !important;
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        margin-bottom: 1.25rem;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .profile-org {
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: #ffffff;
+    }
+
+    .profile-dept {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-bottom: 0.35rem;
+    }
+
+    .profile-title {
+        display: inline-block;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #a0aec0;
+    }
+
+    .profile-email {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        opacity: 0.9;
+        text-decoration: none !important;
+        transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .profile-email:hover {
+        opacity: 1;
+        text-decoration: underline !important;
+    }
+
+    /* Styling for the custom CV badge icon */
+    .cv-icon-badge {
+        position: relative;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cv-icon-badge .cv-text {
+        font-size: 0.65rem;
+        font-weight: 800;
+        font-family: system-ui, -apple-system, sans-serif;
+        letter-spacing: -0.5px;
+        background: #4a5568;
+        color: #fff;
+        padding: 1px 4px;
+        border-radius: 4px;
+        position: absolute;
+        bottom: -2px;
+        right: -4px;
+        line-height: 1;
+        border: 1.5px solid #171c26;
+    }
+
+    body.light-mode .cv-icon-badge .cv-text {
+        background: #2d3748;
+        border-color: #ffffff;
+    }
+
+    /* --- Waving Hand Animation --- */
+    .wave {
+        display: inline-block;
+        animation: wave-animation 2.5s infinite;
+        transform-origin: 70% 70%;
+    }
+
+    @keyframes wave-animation {
+        0% { transform: rotate(0deg); }
+        10% { transform: rotate(14deg); }
+        20% { transform: rotate(-8deg); }
+        30% { transform: rotate(14deg); }
+        40% { transform: rotate(-4deg); }
+        50% { transform: rotate(10deg); }
+        60% { transform: rotate(0deg); }
+        100% { transform: rotate(0deg); }
+    }
+
+    /* --- Custom Social Icons --- */
+    .profile-socials {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 0.5rem 0 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .profile-socials li {
+        padding-left: 0 !important;
+    }
+
+    .profile-socials a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff !important;
+        text-decoration: none;
+        transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
+        border: none;
+    }
+
+    .profile-socials a:hover {
+        background: rgba(255, 255, 255, 0.35);
+        transform: translateY(-3px);
+    }
+
+    .profile-socials a i.ai {
+        font-size: 1.15rem;
+        line-height: 1;
+    }
+
+    /* --- THEME TOGGLE BUTTON STYLING --- */
+    .theme-toggle-btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #f1f5f9;
+        padding: 0.35rem 0.75rem;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .theme-toggle-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* --- LIGHT MODE COMPREHENSIVE FIXES --- */
+    body.light-mode {
+        background-color: #f4f6f9 !important;
+        color: #2e3440 !important;
+    }
+
+    body.light-mode #header {
+        background: #ffffff !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    body.light-mode #logo a,
+    body.light-mode #nav > ul > li > a,
+    body.light-mode #nav > ul > li > span {
+        color: #1a202c !important;
+    }
+
+    body.light-mode #nav ul li a.button.primary {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+    }
+
+    body.light-mode .theme-toggle-btn {
+        border-color: rgba(0, 0, 0, 0.2) !important;
+        color: #1a202c !important;
+    }
+
+    body.light-mode .theme-toggle-btn i.fa-sun {
+        color: #d97706 !important;
+    }
+
+    body.light-mode #banner {
+        background: #f0f4f9 !important;
+    }
+
+    body.light-mode .profile-container {
+        background: rgba(255, 255, 255, 0.88) !important;
+        border-color: rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    body.light-mode .profile-org,
+    body.light-mode .profile-right h2 {
+        color: #1a202c !important;
+    }
+
+    body.light-mode .profile-dept,
+    body.light-mode .profile-title,
+    body.light-mode .profile-right p {
+        color: #2d3748 !important;
+    }
+
+    body.light-mode .profile-email {
+        color: #2563eb !important;
+    }
+
+    body.light-mode .profile-left img {
+        border-color: rgba(0, 0, 0, 0.15) !important;
+    }
+
+    body.light-mode .profile-socials a {
+        background: rgba(0, 0, 0, 0.07) !important;
+        color: #1a202c !important;
+    }
+
+    body.light-mode .profile-socials a:hover {
+        background: rgba(37, 99, 235, 0.15) !important;
+        color: #2563eb !important;
+    }
+
+    /* ==========================================================================
+       MOBILE RESPONSIVE OVERRIDES
+       ========================================================================== */
+    @media screen and (max-width: 980px) {
+        /* Align Header and Theme Toggle cleanly alongside the Mobile Nav Panel trigger */
+        #header {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 0 1.25rem !important;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10002; /* Keeps theme button above mobile nav overlay */
+        }
+
+        #nav {
+            display: none !important; /* Hide original nav bar (HTML5 UP uses Dropotron navPanel) */
+        }
+
+        /* Prevent Dropdown submenu items ("CARP Program") from spilling on mobile */
+        #navPanel ul li ul {
+            display: block !important;
+            margin-left: 1rem !important;
+            opacity: 0.85;
+        }
+    }
+
+    @media screen and (max-width: 736px) {
+        #banner {
+            padding: 5em 1em 2em 1em !important;
+        }
+
+        .profile-container {
+            padding: 2rem 1.25rem !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 1.5rem !important;
+        }
+
+        .profile-left {
+            flex: 0 0 auto !important;
+            width: 100%;
+        }
+
+        .profile-left img {
+            max-width: 180px !important;
+        }
+
+        .profile-right {
+            text-align: center !important;
+            flex: 0 0 auto !important;
+            width: 100%;
+        }
+
+        .profile-right h2 {
+            font-size: 1.8rem !important;
+        }
+
+        .profile-right p {
+            font-size: 1.05rem !important;
+            line-height: 1.6 !important;
+        }
+
+        .profile-socials a {
+            width: 38px !important;
+            height: 38px !important;
+        }
+    }
+</style>
