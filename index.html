@@ -375,29 +375,29 @@
                 color: #2563eb !important;
             }
 
-            /* --- RESPONSIVE / MOBILE CLEANUP --- */
-            @media screen and (max-width: 736px) {
+            /* --- RESPONSIVE / MOBILE & TABLET CLEANUP (Updated threshold to 980px) --- */
+            @media screen and (max-width: 980px) {
                 #banner {
-                    padding: 3.8em 1em 2em 1em !important;
+                    padding: 3.8em 1.5em 2.5em 1.5em !important;
                 }
 
                 .profile-container {
-                    padding: 1.5rem 1.1rem !important;
+                    padding: 1.75rem 1.25rem !important;
                     flex-direction: column !important;
                     align-items: center !important;
                     text-align: center !important;
-                    gap: 1.1rem !important;
+                    gap: 1.2rem !important;
                 }
 
                 .desktop-greeting {
                     display: none !important;
                 }
 
-                /* Mobile Greeting (Strict 1 Line) */
+                /* Mobile/Tablet Greeting (Strict 1 Line) */
                 .mobile-greeting {
                     display: block !important;
                     order: 1 !important;
-                    font-size: clamp(1.1rem, 4.5vw, 1.45rem) !important;
+                    font-size: clamp(1.2rem, 3.5vw, 1.75rem) !important;
                     font-weight: 800;
                     margin: 0 0 0.15rem 0 !important;
                     color: #ffffff;
@@ -414,20 +414,23 @@
                     display: contents !important;
                 }
 
-                /* Mobile Card Layout */
+                /* Mobile/Tablet Card Layout */
                 .profile-card-mobile {
                     order: 2 !important;
                     display: flex !important;
                     flex-direction: row !important;
                     align-items: center !important;
-                    gap: 0.85rem !important;
+                    justify-content: center !important;
+                    gap: 1.25rem !important;
                     width: 100% !important;
-                    padding: 0.85rem 0.9rem !important;
+                    max-width: 500px !important;
+                    padding: 1rem 1.25rem !important;
                     background: rgba(0, 0, 0, 0.25) !important;
                     border: 1px solid rgba(255, 255, 255, 0.12) !important;
                     border-radius: 14px !important;
                     text-align: left !important;
                     box-sizing: border-box;
+                    margin: 0 auto !important;
                 }
 
                 body.light-mode .profile-card-mobile {
@@ -437,20 +440,20 @@
 
                 .profile-left img {
                     order: unset !important;
-                    width: 100px !important;
-                    height: 100px !important;
-                    max-width: 100px !important;
+                    width: 110px !important;
+                    height: 110px !important;
+                    max-width: 110px !important;
                     margin-bottom: 0 !important;
                     flex-shrink: 0;
                 }
 
-                /* Left-align card contents inside compact mobile card */
+                /* Left-align card contents inside compact card */
                 .profile-info {
                     order: unset !important;
                     align-items: flex-start !important;
                     text-align: left !important;
                     margin-bottom: 0 !important;
-                    gap: 0.12rem !important;
+                    gap: 0.15rem !important;
                     width: auto !important;
                     padding: 0 !important;
                     border: none !important;
@@ -465,27 +468,27 @@
                 }
 
                 .profile-org {
-                    font-size: 0.92rem !important;
+                    font-size: 0.98rem !important;
                 }
 
                 /* Department info guaranteed single line */
                 .profile-dept {
-                    font-size: 0.78rem !important;
+                    font-size: 0.82rem !important;
                     white-space: nowrap !important;
                 }
 
                 .profile-title {
-                    font-size: 0.78rem !important;
+                    font-size: 0.82rem !important;
                 }
 
                 .profile-email {
                     margin-top: 0.15rem !important;
-                    font-size: 0.78rem !important;
+                    font-size: 0.82rem !important;
                 }
 
                 .info-icon {
                     width: 14px;
-                    margin-right: 4px;
+                    margin-right: 5px;
                 }
 
                 .profile-right {
@@ -497,15 +500,15 @@
                 }
 
                 .profile-right p {
-                    font-size: 1.05rem !important;
-                    line-height: 1.6 !important;
+                    font-size: 1.15rem !important;
+                    line-height: 1.65 !important;
                 }
 
                 .profile-socials {
                     order: 4 !important;
                     width: 100% !important;
                     gap: 14px !important;
-                    margin-top: 0.1rem !important;
+                    margin-top: 0.2rem !important;
                 }
 
                 .profile-socials a {
@@ -549,7 +552,7 @@
                 <div class="content">
                     <div class="profile-container">
                         
-                        <!-- Standalone Main Greeting for Mobile (Guaranteed Single Line) -->
+                        <!-- Standalone Main Greeting for Mobile/Tablet (Guaranteed Single Line) -->
                         <h2 class="mobile-greeting">Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
 
                         <!-- Left Side: Photo, Details, Socials -->
@@ -624,17 +627,17 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-        <!-- Responsive Layout Switcher for Mobile Card -->
+        <!-- Responsive Layout Switcher for Mobile & Tablet Card (Updated threshold to <= 980) -->
         <script>
             function setupMobileCard() {
-                const isMobile = window.innerWidth <= 736;
+                const isMobileOrTablet = window.innerWidth <= 980;
                 const profileLeft = document.querySelector('.profile-left');
                 if (!profileLeft) return;
                 
                 const img = profileLeft.querySelector('img');
                 const info = profileLeft.querySelector('.profile-info');
                 
-                if (isMobile) {
+                if (isMobileOrTablet) {
                     if (!document.querySelector('.profile-card-mobile')) {
                         const card = document.createElement('div');
                         card.className = 'profile-card-mobile';
@@ -715,6 +718,7 @@
         (function() {
             const canvas = document.getElementById('cosmic-canvas');
             const banner = document.getElementById('banner');
+            if (!canvas || !banner) return;
             const ctx = canvas.getContext('2d');
 
             let width, height, dpr;
@@ -792,7 +796,6 @@
                     ctx.fillStyle = isLight 
                         ? `rgba(50, 70, 110, ${this.alpha * 0.6})` 
                         : `rgba(255, 255, 255, ${this.alpha})`;
-                    
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.fill();
@@ -801,41 +804,18 @@
 
             function init() {
                 particles = [];
-                const particleCount = Math.floor((width * height) / 4500);
-                for (let i = 0; i < particleCount; i++) {
+                const count = Math.floor((width * height) / 10000);
+                for (let i = 0; i < count; i++) {
                     particles.push(new Star());
                 }
             }
 
             function animate() {
                 ctx.clearRect(0, 0, width, height);
-
-                const isLight = document.body.classList.contains('light-mode');
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < 85) {
-                            const lineAlpha = (1 - dist / 85) * 0.15;
-                            ctx.strokeStyle = isLight 
-                                ? `rgba(60, 90, 140, ${lineAlpha * 0.8})` 
-                                : `rgba(180, 210, 255, ${lineAlpha})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-
                 particles.forEach(p => {
                     p.update();
                     p.draw();
                 });
-
                 requestAnimationFrame(animate);
             }
 
@@ -844,6 +824,5 @@
             animate();
         })();
         </script>
-
     </body>
 </html>
