@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
@@ -10,262 +10,259 @@
           gtag('config', 'G-RY38BXSTQB');
         </script>
         
-        <title>Devontae C. Baxter, PhD</title>
+        <title>Home | Devontae C. Baxter, PhD</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+
+        <!-- FontAwesome CDN for Google Scholar icon support -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
-            /* --- LANDING HERO BANNER STYLING --- */
+            /* --- KILL TEMPLATE GHOST SPACERS & FORCE TOP ALIGNMENT --- */
+            #banner::before,
+            #banner::after,
+            #banner .content::before,
+            #banner .content::after {
+                display: none !important;
+                content: none !important;
+                height: 0 !important;
+            }
+
             #banner {
-                padding: 5rem 2rem 4rem 2rem;
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
+                position: relative !important;
+                display: block !important;
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+                padding: 5em 2em 4em 2em !important; 
+                margin: 0 !important;
+                top: 0 !important;
+                background: #11141a !important; /* Deep cosmic space color */
+                overflow: hidden !important;
+                transition: background 0.3s ease;
+            }
+
+            /* --- COSMIC CANVAS --- */
+            #cosmic-canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none; /* Mouse passes through to links */
+                z-index: 1;
+            }
+
+            #banner .content {
                 position: relative;
+                z-index: 2; /* Keeps text & photo on top of stars */
+                display: block !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
+                transform: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                max-width: 1050px;
             }
 
-            .banner-grid {
-                max-width: 1200px;
-                margin: 0 auto;
-                display: grid;
-                grid-template-columns: 320px 1fr;
-                gap: 3.5rem;
+            /* --- CUSTOM PROFILE CARD LAYOUT --- */
+            .profile-container {
+                display: flex !important;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: stretch !important; /* Forces right side to match left side height */
+                justify-content: center;
+                gap: 3rem;
+                width: 100%;
+                text-align: left;
+                background: rgba(23, 28, 38, 0.75); /* Semi-transparent frosted glass look */
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                padding: 3rem 2.5rem;
+                border-radius: 16px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+                transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .profile-left {
+                flex: 0 0 260px;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
-            }
-
-            .profile-photo-container {
                 text-align: center;
             }
 
-            .profile-photo {
-                width: 280px;
-                height: 280px;
-                border-radius: 50%;
+            /* --- CIRCULAR HEADSHOT STYLING --- */
+            .profile-left img {
+                width: 100%;
+                max-width: 230px;
+                aspect-ratio: 1 / 1;
                 object-fit: cover;
-                border: 4px solid rgba(255, 255, 255, 0.2);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-                transition: transform 0.3s ease, border-color 0.3s ease;
+                border-radius: 50% !important; /* Forces a perfect circle */
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+                margin-bottom: 1.25rem;
+                display: block;
+                border: 2px solid rgba(255, 255, 255, 0.15); /* Subtle outline ring */
+                transition: border-color 0.3s ease;
             }
 
-            .profile-photo:hover {
-                transform: scale(1.02);
-                border-color: #60a5fa;
+            .profile-right {
+                flex: 1 1 450px;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important; /* Centers heading & bio vertically */
+                align-self: stretch !important;    /* Ensures full vertical height */
+                padding: 0.5rem 0;
             }
 
-            .banner-content {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-            }
-
-            .intro-heading {
+            .profile-right h2 {
                 font-size: 2.8rem;
                 font-weight: 800;
+                margin-top: 0 !important;
+                margin-bottom: 1rem !important;
                 line-height: 1.2;
-                margin-bottom: 0.75rem;
                 color: #ffffff;
             }
 
-            .intro-heading .highlight {
-                color: #60a5fa;
+            .profile-right p {
+                font-size: 1.25rem;
+                line-height: 1.75;
+                margin-bottom: 0 !important;
             }
 
-            .affiliation-box {
-                margin-bottom: 1.25rem;
-            }
-
-            .position-title {
-                font-size: 1.35rem;
-                font-weight: 700;
-                color: #e2e8f0;
-                margin-bottom: 0.25rem;
-            }
-
-            .institution-title {
-                font-size: 1.15rem;
-                color: rgba(255, 255, 255, 0.85);
-                line-height: 1.5;
-            }
-
-            .contact-email {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                font-size: 1.05rem;
-                color: #60a5fa;
-                text-decoration: none;
-                margin-bottom: 1.5rem;
-                transition: color 0.2s ease;
-            }
-
-            .contact-email:hover {
-                color: #93c5fd;
-                text-decoration: underline;
-            }
-
-            .action-buttons {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                margin-top: 0.5rem;
-            }
-
-            .btn-landing {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.6rem;
-                padding: 0.75rem 1.5rem;
-                border-radius: 8px;
-                font-weight: 700;
-                font-size: 1rem;
-                text-decoration: none;
-                transition: all 0.2s ease;
-            }
-
-            .btn-primary-landing {
-                background: #2563eb;
-                color: #ffffff !important;
-                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            }
-
-            .btn-primary-landing:hover {
-                background: #3b82f6;
-                transform: translateY(-2px);
-                box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
-            }
-
-            .btn-secondary-landing {
-                background: rgba(255, 255, 255, 0.1);
-                color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-
-            .btn-secondary-landing:hover {
-                background: rgba(255, 255, 255, 0.2);
-                border-color: rgba(255, 255, 255, 0.4);
-                transform: translateY(-2px);
-            }
-
-            /* --- MAIN CONTENT & OVERVIEW SECTION --- */
-            .index-container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 2rem 2rem 4rem 2rem;
-            }
-
-            .overview-card {
-                background: rgba(255, 255, 255, 0.04);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                padding: 2.5rem;
-                margin-top: 1.5rem;
-                margin-bottom: 3.5rem;
-                line-height: 1.8;
-                font-size: 1.15rem;
-                color: rgba(255, 255, 255, 0.9);
-            }
-
-            .overview-card p {
-                margin-bottom: 1.25rem;
-            }
-
-            .overview-card p:last-child {
-                margin-bottom: 0;
-            }
-
-            .overview-card strong {
-                color: #60a5fa;
-            }
-
-            .section-heading {
-                font-size: 2rem;
-                font-weight: 700;
-                color: #ffffff;
-                margin-top: 3.5rem;
-                margin-bottom: 1.5rem;
-                padding-bottom: 0.5rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-            }
-
-            .section-heading i {
-                color: #60a5fa;
-            }
-
-            /* --- HIGHLIGHTS CARDS GRID --- */
-            .highlights-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 2rem;
-                margin-bottom: 3rem;
-            }
-
-            .highlight-card {
-                background: rgba(255, 255, 255, 0.04);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                padding: 2rem;
-                transition: transform 0.2s ease, background 0.2s ease;
+            .profile-info {
                 display: flex;
                 flex-direction: column;
-            }
-
-            .highlight-card:hover {
-                background: rgba(255, 255, 255, 0.06);
-                transform: translateY(-2px);
-            }
-
-            .highlight-card-header {
-                display: flex;
                 align-items: center;
-                gap: 0.85rem;
-                margin-bottom: 1rem;
+                gap: 0.25rem;
+                margin-bottom: 1.25rem;
+                font-size: 0.95rem;
+                line-height: 1.4;
             }
 
-            .highlight-card-header i {
-                font-size: 1.6rem;
-                color: #60a5fa;
-            }
-
-            .highlight-card-header h3 {
-                font-size: 1.4rem;
-                font-weight: 700;
-                margin: 0;
+            .profile-org {
+                font-weight: 800;
+                font-size: 1.15rem;
                 color: #ffffff;
             }
 
-            .highlight-card p {
-                line-height: 1.7;
-                font-size: 1.05rem;
-                color: rgba(255, 255, 255, 0.85);
-                margin-bottom: 1.5rem;
-                flex-grow: 1;
+            .profile-dept {
+                font-size: 0.9rem;
+                opacity: 0.8;
+                margin-bottom: 0.35rem;
             }
 
-            .card-link {
+            .profile-title {
+                display: inline-block;
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: #a0aec0;
+            }
+
+            .profile-email {
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                opacity: 0.9;
+                text-decoration: none !important;
+                transition: opacity 0.2s ease, color 0.2s ease;
+            }
+
+            .profile-email:hover {
+                opacity: 1;
+                text-decoration: underline !important;
+            }
+
+            /* Styling for the custom CV badge icon */
+            .cv-icon-badge {
+                position: relative;
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .cv-icon-badge .cv-text {
+                font-size: 0.65rem;
+                font-weight: 800;
+                font-family: system-ui, -apple-system, sans-serif;
+                letter-spacing: -0.5px;
+                background: #4a5568;
+                color: #fff;
+                padding: 1px 4px;
+                border-radius: 4px;
+                position: absolute;
+                bottom: -2px;
+                right: -4px;
+                line-height: 1;
+                border: 1.5px solid #171c26; /* Matches dark mode background */
+            }
+
+            body.light-mode .cv-icon-badge .cv-text {
+                background: #2d3748;
+                border-color: #ffffff;
+            }
+
+            /* --- Waving Hand Animation --- */
+            .wave {
+                display: inline-block;
+                animation: wave-animation 2.5s infinite;
+                transform-origin: 70% 70%;
+            }
+
+            @keyframes wave-animation {
+                0% { transform: rotate(0deg); }
+                10% { transform: rotate(14deg); }
+                20% { transform: rotate(-8deg); }
+                30% { transform: rotate(14deg); }
+                40% { transform: rotate(-4deg); }
+                50% { transform: rotate(10deg); }
+                60% { transform: rotate(0deg); }
+                100% { transform: rotate(0deg); }
+            }
+
+            /* --- Custom Social Icons --- */
+            .profile-socials {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                flex-wrap: wrap;
+                margin: 0.5rem 0 0 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .profile-socials li {
+                padding-left: 0 !important;
+            }
+
+            .profile-socials a {
                 display: inline-flex;
                 align-items: center;
-                gap: 0.4rem;
-                font-weight: 700;
-                color: #60a5fa;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.15);
+                color: #fff !important;
                 text-decoration: none;
-                transition: color 0.2s ease;
+                transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
+                border: none;
             }
 
-            .card-link:hover {
-                color: #93c5fd;
-                text-decoration: underline;
+            .profile-socials a:hover {
+                background: rgba(255, 255, 255, 0.35);
+                transform: translateY(-3px);
             }
 
-            /* --- NAV INTEGRATED THEME TOGGLE BUTTON --- */
+            .profile-socials a i.ai {
+                font-size: 1.15rem;
+                line-height: 1;
+            }
+
+            /* --- INTEGRATED NAV THEME TOGGLE BUTTON --- */
             #nav ul li.nav-toggle-item {
                 display: inline-flex;
                 align-items: center;
@@ -292,16 +289,10 @@
                 border-color: rgba(255, 255, 255, 0.5);
             }
 
-            /* --- LIGHT MODE COMPREHENSIVE OVERRIDES --- */
+            /* --- LIGHT MODE OVERRIDES --- */
             body.light-mode {
                 background-color: #f4f6f9 !important;
                 color: #2e3440 !important;
-            }
-
-            /* Strong tag contrast fix for light mode */
-            body.light-mode strong,
-            body.light-mode b {
-                color: #1a202c !important;
             }
 
             body.light-mode #header {
@@ -329,61 +320,46 @@
                 color: #d97706 !important;
             }
 
-            body.light-mode .intro-heading,
-            body.light-mode .position-title,
-            body.light-mode .section-heading,
-            body.light-mode .highlight-card-header h3 {
+            body.light-mode #banner {
+                background: #f0f4f9 !important;
+            }
+
+            body.light-mode .profile-container {
+                background: rgba(255, 255, 255, 0.88) !important;
+                border-color: rgba(0, 0, 0, 0.1) !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+            }
+
+            body.light-mode .profile-org,
+            body.light-mode .profile-right h2 {
                 color: #1a202c !important;
             }
 
-            body.light-mode .intro-heading .highlight {
-                color: #2563eb !important;
-            }
-
-            body.light-mode .institution-title,
-            body.light-mode .overview-card,
-            body.light-mode .highlight-card p {
+            body.light-mode .profile-dept,
+            body.light-mode .profile-title,
+            body.light-mode .profile-right p {
                 color: #2d3748 !important;
             }
 
-            body.light-mode .overview-card {
-                background: #ffffff !important;
-                border-color: rgba(0, 0, 0, 0.1) !important;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            }
-
-            body.light-mode .overview-card strong {
-                color: #1d4ed8 !important;
-            }
-
-            body.light-mode .highlight-card {
-                background: #ffffff !important;
-                border-color: rgba(0, 0, 0, 0.1) !important;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            }
-
-            body.light-mode .highlight-card-header i,
-            body.light-mode .section-heading i,
-            body.light-mode .card-link,
-            body.light-mode .contact-email {
+            body.light-mode .profile-email {
                 color: #2563eb !important;
             }
 
-            body.light-mode .btn-secondary-landing {
-                background: #e2e8f0;
+            body.light-mode .profile-left img {
+                border-color: rgba(0, 0, 0, 0.15) !important;
+            }
+
+            body.light-mode .profile-socials a {
+                background: rgba(0, 0, 0, 0.07) !important;
                 color: #1a202c !important;
-                border-color: #cbd5e1;
             }
 
-            body.light-mode .btn-secondary-landing:hover {
-                background: #cbd5e1;
+            body.light-mode .profile-socials a:hover {
+                background: rgba(37, 99, 235, 0.15) !important;
+                color: #2563eb !important;
             }
 
-            body.light-mode .profile-photo {
-                border-color: rgba(0, 0, 0, 0.15);
-            }
-
-            /* --- RESPONSIVE MOBILE LAYOUT & ORDER FIX --- */
+            /* --- RESPONSIVE / MOBILE CLEANUP --- */
             @media screen and (max-width: 980px) {
                 #navPanel #theme-toggle {
                     margin: 10px 0;
@@ -395,76 +371,51 @@
                 }
             }
 
-            @media screen and (max-width: 840px) {
-                .banner-grid {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                    text-align: center;
-                }
-
-                .banner-content {
-                    align-items: center;
-                    text-align: center;
-                    /* Convert banner-content to Flex column so order property works on children */
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                /* LOGICAL MOBILE ORDERING:
-                   1. Photo (Top container)
-                   2. Intro Heading ("Hi, I'm Devontae...")
-                   3. Position / Institution Box
-                   4. Contact Email
-                   5. Action Buttons
-                */
-                .intro-heading {
-                    order: 1;
-                }
-
-                .affiliation-box {
-                    order: 2;
-                }
-
-                .contact-email {
-                    order: 3;
-                }
-
-                .action-buttons {
-                    order: 4;
-                    justify-content: center;
-                }
-
-                .profile-photo {
-                    width: 220px;
-                    height: 220px;
-                }
-            }
-
             @media screen and (max-width: 736px) {
                 #banner {
-                    padding: 3rem 1.25rem 2.5rem 1.25rem;
+                    padding: 4.5em 1em 2em 1em !important;
                 }
 
-                .index-container {
-                    padding: 1.5rem 1.25rem 3rem 1.25rem;
+                .profile-container {
+                    padding: 2rem 1.25rem !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    text-align: center !important;
+                    gap: 1.5rem !important;
                 }
 
-                .intro-heading {
-                    font-size: 2.2rem;
+                .profile-left {
+                    flex: 0 0 auto !important;
+                    width: 100%;
                 }
 
-                .overview-card {
-                    padding: 1.5rem;
-                    font-size: 1.05rem;
+                .profile-left img {
+                    max-width: 170px !important;
                 }
 
-                .section-heading {
-                    font-size: 1.6rem;
+                .profile-right {
+                    text-align: center !important;
+                    flex: 0 0 auto !important;
+                    width: 100%;
+                }
+
+                .profile-right h2 {
+                    font-size: 1.8rem !important;
+                }
+
+                .profile-right p {
+                    font-size: 1.05rem !important;
+                    line-height: 1.6 !important;
+                }
+
+                .profile-socials a {
+                    width: 38px !important;
+                    height: 38px !important;
                 }
             }
         </style>
     </head>
-    <body class="is-preload">
+    <body>
         <div id="page-wrapper">
 
             <!-- Header Navigation -->
@@ -472,139 +423,80 @@
                 <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#" class="button primary">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="research.html">Research</a></li>
                         <li>
-                            <a href="mentorship.html" class="button primary">Mentorship &amp; Outreach</a>
+                            <a href="mentorship.html">Mentorship &amp; Outreach</a>
                             <ul>
                                 <li><a href="CARP.html">CARP Program</a></li>
                             </ul>
                         </li>
-                        <!-- Integrated Nav Theme Toggle -->
+                        <!-- Theme Toggle integrated directly into navigation -->
                         <li class="nav-toggle-item">
-                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-                                <i class="fa-solid fa-moon" id="theme-icon"></i>
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark and light theme">
+                                <i class="fa-solid fa-moon theme-icon"></i>
                             </button>
                         </li>
                     </ul>
                 </nav>
             </header>
 
-            <!-- Landing Hero Banner -->
+            <!-- Banner Content Area with Canvas Background -->
             <section id="banner">
-                <div class="banner-grid">
-                    <!-- Column 1: Profile Photo -->
-                    <div class="profile-photo-container">
-                        <img src="images/Devontae.webp" alt="Devontae C. Baxter, PhD" class="profile-photo" fetchpriority="high">
-                    </div>
-
-                    <!-- Column 2: Details & Bio Lead -->
-                    <div class="banner-content">
-                        <h1 class="intro-heading">Hi, I'm <span class="highlight">Devontae</span></h1>
+                <canvas id="cosmic-canvas"></canvas>
+                
+                <div class="content">
+                    <div class="profile-container">
                         
-                        <div class="affiliation-box">
-                            <div class="position-title">NSF Astronomy &amp; Astrophysics Postdoctoral Fellow</div>
-                            <div class="institution-title">Department of Astronomy &amp; Astrophysics | UC San Diego</div>
+                        <!-- Left Side: Photo, Details, Socials -->
+                        <div class="profile-left">
+                            <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter headshot" />
+                            
+                            <div class="profile-info">
+                                <span class="profile-org">Princeton University</span>
+                                <span class="profile-dept">Department of Astrophysical Sciences</span>
+                                <span class="profile-title">FFPS Postdoctoral Fellow</span>
+                                <a href="mailto:dcbaxter@princeton.edu" class="profile-email">
+                                    <i class="fa-regular fa-envelope"></i> dcbaxter@princeton.edu
+                                </a>
+                            </div>
+
+                            <!-- Social Icons -->
+                            <ul class="profile-socials">
+                                <!-- CV -->
+                                <li><a href="CV.pdf" target="_blank" rel="noopener noreferrer" title="Curriculum Vitae (CV)"><i class="ai ai-cv ai-3x"></i></a></li>
+                                
+                                <!-- NASA ADS -->
+                                <li><a href="https://ui.adsabs.harvard.edu/public-libraries/jFJRwpWtSMqBBCSsXhm8-w" target="_blank" rel="noopener noreferrer" title="NASA ADS"><i class="ai ai-ads ai-3x"></i></a></li>
+                            
+                                <!-- Google Scholar -->
+                                <li><a href="https://scholar.google.com/citations?user=AeB9S3cAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar"><i class="ai ai-google-scholar ai-3x"></i></a></li>
+                                
+                                <!-- ORCID -->
+                                <li><a href="https://orcid.org/0000-0002-8209-2783" target="_blank" rel="noopener noreferrer" title="ORCID"><i class="ai ai-orcid ai-3x"></i></a></li>
+                                
+                                <!-- LinkedIn -->
+                                <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
                         </div>
 
-                        <a href="mailto:dcbaxter@ucsd.edu" class="contact-email">
-                            <i class="fa-solid fa-envelope"></i> dcbaxter@ucsd.edu
-                        </a>
-
-                        <div class="action-buttons">
-                            <a href="research.html" class="btn-landing btn-primary-landing">
-                                <i class="fa-solid fa-telescope"></i> Research Overview
-                            </a>
-                            <a href="mentorship.html" class="btn-landing btn-secondary-landing">
-                                <i class="fa-solid fa-users"></i> Mentorship &amp; CARP
-                            </a>
-                            <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-landing btn-secondary-landing">
-                                <i class="fa-solid fa-file-pdf"></i> Curriculum Vitae
-                            </a>
+                        <!-- Right Side: Header and Bio -->
+                        <div class="profile-right">
+                            <h2>Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
+                            <p>
+                                I’m an <strong>observational and computational astrophysicist</strong>. My research combines data from <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to uncover the <strong>drivers of galaxy growth and transformation</strong>. 
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Main Content Overview -->
-            <div id="main" class="wrapper style1">
-                <div class="index-container">
-
-                    <!-- Executive Summary Box -->
-                    <div class="overview-card">
-                        <p>
-                            Welcome! I am an <strong>NSF Astronomy &amp; Astrophysics Postdoctoral Fellow</strong> in the Department of Astronomy &amp; Astrophysics at UC San Diego. My research focuses on unraveling the complex evolutionary pathways of massive galaxies and galaxy clusters across cosmic time.
-                        </p>
-                        <p>
-                            By synthesizing deep space- and ground-based observations—from the <strong>James Webb Space Telescope (JWST)</strong> to wide-field surveys—I investigate how massive galaxies assemble, shut down their star formation ("quench"), and evolve within the cosmic web. Beyond observational cosmology, I am passionate about creating equitable pathways into STEM through structured research preparation, peer mentorship, and public engagement.
-                        </p>
-                    </div>
-
-                    <!-- Highlight Sections Grid -->
-                    <h2 class="section-heading">
-                        <i class="fa-solid fa-compass"></i> Core Focus Areas
-                    </h2>
-
-                    <div class="highlights-grid">
-                        <!-- Card 1: Observational Astrophysics -->
-                        <div class="highlight-card">
-                            <div class="highlight-card-header">
-                                <i class="fa-solid fa-galaxy"></i>
-                                <h3>Observational Astrophysics</h3>
-                            </div>
-                            <p>
-                                Investigating early galaxy quenching, protocluster assembly, and structural evolution using JWST, HST, and ground-based spectroscopic instruments.
-                            </p>
-                            <a href="research.html" class="card-link">
-                                Explore Research <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <!-- Card 2: CARP Program -->
-                        <div class="highlight-card">
-                            <div class="highlight-card-header">
-                                <i class="fa-solid fa-laptop-code"></i>
-                                <h3>CARP Program</h3>
-                            </div>
-                            <p>
-                                Director and founder of the Computational Astrophysics Research Preparation program, training community college transfer students in Python and computational tools.
-                            </p>
-                            <a href="CARP.html" class="card-link">
-                                Learn About CARP <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-
-                        <!-- Card 3: Outreach & Community -->
-                        <div class="highlight-card">
-                            <div class="highlight-card-header">
-                                <i class="fa-solid fa-bullhorn"></i>
-                                <h3>Public Outreach</h3>
-                            </div>
-                            <p>
-                                Public lectures, community discussions, and educational initiatives aimed at sharing the wonder of astrophysics with diverse audiences.
-                            </p>
-                            <a href="mentorship.html" class="card-link">
-                                View Outreach <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
             <!-- Footer -->
             <footer id="footer">
-                <ul class="icons">
-                    <li><a href="mailto:dcbaxter@ucsd.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-                    <li><a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://www.instagram.com/sentientstardust/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="https://github.com/sentientstarstuff" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                </ul>
                 <ul class="copyright">
                     <li>&copy; Devontae C. Baxter. All rights reserved.</li>
-                    <li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
+                    <li>Design adapted from <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
                 </ul>
             </footer>
 
@@ -620,32 +512,34 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-        <!-- Delegated Theme Switcher JS -->
+        <!-- Theme Switcher JS -->
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const applyTheme = (theme) => {
-                    if (theme === 'light') {
-                        document.body.classList.add('light-mode');
-                        document.querySelectorAll('.theme-toggle-btn i').forEach(icon => {
+                    const isLight = theme === 'light';
+                    document.body.classList.toggle('light-mode', isLight);
+                    
+                    // Synchronize icons on both desktop nav and cloned mobile nav panels
+                    const icons = document.querySelectorAll('.theme-toggle-btn i');
+                    icons.forEach(icon => {
+                        if (isLight) {
                             icon.classList.remove('fa-moon');
                             icon.classList.add('fa-sun');
-                        });
-                    } else {
-                        document.body.classList.remove('light-mode');
-                        document.querySelectorAll('.theme-toggle-btn i').forEach(icon => {
+                        } else {
                             icon.classList.remove('fa-sun');
                             icon.classList.add('fa-moon');
-                        });
-                    }
+                        }
+                    });
                 };
 
-                // Load initial theme state
+                // Load stored preference
                 const currentTheme = localStorage.getItem('theme') || 'dark';
                 applyTheme(currentTheme);
 
-                // Delegated event listener for theme toggling
+                // Handle toggle click (delegated to support cloned mobile nav instances)
                 document.addEventListener('click', (e) => {
-                    if (e.target.closest('#theme-toggle')) {
+                    const toggleBtn = e.target.closest('.theme-toggle-btn');
+                    if (toggleBtn) {
                         const isLight = document.body.classList.contains('light-mode');
                         const newTheme = isLight ? 'dark' : 'light';
                         applyTheme(newTheme);
@@ -654,5 +548,145 @@
                 });
             });
         </script>
+
+        <!-- Cosmic Particle Effect Canvas JS -->
+        <script>
+        (function() {
+            const canvas = document.getElementById('cosmic-canvas');
+            const banner = document.getElementById('banner');
+            const ctx = canvas.getContext('2d');
+
+            let width, height, dpr;
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 120 };
+
+            function resize() {
+                dpr = window.devicePixelRatio || 1;
+                width = banner.offsetWidth;
+                height = banner.offsetHeight;
+                
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                ctx.scale(dpr, dpr);
+            }
+
+            banner.addEventListener('mousemove', (e) => {
+                const rect = banner.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+
+            banner.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            window.addEventListener('resize', () => {
+                resize();
+                init();
+            });
+
+            class Star {
+                constructor() {
+                    this.reset();
+                }
+
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 1.8 + 0.4;
+                    this.baseAlpha = Math.random() * 0.6 + 0.2;
+                    this.alpha = this.baseAlpha;
+                    this.vx = (Math.random() - 0.5) * 0.2;
+                    this.vy = (Math.random() - 0.5) * 0.2;
+                    this.twinkleSpeed = Math.random() * 0.02 + 0.005;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Wrap around canvas edges
+                    if (this.x < 0) this.x = width;
+                    if (this.x > width) this.x = 0;
+                    if (this.y < 0) this.y = height;
+                    if (this.y > height) this.y = 0;
+
+                    // Twinkle effect
+                    this.alpha += Math.sin(Date.now() * this.twinkleSpeed) * 0.008;
+                    this.alpha = Math.max(0.1, Math.min(0.8, this.alpha));
+
+                    // Mouse interaction
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            this.alpha = Math.min(1, this.baseAlpha + force * 0.5);
+                        }
+                    }
+                }
+
+                draw() {
+                    const isLight = document.body.classList.contains('light-mode');
+                    ctx.fillStyle = isLight 
+                        ? `rgba(50, 70, 110, ${this.alpha * 0.6})` 
+                        : `rgba(255, 255, 255, ${this.alpha})`;
+                    
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                particles = [];
+                const particleCount = Math.floor((width * height) / 4500);
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Star());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw constellation lines
+                const isLight = document.body.classList.contains('light-mode');
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 85) {
+                            const lineAlpha = (1 - dist / 85) * 0.15;
+                            ctx.strokeStyle = isLight 
+                                ? `rgba(60, 90, 140, ${lineAlpha * 0.8})` 
+                                : `rgba(180, 210, 255, ${lineAlpha})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            resize();
+            init();
+            animate();
+        })();
+        </script>
+
     </body>
 </html>
