@@ -19,6 +19,41 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
+
+        /* --- REVAMP FOOTER --- */
+        .footer-badges {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.6rem;
+                margin-bottom: 2rem;
+            }
+
+            .footer-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.45rem;
+                padding: 0.4rem 0.9rem;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                color: #ffffff !important;
+                font-size: 0.88rem;
+                text-decoration: none !important;
+                transition: all 0.25 ease;
+            }
+
+            .footer-badge:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+            }
+
+            body.light-mode .footer-badge {
+                background: rgba(0, 0, 0, 0.05);
+                border-color: rgba(0, 0, 0, 0.12);
+                color: #1a202c !important;
+            }
+
             /* --- REMOVE EXCESS PADDING ABOVE 'ABOUT ME' --- */
             #main.wrapper {
                 padding-top: 1.5em !important; /* Reduces template top padding */
@@ -467,15 +502,33 @@
                 </div>
             </div>
 
-            <!-- Footer -->
+<!-- Footer -->
             <footer id="footer">
-                <ul class="icons">
-                    <li><a href="mailto:dcbaxter@princeton.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-                    <li><a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://www.instagram.com/sentientstardust/" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="https://github.com/sentientstarstuff" target="_blank" rel="noopener noreferrer" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                </ul>
+                <div class="footer-cta">
+                    <h3>Let's Connect</h3>
+                </div>
+
+                <div class="footer-badges">
+                    <a href="https://github.com/sentientstarstuff" target="_blank" rel="noopener noreferrer" class="footer-badge">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/taebaxter/" target="_blank" rel="noopener noreferrer" class="footer-badge">
+                        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="mailto:dcbaxter@princeton.edu" class="footer-badge">
+                        <i class="fa-solid fa-envelope"></i> Email
+                    </a>
+                    <a href="https://www.duolingo.com/profile/YOUR_DUOLINGO_USERNAME" target="_blank" rel="noopener noreferrer" class="footer-badge duolingo-badge">
+                        <i class="fa-solid fa-language"></i> Duolingo
+                    </a>
+                    <a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="footer-badge">
+                        <i class="fa-brands fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://www.instagram.com/sentientstardust/" target="_blank" rel="noopener noreferrer" class="footer-badge">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </div>
+
                 <ul class="copyright">
                     <li>&copy; Devontae C. Baxter. All rights reserved.</li>
                     <li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
