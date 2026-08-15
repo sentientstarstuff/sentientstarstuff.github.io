@@ -20,14 +20,14 @@
 
         <style>
 
-        /* --- REVAMP FOOTER --- */
-        .footer-badges {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.6rem;
-                margin-bottom: 2rem;
-            }
+            /* --- REVAMP FOOTER --- */
+            .footer-badges {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 0.6rem;
+                    margin-bottom: 2rem;
+                }
 
             .footer-badge {
                 display: inline-flex;
@@ -52,6 +52,21 @@
                 background: rgba(0, 0, 0, 0.05);
                 border-color: rgba(0, 0, 0, 0.12);
                 color: #1a202c !important;
+            }
+
+            /* --- REDUCE TOP PADDING & MARGIN FOR FOOTER --- */
+            #footer {
+                padding-top: 1.5em !important; /* Reduces the large default template padding */
+                margin-top: 0 !important;
+            }
+
+            #footer .footer-cta {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            #footer .footer-cta h3 {
+                margin-top: 0 !important; /* Removes default browser margin above heading */
             }
 
             /* --- REMOVE EXCESS PADDING ABOVE 'ABOUT ME' --- */
@@ -505,7 +520,7 @@
 <!-- Footer -->
             <footer id="footer">
                 <div class="footer-cta">
-                    <h3>Let's Connect</h3>
+                    <h3>Let's Connect!</h3>
                 </div>
 
                 <div class="footer-badges">
@@ -518,7 +533,7 @@
                     <a href="mailto:dcbaxter@princeton.edu" class="footer-badge">
                         <i class="fa-solid fa-envelope"></i> Email
                     </a>
-                    <a href="https://www.duolingo.com/profile/YOUR_DUOLINGO_USERNAME" target="_blank" rel="noopener noreferrer" class="footer-badge duolingo-badge">
+                    <a href="https://www.duolingo.com/profile/CosmicPrimate" target="_blank" rel="noopener noreferrer" class="footer-badge duolingo-badge">
                         <i class="fa-brands fa-duolingo"></i>Duolingo
                     </a>
                     <a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="footer-badge">
