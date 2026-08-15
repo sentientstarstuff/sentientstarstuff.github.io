@@ -341,6 +341,12 @@
                 color: #2d3748 !important;
             }
 
+            /* Fixes <strong> text in light mode so it stands out clearly in black/dark charcoal */
+            body.light-mode strong,
+            body.light-mode b {
+                color: #1a202c !important;
+            }
+
             body.light-mode .profile-email {
                 color: #2563eb !important;
             }
@@ -381,22 +387,40 @@
                     flex-direction: column !important;
                     align-items: center !important;
                     text-align: center !important;
-                    gap: 1.5rem !important;
+                    gap: 1.25rem !important;
                 }
 
+                /* Unwraps profile-left flex container on mobile to re-order items logically */
                 .profile-left {
-                    flex: 0 0 auto !important;
-                    width: 100%;
+                    display: contents !important;
                 }
 
+                /* 1. Photo First */
                 .profile-left img {
+                    order: 1 !important;
                     max-width: 170px !important;
+                    margin-bottom: 0.25rem !important;
                 }
 
+                /* 2. Heading & Bio Intro Second */
                 .profile-right {
+                    order: 2 !important;
                     text-align: center !important;
                     flex: 0 0 auto !important;
-                    width: 100%;
+                    width: 100% !important;
+                }
+
+                /* 3. Academic Details & Institutional Info Third */
+                .profile-info {
+                    order: 3 !important;
+                    width: 100% !important;
+                    margin-bottom: 0.5rem !important;
+                }
+
+                /* 4. Social & Links Buttons Fourth */
+                .profile-socials {
+                    order: 4 !important;
+                    width: 100% !important;
                 }
 
                 .profile-right h2 {
