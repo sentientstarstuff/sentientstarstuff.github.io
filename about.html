@@ -14,12 +14,34 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-        <link rel="stylesheet" href="https://cloudflare.com">
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
+
+            /* FIX DUOLINGO ICON */
+            .duolingo-mask-icon {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-color: #ffffff; /* Default dark mode icon color */
+                -webkit-mask: url('images/duolingo.svg') no-repeat center / contain;
+                mask: url('images/duolingo.svg') no-repeat center / contain;
+                vertical-align: middle;
+                transition: background-color 0.3s ease;
+            }
+
+            /* Match light mode colors */
+            body.light-mode .duolingo-mask-icon {
+                background-color: #1a202c;
+            }
+
+            /* Match hover state */
+            a:hover .duolingo-mask-icon {
+                background-color: #60a5fa; /* Soft accent blue */
+            }
 
             /* --- REVAMP FOOTER --- */
             .footer-badges {
@@ -534,9 +556,16 @@
                     <a href="mailto:dcbaxter@princeton.edu" class="footer-badge">
                         <i class="fa-solid fa-envelope"></i> Email
                     </a>
-                    <a href="https://www.duolingo.com/profile/CosmicPrimate" target="_blank" rel="noopener noreferrer" class="footer-badge duolingo-badge">
-                        <i class="fa-brands fa-duolingo"></i>Duolingo
+
+                    <!-- <a href="https://www.duolingo.com/profile/CosmicPrimate" target="_blank" rel="noopener noreferrer" class="icon alt" title="Duolingo">
+                        <span class="duolingo-mask-icon"></span>
+                        <span class="label">Duolingo</span>
+                    </a> -->
+
+                    <a href="https://www.duolingo.com/profile/YOUR_DUOLINGO_USERNAME" target="_blank" rel="noopener noreferrer" class="footer-badge duolingo-badge">
+                        <i class="fa-brands fa-duolingo"></i> Duolingo
                     </a>
+
                     <a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="footer-badge">
                         <i class="fa-brands fa-twitter"></i> Twitter
                     </a>
