@@ -10,336 +10,286 @@
           gtag('config', 'G-RY38BXSTQB');
         </script>
         
-        <title>Research | Devontae C. Baxter, PhD</title>
+        <title>Home | Devontae C. Baxter, PhD</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+
+        <!-- FontAwesome CDN for Google Scholar icon support -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
-            /* --- WIDENED CONTAINER (MATCHES ABOUT PAGE) --- */
-            .research-container {
-                max-width: 1350px;
-                margin: 0 auto;
-                padding: 0 2.5rem 4rem 2.5rem;
+            /* --- KILL TEMPLATE GHOST SPACERS & FORCE TOP ALIGNMENT --- */
+            #banner::before,
+            #banner::after,
+            #banner .content::before,
+            #banner .content::after {
+                display: none !important;
+                content: none !important;
+                height: 0 !important;
             }
 
-            .research-header-title {
-                font-size: 2.8rem;
-                font-weight: 800;
-                text-align: center;
-                margin-top: 0 !important;
-                margin-bottom: 0.5rem;
-                color: #ffffff;
+            #banner {
+                position: relative !important;
+                display: block !important;
+                height: auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+                padding: 5em 2em 4em 2em !important; 
+                margin: 0 !important;
+                top: 0 !important;
+                background: #11141a !important; /* Deep cosmic space color */
+                overflow: hidden !important;
+                transition: background 0.3s ease;
             }
 
-            /* --- QUOTE BOX (EXACT MATCH TO ABOUT PAGE) --- */
-            .quote-box {
-                text-align: center;
-                font-style: italic;
-                font-size: 1.25rem;
-                margin: 1.5rem auto 3.5rem auto;
-                max-width: 950px;
-                padding: 1.25rem 2rem;
-                border-left: 4px solid #3b82f6;
-                background: rgba(255, 255, 255, 0.04);
-                border-radius: 0 8px 8px 0;
-                color: #e2e8f0;
-            }
-
-            /* --- SECTION STYLING --- */
-            .research-section {
-                margin-bottom: 4rem;
-                line-height: 1.85;
-                font-size: 1.15rem;
-            }
-
-            .research-section h3 {
-                font-size: 1.8rem;
-                font-weight: 700;
-                margin-bottom: 1.25rem;
-                color: #ffffff;
-                border-bottom: 2px solid rgba(255, 255, 255, 0.12);
-                padding-bottom: 0.5rem;
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-            }
-
-            .research-section h3 i {
-                color: #60a5fa;
-            }
-
-            /* --- RESEARCH INTEREST CARDS WITH IMAGES --- */
-            .interest-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 1.75rem;
-                margin-top: 2rem;
-            }
-
-            .interest-card {
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                overflow: hidden;
-                transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .interest-card:hover {
-                transform: translateY(-5px);
-                background: rgba(255, 255, 255, 0.08);
-                border-color: rgba(96, 165, 250, 0.4);
-                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-            }
-
-            .interest-card-img-wrapper {
-                position: relative;
-                width: 100%;
-                height: 200px;
-                overflow: hidden;
-            }
-
-            .interest-card-img-wrapper img {
+            /* --- COSMIC CANVAS --- */
+            #cosmic-canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
-                transition: transform 0.5s ease;
+                pointer-events: none; /* Mouse passes through to links */
+                z-index: 1;
             }
 
-            .interest-card:hover .interest-card-img-wrapper img {
-                transform: scale(1.06);
+            #banner .content {
+                position: relative;
+                z-index: 2; /* Keeps text & photo on top of stars */
+                display: block !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
+                transform: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                max-width: 1050px;
             }
 
-            .interest-badge {
-                position: absolute;
-                top: 12px;
-                right: 12px;
-                background: rgba(15, 23, 42, 0.75);
+            /* --- CUSTOM PROFILE CARD LAYOUT --- */
+            .profile-container {
+                display: flex !important;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: stretch !important; /* Forces right side to match left side height */
+                justify-content: center;
+                gap: 3rem;
+                width: 100%;
+                text-align: left;
+                background: rgba(23, 28, 38, 0.75); /* Semi-transparent frosted glass look */
                 backdrop-filter: blur(8px);
-                color: #60a5fa;
-                border: 1px solid rgba(96, 165, 250, 0.3);
-                border-radius: 20px;
-                padding: 0.35rem 0.85rem;
-                font-size: 0.8rem;
-                font-weight: 700;
-                display: flex;
-                align-items: center;
-                gap: 0.4rem;
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                padding: 3rem 2.5rem;
+                border-radius: 16px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+                transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             }
 
-            .interest-card-content {
-                padding: 1.5rem;
+            .profile-left {
+                flex: 0 0 260px;
                 display: flex;
                 flex-direction: column;
-                flex-grow: 1;
-            }
-
-            .interest-card h4 {
-                font-size: 1.3rem;
-                font-weight: 700;
-                color: #ffffff;
-                margin-bottom: 0.6rem;
-            }
-
-            .interest-card p {
-                font-size: 0.98rem;
-                line-height: 1.65;
-                color: rgba(255, 255, 255, 0.85);
-                margin: 0;
-            }
-
-            /* --- SUBPAGE HUB CARDS --- */
-            .hub-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                gap: 1.5rem;
-                margin: 2rem 0 3.5rem 0;
-            }
-
-            .hub-card {
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                padding: 1.5rem 2rem;
-                display: flex;
                 align-items: center;
-                justify-content: space-between;
-                text-decoration: none;
-                transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+                text-align: center;
             }
 
-            .hub-card:hover {
-                transform: translateY(-4px);
-                background: rgba(255, 255, 255, 0.08);
-                border-color: rgba(96, 165, 250, 0.4);
-            }
-
-            .hub-card h4 {
-                margin: 0 0 0.3rem 0;
-                color: #60a5fa;
-                font-size: 1.2rem;
-                font-weight: 700;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .hub-card p {
-                margin: 0;
-                font-size: 0.95rem;
-                color: rgba(255, 255, 255, 0.85);
-                line-height: 1.5;
-            }
-
-            .hub-card i.chevron {
-                color: #60a5fa;
-                font-size: 1.2rem;
-            }
-
-            /* --- INTERACTIVE CATEGORY FILTER TABS --- */
-            .filter-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.75rem;
-                justify-content: center;
-                margin: 2rem 0 2.5rem 0;
-            }
-
-            .filter-btn {
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.15);
-                color: rgba(255, 255, 255, 0.85);
-                padding: 0.5rem 1.25rem;
-                border-radius: 20px;
-                font-size: 0.95rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.25s ease;
-            }
-
-            .filter-btn.active, .filter-btn:hover {
-                background: rgba(59, 130, 246, 0.2);
-                border-color: #3b82f6;
-                color: #60a5fa;
-            }
-
-            /* --- PROJECT CARDS --- */
-            .project-card {
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                padding: 2rem;
-                margin-bottom: 2rem;
-                transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-            }
-
-            .project-card:hover {
-                background: rgba(255, 255, 255, 0.07);
-                border-color: rgba(96, 165, 250, 0.3);
-            }
-
-            .project-card.hidden {
-                display: none !important;
-            }
-
-            .project-header {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: baseline;
-                gap: 1rem;
-                margin-bottom: 0.75rem;
-            }
-
-            .project-header h4 {
-                font-size: 1.35rem;
-                font-weight: 700;
-                color: #ffffff;
-                margin: 0;
-            }
-
-            .project-status {
-                font-size: 0.88rem;
-                font-weight: 700;
-                color: #60a5fa;
-                background: rgba(96, 165, 250, 0.15);
-                padding: 0.25rem 0.75rem;
-                border-radius: 12px;
-                border: 1px solid rgba(96, 165, 250, 0.3);
-            }
-
-            .project-body {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                align-items: center;
-                margin-top: 1rem;
-            }
-
-            .project-body img {
+            /* --- CIRCULAR HEADSHOT STYLING --- */
+            .profile-left img {
                 width: 100%;
-                max-width: 320px;
-                border-radius: 8px;
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            }
-
-            .project-desc {
-                flex: 1 1 400px;
-            }
-
-            .project-desc p {
+                max-width: 230px;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 50% !important; /* Forces a perfect circle */
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
                 margin-bottom: 1.25rem;
-                font-size: 1.05rem;
-                line-height: 1.7;
+                display: block;
+                border: 2px solid rgba(255, 255, 255, 0.15); /* Subtle outline ring */
+                transition: border-color 0.3s ease;
             }
 
-            /* --- PUBLICATION LISTS --- */
-            .pub-list {
-                line-height: 1.9;
-                font-size: 1.05rem;
-                padding-left: 1.25rem;
+            .profile-right {
+                flex: 1 1 450px;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important; /* Centers heading & bio vertically */
+                align-self: stretch !important;    /* Ensures full vertical height */
+                padding: 0.5rem 0;
             }
 
-            .pub-list li {
-                margin-bottom: 0.75rem;
+            .profile-right h2 {
+                font-size: 2.8rem;
+                font-weight: 800;
+                margin-top: 0 !important;
+                margin-bottom: 1rem !important;
+                line-height: 1.2;
+                color: #ffffff;
             }
 
-            .pub-list a {
-                color: #60a5fa;
-                text-decoration: none;
+            .profile-right p {
+                font-size: 1.25rem;
+                line-height: 1.75;
+                margin-bottom: 0 !important;
+            }
+
+            .profile-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.25rem;
+                margin-bottom: 1.25rem;
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+
+            .profile-org {
+                font-weight: 800;
+                font-size: 1.15rem;
+                color: #ffffff;
+            }
+
+            .profile-dept {
+                font-size: 0.9rem;
+                opacity: 0.8;
+                margin-bottom: 0.35rem;
+            }
+
+            .profile-title {
+                display: inline-block;
+                font-size: 0.95rem;
                 font-weight: 600;
+                color: #a0aec0;
             }
 
-            .pub-list a:hover {
-                text-decoration: underline;
+            .profile-email {
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                opacity: 0.9;
+                text-decoration: none !important;
+                transition: opacity 0.2s ease, color 0.2s ease;
             }
 
-            /* --- THEME TOGGLE BUTTON STYLING --- */
+            .profile-email:hover {
+                opacity: 1;
+                text-decoration: underline !important;
+            }
+
+            /* Styling for the custom CV badge icon */
+            .cv-icon-badge {
+                position: relative;
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .cv-icon-badge .cv-text {
+                font-size: 0.65rem;
+                font-weight: 800;
+                font-family: system-ui, -apple-system, sans-serif;
+                letter-spacing: -0.5px;
+                background: #4a5568;
+                color: #fff;
+                padding: 1px 4px;
+                border-radius: 4px;
+                position: absolute;
+                bottom: -2px;
+                right: -4px;
+                line-height: 1;
+                border: 1.5px solid #171c26; /* Matches dark mode background */
+            }
+
+            body.light-mode .cv-icon-badge .cv-text {
+                background: #2d3748;
+                border-color: #ffffff;
+            }
+
+            /* --- Waving Hand Animation --- */
+            .wave {
+                display: inline-block;
+                animation: wave-animation 2.5s infinite;
+                transform-origin: 70% 70%;
+            }
+
+            @keyframes wave-animation {
+                0% { transform: rotate(0deg); }
+                10% { transform: rotate(14deg); }
+                20% { transform: rotate(-8deg); }
+                30% { transform: rotate(14deg); }
+                40% { transform: rotate(-4deg); }
+                50% { transform: rotate(10deg); }
+                60% { transform: rotate(0deg); }
+                100% { transform: rotate(0deg); }
+            }
+
+            /* --- Custom Social Icons --- */
+            .profile-socials {
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+                flex-wrap: wrap;
+                margin: 0.5rem 0 0 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .profile-socials li {
+                padding-left: 0 !important;
+            }
+
+            .profile-socials a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.15);
+                color: #fff !important;
+                text-decoration: none;
+                transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
+                border: none;
+            }
+
+            .profile-socials a:hover {
+                background: rgba(255, 255, 255, 0.35);
+                transform: translateY(-3px);
+            }
+
+            .profile-socials a i.ai {
+                font-size: 1.15rem;
+                line-height: 1;
+            }
+
+            /* --- INTEGRATED NAV THEME TOGGLE BUTTON --- */
+            #nav ul li.nav-toggle-item {
+                display: inline-flex;
+                align-items: center;
+                margin-left: 0.5rem;
+            }
+
             .theme-toggle-btn {
                 background: transparent;
                 border: 1px solid rgba(255, 255, 255, 0.3);
                 color: #f1f5f9;
-                padding: 0.35rem 0.75rem;
+                padding: 0.25rem 0.65rem;
                 border-radius: 20px;
                 cursor: pointer;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 transition: all 0.3s ease;
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
+                line-height: 1.5;
             }
 
             .theme-toggle-btn:hover {
-                background: rgba(255, 255, 255, 0.1);
+                background: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.5);
             }
 
-            /* --- LIGHT MODE COMPREHENSIVE FIXES --- */
+            /* --- LIGHT MODE OVERRIDES --- */
             body.light-mode {
                 background-color: #f4f6f9 !important;
                 color: #2e3440 !important;
@@ -370,83 +320,98 @@
                 color: #d97706 !important;
             }
 
-            body.light-mode .research-header-title,
-            body.light-mode .research-section h3,
-            body.light-mode .project-header h4,
-            body.light-mode .interest-card h4 {
+            body.light-mode #banner {
+                background: #f0f4f9 !important;
+            }
+
+            body.light-mode .profile-container {
+                background: rgba(255, 255, 255, 0.88) !important;
+                border-color: rgba(0, 0, 0, 0.1) !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+            }
+
+            body.light-mode .profile-org,
+            body.light-mode .profile-right h2 {
                 color: #1a202c !important;
             }
 
-            body.light-mode .research-section h3 {
-                border-bottom-color: rgba(0, 0, 0, 0.12) !important;
-            }
-
-            body.light-mode .research-section,
-            body.light-mode .research-section p,
-            body.light-mode .project-desc p,
-            body.light-mode .interest-card p,
-            body.light-mode .pub-list li {
+            body.light-mode .profile-dept,
+            body.light-mode .profile-title,
+            body.light-mode .profile-right p {
                 color: #2d3748 !important;
             }
 
-            body.light-mode .quote-box {
-                background: rgba(0, 0, 0, 0.04) !important;
-                color: #2d3748 !important;
-            }
-
-            body.light-mode .hub-card,
-            body.light-mode .project-card,
-            body.light-mode .interest-card {
-                background: #ffffff !important;
-                border-color: rgba(0, 0, 0, 0.1) !important;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            }
-
-            body.light-mode .interest-badge {
-                background: rgba(255, 255, 255, 0.85);
-                color: #2563eb;
-                border-color: rgba(37, 99, 235, 0.3);
-            }
-
-            body.light-mode .hub-card p {
-                color: #4a5568 !important;
-            }
-
-            body.light-mode .filter-btn {
-                background: #ffffff;
-                border-color: rgba(0, 0, 0, 0.15);
-                color: #4a5568;
-            }
-
-            body.light-mode .filter-btn.active,
-            body.light-mode .filter-btn:hover {
-                background: rgba(37, 99, 235, 0.1);
-                border-color: #2563eb;
-                color: #2563eb;
-            }
-
-            body.light-mode .pub-list a,
-            body.light-mode .research-section h3 i,
-            body.light-mode .hub-card h4,
-            body.light-mode .hub-card i.chevron {
+            body.light-mode .profile-email {
                 color: #2563eb !important;
             }
 
-            #main.wrapper {
-                padding-top: 1.5em !important;
+            body.light-mode .profile-left img {
+                border-color: rgba(0, 0, 0, 0.15) !important;
             }
 
-            /* Mobile Responsive */
+            body.light-mode .profile-socials a {
+                background: rgba(0, 0, 0, 0.07) !important;
+                color: #1a202c !important;
+            }
+
+            body.light-mode .profile-socials a:hover {
+                background: rgba(37, 99, 235, 0.15) !important;
+                color: #2563eb !important;
+            }
+
+            /* --- RESPONSIVE / MOBILE CLEANUP --- */
+            @media screen and (max-width: 980px) {
+                #navPanel #theme-toggle {
+                    margin: 10px 0;
+                    width: auto;
+                }
+
+                /* Fixes stray/floating dropotron menus on mobile screens */
+                .dropotron {
+                    display: none !important;
+                }
+            }
+
             @media screen and (max-width: 736px) {
-                .research-container {
-                    padding: 0 1.25rem 2rem 1.25rem;
+                #banner {
+                    padding: 4.5em 1em 2em 1em !important;
                 }
-                .research-header-title {
-                    font-size: 2.2rem;
+
+                .profile-container {
+                    padding: 2rem 1.25rem !important;
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    text-align: center !important;
+                    gap: 1.5rem !important;
                 }
-                .project-body {
-                    flex-direction: column;
-                    text-align: center;
+
+                .profile-left {
+                    flex: 0 0 auto !important;
+                    width: 100%;
+                }
+
+                .profile-left img {
+                    max-width: 170px !important;
+                }
+
+                .profile-right {
+                    text-align: center !important;
+                    flex: 0 0 auto !important;
+                    width: 100%;
+                }
+
+                .profile-right h2 {
+                    font-size: 1.8rem !important;
+                }
+
+                .profile-right p {
+                    font-size: 1.05rem !important;
+                    line-height: 1.6 !important;
+                }
+
+                .profile-socials a {
+                    width: 38px !important;
+                    height: 38px !important;
                 }
             }
         </style>
@@ -455,241 +420,78 @@
         <div id="page-wrapper">
 
             <!-- Header Navigation -->
-            <header id="header" style="display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;">
-                <div style="display: flex; align-items: center; gap: 1.5rem;">
-                    <h1 id="logo" style="margin: 0;"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-                </div>
-
-                <nav id="nav" style="display: flex; align-items: center; gap: 1.5rem;">
+            <header id="header">
+                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+                <nav id="nav">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#" class="button primary">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="#" class="button primary">Research</a></li>
+                        <li><a href="research.html">Research</a></li>
                         <li>
                             <a href="mentorship.html">Mentorship &amp; Outreach</a>
                             <ul>
                                 <li><a href="CARP.html">CARP Program</a></li>
                             </ul>
                         </li>
+                        <!-- Theme Toggle integrated directly into navigation -->
+                        <li class="nav-toggle-item">
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                                <i class="fa-solid fa-moon" id="theme-icon"></i>
+                            </button>
+                        </li>
                     </ul>
-
-                    <!-- Theme Toggle Button -->
-                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" style="margin-left: 1rem;">
-                        <i class="fa-solid fa-moon" id="theme-icon"></i>
-                    </button>
                 </nav>
             </header>
 
-            <!-- Main Content Container -->
-            <div id="main" class="wrapper style1" style="padding-top: 1.5em !important;">
-                <div class="research-container" style="padding-top: 0 !important;">
-
-                    <!-- Page Title & Sagan Quote -->
-                    <h2 class="research-header-title" style="margin-top: 0 !important;">Research Overview</h2>
-
-                    <div class="quote-box">
-                        “Somewhere, something incredible is waiting to be known.” 
-                        <br><span style="font-size: 0.9rem; opacity: 0.85;">— Carl E. Sagan</span>
-                    </div>
-
-                    <!-- Research Interests (Funnel Approach) -->
-                    <section class="research-section">
-                        <h3><i class="fa-solid fa-atom"></i> Research Interests</h3>
-                        <p>
-                            The galaxies we observe today display extraordinary diversity in their colors, shapes, sizes, and masses. Galaxy properties strongly correlate with their environments: isolated galaxies residing in sparsely populated regions of the cosmos tend to be gas-rich, actively star-forming, and spiral in morphology, evolving far differently from those packed into the bustling cosmic cities of galaxy clusters. My research bridges multi-wavelength observations and cosmological hydrodynamical simulations to disentangle the complex physical mechanisms driving this differential evolution across diverse cosmic environments.
-                        </p>
-
-                        <!-- Visual Cards for Core Themes -->
-                        <div class="interest-grid">
+            <!-- Banner Content Area with Canvas Background -->
+            <section id="banner">
+                <canvas id="cosmic-canvas"></canvas>
+                
+                <div class="content">
+                    <div class="profile-container">
+                        
+                        <!-- Left Side: Photo, Details, Socials -->
+                        <div class="profile-left">
+                            <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter" />
                             
-                            <!-- Card 1: Dwarf Galaxies -->
-                            <div class="interest-card">
-                                <div class="interest-card-img-wrapper">
-                                    <img src="images/dwarf-galaxy.jpg" alt="Dwarf Galaxy image" />
-                                    <span class="interest-badge"><i class="fa-solid fa-circle-nodes"></i> Small Scales</span>
-                                </div>
-                                <div class="interest-card-content">
-                                    <h4>Dwarf Galaxies</h4>
-                                    <p>
-                                        Dwarf galaxies are both the most numerous and the most fragile systems in the universe. Due to their shallow gravitational potential wells, studying these low-mass systems across diverse environments provides a sensitive laboratory for uncovering how internal feedback and external environmental processes shape galaxy evolution.
-                                    </p>
-                                </div>
+                            <div class="profile-info">
+                                <span class="profile-org">Princeton University</span>
+                                <span class="profile-dept">Department of Astrophysical Sciences</span>
+                                <span class="profile-title">FFPS Postdoctoral Fellow</span>
+                                <a href="mailto:dcbaxter@princeton.edu" class="profile-email">
+                                    <i class="fa-regular fa-envelope"></i> dcbaxter@princeton.edu
+                                </a>
                             </div>
 
-                            <!-- Card 2: Galaxy Groups & Clusters -->
-                            <div class="interest-card">
-                                <div class="interest-card-img-wrapper">
-                                    <img src="images/coma-cluster.webp" alt="Coma Galaxy Cluster" />
-                                    <span class="interest-badge"><i class="fa-brands fa-galactic-republic"></i> Large Scales</span>
-                                </div>
-                                <div class="interest-card-content">
-                                    <h4>Galaxy Groups &amp; Clusters</h4>
-                                    <p>
-                                        Galaxy groups and clusters represent the densest nodes of the cosmic web. Investigating galaxy populations within these extreme environments across cosmic time allows us to quantify how dense surroundings starve galaxies of gas, accelerate star-formation suppression, and alter their evolutionary pathways compared to field environments.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Card 3: The High-Redshift Universe -->
-                            <div class="interest-card">
-                                <div class="interest-card-img-wrapper">
-                                    <img src="images/spiderweb-protocluster.webp" alt="Spiderweb Protocluster at high-z" />
-                                    <span class="interest-badge"><i class="fa-solid fa-clock"></i> Early Universe</span>
-                                </div>
-                                <div class="interest-card-content">
-                                    <h4>The High-Redshift Universe</h4>
-                                    <p>
-                                        Powerful infrared observatories like JWST and Roman are opening unprecedented windows into the early universe. My work focuses on studying galaxy protoclusters—the densest structures in the early cosmos—to detect the earliest signatures of environmental impact on galaxy evolution during the epoch of peak cluster assembly.
-                                    </p>
-                                </div>
-                            </div>
-
+                            <!-- Social Icons -->
+                            <ul class="profile-socials">
+                                <!-- CV -->
+                                <li><a href="CV.pdf" target="_blank" title="Curriculum Vitae (CV)"><i class="ai ai-cv ai-3x"></i></a></li>
+                                
+                                <!-- NASA ADS -->
+                                <li><a href="https://ui.adsabs.harvard.edu/public-libraries/jFJRwpWtSMqBBCSsXhm8-w" target="_blank" title="NASA ADS"><i class="ai ai-ads ai-3x"></i></a></li>
+                            
+                                <!-- Google Scholar -->
+                                <li><a href="https://scholar.google.com/citations?user=AeB9S3cAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar ai-3x"></i></a></li>
+                                
+                                <!-- ORCID -->
+                                <li><a href="https://orcid.org/0000-0002-8209-2783" target="_blank" title="ORCID"><i class="ai ai-orcid ai-3x"></i></a></li>
+                                
+                                <!-- LinkedIn -->
+                                <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
                         </div>
-                    </section>
 
-                    <!-- Subpage Hub Buttons -->
-                    <div class="hub-grid">
-                        <a href="research-presentations.html" class="hub-card">
-                            <div>
-                                <h4><i class="fa-solid fa-display"></i> Research Presentations</h4>
-                                <p>Explore recorded talks and slides from previous conferences, seminars, and colloquia.</p>
-                            </div>
-                            <i class="fa-solid fa-chevron-right chevron"></i>
-                        </a>
-
-                        <a href="collaborations.html" class="hub-card">
-                            <div>
-                                <h4><i class="fa-solid fa-network-wired"></i> Ongoing Collaborations</h4>
-                                <p>Learn about previous and ongoing work from the C3VO, GRACE, and GOGREEN research collaborations.</p>
-                            </div>
-                            <i class="fa-solid fa-chevron-right chevron"></i>
-                        </a>
+                        <!-- Right Side: Header and Bio -->
+                        <div class="profile-right">
+                            <h2>Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
+                            <p>
+                                I’m an <strong>observational and computational astrophysicist</strong>. My research combines data from <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to uncover the <strong>drivers of galaxy growth and transformation</strong>. 
+                            </p>
+                        </div>
                     </div>
-
-                    <!-- Research Projects & Filter Tabs -->
-                    <section class="research-section">
-                        <h3><i class="fa-solid fa-galaxy"></i> Featured Research Projects</h3>
-
-                        <!-- Interactive Filter Tabs -->
-                        <div class="filter-container">
-                            <button class="filter-btn active" data-filter="all">All Focus Areas</button>
-                            <button class="filter-btn" data-filter="dwarfs">Dwarf Galaxies</button>
-                            <button class="filter-btn" data-filter="clusters">Galaxy Clusters &amp; Groups</button>
-                            <button class="filter-btn" data-filter="protoclusters">Protoclusters &amp; High-z</button>
-                        </div>
-
-                        <!-- Project 1: Dwarfs -->
-                        <div class="project-card" data-category="dwarfs">
-                            <div class="project-header">
-                                <h4>Environmental Quenching of Dwarf Galaxies Beyond the Local Group</h4>
-                                <span class="project-status">Baxter et al. (2021)</span>
-                            </div>
-                            <div class="project-body">
-                                <img src="images/baxter21.webp" alt="Dwarf satellite quenching plot" />
-                                <div class="project-desc">
-                                    <p>
-                                        Combining supervised machine learning with statistical background subtraction to classify star formation activity in dwarf satellites surrounding SDSS galaxy groups ($z < 0.1$). We demonstrated that satellite quenched fraction turns over around $10^9 M_\odot$, proving that environmental quenching efficiency accelerates dramatically for low-mass dwarf systems.
-                                    </p>
-                                    <a href="https://ui.adsabs.harvard.edu/link_gateway/2021MNRAS.503.1636B/PUB_PDF" target="_blank" rel="noopener noreferrer" class="button small">
-                                        <i class="fa-solid fa-file-pdf"></i> View PDF Publication
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 2: Clusters -->
-                        <div class="project-card" data-category="clusters">
-                            <div class="project-header">
-                                <h4>Environmental Quenching in Massive Galaxy Clusters at z ~ 1</h4>
-                                <span class="project-status">Baxter et al. (2022, 2023)</span>
-                            </div>
-                            <div class="project-body">
-                                <img src="images/baxter22.webp" alt="Satellite quenching timescales plot" />
-                                <div class="project-desc">
-                                    <p>
-                                        Combining satellite quenched fractions from 14 galaxy clusters in the GOGREEN and GCLASS surveys with infall histories from TNG-300 simulations to constrain quenching timescales. We found that satellite quenching timescales for massive galaxies at $z \sim 1$ match expected cold gas depletion timescales, identifying gas "starvation" as the primary quenching driver in cluster environments.
-                                    </p>
-                                    <a href="https://ui.adsabs.harvard.edu/link_gateway/2022MNRAS.515.5479B/PUB_PDF" target="_blank" rel="noopener noreferrer" class="button small">
-                                        <i class="fa-solid fa-file-pdf"></i> View PDF Publication
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 3: Groups -->
-                        <div class="project-card" data-category="clusters">
-                            <div class="project-header">
-                                <h4>Cosmic Evolution of Group Environmental Quenching Since z ~ 0.8</h4>
-                                <span class="project-status">Baxter et al. (2025a)</span>
-                            </div>
-                            <div class="project-body">
-                                <img src="images/baxter25ab.webp" alt="Redshift evolution of quenching" />
-                                <div class="project-desc">
-                                    <p>
-                                        Analyzing multi-cycle Keck/DEIMOS spectroscopy targeting satellite candidates in $z \sim 0.8$ galaxy groups. We established the first spectroscopic measurement of satellite quiescent fraction down to $10^{9.5} M_\odot$ at this redshift, showing that the doubling of group quenching timescales since $z \sim 1$ stems from declining starvation efficiency as cosmic gas supplies decline.
-                                    </p>
-                                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad9aa4/pdf" target="_blank" rel="noopener noreferrer" class="button small">
-                                        <i class="fa-solid fa-file-pdf"></i> View PDF Publication
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project 4: Protoclusters -->
-                        <div class="project-card" data-category="protoclusters">
-                            <div class="project-header">
-                                <h4>Quantifying Survey Incompleteness in Galaxy Protoclusters</h4>
-                                <span class="project-status">Baxter et al. (2025b)</span>
-                            </div>
-                            <div class="project-body">
-                                <img src="images/baxter25c.webp" alt="Protocluster recovery fraction plot" />
-                                <div class="project-desc">
-                                    <p>
-                                        Leveraging the TNG-Cluster simulation to quantify how mass and star-formation incompleteness skews protocluster identification at $z > 2$. We revealed that surveys limited to massive galaxies miss the true protocluster core in $>50\%$ of cases by offsets exceeding 1 proper Mpc, showing how survey limits directly shape density inferences.
-                                    </p>
-                                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/adf644/pdf" target="_blank" rel="noopener noreferrer" class="button small">
-                                        <i class="fa-solid fa-file-pdf"></i> View PDF Publication
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Publications Section -->
-                    <section class="research-section">
-                        <h3><i class="fa-solid fa-book-bookmark"></i> Lead &amp; First-Author Publications</h3>
-                        <ul class="pub-list">
-                            <li><a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260708820B/abstract" target="_blank" rel="noopener noreferrer">What Becomes of JWST/NIRCam-Selected High-Redshift Massive Galaxies?</a> — <strong>D.C. Baxter</strong> et al. (2026)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv251206071M/abstract" target="_blank" rel="noopener noreferrer">The Quenched Fraction of Satellites Around Simulated Milky Way-mass Galaxies</a> — F. J. Mercado, <strong>D.C. Baxter</strong>, M. K. Rodriguez Wimberly et al. (2026)</li>
-                            <li><a href="https://arxiv.org/pdf/2504.03836" target="_blank" rel="noopener noreferrer">Quantifying the Impact of Incompleteness on Identifying &amp; Interpreting Galaxy Protocluster Populations w/ the TNG-Cluster Simulation</a> — <strong>D.C. Baxter</strong> et al. (2025b)</li>
-                            <li><a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad9aa4/pdf" target="_blank" rel="noopener noreferrer">The Importance of Gas Starvation in Driving Satellite Quenching in Galaxy Groups at z∼0.8</a> — <strong>D.C. Baxter</strong> et al. (2025a)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/link_gateway/2023arXiv230609404B/EPRINT_PDF" target="_blank" rel="noopener noreferrer">When the Well Runs Dry: Modeling Environmental Quenching in Massive Clusters at z≳1</a> — <strong>D.C. Baxter</strong> et al. (2023)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/link_gateway/2022MNRAS.515.5479B/PUB_PDF" target="_blank" rel="noopener noreferrer">The GOGREEN survey: Constraining the Satellite Quenching Time-scale in Massive Clusters at z ≳ 1</a> — <strong>D.C. Baxter</strong> et al. (2022)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/link_gateway/2021MNRAS.503.1636B/PUB_PDF" target="_blank" rel="noopener noreferrer">A Supervised Learning Approach for Exploring Low-Mass Satellite Quenching Beyond the Local Group</a> — <strong>D.C. Baxter</strong> et al. (2021)</li>
-                        </ul>
-
-                        <h3 style="margin-top: 3rem;"><i class="fa-solid fa-users-viewfinder"></i> Select Co-Authored Publications</h3>
-                        <ul class="pub-list">
-                            <li><a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...708A.114S/abstract" target="_blank" rel="noopener noreferrer">The HST-Hyperion survey: Environmental Imprints on the Stellar Mass Function at z ∼ 2.5</a> — D. Sikorsky et al. (2026)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/abs/2026A%26A...706A..55G/abstract" target="_blank" rel="noopener noreferrer">The HST-Hyperion survey: Companion Fraction and Overdensity in a z ∼ 2.5 Proto-Supercluster</a> — F. Giddings et al. (2026)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/abs/2025OJAp....8E.110S/abstract" target="_blank" rel="noopener noreferrer">Caught in the Act of Quenching? – A Population of Post-Starburst Ultra-Diffuse Galaxies</a> — L. Sandoval Ascencio et al. (2025)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.541..409H/abstract" target="_blank" rel="noopener noreferrer">Distinct Origins of Environmentally Quenched Galaxies in the Core and Outer Virialized Regions of Massive clusters at 0.8 < z < 1.5</a> — G. Hewitt et al. (2025)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.tmp..607G/abstract" target="_blank" rel="noopener noreferrer">Insights into Environmental Quenching at z ~ 1: An Enhancement of Faint, Low-Mass Passive Galaxies in Clusters</a> — H. Gully et al. (2025)</li>
-                            <li><a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250408894G/abstract" target="_blank" rel="noopener noreferrer">Gas Properties as a Function of Environment in the Proto-Supercluster Hyperion at z ~ 2.45</a> — G. Gururajan et al. (2025)</li>
-                            <li><a href="https://iopscience.iop.org/article/10.3847/2041-8213/ad380a/pdf" target="_blank" rel="noopener noreferrer">The First Quenched Galaxies: When and How?</a> — L. Xie et al. (2024)</li>
-                            <li><a href="https://academic.oup.com/mnras/article-pdf/518/3/4782/47760391/stac3438.pdf" target="_blank" rel="noopener noreferrer">GOGREEN: A Critical Assessment of Environmental Trends in Cosmological Hydrodynamical Simulations at z ≈ 1</a> — E. Kukstas et al. (2023)</li>
-                            <li><a href="https://academic.oup.com/mnras/article-pdf/513/4/4968/43796515/stac1265.pdf" target="_blank" rel="noopener noreferrer">Sizing from the Smallest Scales: the Mass of the Milky Way</a> — M.K. Rodriguez Wimberly et al. (2022)</li>
-                        </ul>
-
-                        <div style="text-align: center; margin-top: 2.5rem;">
-                            <a href="https://ui.adsabs.harvard.edu/public-libraries/jFJRwpWtSMqBBCSsXhm8-w" target="_blank" rel="noopener noreferrer" class="button primary">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Full ADS Publication Record
-                            </a>
-                        </div>
-                    </section>
-
                 </div>
-            </div>
+            </section>
 
             <!-- Footer -->
             <footer id="footer">
@@ -711,55 +513,178 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
-        <!-- Theme Switcher & Interactive Filtering Scripts -->
+        <!-- Theme Switcher JS -->
         <script>
-            // --- Theme Toggle Logic ---
-            const toggleBtn = document.getElementById('theme-toggle');
-            const themeIcon = document.getElementById('theme-icon');
-            
-            const currentTheme = localStorage.getItem('theme');
-            if (currentTheme === 'light') {
-                document.body.classList.add('light-mode');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            }
-
-            toggleBtn.addEventListener('click', () => {
-                document.body.classList.toggle('light-mode');
-                
-                let theme = 'dark';
-                if (document.body.classList.contains('light-mode')) {
-                    theme = 'light';
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                } else {
-                    themeIcon.classList.replace('fa-sun', 'fa-moon');
-                }
-                
-                localStorage.setItem('theme', theme);
-            });
-
-            // --- Category Filtering Logic ---
             document.addEventListener('DOMContentLoaded', () => {
-                const filterBtns = document.querySelectorAll('.filter-btn');
-                const projectCards = document.querySelectorAll('.project-card');
+                const toggleBtn = document.getElementById('theme-toggle');
+                const themeIcon = document.getElementById('theme-icon');
+                
+                const applyTheme = (theme) => {
+                    if (theme === 'light') {
+                        document.body.classList.add('light-mode');
+                        if (themeIcon) {
+                            themeIcon.classList.remove('fa-moon');
+                            themeIcon.classList.add('fa-sun');
+                        }
+                    } else {
+                        document.body.classList.remove('light-mode');
+                        if (themeIcon) {
+                            themeIcon.classList.remove('fa-sun');
+                            themeIcon.classList.add('fa-moon');
+                        }
+                    }
+                };
 
-                filterBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        filterBtns.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
+                // Load stored preference
+                const currentTheme = localStorage.getItem('theme') || 'dark';
+                applyTheme(currentTheme);
 
-                        const filter = btn.getAttribute('data-filter');
-
-                        projectCards.forEach(card => {
-                            const category = card.getAttribute('data-category');
-                            if (filter === 'all' || category === filter) {
-                                card.classList.remove('hidden');
-                            } else {
-                                card.classList.add('hidden');
-                            }
-                        });
-                    });
+                // Handle toggle click (delegated to support cloned mobile nav instances)
+                document.addEventListener('click', (e) => {
+                    if (e.target.closest('#theme-toggle')) {
+                        const isLight = document.body.classList.contains('light-mode');
+                        const newTheme = isLight ? 'dark' : 'light';
+                        applyTheme(newTheme);
+                        localStorage.setItem('theme', newTheme);
+                    }
                 });
             });
         </script>
+
+        <!-- Cosmic Particle Effect Canvas JS -->
+        <script>
+        (function() {
+            const canvas = document.getElementById('cosmic-canvas');
+            const banner = document.getElementById('banner');
+            const ctx = canvas.getContext('2d');
+
+            let width, height;
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 120 };
+
+            function resize() {
+                width = canvas.width = banner.offsetWidth;
+                height = canvas.height = banner.offsetHeight;
+            }
+
+            banner.addEventListener('mousemove', (e) => {
+                const rect = banner.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+
+            banner.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            window.addEventListener('resize', () => {
+                resize();
+                init();
+            });
+
+            class Star {
+                constructor() {
+                    this.reset();
+                }
+
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 1.8 + 0.4;
+                    this.baseAlpha = Math.random() * 0.6 + 0.2;
+                    this.alpha = this.baseAlpha;
+                    this.vx = (Math.random() - 0.5) * 0.2;
+                    this.vy = (Math.random() - 0.5) * 0.2;
+                    this.twinkleSpeed = Math.random() * 0.02 + 0.005;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Wrap around canvas edges
+                    if (this.x < 0) this.x = width;
+                    if (this.x > width) this.x = 0;
+                    if (this.y < 0) this.y = height;
+                    if (this.y > height) this.y = 0;
+
+                    // Twinkle effect
+                    this.alpha += Math.sin(Date.now() * this.twinkleSpeed) * 0.008;
+                    this.alpha = Math.max(0.1, Math.min(0.8, this.alpha));
+
+                    // Mouse interaction (gently push/brighten nearby stars)
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            this.alpha = Math.min(1, this.baseAlpha + force * 0.5);
+                        }
+                    }
+                }
+
+                draw() {
+                    const isLight = document.body.classList.contains('light-mode');
+                    ctx.fillStyle = isLight 
+                        ? `rgba(50, 70, 110, ${this.alpha * 0.6})` 
+                        : `rgba(255, 255, 255, ${this.alpha})`;
+                    
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                particles = [];
+                // Scale particle count based on screen size
+                const particleCount = Math.floor((width * height) / 4500);
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Star());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Draw constellation connection lines for close stars
+                const isLight = document.body.classList.contains('light-mode');
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 85) {
+                            const lineAlpha = (1 - dist / 85) * 0.15;
+                            ctx.strokeStyle = isLight 
+                                ? `rgba(60, 90, 140, ${lineAlpha * 0.8})` 
+                                : `rgba(180, 210, 255, ${lineAlpha})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            resize();
+            init();
+            animate();
+        })();
+        </script>
+
     </body>
 </html>
