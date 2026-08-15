@@ -88,6 +88,11 @@
                 transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             }
 
+            /* Hide standalone mobile greeting on desktop */
+            .mobile-greeting {
+                display: none;
+            }
+
             .profile-left {
                 flex: 0 0 260px;
                 display: flex;
@@ -119,7 +124,7 @@
                 padding: 0.5rem 0;
             }
 
-            .profile-right h2 {
+            .profile-right h2.desktop-greeting {
                 font-size: 2.8rem;
                 font-weight: 800;
                 margin-top: 0 !important;
@@ -331,7 +336,8 @@
             }
 
             body.light-mode .profile-org,
-            body.light-mode .profile-right h2 {
+            body.light-mode .profile-right h2.desktop-greeting,
+            body.light-mode .mobile-greeting {
                 color: #1a202c !important;
             }
 
@@ -372,36 +378,101 @@
                 }
 
                 .profile-container {
-                    padding: 2.25rem 1.25rem !important;
+                    padding: 1.75rem 1.25rem !important;
                     flex-direction: column !important;
                     align-items: center !important;
                     text-align: center !important;
                     gap: 1.25rem !important;
                 }
 
-                /* Unwrap profile-left flex container to re-order items via Flexbox */
+                /* Toggle visibility for greetings */
+                .desktop-greeting {
+                    display: none !important;
+                }
+
+                /* 1. Mobile Greeting First */
+                .mobile-greeting {
+                    display: block !important;
+                    order: 1 !important;
+                    font-size: 1.75rem !important;
+                    font-weight: 800;
+                    margin: 0 0 0.25rem 0 !important;
+                    color: #ffffff;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                body.light-mode .mobile-greeting {
+                    color: #1a202c !important;
+                }
+
+                /* Unwrap profile-left container to reorder sub-elements */
                 .profile-left {
                     display: contents !important;
                 }
 
-                /* 1. Photo First */
-                .profile-left img {
-                    order: 1 !important;
-                    max-width: 160px !important;
-                    margin-bottom: 0.25rem !important;
+                /* 2. Mini Profile Card (Headshot + Info side-by-side) */
+                .profile-card-mobile {
+                    order: 2 !important;
+                    display: flex !important;
+                    flex-direction: row !important;
+                    align-items: center !important;
+                    gap: 1.2rem !important;
+                    width: 100% !important;
+                    padding: 1rem 1.1rem !important;
+                    background: rgba(0, 0, 0, 0.25) !important;
+                    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+                    border-radius: 14px !important;
+                    text-align: left !important;
+                    box-sizing: border-box;
                 }
 
-                /* 2. Intro Greeting & Paragraph Second */
+                body.light-mode .profile-card-mobile {
+                    background: rgba(255, 255, 255, 0.65) !important;
+                    border-color: rgba(0, 0, 0, 0.08) !important;
+                }
+
+                .profile-left img {
+                    order: unset !important;
+                    width: 90px !important;
+                    height: 90px !important;
+                    max-width: 90px !important;
+                    margin-bottom: 0 !important;
+                    flex-shrink: 0;
+                }
+
+                .profile-info {
+                    order: unset !important;
+                    align-items: flex-start !important;
+                    margin-bottom: 0 !important;
+                    gap: 0.15rem !important;
+                    font-size: 0.85rem !important;
+                    width: auto !important;
+                    padding: 0 !important;
+                    border: none !important;
+                    background: transparent !important;
+                }
+
+                .profile-org {
+                    font-size: 0.98rem !important;
+                }
+
+                .profile-dept, .profile-title {
+                    font-size: 0.82rem !important;
+                }
+
+                .profile-email {
+                    margin-top: 0.25rem !important;
+                    font-size: 0.82rem !important;
+                }
+
+                /* 3. Bio Pitch Paragraph Third */
                 .profile-right {
-                    order: 2 !important;
+                    order: 3 !important;
                     text-align: center !important;
                     flex: 0 0 auto !important;
                     width: 100% !important;
-                }
-
-                .profile-right h2 {
-                    font-size: 1.75rem !important;
-                    margin-bottom: 0.75rem !important;
+                    padding: 0 !important;
                 }
 
                 .profile-right p {
@@ -409,42 +480,17 @@
                     line-height: 1.6 !important;
                 }
 
-                /* 3. Social / CV Buttons Third (Immediate Call to Action) */
+                /* 4. Action Buttons Fourth */
                 .profile-socials {
-                    order: 3 !important;
+                    order: 4 !important;
                     width: 100% !important;
-                    gap: 16px !important;
+                    gap: 14px !important;
                     margin-top: 0.25rem !important;
                 }
 
                 .profile-socials a {
-                    width: 44px !important; /* Touch-friendly size */
+                    width: 44px !important;
                     height: 44px !important;
-                }
-
-                /* 4. Institutional Credentials Fourth (Grounded Base Badge) */
-                .profile-info {
-                    order: 4 !important;
-                    width: 100% !important;
-                    margin-top: 0.75rem !important;
-                    padding-top: 1.25rem !important;
-                    border-top: 1px solid rgba(255, 255, 255, 0.1);
-                    background: rgba(0, 0, 0, 0.15);
-                    padding: 1rem !important;
-                    border-radius: 12px;
-                }
-
-                body.light-mode .profile-info {
-                    border-top-color: rgba(0, 0, 0, 0.08);
-                    background: rgba(0, 0, 0, 0.03);
-                }
-
-                .profile-org {
-                    font-size: 1.05rem !important;
-                }
-
-                .profile-dept, .profile-title {
-                    font-size: 0.88rem !important;
                 }
             }
         </style>
@@ -483,6 +529,9 @@
                 <div class="content">
                     <div class="profile-container">
                         
+                        <!-- Standalone Main Greeting for Mobile -->
+                        <h2 class="mobile-greeting">Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
+
                         <!-- Left Side: Photo, Details, Socials -->
                         <div class="profile-left">
                             <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter headshot" />
@@ -517,7 +566,7 @@
 
                         <!-- Right Side: Header and Bio -->
                         <div class="profile-right">
-                            <h2>Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
+                            <h2 class="desktop-greeting">Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
                             <p>
                                 I’m an <strong>observational and computational astrophysicist</strong>. My research combines data from <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to uncover the <strong>drivers of galaxy growth and transformation</strong>. 
                             </p>
@@ -545,6 +594,41 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+
+        <!-- Responsive Layout Switcher for Mobile Card -->
+        <script>
+            function setupMobileCard() {
+                const isMobile = window.innerWidth <= 736;
+                const profileLeft = document.querySelector('.profile-left');
+                if (!profileLeft) return;
+                
+                const img = profileLeft.querySelector('img');
+                const info = profileLeft.querySelector('.profile-info');
+                
+                if (isMobile) {
+                    if (!document.querySelector('.profile-card-mobile')) {
+                        const card = document.createElement('div');
+                        card.className = 'profile-card-mobile';
+                        if (img && info) {
+                            profileLeft.insertBefore(card, img);
+                            card.appendChild(img);
+                            card.appendChild(info);
+                        }
+                    }
+                } else {
+                    const card = document.querySelector('.profile-card-mobile');
+                    if (card) {
+                        const socials = profileLeft.querySelector('.profile-socials');
+                        if (img) profileLeft.insertBefore(img, socials);
+                        if (info) profileLeft.insertBefore(info, socials);
+                        card.remove();
+                    }
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', setupMobileCard);
+            window.addEventListener('resize', setupMobileCard);
+        </script>
 
         <!-- Theme Switcher JS -->
         <script>
