@@ -10,11 +10,11 @@
           gtag('config', 'G-RY38BXSTQB');
         </script>
         
-        <title>Home | Devontae C. Baxter</title>
+        <title>Home | Devontae C. Baxter, PhD</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
         <!-- FontAwesome CDN for Google Scholar icon support -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -42,6 +42,7 @@
                 top: 0 !important;
                 background: #11141a !important; /* Deep cosmic space color */
                 overflow: hidden !important;
+                transition: background 0.3s ease;
             }
 
             /* --- COSMIC CANVAS --- */
@@ -72,8 +73,7 @@
                 display: flex !important;
                 flex-direction: row;
                 flex-wrap: wrap;
-                /* align-items: flex-start; */
-				align-items: stretch !important; /* Forces right side to match left side height */
+                align-items: stretch !important; /* Forces right side to match left side height */
                 justify-content: center;
                 gap: 3rem;
                 width: 100%;
@@ -85,6 +85,7 @@
                 padding: 3rem 2.5rem;
                 border-radius: 16px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+                transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             }
 
             .profile-left {
@@ -95,16 +96,7 @@
                 text-align: center;
             }
 
-            /* .profile-left img {
-                width: 100%;
-                max-width: 240px;
-                border-radius: 12px;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-                margin-bottom: 1.25rem;
-                display: block;
-            } */
-
-			/* --- CIRCULAR HEADSHOT STYLING --- */
+            /* --- CIRCULAR HEADSHOT STYLING --- */
             .profile-left img {
                 width: 100%;
                 max-width: 230px;
@@ -115,115 +107,103 @@
                 margin-bottom: 1.25rem;
                 display: block;
                 border: 2px solid rgba(255, 255, 255, 0.15); /* Subtle outline ring */
+                transition: border-color 0.3s ease;
             }
 
-            /* .profile-info {
-                margin-bottom: 1rem;
-                font-size: 1rem;
-                line-height: 1.5;
+            .profile-right {
+                flex: 1 1 450px;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important; /* Centers heading & bio vertically */
+                align-self: stretch !important;    /* Ensures full vertical height */
+                padding: 0.5rem 0;
             }
 
-            .profile-info strong {
-                display: block;
+            .profile-right h2 {
+                font-size: 2.8rem;
+                font-weight: 800;
+                margin-top: 0 !important;
+                margin-bottom: 1rem !important;
+                line-height: 1.2;
+                color: #ffffff;
+            }
+
+            .profile-right p {
+                font-size: 1.25rem;
+                line-height: 1.75;
+                margin-bottom: 0 !important;
+            }
+
+            .profile-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Centered for the left sidebar column */
+                gap: 0.25rem;
+                margin-bottom: 1.25rem;
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+
+            .profile-org {
+                font-weight: 800;
                 font-size: 1.15rem;
-                margin-bottom: 0.25rem;
-            } */
+                color: #ffffff;
+            }
 
-			/* 2. Make .profile-right fill the full height and center its contents */
-			.profile-right {
-				flex: 1 1 450px;
-				display: flex !important;
-				flex-direction: column !important;
-				justify-content: center !important; /* Centers heading & bio vertically */
-				align-self: stretch !important;    /* Ensures full vertical height */
-				padding: 0.5rem 0;
-			}
+            .profile-dept {
+                font-size: 0.9rem;
+                opacity: 0.8;
+                margin-bottom: 0.35rem;
+            }
 
-			.profile-right h2 {
-				font-size: 2.8rem;
-				font-weight: 800;
-				margin-top: 0 !important;
-				margin-bottom: 1rem !important;
-				line-height: 1.2;
-			}
+            .profile-title {
+                display: inline-block;
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: #a0aec0;
+            }
 
-			.profile-right p {
-				font-size: 1.25rem;
-				line-height: 1.75;
-				margin-bottom: 0 !important; /* Prevents unwanted extra space at the bottom of the paragraph */
-			}
+            .profile-email {
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                opacity: 0.9;
+                text-decoration: none !important;
+                transition: opacity 0.2s ease, color 0.2s ease;
+            }
 
-			.profile-info {
-				display: flex;
-				flex-direction: column;
-				align-items: center; /* Centered for the left sidebar column */
-				gap: 0.25rem;
-				margin-bottom: 1.25rem;
-				font-size: 0.95rem;
-				line-height: 1.4;
-			}
+            .profile-email:hover {
+                opacity: 1;
+                text-decoration: underline !important;
+            }
 
-			.profile-org {
-				font-weight: 800;
-				font-size: 1.15rem;
-				color: #ffffff;
-			}
+            /* Styling for the custom CV badge icon */
+            .cv-icon-badge {
+                position: relative;
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+            }
 
-			.profile-dept {
-				font-size: 0.9rem;
-				opacity: 0.8;
-				margin-bottom: 0.35rem;
-			}
+            .cv-icon-badge .cv-text {
+                font-size: 0.65rem;
+                font-weight: 800;
+                font-family: system-ui, -apple-system, sans-serif;
+                letter-spacing: -0.5px;
+                background: #4a5568;
+                color: #fff;
+                padding: 1px 4px;
+                border-radius: 4px;
+                position: absolute;
+                bottom: -2px;
+                right: -4px;
+                line-height: 1;
+                border: 1.5px solid #171c26; /* Matches dark mode background */
+            }
 
-			.profile-title {
-				display: inline-block;
-				font-size: 0.95rem;
-				font-weight: 600;
-				color: #a0aec0;
-			}
-
-			.profile-email {
-				margin-top: 0.5rem;
-				font-size: 0.9rem;
-				opacity: 0.9;
-				text-decoration: none !important;
-				transition: opacity 0.2s ease;
-			}
-
-			.profile-email:hover {
-				opacity: 1;
-				text-decoration: underline !important;
-			}
-
-			
-			/* Styling for the custom CV badge icon */
-			.cv-icon-badge {
-				position: relative;
-				display: inline-flex !important;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.cv-icon-badge .cv-text {
-				font-size: 0.65rem;
-				font-weight: 800;
-				font-family: system-ui, -apple-system, sans-serif;
-				letter-spacing: -0.5px;
-				background: #4a5568;
-				color: #fff;
-				padding: 1px 4px;
-				border-radius: 4px;
-				position: absolute;
-				bottom: -2px;
-				right: -4px;
-				line-height: 1;
-				border: 1.5px solid #171c26; /* Matches dark mode background */
-			}
-
-			body.light-mode .cv-icon-badge .cv-text {
-				background: #2d3748;
-				border-color: #ffffff;
-			}
+            body.light-mode .cv-icon-badge .cv-text {
+                background: #2d3748;
+                border-color: #ffffff;
+            }
 
             /* --- Waving Hand Animation --- */
             .wave {
@@ -268,7 +248,7 @@
                 background: rgba(255, 255, 255, 0.15);
                 color: #fff !important;
                 text-decoration: none;
-                transition: background 0.3s ease, transform 0.2s ease;
+                transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
                 border: none;
             }
 
@@ -277,10 +257,99 @@
                 transform: translateY(-3px);
             }
 
-			.profile-socials a i.ai {
-					font-size: 1.15rem;
-					line-height: 1;
-				}
+            .profile-socials a i.ai {
+                font-size: 1.15rem;
+                line-height: 1;
+            }
+
+            /* --- THEME TOGGLE BUTTON STYLING --- */
+            .theme-toggle-btn {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: #f1f5f9;
+                padding: 0.35rem 0.75rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .theme-toggle-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            /* --- LIGHT MODE COMPREHENSIVE FIXES --- */
+            body.light-mode {
+                background-color: #f4f6f9 !important;
+                color: #2e3440 !important;
+            }
+
+            body.light-mode #header {
+                background: #ffffff !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            body.light-mode #logo a,
+            body.light-mode #nav > ul > li > a,
+            body.light-mode #nav > ul > li > span {
+                color: #1a202c !important;
+            }
+
+            body.light-mode #nav ul li a.button.primary {
+                background-color: #2563eb !important;
+                color: #ffffff !important;
+            }
+
+            body.light-mode .theme-toggle-btn {
+                border-color: rgba(0, 0, 0, 0.2) !important;
+                color: #1a202c !important;
+            }
+
+            body.light-mode .theme-toggle-btn i.fa-sun {
+                color: #d97706 !important;
+            }
+
+            body.light-mode #banner {
+                background: #f0f4f9 !important;
+            }
+
+            body.light-mode .profile-container {
+                background: rgba(255, 255, 255, 0.88) !important;
+                border-color: rgba(0, 0, 0, 0.1) !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+            }
+
+            body.light-mode .profile-org,
+            body.light-mode .profile-right h2 {
+                color: #1a202c !important;
+            }
+
+            body.light-mode .profile-dept,
+            body.light-mode .profile-title,
+            body.light-mode .profile-right p {
+                color: #2d3748 !important;
+            }
+
+            body.light-mode .profile-email {
+                color: #2563eb !important;
+            }
+
+            body.light-mode .profile-left img {
+                border-color: rgba(0, 0, 0, 0.15) !important;
+            }
+
+            body.light-mode .profile-socials a {
+                background: rgba(0, 0, 0, 0.07) !important;
+                color: #1a202c !important;
+            }
+
+            body.light-mode .profile-socials a:hover {
+                background: rgba(37, 99, 235, 0.15) !important;
+                color: #2563eb !important;
+            }
 
             /* Mobile Responsiveness */
             @media screen and (max-width: 736px) {
@@ -306,21 +375,28 @@
         <div id="page-wrapper">
 
             <!-- Header Navigation -->
-            <header id="header">
-                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-                <nav id="nav">
+            <header id="header" style="display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;">
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <h1 id="logo" style="margin: 0;"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+                </div>
+
+                <nav id="nav" style="display: flex; align-items: center; gap: 1.5rem;">
                     <ul>
                         <li><a href="#" class="button primary">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="research.html">Research</a></li>
                         <li>
-                            <a href="mentorship.html">Mentorship & Outreach</a>
+                            <a href="mentorship.html">Mentorship &amp; Outreach</a>
                             <ul>
                                 <li><a href="CARP.html">CARP Program</a></li>
                             </ul>
                         </li>
-                        <!-- <li><a href="CV.pdf" target="_blank">CV</a></li> -->
                     </ul>
+
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" style="margin-left: 1rem;">
+                        <i class="fa-solid fa-moon" id="theme-icon"></i>
+                    </button>
                 </nav>
             </header>
 
@@ -335,44 +411,31 @@
                         <div class="profile-left">
                             <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter" />
                             
-							<div class="profile-info">
-								<span class="profile-org">Princeton University</span>
-								<span class="profile-dept">Department of Astrophysical Sciences</span>
-								<span class="profile-title">FFPS Postdoctoral Fellow</span>
-								<a href="mailto:dcbaxter@princeton.edu" class="profile-email">
-									<i class="fa-regular fa-envelope"></i> dcbaxter@princeton.edu
-								</a>
-							</div>
+                            <div class="profile-info">
+                                <span class="profile-org">Princeton University</span>
+                                <span class="profile-dept">Department of Astrophysical Sciences</span>
+                                <span class="profile-title">FFPS Postdoctoral Fellow</span>
+                                <a href="mailto:dcbaxter@princeton.edu" class="profile-email">
+                                    <i class="fa-regular fa-envelope"></i> dcbaxter@princeton.edu
+                                </a>
+                            </div>
 
                             <!-- Social Icons -->
                             <ul class="profile-socials">
-								
-								<!-- <li>
-									<a href="CV.pdf" target="_blank" title="Curriculum Vitae (CV)" class="cv-icon-badge">
-										<i class="fa-solid fa-file-lines"></i>
-										<span class="cv-text">CV</span>
-									</a>
-								</li> -->
-
-								<!-- CV -->
-								<li><a href="CV.pdf" target="_blank" title="Curriculum Vitae (CV)"><i class="ai ai-cv ai-3x"></i></a></li>
-								
-								<!-- NASA ADS -->
-								<li><a href="https://ui.adsabs.harvard.edu/public-libraries/jFJRwpWtSMqBBCSsXhm8-w" target="_blank" title="NASA ADS"><i class="ai ai-ads ai-3x"></i></a></li>
-							
-								<!-- Google Scholar -->
-								<li><a href="https://scholar.google.com/citations?user=AeB9S3cAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar ai-3x"></i></a></li>
-								
-								<!-- ORCID -->
-								<li><a href="https://orcid.org/0000-0002-8209-2783" target="_blank" title="ORCID"><i class="ai ai-orcid ai-3x"></i></a></li>
+                                <!-- CV -->
+                                <li><a href="CV.pdf" target="_blank" title="Curriculum Vitae (CV)"><i class="ai ai-cv ai-3x"></i></a></li>
                                 
-								<!-- GitHub -->
-								<!-- <li><a href="https://github.com/sentientstarstuff" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
-                                 -->
-								<!-- LinkedIn -->
-								<li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <!-- NASA ADS -->
+                                <li><a href="https://ui.adsabs.harvard.edu/public-libraries/jFJRwpWtSMqBBCSsXhm8-w" target="_blank" title="NASA ADS"><i class="ai ai-ads ai-3x"></i></a></li>
+                            
+                                <!-- Google Scholar -->
+                                <li><a href="https://scholar.google.com/citations?user=AeB9S3cAAAAJ&hl=en" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar ai-3x"></i></a></li>
                                 
-								<!-- <li><a href="https://www.instagram.com/sentientstardust/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li> -->
+                                <!-- ORCID -->
+                                <li><a href="https://orcid.org/0000-0002-8209-2783" target="_blank" title="ORCID"><i class="ai ai-orcid ai-3x"></i></a></li>
+                                
+                                <!-- LinkedIn -->
+                                <li><a href="https://www.linkedin.com/in/taebaxter/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
                             </ul>
                         </div>
 
@@ -383,8 +446,6 @@
                                 I’m an <strong>observational and computational astrophysicist</strong>. My research combines data from <strong>world-class telescopes</strong> and <strong>supercomputer simulations</strong> to uncover the <strong>drivers of galaxy growth and transformation</strong>. 
                             </p>
                         </div>
-<!-- alternative description: I’m an astrophysicist who combines data from ground- and space-based telescopes 
- with cosmological simulations to investigate how galaxies shape and are shaped by their cosmic environments.  (or across the cosmic web -->
                     </div>
                 </div>
             </section>
@@ -409,6 +470,31 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
+        <!-- Theme Switcher JS -->
+        <script>
+            const toggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'light') {
+                document.body.classList.add('light-mode');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('light-mode');
+                
+                let theme = 'dark';
+                if (document.body.classList.contains('light-mode')) {
+                    theme = 'light';
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    themeIcon.classList.replace('fa-sun', 'fa-moon');
+                }
+                
+                localStorage.setItem('theme', theme);
+            });
+        </script>
 
         <!-- Cosmic Particle Effect Canvas JS -->
         <script>
