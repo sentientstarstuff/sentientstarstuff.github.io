@@ -366,31 +366,20 @@
             }
 
             /* --- RESPONSIVE / MOBILE CLEANUP --- */
-            @media screen and (max-width: 980px) {
-                #navPanel #theme-toggle {
-                    margin: 10px 0;
-                    width: auto;
-                }
-
-                .dropotron {
-                    display: none !important;
-                }
-            }
-
             @media screen and (max-width: 736px) {
                 #banner {
-                    padding: 4.5em 1em 2em 1em !important;
+                    padding: 4em 1em 2em 1em !important;
                 }
 
                 .profile-container {
-                    padding: 2rem 1.25rem !important;
+                    padding: 2.25rem 1.25rem !important;
                     flex-direction: column !important;
                     align-items: center !important;
                     text-align: center !important;
                     gap: 1.25rem !important;
                 }
 
-                /* Unwraps profile-left flex container on mobile to re-order items logically */
+                /* Unwrap profile-left flex container to re-order items via Flexbox */
                 .profile-left {
                     display: contents !important;
                 }
@@ -398,11 +387,11 @@
                 /* 1. Photo First */
                 .profile-left img {
                     order: 1 !important;
-                    max-width: 170px !important;
+                    max-width: 160px !important;
                     margin-bottom: 0.25rem !important;
                 }
 
-                /* 2. Heading & Bio Intro Second */
+                /* 2. Intro Greeting & Paragraph Second */
                 .profile-right {
                     order: 2 !important;
                     text-align: center !important;
@@ -410,21 +399,9 @@
                     width: 100% !important;
                 }
 
-                /* 3. Academic Details & Institutional Info Third */
-                .profile-info {
-                    order: 3 !important;
-                    width: 100% !important;
-                    margin-bottom: 0.5rem !important;
-                }
-
-                /* 4. Social & Links Buttons Fourth */
-                .profile-socials {
-                    order: 4 !important;
-                    width: 100% !important;
-                }
-
                 .profile-right h2 {
-                    font-size: 1.8rem !important;
+                    font-size: 1.75rem !important;
+                    margin-bottom: 0.75rem !important;
                 }
 
                 .profile-right p {
@@ -432,9 +409,42 @@
                     line-height: 1.6 !important;
                 }
 
+                /* 3. Social / CV Buttons Third (Immediate Call to Action) */
+                .profile-socials {
+                    order: 3 !important;
+                    width: 100% !important;
+                    gap: 16px !important;
+                    margin-top: 0.25rem !important;
+                }
+
                 .profile-socials a {
-                    width: 38px !important;
-                    height: 38px !important;
+                    width: 44px !important; /* Touch-friendly size */
+                    height: 44px !important;
+                }
+
+                /* 4. Institutional Credentials Fourth (Grounded Base Badge) */
+                .profile-info {
+                    order: 4 !important;
+                    width: 100% !important;
+                    margin-top: 0.75rem !important;
+                    padding-top: 1.25rem !important;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    background: rgba(0, 0, 0, 0.15);
+                    padding: 1rem !important;
+                    border-radius: 12px;
+                }
+
+                body.light-mode .profile-info {
+                    border-top-color: rgba(0, 0, 0, 0.08);
+                    background: rgba(0, 0, 0, 0.03);
+                }
+
+                .profile-org {
+                    font-size: 1.05rem !important;
+                }
+
+                .profile-dept, .profile-title {
+                    font-size: 0.88rem !important;
                 }
             }
         </style>
