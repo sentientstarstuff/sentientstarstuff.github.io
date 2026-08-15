@@ -139,12 +139,12 @@
                 margin-bottom: 0 !important;
             }
 
-            /* --- INSTITUTIONAL METADATA BADGE (LEFT-JUSTIFIED) --- */
+            /* --- INSTITUTIONAL METADATA BADGE (CENTER-JUSTIFIED ON DESKTOP) --- */
             .profile-info {
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start; /* Left align items */
-                text-align: left;       /* Left align text */
+                align-items: center; /* Center align items on desktop */
+                text-align: center;     /* Center align text on desktop */
                 gap: 0.35rem;
                 margin-bottom: 1.25rem;
                 font-size: 0.95rem;
@@ -173,7 +173,7 @@
             .profile-email {
                 display: flex;
                 align-items: center;
-                justify-content: flex-start; /* Left justify items */
+                justify-content: center; /* Center justify desktop items */
                 width: 100%;
             }
 
@@ -444,7 +444,7 @@
                     flex-shrink: 0;
                 }
 
-                /* Left-align card contents on mobile */
+                /* Left-align card contents inside compact mobile card */
                 .profile-info {
                     order: unset !important;
                     align-items: flex-start !important;
