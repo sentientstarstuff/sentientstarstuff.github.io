@@ -55,7 +55,21 @@
                 border-color: rgba(0, 0, 0, 0.12);
                 color: #1a202c !important;
             }
+            
+            /* --- REDUCE TOP PADDING & MARGIN FOR FOOTER --- */
+            #footer {
+                padding-top: 1.5em !important; /* Reduces the large default template padding */
+                margin-top: 0 !important;
+            }
 
+            #footer .footer-cta {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            #footer .footer-cta h3 {
+                margin-top: 0 !important; /* Removes default browser margin above heading */
+            }
 
             /* --- KILL TEMPLATE GHOST SPACERS & FORCE TOP ALIGNMENT --- */
             #banner::before,
