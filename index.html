@@ -139,15 +139,17 @@
                 margin-bottom: 0 !important;
             }
 
-            /* --- INSTITUTIONAL METADATA BADGE --- */
+            /* --- INSTITUTIONAL METADATA BADGE (RIGHT-JUSTIFIED ON DESKTOP) --- */
             .profile-info {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-end; /* Right align on desktop */
+                text-align: right;     /* Right align text on desktop */
                 gap: 0.35rem;
                 margin-bottom: 1.25rem;
                 font-size: 0.95rem;
                 line-height: 1.4;
+                width: 100%;
             }
 
             /* Metadata micro-icons */
@@ -165,37 +167,46 @@
                 color: #2563eb;
             }
 
+            .profile-org,
+            .profile-dept,
+            .profile-title,
+            .profile-email {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end; /* Right justify desktop items */
+                width: 100%;
+            }
+
             .profile-org {
                 font-weight: 800;
                 font-size: 1.12rem;
                 color: #ffffff;
-                display: flex;
-                align-items: center;
             }
 
             .profile-dept {
                 font-size: 0.9rem;
                 opacity: 0.85;
                 margin-bottom: 0.1rem;
-                display: flex;
-                align-items: center;
             }
 
             .profile-title {
-                display: flex;
-                align-items: center;
                 font-size: 0.92rem;
                 font-weight: 600;
                 color: #a0aec0;
             }
 
-            .profile-email {
-                margin-top: 0.35rem;
+            /* Clean email link without dotted underlines */
+            .profile-email,
+            .profile-email:hover,
+            .profile-email:focus,
+            .profile-email:active {
+                margin-top: 0.25rem;
                 font-size: 0.9rem;
                 opacity: 0.9;
                 text-decoration: none !important;
-                display: flex;
-                align-items: center;
+                border-bottom: none !important; /* Removes template dotted line */
+                outline: none !important;
+                box-shadow: none !important;
                 transition: opacity 0.2s ease, color 0.2s ease;
             }
 
@@ -341,7 +352,6 @@
                 color: #2d3748 !important;
             }
 
-            /* Fixes <strong> text in light mode so it stands out clearly in dark charcoal */
             body.light-mode strong,
             body.light-mode b {
                 color: #1a202c !important;
@@ -379,42 +389,40 @@
                     gap: 1.1rem !important;
                 }
 
-                /* Toggle visibility for greetings */
                 .desktop-greeting {
                     display: none !important;
                 }
 
-                /* 1. Mobile Greeting First (STRICT SINGLE LINE) */
+                /* Mobile Greeting (Strict 1 Line) */
                 .mobile-greeting {
                     display: block !important;
                     order: 1 !important;
-                    font-size: clamp(1.1rem, 4.5vw, 1.45rem) !important; /* Dynamically scales so it fits on 1 line */
+                    font-size: clamp(1.1rem, 4.5vw, 1.45rem) !important;
                     font-weight: 800;
                     margin: 0 0 0.15rem 0 !important;
                     color: #ffffff;
                     width: 100%;
                     text-align: center;
-                    white-space: nowrap !important; /* Forces 1 line */
+                    white-space: nowrap !important;
                 }
 
                 body.light-mode .mobile-greeting {
                     color: #1a202c !important;
                 }
 
-                /* Unwrap profile-left container to reorder sub-elements */
                 .profile-left {
                     display: contents !important;
                 }
 
-                /* 2. Mini Profile Card (Headshot + Info side-by-side) */
+                /* Mobile Card Layout */
                 .profile-card-mobile {
                     order: 2 !important;
                     display: flex !important;
                     flex-direction: row !important;
                     align-items: center !important;
-                    gap: 0.9rem !important;
+                    gap: 0.85rem !important;
                     width: 100% !important;
-                    padding: 0.85rem 0.95rem !important;
+                    padding: 0.85rem 0.9rem !important;
                     background: rgba(0, 0, 0, 0.25) !important;
                     border: 1px solid rgba(255, 255, 255, 0.12) !important;
                     border-radius: 14px !important;
@@ -427,20 +435,20 @@
                     border-color: rgba(0, 0, 0, 0.08) !important;
                 }
 
-                /* Larger, prominent headshot on mobile */
                 .profile-left img {
                     order: unset !important;
-                    width: 102px !important;
-                    height: 102px !important;
-                    max-width: 102px !important;
+                    width: 100px !important;
+                    height: 100px !important;
+                    max-width: 100px !important;
                     margin-bottom: 0 !important;
                     flex-shrink: 0;
                 }
 
-                /* Streamlined info text inside mobile card */
+                /* Left-align card contents on mobile */
                 .profile-info {
                     order: unset !important;
                     align-items: flex-start !important;
+                    text-align: left !important;
                     margin-bottom: 0 !important;
                     gap: 0.12rem !important;
                     width: auto !important;
@@ -449,16 +457,29 @@
                     background: transparent !important;
                 }
 
+                .profile-org,
+                .profile-dept,
+                .profile-title,
+                .profile-email {
+                    justify-content: flex-start !important;
+                }
+
                 .profile-org {
                     font-size: 0.92rem !important;
                 }
 
-                .profile-dept, .profile-title {
+                /* Department info guaranteed single line */
+                .profile-dept {
+                    font-size: 0.78rem !important;
+                    white-space: nowrap !important;
+                }
+
+                .profile-title {
                     font-size: 0.78rem !important;
                 }
 
                 .profile-email {
-                    margin-top: 0.2rem !important;
+                    margin-top: 0.15rem !important;
                     font-size: 0.78rem !important;
                 }
 
@@ -467,7 +488,6 @@
                     margin-right: 4px;
                 }
 
-                /* 3. Bio Pitch Paragraph Third */
                 .profile-right {
                     order: 3 !important;
                     text-align: center !important;
@@ -481,7 +501,6 @@
                     line-height: 1.6 !important;
                 }
 
-                /* 4. Action Buttons Fourth */
                 .profile-socials {
                     order: 4 !important;
                     width: 100% !important;
@@ -539,10 +558,12 @@
                             
                             <div class="profile-info">
                                 <span class="profile-org"><i class="fa-solid fa-building-columns info-icon"></i> Princeton University</span>
-                                <span class="profile-dept"><i class="fa-solid fa-atom info-icon"></i> Department of Astrophysical Sciences</span>
+                                <span class="profile-dept"><i class="fa-solid fa-atom info-icon"></i> Dept. of Astrophysical Sciences</span>
                                 <span class="profile-title"><i class="fa-solid fa-id-badge info-icon"></i> FFPS Postdoctoral Fellow</span>
-                                <a href="mailto:dcbaxter@princeton.edu" class="profile-email">
-                                    <i class="fa-regular fa-envelope info-icon"></i> dcbaxter@princeton.edu
+                                
+                                <!-- Anti-Bot Obfuscated Email Link -->
+                                <a href="#" class="profile-email" id="profile-email-link" aria-label="Email Devontae Baxter">
+                                    <i class="fa-regular fa-envelope info-icon"></i> <span id="profile-email-text">dcbaxter [at] princeton [dot] edu</span>
                                 </a>
                             </div>
 
@@ -631,6 +652,23 @@
             window.addEventListener('resize', setupMobileCard);
         </script>
 
+        <!-- Anti-Bot Email Hydration -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const u = 'dcbaxter';
+                const d = 'princeton.edu';
+                const fullEmail = u + '@' + d;
+                
+                const linkEl = document.getElementById('profile-email-link');
+                const textEl = document.getElementById('profile-email-text');
+                
+                if (linkEl && textEl) {
+                    linkEl.href = 'mailto:' + fullEmail;
+                    textEl.textContent = fullEmail;
+                }
+            });
+        </script>
+
         <!-- Theme Switcher JS -->
         <script>
             document.addEventListener('DOMContentLoaded', () => {
@@ -638,7 +676,6 @@
                     const isLight = theme === 'light';
                     document.body.classList.toggle('light-mode', isLight);
                     
-                    // Synchronize icons on both desktop nav and cloned mobile nav panels
                     const icons = document.querySelectorAll('.theme-toggle-btn i');
                     icons.forEach(icon => {
                         if (isLight) {
@@ -651,11 +688,9 @@
                     });
                 };
 
-                // Load stored preference
                 const currentTheme = localStorage.getItem('theme') || 'dark';
                 applyTheme(currentTheme);
 
-                // Handle toggle click (delegated to support cloned mobile nav instances)
                 document.addEventListener('click', (e) => {
                     const toggleBtn = e.target.closest('.theme-toggle-btn');
                     if (toggleBtn) {
@@ -725,17 +760,14 @@
                     this.x += this.vx;
                     this.y += this.vy;
 
-                    // Wrap around canvas edges
                     if (this.x < 0) this.x = width;
                     if (this.x > width) this.x = 0;
                     if (this.y < 0) this.y = height;
                     if (this.y > height) this.y = 0;
 
-                    // Twinkle effect
                     this.alpha += Math.sin(Date.now() * this.twinkleSpeed) * 0.008;
                     this.alpha = Math.max(0.1, Math.min(0.8, this.alpha));
 
-                    // Mouse interaction
                     if (mouse.x !== null && mouse.y !== null) {
                         const dx = mouse.x - this.x;
                         const dy = mouse.y - this.y;
@@ -771,7 +803,6 @@
             function animate() {
                 ctx.clearRect(0, 0, width, height);
 
-                // Draw constellation lines
                 const isLight = document.body.classList.contains('light-mode');
                 for (let i = 0; i < particles.length; i++) {
                     for (let j = i + 1; j < particles.length; j++) {
