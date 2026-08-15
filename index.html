@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
-        <!-- FontAwesome CDN for Google Scholar icon support -->
+        <!-- FontAwesome CDN for Google Scholar and metadata icon support -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -139,75 +139,69 @@
                 margin-bottom: 0 !important;
             }
 
+            /* --- INSTITUTIONAL METADATA BADGE --- */
             .profile-info {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 0.25rem;
+                gap: 0.35rem;
                 margin-bottom: 1.25rem;
                 font-size: 0.95rem;
                 line-height: 1.4;
             }
 
+            /* Metadata micro-icons */
+            .info-icon {
+                width: 16px;
+                text-align: center;
+                margin-right: 6px;
+                opacity: 0.75;
+                font-size: 0.88em;
+                display: inline-block;
+                color: #60a5fa; /* Soft accent blue */
+            }
+
+            body.light-mode .info-icon {
+                color: #2563eb;
+            }
+
             .profile-org {
                 font-weight: 800;
-                font-size: 1.15rem;
+                font-size: 1.12rem;
                 color: #ffffff;
+                display: flex;
+                align-items: center;
             }
 
             .profile-dept {
                 font-size: 0.9rem;
-                opacity: 0.8;
-                margin-bottom: 0.35rem;
+                opacity: 0.85;
+                margin-bottom: 0.1rem;
+                display: flex;
+                align-items: center;
             }
 
             .profile-title {
-                display: inline-block;
-                font-size: 0.95rem;
+                display: flex;
+                align-items: center;
+                font-size: 0.92rem;
                 font-weight: 600;
                 color: #a0aec0;
             }
 
             .profile-email {
-                margin-top: 0.5rem;
+                margin-top: 0.35rem;
                 font-size: 0.9rem;
                 opacity: 0.9;
                 text-decoration: none !important;
+                display: flex;
+                align-items: center;
                 transition: opacity 0.2s ease, color 0.2s ease;
             }
 
             .profile-email:hover {
                 opacity: 1;
                 text-decoration: underline !important;
-            }
-
-            /* Styling for the custom CV badge icon */
-            .cv-icon-badge {
-                position: relative;
-                display: inline-flex !important;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .cv-icon-badge .cv-text {
-                font-size: 0.65rem;
-                font-weight: 800;
-                font-family: system-ui, -apple-system, sans-serif;
-                letter-spacing: -0.5px;
-                background: #4a5568;
-                color: #fff;
-                padding: 1px 4px;
-                border-radius: 4px;
-                position: absolute;
-                bottom: -2px;
-                right: -4px;
-                line-height: 1;
-                border: 1.5px solid #171c26; /* Matches dark mode background */
-            }
-
-            body.light-mode .cv-icon-badge .cv-text {
-                background: #2d3748;
-                border-color: #ffffff;
             }
 
             /* --- Waving Hand Animation --- */
@@ -347,7 +341,7 @@
                 color: #2d3748 !important;
             }
 
-            /* Fixes <strong> text in light mode so it stands out clearly in black/dark charcoal */
+            /* Fixes <strong> text in light mode so it stands out clearly in dark charcoal */
             body.light-mode strong,
             body.light-mode b {
                 color: #1a202c !important;
@@ -374,15 +368,15 @@
             /* --- RESPONSIVE / MOBILE CLEANUP --- */
             @media screen and (max-width: 736px) {
                 #banner {
-                    padding: 4em 1em 2em 1em !important;
+                    padding: 3.8em 1em 2em 1em !important;
                 }
 
                 .profile-container {
-                    padding: 1.75rem 1.25rem !important;
+                    padding: 1.5rem 1.1rem !important;
                     flex-direction: column !important;
                     align-items: center !important;
                     text-align: center !important;
-                    gap: 1.25rem !important;
+                    gap: 1.1rem !important;
                 }
 
                 /* Toggle visibility for greetings */
@@ -390,16 +384,17 @@
                     display: none !important;
                 }
 
-                /* 1. Mobile Greeting First */
+                /* 1. Mobile Greeting First (STRICT SINGLE LINE) */
                 .mobile-greeting {
                     display: block !important;
                     order: 1 !important;
-                    font-size: 1.75rem !important;
+                    font-size: clamp(1.1rem, 4.5vw, 1.45rem) !important; /* Dynamically scales so it fits on 1 line */
                     font-weight: 800;
-                    margin: 0 0 0.25rem 0 !important;
+                    margin: 0 0 0.15rem 0 !important;
                     color: #ffffff;
                     width: 100%;
                     text-align: center;
+                    white-space: nowrap !important; /* Forces 1 line */
                 }
 
                 body.light-mode .mobile-greeting {
@@ -417,9 +412,9 @@
                     display: flex !important;
                     flex-direction: row !important;
                     align-items: center !important;
-                    gap: 1.2rem !important;
+                    gap: 0.9rem !important;
                     width: 100% !important;
-                    padding: 1rem 1.1rem !important;
+                    padding: 0.85rem 0.95rem !important;
                     background: rgba(0, 0, 0, 0.25) !important;
                     border: 1px solid rgba(255, 255, 255, 0.12) !important;
                     border-radius: 14px !important;
@@ -432,21 +427,22 @@
                     border-color: rgba(0, 0, 0, 0.08) !important;
                 }
 
+                /* Larger, prominent headshot on mobile */
                 .profile-left img {
                     order: unset !important;
-                    width: 90px !important;
-                    height: 90px !important;
-                    max-width: 90px !important;
+                    width: 102px !important;
+                    height: 102px !important;
+                    max-width: 102px !important;
                     margin-bottom: 0 !important;
                     flex-shrink: 0;
                 }
 
+                /* Streamlined info text inside mobile card */
                 .profile-info {
                     order: unset !important;
                     align-items: flex-start !important;
                     margin-bottom: 0 !important;
-                    gap: 0.15rem !important;
-                    font-size: 0.85rem !important;
+                    gap: 0.12rem !important;
                     width: auto !important;
                     padding: 0 !important;
                     border: none !important;
@@ -454,16 +450,21 @@
                 }
 
                 .profile-org {
-                    font-size: 0.98rem !important;
+                    font-size: 0.92rem !important;
                 }
 
                 .profile-dept, .profile-title {
-                    font-size: 0.82rem !important;
+                    font-size: 0.78rem !important;
                 }
 
                 .profile-email {
-                    margin-top: 0.25rem !important;
-                    font-size: 0.82rem !important;
+                    margin-top: 0.2rem !important;
+                    font-size: 0.78rem !important;
+                }
+
+                .info-icon {
+                    width: 14px;
+                    margin-right: 4px;
                 }
 
                 /* 3. Bio Pitch Paragraph Third */
@@ -485,7 +486,7 @@
                     order: 4 !important;
                     width: 100% !important;
                     gap: 14px !important;
-                    margin-top: 0.25rem !important;
+                    margin-top: 0.1rem !important;
                 }
 
                 .profile-socials a {
@@ -529,7 +530,7 @@
                 <div class="content">
                     <div class="profile-container">
                         
-                        <!-- Standalone Main Greeting for Mobile -->
+                        <!-- Standalone Main Greeting for Mobile (Guaranteed Single Line) -->
                         <h2 class="mobile-greeting">Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
 
                         <!-- Left Side: Photo, Details, Socials -->
@@ -537,11 +538,11 @@
                             <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter headshot" />
                             
                             <div class="profile-info">
-                                <span class="profile-org">Princeton University</span>
-                                <span class="profile-dept">Department of Astrophysical Sciences</span>
-                                <span class="profile-title">FFPS Postdoctoral Fellow</span>
+                                <span class="profile-org"><i class="fa-solid fa-building-columns info-icon"></i> Princeton University</span>
+                                <span class="profile-dept"><i class="fa-solid fa-atom info-icon"></i> Department of Astrophysical Sciences</span>
+                                <span class="profile-title"><i class="fa-solid fa-id-badge info-icon"></i> FFPS Postdoctoral Fellow</span>
                                 <a href="mailto:dcbaxter@princeton.edu" class="profile-email">
-                                    <i class="fa-regular fa-envelope"></i> dcbaxter@princeton.edu
+                                    <i class="fa-regular fa-envelope info-icon"></i> dcbaxter@princeton.edu
                                 </a>
                             </div>
 
