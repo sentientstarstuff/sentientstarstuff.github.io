@@ -137,7 +137,7 @@
             .profile-info {
                 display: flex;
                 flex-direction: column;
-                align-items: center; /* Centered for the left sidebar column */
+                align-items: center;
                 gap: 0.25rem;
                 margin-bottom: 1.25rem;
                 font-size: 0.95rem;
@@ -262,26 +262,34 @@
                 line-height: 1;
             }
 
-            /* --- THEME TOGGLE BUTTON STYLING --- */
+            /* --- INTEGRATED NAV THEME TOGGLE BUTTON --- */
+            #nav ul li.nav-toggle-item {
+                display: inline-flex;
+                align-items: center;
+                margin-left: 0.5rem;
+            }
+
             .theme-toggle-btn {
                 background: transparent;
                 border: 1px solid rgba(255, 255, 255, 0.3);
                 color: #f1f5f9;
-                padding: 0.35rem 0.75rem;
+                padding: 0.25rem 0.65rem;
                 border-radius: 20px;
                 cursor: pointer;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 transition: all 0.3s ease;
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
+                line-height: 1.5;
             }
 
             .theme-toggle-btn:hover {
-                background: rgba(255, 255, 255, 0.1);
+                background: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.5);
             }
 
-            /* --- LIGHT MODE COMPREHENSIVE FIXES --- */
+            /* --- LIGHT MODE OVERRIDES --- */
             body.light-mode {
                 background-color: #f4f6f9 !important;
                 color: #2e3440 !important;
@@ -351,40 +359,22 @@
                 color: #2563eb !important;
             }
 
-            /* ==========================================================================
-               MOBILE RESPONSIVE OVERRIDES
-               ========================================================================== */
+            /* --- RESPONSIVE / MOBILE CLEANUP --- */
             @media screen and (max-width: 980px) {
-                /* Align Header and Theme Toggle cleanly alongside the Mobile Nav Panel trigger */
-                #header {
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: space-between !important;
-                    padding: 0 1.25rem !important;
+                #navPanel #theme-toggle {
+                    margin: 10px 0;
+                    width: auto;
                 }
 
-                .header-controls {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    z-index: 10002; /* Keeps theme button above mobile nav overlay */
-                }
-
-                #nav {
-                    display: none !important; /* Hide desktop nav bar (HTML5 UP uses Dropotron navPanel) */
-                }
-
-                /* Prevent Dropdown submenu items ("CARP Program") from spilling on mobile */
-                #navPanel ul li ul {
-                    display: block !important;
-                    margin-left: 1rem !important;
-                    opacity: 0.85;
+                /* Fixes stray/floating dropotron menus on mobile screens */
+                .dropotron {
+                    display: none !important;
                 }
             }
 
             @media screen and (max-width: 736px) {
                 #banner {
-                    padding: 5em 1em 2em 1em !important;
+                    padding: 4.5em 1em 2em 1em !important;
                 }
 
                 .profile-container {
@@ -401,7 +391,7 @@
                 }
 
                 .profile-left img {
-                    max-width: 180px !important;
+                    max-width: 170px !important;
                 }
 
                 .profile-right {
@@ -432,27 +422,25 @@
             <!-- Header Navigation -->
             <header id="header">
                 <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-
-                <div class="header-controls">
-                    <nav id="nav">
-                        <ul>
-                            <li><a href="#" class="button primary">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="research.html">Research</a></li>
-                            <li>
-                                <a href="mentorship.html">Mentorship &amp; Outreach</a>
-                                <ul>
-                                    <li><a href="CARP.html">CARP Program</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Theme Toggle Button -->
-                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
-                        <i class="fa-solid fa-moon" id="theme-icon"></i>
-                    </button>
-                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#" class="button primary">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li>
+                            <a href="mentorship.html">Mentorship &amp; Outreach</a>
+                            <ul>
+                                <li><a href="CARP.html">CARP Program</a></li>
+                            </ul>
+                        </li>
+                        <!-- Theme Toggle integrated directly into navigation -->
+                        <li class="nav-toggle-item">
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                                <i class="fa-solid fa-moon" id="theme-icon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
             </header>
 
             <!-- Banner Content Area with Canvas Background -->
@@ -527,27 +515,39 @@
 
         <!-- Theme Switcher JS -->
         <script>
-            const toggleBtn = document.getElementById('theme-toggle');
-            const themeIcon = document.getElementById('theme-icon');
-            
-            const currentTheme = localStorage.getItem('theme');
-            if (currentTheme === 'light') {
-                document.body.classList.add('light-mode');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            }
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggleBtn = document.getElementById('theme-toggle');
+                const themeIcon = document.getElementById('theme-icon');
+                
+                const applyTheme = (theme) => {
+                    if (theme === 'light') {
+                        document.body.classList.add('light-mode');
+                        if (themeIcon) {
+                            themeIcon.classList.remove('fa-moon');
+                            themeIcon.classList.add('fa-sun');
+                        }
+                    } else {
+                        document.body.classList.remove('light-mode');
+                        if (themeIcon) {
+                            themeIcon.classList.remove('fa-sun');
+                            themeIcon.classList.add('fa-moon');
+                        }
+                    }
+                };
 
-            toggleBtn.addEventListener('click', () => {
-                document.body.classList.toggle('light-mode');
-                
-                let theme = 'dark';
-                if (document.body.classList.contains('light-mode')) {
-                    theme = 'light';
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                } else {
-                    themeIcon.classList.replace('fa-sun', 'fa-moon');
-                }
-                
-                localStorage.setItem('theme', theme);
+                // Load stored preference
+                const currentTheme = localStorage.getItem('theme') || 'dark';
+                applyTheme(currentTheme);
+
+                // Handle toggle click (delegated to support cloned mobile nav instances)
+                document.addEventListener('click', (e) => {
+                    if (e.target.closest('#theme-toggle')) {
+                        const isLight = document.body.classList.contains('light-mode');
+                        const newTheme = isLight ? 'dark' : 'light';
+                        applyTheme(newTheme);
+                        localStorage.setItem('theme', newTheme);
+                    }
+                });
             });
         </script>
 
