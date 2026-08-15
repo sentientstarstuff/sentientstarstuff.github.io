@@ -19,17 +19,23 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
+            /* --- REMOVE EXCESS PADDING ABOVE 'ABOUT ME' --- */
+            #main.wrapper {
+                padding-top: 1.5em !important; /* Reduces template top padding */
+            }
+
             /* --- WIDENED CONTAINER (25% MORE WIDTH) --- */
             .about-container {
                 max-width: 1350px;
                 margin: 0 auto;
-                padding: 4rem 2.5rem;
+                padding: 0 2.5rem 4rem 2.5rem; /* Removed top padding from container */
             }
 
             .about-header-title {
                 font-size: 2.8rem;
                 font-weight: 800;
                 text-align: center;
+                margin-top: 0 !important; /* Prevents heading default top margin */
                 margin-bottom: 0.5rem;
                 color: #ffffff;
             }
@@ -169,23 +175,31 @@
                 color: rgba(255, 255, 255, 0.85);
             }
 
-            /* --- THEME TOGGLE BUTTON STYLING --- */
+            /* --- INTEGRATED NAV THEME TOGGLE BUTTON --- */
+            #nav ul li.nav-toggle-item {
+                display: inline-flex;
+                align-items: center;
+                margin-left: 0.5rem;
+            }
+
             .theme-toggle-btn {
                 background: transparent;
                 border: 1px solid rgba(255, 255, 255, 0.3);
                 color: #f1f5f9;
-                padding: 0.35rem 0.75rem;
+                padding: 0.25rem 0.65rem;
                 border-radius: 20px;
                 cursor: pointer;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 transition: all 0.3s ease;
                 display: inline-flex;
                 align-items: center;
                 gap: 6px;
+                line-height: 1.5;
             }
 
             .theme-toggle-btn:hover {
-                background: rgba(255, 255, 255, 0.1);
+                background: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.5);
             }
 
             /* --- LIGHT MODE COMPREHENSIVE FIXES --- */
@@ -274,7 +288,18 @@
                 color: #2563eb !important;
             }
 
-            /* Mobile Responsive */
+            /* Mobile Responsive & Dropotron Fixes */
+            @media screen and (max-width: 980px) {
+                #navPanel #theme-toggle {
+                    margin: 10px 0;
+                    width: auto;
+                }
+
+                .dropotron {
+                    display: none !important;
+                }
+            }
+
             @media screen and (max-width: 736px) {
                 .about-container {
                     padding: 2rem 1.25rem;
@@ -287,71 +312,46 @@
                     font-size: 2.2rem;
                 }
             }
-
-			/* --- REMOVE EXCESS PADDING ABOVE 'ABOUT ME' --- */
-			#main.wrapper {
-				padding-top: 1.5em !important; /* Reduces template top padding */
-			}
-
-			.about-container {
-				max-width: 1350px;
-				margin: 0 auto;
-				padding: 0 2.5rem 4rem 2.5rem; /* Removed top padding from container */
-			}
-
-			.about-header-title {
-				font-size: 2.8rem;
-				font-weight: 800;
-				text-align: center;
-				margin-top: 0 !important; /* Prevents heading default top margin */
-				margin-bottom: 0.5rem;
-				color: #ffffff;
-			}
-
-
         </style>
     </head>
     <body>
         <div id="page-wrapper">
 
-			<!-- Header Navigation with Right-Aligned Toggle -->
-			<header id="header" style="display: flex; align-items: center; justify-content: space-between; padding: 0 2rem;">
-				<div style="display: flex; align-items: center; gap: 1.5rem;">
-					<h1 id="logo" style="margin: 0;"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
-				</div>
+            <!-- Header Navigation -->
+            <header id="header">
+                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#" class="button primary">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li>
+                            <a href="mentorship.html">Mentorship &amp; Outreach</a>
+                            <ul>
+                                <li><a href="CARP.html">CARP Program</a></li>
+                            </ul>
+                        </li>
+                        <!-- Theme Toggle integrated directly into navigation -->
+                        <li class="nav-toggle-item">
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                                <i class="fa-solid fa-moon" id="theme-icon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
 
-				<nav id="nav" style="display: flex; align-items: center; gap: 1.5rem;">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="#" class="button primary">About</a></li>
-						<li><a href="research.html">Research</a></li>
-						<li>
-							<a href="mentorship.html">Mentorship & Outreach</a>
-							<ul>
-								<li><a href="CARP.html">CARP Program</a></li>
-							</ul>
-						</li>
-						<!-- <li><a href="CV.pdf" target="_blank">CV</a></li> -->
-					</ul>
+            <!-- Main Content Container -->
+            <div id="main" class="wrapper style1" style="padding-top: 1.5em !important;">
+                <div class="about-container" style="padding-top: 0 !important;">
 
-					<!-- Right-Aligned Theme Toggle Button -->
-					<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" style="margin-left: 1rem;">
-						<i class="fa-solid fa-moon" id="theme-icon"></i>
-					</button>
-				</nav>
-			</header>
+                    <!-- Page Title & Feynman Quote -->
+                    <h2 class="about-header-title" style="margin-top: 0 !important;">About Me</h2>
 
-			<!-- Main Content Container -->
-			<div id="main" class="wrapper style1" style="padding-top: 1.5em !important;">
-				<div class="about-container" style="padding-top: 0 !important;">
-
-					<!-- Page Title & Feynman Quote -->
-					<h2 class="about-header-title" style="margin-top: 0 !important;">About Me</h2>
-
-					<div class="quote-box">
-						“I... a universe of atoms, an atom in the universe.” 
-						<br><span style="font-size: 0.9rem; opacity: 0.85;">— Richard P. Feynman</span>
-					</div>
+                    <div class="quote-box">
+                        “I... a universe of atoms, an atom in the universe.” 
+                        <br><span style="font-size: 0.9rem; opacity: 0.85;">— Richard P. Feynman</span>
+                    </div>
 
                     <!-- Short Formal Bio -->
                     <section class="story-section">
@@ -380,7 +380,7 @@
         
                     </section>
 
-					<!-- Academic Journey Timeline -->
+                    <!-- Academic Journey Timeline -->
                     <section class="story-section">
                         <h3>Academic Journey</h3>
                         
@@ -395,7 +395,7 @@
 
                             <div class="timeline-item">
                                 <div class="timeline-date">2023 – 2026</div>
-                                <div class="timeline-title">NSF Astronomy & Astrophysics and UC Chancellor's Postdoctoral Fellow — UC San Diego</div>
+                                <div class="timeline-title">NSF Astronomy &amp; Astrophysics and UC Chancellor's Postdoctoral Fellow — UC San Diego</div>
                                 <div class="timeline-body">
                                     Investigated the drivers of environmental quenching across cosmic time and established predictions for galaxy protocluster populations. Developed and led multiple outreach initiatives, including programming and mentoring workshops through the CARP, CRANE, and STARTAstro programs. Taught and developed materials for the Introduction to Astrophysics Part I course in the newly established Astronomy and Astrophysics Department at UC San Diego.
                                 </div>
@@ -427,7 +427,7 @@
                         </div>
                     </section>
 
-					<!--Hobbies and Interests  -->
+                    <!-- Hobbies and Interests -->
                     <section class="story-section">
                         <h3>Hobbies and Interests</h3>
                         <p>
@@ -449,7 +449,7 @@
 
                             <div class="hobby-card">
                                 <i class="fa-solid fa-tv"></i>
-                                <h4>Anime & Sci-Fi</h4>
+                                <h4>Anime &amp; Sci-Fi</h4>
                                 <p>I love keeping up with my favorite manga and anime, as well as exploring fantastical worlds in sci-fi literature, TV shows, and movies. I am currently hooked on <em>One Piece</em>, and my favorite sci-fi book series is <em>The Hitchhiker's Guide to the Galaxy</em>.</p>
                             </div>
 
@@ -459,14 +459,7 @@
                                 <p>Recharging through hiking, stargazing, and spending quality time outdoors with family and friends.</p>
                             </div>
                         </div>
-                    </section>	
-<!-- 
-                    CV Download Callout
-                    <div style="text-align: center; margin-top: 3.5rem;">
-                        <a href="CV.pdf" target="_blank" class="button primary">
-                            <i class="fa-solid fa-file-invoice"></i> Download Full Curriculum Vitae (PDF)
-                        </a>
-                    </div> -->
+                    </section>
 
                 </div>
             </div>
@@ -493,28 +486,37 @@
 
         <!-- Theme Switcher JS -->
         <script>
-          const toggleBtn = document.getElementById('theme-toggle');
-          const themeIcon = document.getElementById('theme-icon');
-          
-          const currentTheme = localStorage.getItem('theme');
-          if (currentTheme === 'light') {
-            document.body.classList.add('light-mode');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
-          }
+            document.addEventListener('DOMContentLoaded', () => {
+                const applyTheme = (theme) => {
+                    if (theme === 'light') {
+                        document.body.classList.add('light-mode');
+                        document.querySelectorAll('.theme-toggle-btn i').forEach(icon => {
+                            icon.classList.remove('fa-moon');
+                            icon.classList.add('fa-sun');
+                        });
+                    } else {
+                        document.body.classList.remove('light-mode');
+                        document.querySelectorAll('.theme-toggle-btn i').forEach(icon => {
+                            icon.classList.remove('fa-sun');
+                            icon.classList.add('fa-moon');
+                        });
+                    }
+                };
 
-          toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            
-            let theme = 'dark';
-            if (document.body.classList.contains('light-mode')) {
-              theme = 'light';
-              themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-              themeIcon.classList.replace('fa-sun', 'fa-moon');
-            }
-            
-            localStorage.setItem('theme', theme);
-          });
+                // Load stored preference
+                const currentTheme = localStorage.getItem('theme') || 'dark';
+                applyTheme(currentTheme);
+
+                // Handle toggle click (delegated to support cloned mobile nav instances)
+                document.addEventListener('click', (e) => {
+                    if (e.target.closest('#theme-toggle')) {
+                        const isLight = document.body.classList.contains('light-mode');
+                        const newTheme = isLight ? 'dark' : 'light';
+                        applyTheme(newTheme);
+                        localStorage.setItem('theme', newTheme);
+                    }
+                });
+            });
         </script>
     </body>
 </html>
