@@ -16,39 +16,21 @@
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
-        <!-- FontAwesome CDN (Fixed Version) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <!-- FontAwesome CDN for Google Scholar and metadata icon support -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
-            /* --- REVAMP FOOTER --- */
-            #footer {
-                padding-top: 1.5em !important;
-                margin-top: 0 !important;
-                transition: background 0.3s ease, color 0.3s ease;
-            }
 
-            #footer .footer-cta {
-                margin-top: 0 !important;
-                padding-top: 0 !important;
-                text-align: center;
-            }
-
-            #footer .footer-cta h3 {
-                margin-top: 0 !important;
-                margin-bottom: 1.25rem;
-                font-size: 1.35rem;
-                font-weight: 700;
-                color: #ffffff;
-            }
-
+           /* --- REVAMP FOOTER --- */
             .footer-badges {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.6rem;
-                margin-bottom: 2rem;
-            }
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 0.6rem;
+                    margin-bottom: 2rem;
+                }
 
             .footer-badge {
                 display: inline-flex;
@@ -61,40 +43,43 @@
                 color: #ffffff !important;
                 font-size: 0.88rem;
                 text-decoration: none !important;
-                transition: all 0.25s ease;
-            }
-
-            .footer-badge i {
-                color: #ffffff !important;
-                opacity: 1 !important;
+                transition: all 0.25 ease;
             }
 
             .footer-badge:hover {
                 background: rgba(255, 255, 255, 0.2);
                 transform: translateY(-2px);
-                color: #ffffff !important;
             }
 
-            /* --- FOOTER LIGHT MODE OVERRIDES --- */
-            body.light-mode #footer {
-                background-color: #eef2f7 !important;
-                color: #2d3748 !important;
-            }
-
-            body.light-mode #footer .footer-cta h3 {
+            body.light-mode .footer-badge {
+                background: rgba(0, 0, 0, 0.05);
+                border-color: rgba(0, 0, 0, 0.12);
                 color: #1a202c !important;
             }
+            
+            /* --- REDUCE TOP PADDING & MARGIN FOR FOOTER --- */
+            #footer {
+                padding-top: 1.5em !important; /* Reduces the large default template padding */
+                margin-top: 0 !important;
+            }
 
+            #footer .footer-cta {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            #footer .footer-cta h3 {
+                margin-top: 0 !important; /* Removes default browser margin above heading */
+            }
+
+
+            /* --- FOOTER LIGHT MODE ICON FIXES --- */
+            /* 1. Fix badge buttons if using badge layout */
             body.light-mode .footer-badge {
                 background: rgba(0, 0, 0, 0.06) !important;
                 border-color: rgba(0, 0, 0, 0.15) !important;
                 color: #1a202c !important;
                 box-shadow: none !important;
-            }
-
-            body.light-mode .footer-badge i {
-                color: #1a202c !important;
-                opacity: 1 !important;
             }
 
             body.light-mode .footer-badge:hover {
@@ -103,19 +88,38 @@
                 color: #2563eb !important;
             }
 
-            body.light-mode .footer-badge:hover i {
+            /* 2. Fix round circle icons (HTML5 UP template default) */
+            body.light-mode #footer .icons li a,
+            body.light-mode #footer .icons a {
+                background-color: rgba(0, 0, 0, 0.07) !important;
+                color: #1a202c !important;
+                border-color: rgba(0, 0, 0, 0.18) !important;
+                box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15) !important;
+                opacity: 1 !important; /* Prevents template opacity fading */
+            }
+
+            /* 3. Force the internal icon font glyphs (:before) to solid dark charcoal */
+            body.light-mode #footer .icons li a:before,
+            body.light-mode #footer .icons a:before,
+            body.light-mode #footer .icons li a i,
+            body.light-mode #footer .icons a i {
+                color: #1a202c !important;
+                opacity: 1 !important;
+            }
+
+            /* 4. Crisp hover states in light mode */
+            body.light-mode #footer .icons li a:hover,
+            body.light-mode #footer .icons a:hover {
+                background-color: rgba(37, 99, 235, 0.15) !important;
+                border-color: rgba(37, 99, 235, 0.4) !important;
                 color: #2563eb !important;
             }
 
-            body.light-mode #footer .copyright,
-            body.light-mode #footer .copyright li {
-                color: #4a5568 !important;
-                border-color: rgba(0, 0, 0, 0.12) !important;
-            }
-
-            body.light-mode #footer .copyright a {
+            body.light-mode #footer .icons li a:hover:before,
+            body.light-mode #footer .icons a:hover:before,
+            body.light-mode #footer .icons li a:hover i,
+            body.light-mode #footer .icons a:hover i {
                 color: #2563eb !important;
-                border-bottom-color: rgba(37, 99, 235, 0.4) !important;
             }
 
             /* --- KILL TEMPLATE GHOST SPACERS & FORCE TOP ALIGNMENT --- */
@@ -472,7 +476,7 @@
                 color: #2563eb !important;
             }
 
-            /* --- RESPONSIVE / MOBILE & TABLET CLEANUP --- */
+            /* --- RESPONSIVE / MOBILE & TABLET CLEANUP (Updated threshold to 980px) --- */
             @media screen and (max-width: 980px) {
                 #banner {
                     padding: 3.8em 1.5em 2.5em 1.5em !important;
@@ -490,6 +494,7 @@
                     display: none !important;
                 }
 
+                /* Mobile/Tablet Greeting (Strict 1 Line) */
                 .mobile-greeting {
                     display: block !important;
                     order: 1 !important;
@@ -510,6 +515,7 @@
                     display: contents !important;
                 }
 
+                /* Mobile/Tablet Card Layout */
                 .profile-card-mobile {
                     order: 2 !important;
                     display: flex !important;
@@ -542,6 +548,7 @@
                     flex-shrink: 0;
                 }
 
+                /* Left-align card contents inside compact card */
                 .profile-info {
                     order: unset !important;
                     align-items: flex-start !important;
@@ -565,6 +572,7 @@
                     font-size: 0.98rem !important;
                 }
 
+                /* Department info guaranteed single line */
                 .profile-dept {
                     font-size: 0.82rem !important;
                     white-space: nowrap !important;
@@ -628,6 +636,7 @@
                                 <li><a href="CARP.html">CARP Program</a></li>
                             </ul>
                         </li>
+                        <!-- Theme Toggle integrated directly into navigation -->
                         <li class="nav-toggle-item">
                             <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark and light theme">
                                 <i class="fa-solid fa-moon theme-icon"></i>
@@ -643,8 +652,11 @@
                 
                 <div class="content">
                     <div class="profile-container">
+                        
+                        <!-- Standalone Main Greeting for Mobile/Tablet (Guaranteed Single Line) -->
                         <h2 class="mobile-greeting">Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
 
+                        <!-- Left Side: Photo, Details, Socials -->
                         <div class="profile-left">
                             <img src="images/dcb-headshot.webp" alt="Devontae C. Baxter headshot" />
                             
@@ -653,20 +665,33 @@
                                 <span class="profile-dept"><i class="fa-solid fa-atom info-icon"></i> Dept. of Astrophysical Sciences</span>
                                 <span class="profile-title"><i class="fa-solid fa-id-badge info-icon"></i> FFPS Postdoctoral Fellow</span>
                                 
+                                <!-- Anti-Bot Obfuscated Email Link -->
                                 <a href="#" class="profile-email" id="profile-email-link" aria-label="Email Devontae Baxter">
                                     <i class="fa-regular fa-envelope info-icon"></i> <span id="profile-email-text">dcbaxter [at] princeton [dot] edu</span>
                                 </a>
                             </div>
 
+                            <!-- Social Icons -->
                             <ul class="profile-socials">
+                                <!-- CV -->
                                 <li><a href="CV.pdf" target="_blank" rel="noopener noreferrer" title="Curriculum Vitae (CV)"><i class="ai ai-cv ai-3x"></i></a></li>
+                                
+                                <!-- NASA ADS -->
                                 <li><a href="https://ui.adsabs.harvard.edu/public-libraries/jFJRwpWtSMqBBCSsXhm8-w" target="_blank" rel="noopener noreferrer" title="NASA ADS"><i class="ai ai-ads ai-3x"></i></a></li>
+                            
+                                <!-- Google Scholar -->
                                 <li><a href="https://scholar.google.com/citations?user=AeB9S3cAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" title="Google Scholar"><i class="ai ai-google-scholar ai-3x"></i></a></li>
+
+                                <!-- ResearchGate -->
                                 <li><a href="https://www.researchgate.net/profile/Devontae-Baxter" target="_blank" rel="noopener noreferrer" title="ResearchGate"><i class="ai ai-researchgate ai-3x"></i></a></li>
+                               
+                                <!-- ORCID -->
                                 <li><a href="https://orcid.org/0000-0002-8209-2783" target="_blank" rel="noopener noreferrer" title="ORCID"><i class="ai ai-orcid ai-3x"></i></a></li>
+                                
                             </ul>
                         </div>
 
+                        <!-- Right Side: Header and Bio -->
                         <div class="profile-right">
                             <h2 class="desktop-greeting">Hi, I'm Devontae (Tae) Baxter! <span class="wave">👋🏾</span></h2>
                             <p>
@@ -684,24 +709,31 @@
                 </div>
 
                 <div class="footer-badges">
+                    <!-- EMAIL  -->
                     <a href="mailto:dcbaxter@princeton.edu" class="footer-badge">
                         <i class="fa-solid fa-envelope"></i> Email
                     </a>
+                    <!-- GitHub -->
                     <a href="https://github.com/sentientstarstuff" target="_blank" rel="noopener noreferrer" class="footer-badge">
                         <i class="fa-brands fa-github"></i> GitHub
                     </a>
+                    <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/taebaxter/" target="_blank" rel="noopener noreferrer" class="footer-badge">
                         <i class="fa-brands fa-linkedin-in"></i> LinkedIn
                     </a>
+                    <!-- Twitter -->
                     <a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="footer-badge">
                         <i class="fa-brands fa-twitter"></i> Twitter
                     </a>
+                    <!-- Instagram -->
                     <a href="https://www.instagram.com/sentientstardust/" target="_blank" rel="noopener noreferrer" class="footer-badge">
                         <i class="fa-brands fa-instagram"></i> Instagram
                     </a>
+                    <!-- Duolingo -->
                     <a href="https://www.duolingo.com/profile/CosmicPrimate" target="_blank" rel="noopener noreferrer" class="footer-badge duolingo-badge">
                         <i class="fa-brands fa-duolingo"></i> Duolingo
                     </a>
+
                 </div>
 
                 <ul class="copyright">
@@ -722,6 +754,7 @@
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
 
+        <!-- Responsive Layout Switcher for Mobile & Tablet Card (Updated threshold to <= 980) -->
         <script>
             function setupMobileCard() {
                 const isMobileOrTablet = window.innerWidth <= 980;
@@ -754,6 +787,169 @@
 
             window.addEventListener('DOMContentLoaded', setupMobileCard);
             window.addEventListener('resize', setupMobileCard);
+        </script>
+
+        <!-- Anti-Bot Email Hydration -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const u = 'dcbaxter';
+                const d = 'princeton.edu';
+                const fullEmail = u + '@' + d;
+                
+                const linkEl = document.getElementById('profile-email-link');
+                const textEl = document.getElementById('profile-email-text');
+                
+                if (linkEl && textEl) {
+                    linkEl.href = 'mailto:' + fullEmail;
+                    textEl.textContent = fullEmail;
+                }
+            });
+        </script>
+
+        <!-- Theme Switcher JS -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const applyTheme = (theme) => {
+                    const isLight = theme === 'light';
+                    document.body.classList.toggle('light-mode', isLight);
+                    
+                    const icons = document.querySelectorAll('.theme-toggle-btn i');
+                    icons.forEach(icon => {
+                        if (isLight) {
+                            icon.classList.remove('fa-moon');
+                            icon.classList.add('fa-sun');
+                        } else {
+                            icon.classList.remove('fa-sun');
+                            icon.classList.add('fa-moon');
+                        }
+                    });
+                };
+
+                const currentTheme = localStorage.getItem('theme') || 'dark';
+                applyTheme(currentTheme);
+
+                document.addEventListener('click', (e) => {
+                    const toggleBtn = e.target.closest('.theme-toggle-btn');
+                    if (toggleBtn) {
+                        const isLight = document.body.classList.contains('light-mode');
+                        const newTheme = isLight ? 'dark' : 'light';
+                        applyTheme(newTheme);
+                        localStorage.setItem('theme', newTheme);
+                    }
+                });
+            });
+        </script>
+
+        <!-- Cosmic Particle Effect Canvas JS -->
+        <script>
+        (function() {
+            const canvas = document.getElementById('cosmic-canvas');
+            const banner = document.getElementById('banner');
+            if (!canvas || !banner) return;
+            const ctx = canvas.getContext('2d');
+
+            let width, height, dpr;
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 120 };
+
+            function resize() {
+                dpr = window.devicePixelRatio || 1;
+                width = banner.offsetWidth;
+                height = banner.offsetHeight;
+                
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                ctx.scale(dpr, dpr);
+            }
+
+            banner.addEventListener('mousemove', (e) => {
+                const rect = banner.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+
+            banner.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            window.addEventListener('resize', () => {
+                resize();
+                init();
+            });
+
+            class Star {
+                constructor() {
+                    this.reset();
+                }
+
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 1.8 + 0.4;
+                    this.baseAlpha = Math.random() * 0.6 + 0.2;
+                    this.alpha = this.baseAlpha;
+                    this.vx = (Math.random() - 0.5) * 0.2;
+                    this.vy = (Math.random() - 0.5) * 0.2;
+                    this.twinkleSpeed = Math.random() * 0.02 + 0.005;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x < 0) this.x = width;
+                    if (this.x > width) this.x = 0;
+                    if (this.y < 0) this.y = height;
+                    if (this.y > height) this.y = 0;
+
+                    this.alpha += Math.sin(Date.now() * this.twinkleSpeed) * 0.008;
+                    this.alpha = Math.max(0.1, Math.min(0.8, this.alpha));
+
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = mouse.x - this.x;
+                        const dy = mouse.y - this.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            this.alpha = Math.min(1, this.baseAlpha + force * 0.5);
+                        }
+                    }
+                }
+
+                draw() {
+                    const isLight = document.body.classList.contains('light-mode');
+                    ctx.fillStyle = isLight 
+                        ? `rgba(50, 70, 110, ${this.alpha * 0.6})` 
+                        : `rgba(255, 255, 255, ${this.alpha})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                particles = [];
+                const count = Math.floor((width * height) / 10000);
+                for (let i = 0; i < count; i++) {
+                    particles.push(new Star());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animate);
+            }
+
+            resize();
+            init();
+            animate();
+        })();
         </script>
     </body>
 </html>
