@@ -114,51 +114,27 @@
 
             /* --- PAGE LAYOUT & CONTAINER --- */
             #main.wrapper {
-                padding-top: 1.5em !important;
+                padding-top: 2.5em !important;
             }
 
             .collab-container {
                 max-width: 1250px;
                 margin: 0 auto;
-                padding: 0 2rem 4rem 2rem;
-            }
-
-            /* --- HERO OVERVIEW BOX --- */
-            .collab-hero-box {
-                background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(30, 58, 138, 0.2));
-                border: 1px solid rgba(96, 165, 250, 0.3);
-                border-radius: 12px;
-                padding: 2rem 2.5rem;
-                margin: 80px auto 3rem auto;
-                text-align: center;
-                font-size: 1.2rem;
-                line-height: 1.7;
-                color: #f1f5f9;
-            }
-
-            .collab-hero-box h2 {
-                font-size: 2.2rem;
-                font-weight: 800;
-                color: #ffffff;
-                margin-bottom: 0.75rem;
-            }
-
-            .collab-hero-box strong {
-                color: #60a5fa;
+                padding: 60px 2rem 4rem 2rem;
             }
 
             /* --- SECTION HEADINGS --- */
             .section-heading {
-                font-size: 1.8rem;
-                font-weight: 700;
+                font-size: 2.2rem;
+                font-weight: 800;
                 color: #ffffff;
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-                padding-bottom: 0.5rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 1rem;
+                margin-bottom: 2.5rem;
+                padding-bottom: 0.75rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
                 display: flex;
                 align-items: center;
-                gap: 0.75rem;
+                gap: 0.85rem;
             }
 
             .section-heading i {
@@ -168,118 +144,121 @@
             /* --- COLLABORATION CARDS GRID --- */
             .collab-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+                gap: 2.25rem;
                 margin-bottom: 3rem;
             }
 
             .collab-card {
-                background: rgba(255, 255, 255, 0.04);
-                border: 1px solid rgba(255, 255, 255, 0.12);
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.1);
                 border-radius: 16px;
-                overflow: hidden;
+                padding: 1.75rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+                transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
             }
 
             .collab-card:hover {
-                background: rgba(255, 255, 255, 0.07);
-                transform: translateY(-5px);
-                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+                background: rgba(255, 255, 255, 0.05);
+                border-color: rgba(96, 165, 250, 0.3);
+                transform: translateY(-4px);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
             }
 
-            /* FIXED LOGO CONTAINER (Slimmed down to eliminate blank space) */
-            .collab-card-header {
-                padding: 1.25rem 1.5rem 0.5rem 1.5rem;
+            /* EMBEDDED LOGO CARD / CONTAINER */
+            .collab-logo-box {
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                border-radius: 12px;
+                padding: 1.25rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 110px; /* Reduced vertical footprint */
-                background: transparent;
+                height: 130px;
+                margin-bottom: 1.5rem;
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+                transition: all 0.25s ease;
             }
 
-            .collab-card-header img {
-                max-width: 100%;
-                max-height: 90px;
+            .collab-card:hover .collab-logo-box {
+                background: rgba(255, 255, 255, 0.09);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+
+            .collab-logo-box img {
+                max-width: 90%;
+                max-height: 95px;
                 width: auto;
                 height: auto;
                 object-fit: contain;
-                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
                 transition: transform 0.25s ease;
             }
 
-            .collab-card:hover .collab-card-header img {
-                transform: scale(1.04);
+            .collab-card:hover .collab-logo-box img {
+                transform: scale(1.03);
             }
 
             .collab-card-body {
-                padding: 1.25rem 1.75rem 1.75rem 1.75rem;
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
             }
 
-            .collab-badge-group {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .collab-badge {
-                font-size: 0.78rem;
-                font-weight: 700;
-                padding: 0.25rem 0.65rem;
-                border-radius: 12px;
-                background: rgba(96, 165, 250, 0.15);
-                color: #60a5fa;
-                border: 1px solid rgba(96, 165, 250, 0.3);
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-
             .collab-card-title {
-                font-size: 1.45rem;
+                font-size: 1.5rem;
                 font-weight: 700;
                 color: #ffffff;
-                margin-bottom: 0.75rem;
+                margin-bottom: 0.85rem;
+                line-height: 1.3;
             }
 
             .collab-card-description {
-                font-size: 1rem;
-                line-height: 1.65;
-                color: rgba(255, 255, 255, 0.88);
-                margin-bottom: 1.5rem;
+                font-size: 1.02rem;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.85);
+                margin-bottom: 1.75rem;
                 flex-grow: 1;
             }
 
-            .collab-card-footer {
-                padding: 1rem 1.75rem 1.75rem 1.75rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.08);
-            }
-
+            /* THEME INTEGRATED BUTTON (REMOVED CLASHING BLUE & DOTTED BORDERS) */
             .collab-link-btn {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
                 gap: 0.6rem;
                 width: 100%;
-                padding: 0.75rem 1.25rem;
-                background: #2563eb;
+                padding: 0.8rem 1.25rem;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
                 color: #ffffff !important;
-                font-weight: 700;
-                font-size: 0.98rem;
+                font-weight: 600;
+                font-size: 0.95rem;
                 border-radius: 8px;
                 text-decoration: none !important;
-                transition: all 0.2s ease;
-                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+                border-bottom: none !important; /* Removes template dotted underline */
+                outline: none !important;
+                transition: all 0.25s ease;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             }
 
             .collab-link-btn:hover {
-                background: #3b82f6;
-                box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+                background: rgba(96, 165, 250, 0.2);
+                border-color: rgba(96, 165, 250, 0.5) !important;
+                color: #60a5fa !important;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+            }
+
+            .collab-link-btn i {
+                font-size: 0.88rem;
+                transition: transform 0.2s ease;
+            }
+
+            .collab-link-btn:hover i {
+                transform: translate(2px, -2px);
             }
 
             /* --- NAV THEME TOGGLE BUTTON --- */
@@ -340,23 +319,9 @@
                 color: #d97706 !important;
             }
 
-            body.light-mode .collab-hero-box {
-                background: #e0f2fe !important;
-                border-color: #93c5fd !important;
-                color: #1e293b !important;
-            }
-
-            body.light-mode .collab-hero-box h2 {
-                color: #0f172a !important;
-            }
-
-            body.light-mode .collab-hero-box strong {
-                color: #1d4ed8 !important;
-            }
-
             body.light-mode .section-heading {
                 color: #1a202c !important;
-                border-bottom-color: rgba(0, 0, 0, 0.1);
+                border-bottom-color: rgba(0, 0, 0, 0.12);
             }
 
             body.light-mode .section-heading i {
@@ -369,6 +334,17 @@
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             }
 
+            body.light-mode .collab-card:hover {
+                border-color: rgba(37, 99, 235, 0.3) !important;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            }
+
+            body.light-mode .collab-logo-box {
+                background: #f8fafc !important;
+                border-color: rgba(0, 0, 0, 0.08) !important;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+            }
+
             body.light-mode .collab-card-title {
                 color: #1a202c !important;
             }
@@ -377,21 +353,22 @@
                 color: #334155 !important;
             }
 
-            body.light-mode .collab-badge {
-                background: rgba(37, 99, 235, 0.1);
-                color: #2563eb;
-                border-color: rgba(37, 99, 235, 0.25);
+            body.light-mode .collab-link-btn {
+                background: #f1f5f9 !important;
+                border-color: rgba(0, 0, 0, 0.15) !important;
+                color: #1e293b !important;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             }
 
-            body.light-mode .collab-card-footer {
-                border-top-color: rgba(0, 0, 0, 0.08);
+            body.light-mode .collab-link-btn:hover {
+                background: #2563eb !important;
+                border-color: #2563eb !important;
+                color: #ffffff !important;
+                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
             }
 
             /* --- RESPONSIVE MEDIA QUERIES --- */
             @media screen and (max-width: 980px) {
-                .collab-hero-box {
-                    margin-top: 70px;
-                }
                 .dropotron {
                     display: none !important;
                 }
@@ -399,19 +376,16 @@
 
             @media screen and (max-width: 736px) {
                 .collab-container {
-                    padding: 0 1.25rem 2rem 1.25rem;
+                    padding: 40px 1.25rem 2rem 1.25rem;
                 }
-                .collab-hero-box {
-                    padding: 1.5rem;
-                }
-                .collab-hero-box h2 {
+                .section-heading {
                     font-size: 1.8rem;
                 }
                 .collab-grid {
                     grid-template-columns: 1fr;
                 }
-                .collab-card-header {
-                    height: 90px;
+                .collab-logo-box {
+                    height: 110px;
                 }
             }
         </style>
@@ -452,89 +426,64 @@
             <div id="main" class="wrapper style1">
                 <div class="collab-container">
 
-                    <!-- Hero / Summary Box -->
-                    <div class="collab-hero-box">
-                        <h2>Research Collaborations</h2>
-                        <p>
-                            Observational cosmology and galaxy evolution thrive on collaborative scientific networks. My research integrates observational data from multi-wavelength campaigns and state-of-the-art ground and space facilities to probe <strong>galaxy cluster formation, protoclusters, and environmental quenching across cosmic time</strong>.
-                        </p>
-                    </div>
-
-                    <h3 class="section-heading">
-                        <i class="fa-solid fa-diagram-project"></i> Survey Programs &amp; Initiatives
-                    </h3>
+                    <!-- Main Section Heading -->
+                    <h2 class="section-heading">
+                        <i class="fa-solid fa-diagram-project"></i> Research Collaborations
+                    </h2>
 
                     <!-- Collaboration Cards Grid -->
                     <div class="collab-grid">
 
                         <!-- C3VO Card -->
                         <div class="collab-card">
-                            <div>
-                                <div class="collab-card-header">
+                            <div class="collab-card-body">
+                                <div class="collab-logo-box">
                                     <img src="images/C3VO.webp" alt="C3VO Collaboration Logo" loading="lazy">
                                 </div>
-                                <div class="collab-card-body">
-                                    <div class="collab-badge-group">
-                                        <span class="collab-badge">Keck &amp; VUDS</span>
-                                        <span class="collab-badge">Overdensity Mapping</span>
-                                    </div>
-                                    <h3 class="collab-card-title">C3VO Survey</h3>
-                                    <p class="collab-card-description">
-                                        The <strong>Charting Cluster Construction with VUDS and ORELSE (C3VO)</strong> survey is an ongoing observational campaign designed to construct a nearly complete map of the five most significant overdensities identified in the VIMOS Ultra–Deep Survey (VUDS). C3VO integrates spectroscopy from DEIMOS and MOSFIRE on the Keck I/II telescopes alongside VUDS, utilizing a Voronoi Monte-Carlo density mapper originally developed within the ORELSE survey. Its Keck component targets star-forming galaxies down to $i_{\text{AB}} < 25.3$ ($\sim L^*_{\text{FUV}}$ at $z \sim 4.5$ and $< L^*_{\text{FUV}}$ at $z \sim 2.5$) and Lyman-$\alpha$ emitting galaxies to even fainter limits.
-                                    </p>
-                                </div>
+                                <h3 class="collab-card-title">C3VO Survey</h3>
+                                <p class="collab-card-description">
+                                    Charting Cluster Construction with VUDS and ORELSE (C3VO) is a high-redshift survey campaign targeting the most massive overdensities in the early universe. By mapping primeval structure assembly and local environment density, C3VO probes the seeds of modern galaxy clusters and early environmental quenching mechanisms.
+                                </p>
                             </div>
                             <div class="collab-card-footer">
                                 <a href="https://www.orelsesurvey.com/c3vo.html" target="_blank" rel="noopener noreferrer" class="collab-link-btn">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit C3VO Homepage
+                                    Visit C3VO Homepage <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </div>
                         </div>
 
                         <!-- GOGREEN Card -->
                         <div class="collab-card">
-                            <div>
-                                <div class="collab-card-header">
+                            <div class="collab-card-body">
+                                <div class="collab-logo-box">
                                     <img src="images/GOGREEN.webp" alt="GOGREEN Survey Logo" loading="lazy">
                                 </div>
-                                <div class="collab-card-body">
-                                    <div class="collab-badge-group">
-                                        <span class="collab-badge">1 < z < 1.5</span>
-                                        <span class="collab-badge">Gemini Observatory</span>
-                                    </div>
-                                    <h3 class="collab-card-title">GOGREEN Survey</h3>
-                                    <p class="collab-card-description">
-                                        The <strong>Gemini Observations of Galaxies in Rich Early Environments (GOGREEN)</strong> survey is a multi-wavelength legacy program designed to systematically examine galaxy evolution across group and cluster environments at $1.0 < z < 1.5$. GOGREEN delivers deep spectroscopic and photometric datasets to analyze environmental star-formation quenching, galaxy structural evolution, and the build-up of the cluster stellar mass function.
-                                    </p>
-                                </div>
+                                <h3 class="collab-card-title">GOGREEN Survey</h3>
+                                <p class="collab-card-description">
+                                    Gemini Observations of Galaxies in Rich Early Environments (GOGREEN) is an international multi-wavelength legacy initiative exploring galaxy evolution in dense structures. The survey provides deep spectroscopic and photometric insights into how group and cluster environments shape galaxy growth and shut down star formation.
+                                </p>
                             </div>
                             <div class="collab-card-footer">
                                 <a href="http://gogreensurvey.ca/" target="_blank" rel="noopener noreferrer" class="collab-link-btn">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit GOGREEN Homepage
+                                    Visit GOGREEN Homepage <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </div>
                         </div>
 
                         <!-- GRACE Card -->
                         <div class="collab-card">
-                            <div>
-                                <div class="collab-card-header">
+                            <div class="collab-card-body">
+                                <div class="collab-logo-box">
                                     <img src="images/GRACE.webp" alt="GRACE Roman Space Telescope Program Logo" loading="lazy">
                                 </div>
-                                <div class="collab-card-body">
-                                    <div class="collab-badge-group">
-                                        <span class="collab-badge">Roman Space Telescope</span>
-                                        <span class="collab-badge">Cycle 1 Approved</span>
-                                    </div>
-                                    <h3 class="collab-card-title">GRACE (Roman Program #2003)</h3>
-                                    <p class="collab-card-description">
-                                        <strong>GRACE</strong> is an approved NASA Nancy Grace Roman Space Telescope Cycle 1 science program focused on galaxy clusters and large-scale cosmic structure. Leveraging Roman's wide-field infrared imaging capabilities, GRACE aims to map cosmic web filaments, trace low-mass cluster galaxy populations, and characterize halo assembly and structural evolution across cosmic time.
-                                    </p>
-                                </div>
+                                <h3 class="collab-card-title">GRACE (Roman Program #2003)</h3>
+                                <p class="collab-card-description">
+                                    GRACE is an approved NASA Nancy Grace Roman Space Telescope Cycle 1 science program devoted to studying galaxy clusters and wide-field cosmic web architecture. Utilizing Roman’s infrared capabilities, the program maps large-scale structure, low-mass cluster populations, and halo assembly.
+                                </p>
                             </div>
                             <div class="collab-card-footer">
                                 <a href="https://roman.ipac.caltech.edu/cycle1-approved-programs/2003" target="_blank" rel="noopener noreferrer" class="collab-link-btn">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View Roman Program #2003
+                                    View Roman Program #2003 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
                             </div>
                         </div>
