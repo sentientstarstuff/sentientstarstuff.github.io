@@ -74,15 +74,51 @@
 
 
             /* --- FOOTER LIGHT MODE ICON FIXES --- */
-            /* Fix standard FontAwesome icon colors in light mode */
-            body.light-mode #footer .icons a {
-                color: #1a202c !important;
-                background-color: rgba(0, 0, 0, 0.08) !important;
+            /* 1. Fix badge buttons if using badge layout */
+            body.light-mode .footer-badge {
+                background: rgba(0, 0, 0, 0.06) !important;
                 border-color: rgba(0, 0, 0, 0.15) !important;
+                color: #1a202c !important;
+                box-shadow: none !important;
             }
 
+            body.light-mode .footer-badge:hover {
+                background: rgba(37, 99, 235, 0.12) !important;
+                border-color: rgba(37, 99, 235, 0.3) !important;
+                color: #2563eb !important;
+            }
+
+            /* 2. Fix round circle icons (HTML5 UP template default) */
+            body.light-mode #footer .icons li a,
+            body.light-mode #footer .icons a {
+                background-color: rgba(0, 0, 0, 0.07) !important;
+                color: #1a202c !important;
+                border-color: rgba(0, 0, 0, 0.18) !important;
+                box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15) !important;
+                opacity: 1 !important; /* Prevents template opacity fading */
+            }
+
+            /* 3. Force the internal icon font glyphs (:before) to solid dark charcoal */
+            body.light-mode #footer .icons li a:before,
+            body.light-mode #footer .icons a:before,
+            body.light-mode #footer .icons li a i,
+            body.light-mode #footer .icons a i {
+                color: #1a202c !important;
+                opacity: 1 !important;
+            }
+
+            /* 4. Crisp hover states in light mode */
+            body.light-mode #footer .icons li a:hover,
             body.light-mode #footer .icons a:hover {
                 background-color: rgba(37, 99, 235, 0.15) !important;
+                border-color: rgba(37, 99, 235, 0.4) !important;
+                color: #2563eb !important;
+            }
+
+            body.light-mode #footer .icons li a:hover:before,
+            body.light-mode #footer .icons a:hover:before,
+            body.light-mode #footer .icons li a:hover i,
+            body.light-mode #footer .icons a:hover i {
                 color: #2563eb !important;
             }
 
