@@ -72,6 +72,20 @@
                 margin-top: 0 !important; /* Removes default browser margin above heading */
             }
 
+
+            /* --- FOOTER LIGHT MODE ICON FIXES --- */
+            /* Fix standard FontAwesome icon colors in light mode */
+            body.light-mode #footer .icons a {
+                color: #1a202c !important;
+                background-color: rgba(0, 0, 0, 0.08) !important;
+                border-color: rgba(0, 0, 0, 0.15) !important;
+            }
+
+            body.light-mode #footer .icons a:hover {
+                background-color: rgba(37, 99, 235, 0.15) !important;
+                color: #2563eb !important;
+            }
+
             /* --- KILL TEMPLATE GHOST SPACERS & FORCE TOP ALIGNMENT --- */
             #banner::before,
             #banner::after,
