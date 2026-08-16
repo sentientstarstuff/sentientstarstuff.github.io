@@ -167,7 +167,7 @@
                 box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
             }
 
-            /* EMBEDDED LOGO CONTAINER */
+            /* EMBEDDED LOGO CONTAINER (SLIGHTLY LARGER) */
             .collab-logo-box {
                 background: rgba(255, 255, 255, 0.06);
                 border: 1px solid rgba(255, 255, 255, 0.12);
@@ -176,7 +176,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 130px;
+                height: 150px; /* Increased height */
                 margin-bottom: 1.5rem;
                 box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
                 transition: all 0.25s ease;
@@ -188,8 +188,8 @@
             }
 
             .collab-logo-box img {
-                max-width: 90%;
-                max-height: 95px;
+                max-width: 92%;
+                max-height: 110px; /* Increased max image height */
                 width: auto;
                 height: auto;
                 object-fit: contain;
@@ -198,7 +198,7 @@
             }
 
             .collab-card:hover .collab-logo-box img {
-                transform: scale(1.03);
+                transform: scale(1.04);
             }
 
             .collab-card-body {
@@ -221,6 +221,11 @@
                 color: rgba(255, 255, 255, 0.85);
                 margin-bottom: 1.75rem;
                 flex-grow: 1;
+            }
+
+            .collab-card-description strong {
+                color: #ffffff;
+                font-weight: 700;
             }
 
             /* THEME INTEGRATED BUTTON */
@@ -353,6 +358,12 @@
                 color: #334155 !important;
             }
 
+            /* PREVENT BOLD TEXT FROM BEING WASHED OUT IN LIGHT MODE */
+            body.light-mode .collab-card-description strong {
+                color: #0f172a !important;
+                font-weight: 700 !important;
+            }
+
             body.light-mode .collab-link-btn {
                 background: #f1f5f9 !important;
                 border-color: rgba(0, 0, 0, 0.15) !important;
@@ -385,7 +396,7 @@
                     grid-template-columns: 1fr;
                 }
                 .collab-logo-box {
-                    height: 110px;
+                    height: 125px;
                 }
             }
         </style>
@@ -442,7 +453,7 @@
                                 </div>
                                 <h3 class="collab-card-title">C3VO Survey</h3>
                                 <p class="collab-card-description">
-                                    The <strong>Charting Cluster Construction with VUDS and ORELSE (C3VO)</strong> survey maps five of the most massive overdensities in the early universe ($z \sim 2\text{--}5$). Combining Keck spectroscopy (DEIMOS/MOSFIRE) and VUDS with Voronoi Monte-Carlo environmental mapping, C3VO investigates how environmental density connects to star formation, AGN activity, galaxy color, and the dynamical virialization of assembling protoclusters across cosmic time.
+                                    The <strong>Charting Cluster Construction with VUDS and ORELSE (C3VO)</strong> survey maps five of the most massive cosmic structures in the early universe (<em>z</em> ~ 2–5). Combining deep spectroscopy from Keck Observatory (DEIMOS and MOSFIRE) with multi-wavelength mapping, C3VO's primary goals are to <strong>map cosmic structure growth over 12 billion years</strong>, <strong>track how galaxy properties change across different cosmic environments</strong>, and <strong>identify detection biases when finding early forming galaxy clusters</strong>.
                                 </p>
                             </div>
                             <div class="collab-card-footer">
@@ -460,7 +471,7 @@
                                 </div>
                                 <h3 class="collab-card-title">GOGREEN Survey</h3>
                                 <p class="collab-card-description">
-                                    The <strong>Gemini Observations of Galaxies in Rich Early Environments (GOGREEN)</strong> survey is a premier spectroscopic legacy project targeting 21 high-redshift ($z > 1$) galaxy clusters and massive groups. By securing over 1,000 galaxy spectra with Gemini, GOGREEN establishes the definitive benchmark for testing unconstrained theories of environmental quenching, tidal stripping, and structural evolution in distant cosmic calorimeters.
+                                    The <strong>Gemini Observations of Galaxies in Rich Early Environments (GOGREEN)</strong> survey is a premier spectroscopic initiative targeting 21 distant galaxy clusters and groups (<em>z</em> &gt; 1). Securing spectra for over 1,000 cluster galaxies with Gemini Observatory, GOGREEN's main goals are to <strong>discover how dense group and cluster environments shape galaxy growth</strong>, <strong>uncover why early cluster galaxies shut down star formation</strong>, and <strong>provide a legacy dataset to test theories of cosmic structure formation</strong>.
                                 </p>
                             </div>
                             <div class="collab-card-footer">
@@ -476,9 +487,9 @@
                                 <div class="collab-logo-box">
                                     <img src="images/GRACE.webp" alt="GRACE Roman Space Telescope Program Logo" loading="lazy">
                                 </div>
-                                <h3 class="collab-card-title">GRACE (Roman Program #2003)</h3>
+                                <h3 class="collab-card-title">GRACE (Roman Cycle 1 Program ID #2003)</h3>
                                 <p class="collab-card-description">
-                                    <strong>GRACE</strong> is an approved ultra-deep wide-field grism spectroscopic survey with the Nancy Grace Roman Space Telescope, designing a sensitive 3D map of $\sim 290,000$ emission-line galaxies across 1.5 square degrees in CDFS. Bridging the area-depth gap between JWST and Euclid, GRACE measures the pace of Epoch of Reionization ($z = 7\text{--}10$) Lyman-$\alpha$ emitters and uncovers how cosmic environments shape early galaxy growth.
+                                    <strong>GRACE</strong> is an ultra-deep spectroscopic survey using NASA's Nancy Grace Roman Space Telescope, constructing a 3D map of ~290,000 faint galaxies in the Chandra Deep Field South. Targeting Lyman-alpha emitting galaxies in the early universe (<em>z</em> = 7–10), GRACE's primary goals are to <strong>measure the pace and timeline of cosmic reionization</strong>, <strong>map how early galaxies influence their cosmic environments</strong>, and <strong>reveal how early structures drive galaxy evolution</strong>.
                                 </p>
                             </div>
                             <div class="collab-card-footer">
