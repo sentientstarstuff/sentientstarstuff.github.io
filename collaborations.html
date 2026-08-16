@@ -19,7 +19,7 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
-            /* --- FOOTER LIGHT MODE & BASE STYLES --- */
+            /* --- FOOTER BASE STYLES --- */
             .footer-badges {
                 display: flex;
                 flex-wrap: wrap;
@@ -190,30 +190,32 @@
                 box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
             }
 
+            /* FIXED LOGO CONTAINER (Slimmed down to eliminate blank space) */
             .collab-card-header {
-                background: rgba(0, 0, 0, 0.25);
-                padding: 1.75rem 1.5rem;
+                padding: 1.25rem 1.5rem 0.5rem 1.5rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-                min-height: 160px;
+                height: 110px; /* Reduced vertical footprint */
+                background: transparent;
             }
 
             .collab-card-header img {
-                max-width: 85%;
-                max-height: 110px;
+                max-width: 100%;
+                max-height: 90px;
+                width: auto;
+                height: auto;
                 object-fit: contain;
                 filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
                 transition: transform 0.25s ease;
             }
 
             .collab-card:hover .collab-card-header img {
-                transform: scale(1.03);
+                transform: scale(1.04);
             }
 
             .collab-card-body {
-                padding: 1.75rem;
+                padding: 1.25rem 1.75rem 1.75rem 1.75rem;
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
@@ -227,7 +229,7 @@
             }
 
             .collab-badge {
-                font-size: 0.8rem;
+                font-size: 0.78rem;
                 font-weight: 700;
                 padding: 0.25rem 0.65rem;
                 border-radius: 12px;
@@ -239,22 +241,22 @@
             }
 
             .collab-card-title {
-                font-size: 1.5rem;
+                font-size: 1.45rem;
                 font-weight: 700;
                 color: #ffffff;
                 margin-bottom: 0.75rem;
             }
 
             .collab-card-description {
-                font-size: 1.02rem;
-                line-height: 1.7;
-                color: rgba(255, 255, 255, 0.85);
+                font-size: 1rem;
+                line-height: 1.65;
+                color: rgba(255, 255, 255, 0.88);
                 margin-bottom: 1.5rem;
                 flex-grow: 1;
             }
 
             .collab-card-footer {
-                padding-top: 1rem;
+                padding: 1rem 1.75rem 1.75rem 1.75rem;
                 border-top: 1px solid rgba(255, 255, 255, 0.08);
             }
 
@@ -280,7 +282,7 @@
                 box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
             }
 
-            /* --- INTEGRATED NAV THEME TOGGLE BUTTON --- */
+            /* --- NAV THEME TOGGLE BUTTON --- */
             #nav ul li.nav-toggle-item {
                 display: inline-flex;
                 align-items: center;
@@ -307,7 +309,7 @@
                 border-color: rgba(255, 255, 255, 0.5);
             }
 
-            /* --- LIGHT MODE COMPREHENSIVE OVERRIDES --- */
+            /* --- LIGHT MODE OVERRIDES --- */
             body.light-mode {
                 background-color: #f4f6f9 !important;
                 color: #2e3440 !important;
@@ -367,11 +369,6 @@
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             }
 
-            body.light-mode .collab-card-header {
-                background: #f8fafc !important;
-                border-bottom-color: rgba(0, 0, 0, 0.08);
-            }
-
             body.light-mode .collab-card-title {
                 color: #1a202c !important;
             }
@@ -412,6 +409,9 @@
                 }
                 .collab-grid {
                     grid-template-columns: 1fr;
+                }
+                .collab-card-header {
+                    height: 90px;
                 }
             }
         </style>
@@ -456,7 +456,7 @@
                     <div class="collab-hero-box">
                         <h2>Research Collaborations</h2>
                         <p>
-                            Observational cosmology and galaxy evolution thrive on international teamwork. My research leverages multi-wavelength dataset pipelines and state-of-the-art space and ground-based facilities across several multi-institutional survey collaborations targeting galaxies in a wide range of environments.
+                            Observational cosmology and galaxy evolution thrive on collaborative scientific networks. My research integrates observational data from multi-wavelength campaigns and state-of-the-art ground and space facilities to probe <strong>galaxy cluster formation, protoclusters, and environmental quenching across cosmic time</strong>.
                         </p>
                     </div>
 
@@ -475,16 +475,16 @@
                                 </div>
                                 <div class="collab-card-body">
                                     <div class="collab-badge-group">
-                                        <span class="collab-badge">High Redshift (z ~ 2–3)</span>
-                                        <span class="collab-badge">Keck &amp; Subaru</span>
+                                        <span class="collab-badge">Keck &amp; VUDS</span>
+                                        <span class="collab-badge">Overdensity Mapping</span>
                                     </div>
                                     <h3 class="collab-card-title">C3VO Survey</h3>
                                     <p class="collab-card-description">
-                                        The <strong>Clusters at z ~ 3 Very-Large-Scale Overdensity (C3VO)</strong> survey targets high-redshift galaxy structures to map the assembly of early galaxy clusters during peak cosmic star formation. By integrating optical/near-IR spectroscopy from Keck and Subaru, C3VO investigates early environmental quenching, protocluster dark matter halos, and the emergence of massive cluster galaxies.
+                                        The <strong>Charting Cluster Construction with VUDS and ORELSE (C3VO)</strong> survey is an ongoing observational campaign designed to construct a nearly complete map of the five most significant overdensities identified in the VIMOS Ultra–Deep Survey (VUDS). C3VO integrates spectroscopy from DEIMOS and MOSFIRE on the Keck I/II telescopes alongside VUDS, utilizing a Voronoi Monte-Carlo density mapper originally developed within the ORELSE survey. Its Keck component targets star-forming galaxies down to $i_{\text{AB}} < 25.3$ ($\sim L^*_{\text{FUV}}$ at $z \sim 4.5$ and $< L^*_{\text{FUV}}$ at $z \sim 2.5$) and Lyman-$\alpha$ emitting galaxies to even fainter limits.
                                     </p>
                                 </div>
                             </div>
-                            <div class="collab-card-body collab-card-footer">
+                            <div class="collab-card-footer">
                                 <a href="https://www.orelsesurvey.com/c3vo.html" target="_blank" rel="noopener noreferrer" class="collab-link-btn">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit C3VO Homepage
                                 </a>
@@ -499,16 +499,16 @@
                                 </div>
                                 <div class="collab-card-body">
                                     <div class="collab-badge-group">
-                                        <span class="collab-badge">Intermediate Redshift (1 < z < 1.5)</span>
+                                        <span class="collab-badge">1 < z < 1.5</span>
                                         <span class="collab-badge">Gemini Observatory</span>
                                     </div>
                                     <h3 class="collab-card-title">GOGREEN Survey</h3>
                                     <p class="collab-card-description">
-                                        The <strong>Gemini Observations of Galaxies in Rich Early Environments (GOGREEN)</strong> survey is a multi-wavelength legacy program designed to study galaxy evolution across diverse cluster environments at 1.0 &lt; z &lt; 1.5. GOGREEN provides deep spectroscopic and photometric measurements to unpack how group and cluster density suppresses star formation and shapes the stellar mass function.
+                                        The <strong>Gemini Observations of Galaxies in Rich Early Environments (GOGREEN)</strong> survey is a multi-wavelength legacy program designed to systematically examine galaxy evolution across group and cluster environments at $1.0 < z < 1.5$. GOGREEN delivers deep spectroscopic and photometric datasets to analyze environmental star-formation quenching, galaxy structural evolution, and the build-up of the cluster stellar mass function.
                                     </p>
                                 </div>
                             </div>
-                            <div class="collab-card-body collab-card-footer">
+                            <div class="collab-card-footer">
                                 <a href="http://gogreensurvey.ca/" target="_blank" rel="noopener noreferrer" class="collab-link-btn">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit GOGREEN Homepage
                                 </a>
@@ -528,11 +528,11 @@
                                     </div>
                                     <h3 class="collab-card-title">GRACE (Roman Program #2003)</h3>
                                     <p class="collab-card-description">
-                                        <strong>GRACE</strong> is an approved NASA Nancy Grace Roman Space Telescope Cycle 1 science project focusing on large-scale structure and galaxy clusters. Leveraging Roman’s panoramic wide-field infrared capabilities, GRACE aims to trace cosmic web filamentary structures, identify faint cluster populations, and quantify halo assembly bias with unprecedented spatial precision.
+                                        <strong>GRACE</strong> is an approved NASA Nancy Grace Roman Space Telescope Cycle 1 science program focused on galaxy clusters and large-scale cosmic structure. Leveraging Roman's wide-field infrared imaging capabilities, GRACE aims to map cosmic web filaments, trace low-mass cluster galaxy populations, and characterize halo assembly and structural evolution across cosmic time.
                                     </p>
                                 </div>
                             </div>
-                            <div class="collab-card-body collab-card-footer">
+                            <div class="collab-card-footer">
                                 <a href="https://roman.ipac.caltech.edu/cycle1-approved-programs/2003" target="_blank" rel="noopener noreferrer" class="collab-link-btn">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i> View Roman Program #2003
                                 </a>
