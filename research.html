@@ -21,7 +21,7 @@
 
         <style>
 
-            /* --- REVAMP FOOTER --- */
+           /* --- REVAMP FOOTER --- */
             .footer-badges {
                     display: flex;
                     flex-wrap: wrap;
@@ -54,7 +54,7 @@
                 border-color: rgba(0, 0, 0, 0.12);
                 color: #1a202c !important;
             }
-
+            
             /* --- REDUCE TOP PADDING & MARGIN FOR FOOTER --- */
             #footer {
                 padding-top: 1.5em !important; /* Reduces the large default template padding */
@@ -70,6 +70,58 @@
                 margin-top: 0 !important; /* Removes default browser margin above heading */
             }
 
+
+            /* --- FOOTER LIGHT MODE OVERRIDES --- */
+            body.light-mode #footer,
+            body.light-mode #page-wrapper #footer {
+                background: #ffffff !important; /* Shorthand overrides background-image & gradients */
+                background-color: #ffffff !important;
+                color: #2d3748 !important;
+            }
+
+            /* Kill any template dark gradient/overlay pseudo-elements on the footer */
+            body.light-mode #footer::before,
+            body.light-mode #footer::after {
+                display: none !important;
+                background: none !important;
+            }
+
+            body.light-mode #footer .footer-cta h3 {
+                color: #1a202c !important;
+            }
+
+            body.light-mode .footer-badge {
+                background: rgba(0, 0, 0, 0.05) !important;
+                border-color: rgba(0, 0, 0, 0.15) !important;
+                color: #1a202c !important;
+                box-shadow: none !important;
+            }
+
+            body.light-mode .footer-badge i {
+                color: #1a202c !important;
+                opacity: 1 !important;
+            }
+
+            body.light-mode .footer-badge:hover {
+                background: rgba(37, 99, 235, 0.12) !important;
+                border-color: rgba(37, 99, 235, 0.3) !important;
+                color: #2563eb !important;
+            }
+
+            body.light-mode .footer-badge:hover i {
+                color: #2563eb !important;
+            }
+
+            body.light-mode #footer .copyright,
+            body.light-mode #footer .copyright li {
+                color: #4a5568 !important;
+                border-color: rgba(0, 0, 0, 0.12) !important;
+            }
+
+            body.light-mode #footer .copyright a {
+                color: #2563eb !important;
+                border-bottom-color: rgba(37, 99, 235, 0.4) !important;
+            }
 
             /* --- REMOVE EXCESS PADDING ABOVE PAGE HEADING --- */
             #main.wrapper {
