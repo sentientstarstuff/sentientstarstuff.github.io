@@ -479,116 +479,6 @@
                 color: #2563eb !important;
             }
 
-            /* =========================================================
-            RIGHT-HAND SIDE MOBILE DRAWER & FLUSH TOGGLE BUTTON
-            ========================================================= */
-
-            /* 1. Header Bar (#titleBar) */
-            #titleBar {
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                right: 0 !important;
-                width: 100% !important;
-                height: 44px !important;
-                background: #11141a !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-                z-index: 10000 !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            #titleBar .title {
-                text-align: left !important;
-                padding-left: 1.25rem !important;
-                padding-right: 65px !important; /* Leave space so title doesn't overlap the right toggle */
-                line-height: 44px !important;
-                color: #ffffff !important;
-            }
-
-            /* 2. Flush-Right Toggle (Hamburger) Button */
-            #titleBar .toggle {
-                position: absolute !important;
-                top: 0 !important;
-                right: 0 !important;
-                left: auto !important; /* Removes default left anchor */
-                width: 50px !important;
-                height: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
-                border-right: none !important;
-                box-sizing: border-box !important;
-            }
-
-            #titleBar .toggle:before {
-                position: static !important;
-                margin: 0 !important;
-                line-height: 1 !important;
-                color: #ffffff !important;
-            }
-
-            /* 3. Nightside Right-hand Drawer (#navPanel) */
-            #navPanel {
-                position: fixed !important;
-                top: 0 !important;
-                right: 0 !important;
-                left: auto !important;
-                width: 280px !important; /* Explicit width prevents content collapse */
-                max-width: 80vw !important;
-                height: 100% !important;
-                background: #11141a !important;
-                box-shadow: -5px 0 25px rgba(0, 0, 0, 0.6) !important;
-                z-index: 10001 !important;
-                overflow-y: auto !important;
-
-                /* Hidden off the right edge */
-                transform: translateX(100%) !important;
-                transition: transform 0.35s ease-in-out !important;
-            }
-
-            /* Slide drawer in when active */
-            body.is-navPanel-visible #navPanel {
-                transform: translateX(0) !important;
-            }
-
-            /* Prevent body content from shifting off-screen when menu opens */
-            body.is-navPanel-visible #page-wrapper,
-            body.is-navPanel-visible #titleBar {
-                transform: none !important;
-            }
-
-            /* 4. Ensure Links & Content display clearly inside Drawer */
-            #navPanel nav {
-                display: block !important;
-                padding: 1rem 0 !important;
-            }
-
-            #navPanel .link {
-                display: block !important;
-                width: 100% !important;
-                padding: 0.85rem 1.25rem !important;
-                color: #e2e8f0 !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-                text-decoration: none !important;
-                box-sizing: border-box !important;
-            }
-
-            #navPanel .link:hover,
-            #navPanel .link:active {
-                color: #60a5fa !important;
-                background: rgba(255, 255, 255, 0.06) !important;
-            }
-
-            /* Nested sub-menu link indents */
-            #navPanel .link.depth-1 {
-                padding-left: 2.25rem !important;
-                font-size: 0.9em !important;
-                opacity: 0.85;
-            }
             
             /* --- RESPONSIVE / MOBILE & TABLET CLEANUP (Updated threshold to 980px) --- */
             @media screen and (max-width: 980px) {
@@ -730,30 +620,9 @@
                     width: 44px !important;
                     height: 44px !important;
                 }
-                
             }
         </style>
     </head>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Ensure navPanel exists and populates links properly
-        setTimeout(() => {
-            const navPanelNav = document.querySelector('#navPanel nav');
-            if (navPanelNav && navPanelNav.children.length === 0) {
-                const links = document.querySelectorAll('#nav a');
-                links.forEach(link => {
-                    if (link.textContent.trim()) {
-                        const a = document.createElement('a');
-                        a.className = 'link';
-                        a.href = link.href;
-                        a.textContent = link.textContent;
-                        navPanelNav.appendChild(a);
-                    }
-                });
-            }
-        }, 300);
-    });
-</script>
     <body>
         <div id="page-wrapper">
 
