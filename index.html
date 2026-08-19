@@ -479,6 +479,45 @@
                 color: #2563eb !important;
             }
 
+            /* =========================================================
+            MOBILE MENU DRAWER & TOGGLE (RIGHT-HAND SIDE)
+            ========================================================= */
+
+            /* 1. Anchor panel to the right & hide it off the right edge */
+            #navPanel {
+                left: auto !important;
+                right: 0 !important;
+                transform: translateX(100%) !important;
+                transition: transform 0.35s ease-in-out !important;
+            }
+
+            /* 2. Slide panel in from the right when active */
+            body.is-navPanel-visible #navPanel {
+                transform: translateX(0) !important;
+            }
+
+            /* 3. Prevent the background page from shifting right when menu opens */
+            body.is-navPanel-visible #page-wrapper,
+            body.is-navPanel-visible #titleBar {
+                transform: none !important;
+            }
+
+            /* 4. Move the Hamburger Toggle Button to the top-right corner */
+            #titleBar .toggle {
+                left: auto !important;
+                right: 0 !important;
+                border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
+                border-right: none !important;
+            }
+
+            /* 5. Re-align title text so it doesn't overlap the right-aligned hamburger icon */
+            #titleBar .title {
+                text-align: left !important;
+                padding-left: 1.25em !important;
+                padding-right: 4em !important;
+            }
+
+
             /* --- RESPONSIVE / MOBILE & TABLET CLEANUP (Updated threshold to 980px) --- */
             @media screen and (max-width: 980px) {
                 #banner {
