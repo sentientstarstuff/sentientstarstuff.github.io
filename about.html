@@ -423,6 +423,55 @@
                     font-size: 2.2rem;
                 }
             }
+
+            /* =========================================================
+            STYLISH SKATEBOARDING VIDEO CARD
+            ========================================================= */
+            .skate-video-card {
+                position: relative;
+                max-width: 520px;
+                margin: 1.5rem auto;
+                border-radius: 16px;
+                overflow: hidden;
+                background: #11141a;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .skate-video-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+            }
+
+            .skate-video-card video {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+            }
+
+            .skate-video-card .video-caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 0.75rem 1rem;
+                background: linear-gradient(to top, rgba(17, 20, 26, 0.9), transparent);
+                color: #f1f5f9;
+                font-size: 0.85rem;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            /* Light Mode Overrides */
+            body.light-mode .skate-video-card {
+                background: #ffffff;
+                border-color: rgba(0, 0, 0, 0.1);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            }
         </style>
     </head>
     <body>
@@ -493,8 +542,17 @@
                                 </p>
                             </div>
                         </div>
-
-        
+                        <div class="skate-video-card">
+                            <video autoplay loop muted playsinline poster="images/kickflip-poster.jpg">
+                                <source src="videos/kickflip.mp4" type="video/mp4" />
+                                <source src="videos/kickflip.mov" type="video/quicktime" />
+                                Your browser does not support HTML5 video.
+                            </video>
+                            <div class="video-caption">
+                                <span><i class="fa-solid fa-person-skateboarding"></i> Kickflip</span>
+                            </div>
+                        </div>
+                                
                     </section>
 
                     <!-- Academic Journey Timeline -->
