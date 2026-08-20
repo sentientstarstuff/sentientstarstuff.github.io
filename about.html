@@ -425,42 +425,44 @@
             }
 
             /* =========================================================
-            SKATEBOARDING TWO-COLUMN GRID & MEDIA GROUP
+            LARGE SCREEN / 27" RESPONSIVE SKATEBOARDING GRID
             ========================================================= */
             .story-section {
-                max-width: 1050px;
-                margin: 2rem auto;
+                width: 90%;
+                max-width: 1500px; /* Expanded limit for large 27"+ desktop monitors */
+                margin: 2.5rem auto;
                 padding: 0 1rem;
             }
 
             .skate-grid {
                 display: grid;
-                grid-template-columns: 1fr 1fr; /* Equal split on desktop */
-                gap: 2.5rem;
+                /* Allocates slightly more width to media than text on wide screens */
+                grid-template-columns: 1fr 1.25fr;
+                gap: 3.5rem;
                 align-items: center;
             }
 
             .skate-text p {
-                font-size: 1.1rem;
-                line-height: 1.75;
+                font-size: 1.15rem; /* Slightly larger text scale for large displays */
+                line-height: 1.8;
                 margin-bottom: 1.25rem;
             }
 
-            /* Side-by-Side Media Frame */
             .skate-media-group {
                 display: grid;
-                grid-template-columns: 1fr 1fr; /* Photo & video side-by-side */
-                gap: 1rem;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.25rem;
             }
 
             .skate-media-item {
                 position: relative;
-                border-radius: 14px;
+                border-radius: 16px;
                 overflow: hidden;
                 background: #11141a;
                 border: 1px solid rgba(255, 255, 255, 0.12);
                 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-                aspect-ratio: 4 / 5; /* Matches height across photo and video */
+                /* 3/4 aspect ratio scales wider and fuller on big screens */
+                aspect-ratio: 3 / 4; 
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
 
@@ -496,16 +498,16 @@
                 gap: 5px;
             }
 
-            /* Responsive Stacking for Mobile/Tablet */
-            @media screen and (max-width: 768px) {
-                .skate-grid {
-                    grid-template-columns: 1fr; /* Stacks text above media */
-                    gap: 1.5rem;
+            /* Maintain clean bounds on mobile/tablets */
+            @media screen and (max-width: 980px) {
+                .story-section {
+                    width: 100%;
+                    max-width: 100%;
                 }
                 
-                .skate-media-group {
-                    grid-template-columns: 1fr 1fr; /* Keeps media side-by-side on mobile */
-                    gap: 0.75rem;
+                .skate-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
                 }
             }
 
