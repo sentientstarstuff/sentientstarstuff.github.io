@@ -526,20 +526,21 @@
                     gap: 0.2rem;
                 }
             }
+
             /* =========================================================
-            PROGRAM INITIATIVES CAROUSEL & LOGO STYLING
+            SIDE-BY-SIDE CAROUSEL & LOGO LAYOUT
             ========================================================= */
             .carousel-container {
                 position: relative;
                 max-width: 100%;
-                margin-bottom: 2rem;
+                margin-bottom: 2.5rem;
             }
 
             .carousel-track {
                 display: flex;
                 overflow: hidden;
                 position: relative;
-                border-radius: 12px;
+                border-radius: 14px;
             }
 
             .carousel-slide {
@@ -555,58 +556,98 @@
             .carousel-slide.active {
                 opacity: 1;
                 visibility: visible;
-                position: relative; /* Takes up space when active */
+                position: relative;
             }
 
-            /* Adjust Existing Program Card Inside Carousel */
             .carousel-container .program-card {
                 margin-bottom: 0 !important;
-                padding: 2.25rem 3.5rem; /* Extra side padding to accommodate arrow buttons */
+                padding: 2.5rem 3.5rem; /* Extra padding for floating arrow buttons */
             }
 
-            /* Program Logo Styling */
+            /* Two-Column Grid: Logo on Left, Content on Right */
+            .program-card-grid {
+                display: grid;
+                grid-template-columns: 140px 1fr;
+                gap: 2rem;
+                align-items: center;
+            }
+
+            .program-logo-col {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
             .program-logo {
-                width: 64px;
-                height: 64px;
+                width: 120px;
+                height: 120px;
                 object-fit: contain;
-                border-radius: 10px;
+                border-radius: 12px;
                 background: rgba(255, 255, 255, 0.05);
-                padding: 6px;
+                padding: 10px;
                 border: 1px solid rgba(255, 255, 255, 0.12);
-                flex-shrink: 0;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
             }
 
-            .program-tag {
-                display: inline-block;
-                font-size: 0.82rem;
+            .alt-program-icon {
+                font-size: 3.5rem;
                 color: #60a5fa;
-                font-weight: 600;
-                margin-top: 0.2rem;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 1.25rem;
+                border-radius: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.12);
             }
 
+            .program-content-col h3 {
+                font-size: 1.7rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 0.85rem;
+                color: #ffffff;
+            }
+
+            .program-content-col h3 a {
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+
+            .program-content-col h3 a:hover {
+                color: #60a5fa;
+            }
+
+            /* Centered CTA Button Container */
+            .slide-footer-cta {
+                display: flex;
+                justify-content: center;
+                margin-top: 1.75rem;
+            }
+
+            .slide-footer-cta .lecture-btn {
+                padding: 0.55rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            /* Compact List Formatting */
             .compact-list {
-                margin-top: 0.5rem !important;
-                margin-bottom: 0.5rem !important;
+                margin-top: 0.5rem;
+                padding-left: 1.25rem;
             }
 
             .compact-list li {
-                margin-bottom: 0.35rem !important;
+                margin-bottom: 0.4rem;
             }
 
-            .slide-footer-cta {
-                margin-top: 1.25rem;
-            }
-
-            /* Carousel Prev/Next Buttons */
+            /* Carousel Buttons & Dots */
             .carousel-btn {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                background: rgba(17, 20, 26, 0.75);
+                background: rgba(17, 20, 26, 0.85);
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 color: #ffffff;
-                width: 42px;
-                height: 42px;
+                width: 44px;
+                height: 44px;
                 border-radius: 50%;
                 cursor: pointer;
                 display: flex;
@@ -619,7 +660,7 @@
             }
 
             .carousel-btn:hover {
-                background: rgba(37, 99, 235, 0.8);
+                background: #2563eb;
                 border-color: #60a5fa;
                 transform: translateY(-50%) scale(1.08);
             }
@@ -627,12 +668,11 @@
             .prev-btn { left: 10px; }
             .next-btn { right: 10px; }
 
-            /* Carousel Dots Indicator */
             .carousel-dots {
                 display: flex;
                 justify-content: center;
                 gap: 0.6rem;
-                margin-top: 1rem;
+                margin-top: 1.2rem;
             }
 
             .dot {
@@ -646,21 +686,30 @@
 
             .dot.active, .dot:hover {
                 background: #60a5fa;
-                transform: scale(1.2);
+                transform: scale(1.25);
             }
 
-            /* Light Mode Overrides for Carousel */
-            body.light-mode .program-logo {
+            /* Light Mode Overrides */
+            body.light-mode .program-logo,
+            body.light-mode .alt-program-icon {
                 background: #ffffff;
                 border-color: rgba(0, 0, 0, 0.12);
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            }
+
+            body.light-mode .program-content-col h3,
+            body.light-mode .program-content-col h3 a {
+                color: #1a202c !important;
+            }
+
+            body.light-mode .program-content-col h3 a:hover {
+                color: #2563eb !important;
             }
 
             body.light-mode .carousel-btn {
                 background: rgba(255, 255, 255, 0.9);
                 border-color: rgba(0, 0, 0, 0.15);
                 color: #1a202c;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
 
             body.light-mode .carousel-btn:hover {
@@ -676,25 +725,33 @@
                 background: #2563eb;
             }
 
-            /* Mobile Adjustments */
-            @media screen and (max-width: 736px) {
+            /* Responsive Stacking for Mobile/Tablet */
+            @media screen and (max-width: 768px) {
                 .carousel-container .program-card {
-                    padding: 1.5rem 1rem 3.5rem 1rem; /* Adjusts bottom padding for arrows */
+                    padding: 1.5rem 1rem 3.5rem 1rem;
                 }
-                
+
+                .program-card-grid {
+                    grid-template-columns: 1fr; /* Stacks logo above content on small screens */
+                    gap: 1rem;
+                    text-align: center;
+                }
+
+                .compact-list {
+                    text-align: left;
+                }
+
                 .carousel-btn {
                     top: auto;
                     bottom: 10px;
                     transform: none;
                 }
-                
-                .carousel-btn:hover {
-                    transform: scale(1.05);
-                }
 
                 .prev-btn { left: 15px; }
                 .next-btn { right: 15px; }
             }
+
+
 
 
         </style>
@@ -754,21 +811,22 @@
                             <!-- Slide 1: CARP -->
                             <div class="carousel-slide active">
                                 <div class="program-card">
-                                    <div class="program-card-header">
-                                        <img src="images/CARP.png" alt="CARP Logo" class="program-logo" />
-                                        <div>
+                                    <div class="program-card-grid">
+                                        <div class="program-logo-col">
+                                            <img src="images/CARP.png" alt="CARP Logo" class="program-logo" />
+                                        </div>
+                                        <div class="program-content-col">
                                             <h3><a href="CARP.html">Computational Astrophysics Research Preparation (CARP) Program</a></h3>
-                                            <span class="program-tag"><i class="fa-solid fa-graduation-cap"></i> Founder &amp; Director</span>
+                                            <p>
+                                                As the <strong>Founder and Director</strong> of CARP, I developed this training and mentoring initiative during my NSF Astronomy &amp; Astrophysics Postdoctoral Fellowship at UC San Diego. I organize and lead engaging workshops tailored for community college students aspiring to transfer to four-year universities and pursue undergraduate research.
+                                            </p>
+                                            <p>
+                                                The program equips transfer scholars with essential Python programming, data analysis skills, and personalized mentorship. To date, three cohorts have completed the program, with many scholars successfully transferring and securing competitive research internships.
+                                            </p>
                                         </div>
                                     </div>
-                                    <p>
-                                        <a href="CARP.html">CARP</a> is a training and mentoring initiative that I developed as an NSF Astronomy &amp; Astrophysics Postdoctoral Fellow at UC San Diego. As director, I organize and lead engaging workshops tailored for community college students aspiring to transfer to 4-year universities and pursue undergraduate research.
-                                    </p>
-                                    <p>
-                                        The program equips transfer scholars with essential Python programming, data analysis skills, and personalized mentorship. To date, three cohorts have completed the program, with many scholars successfully transferring and securing competitive research internships.
-                                    </p>
                                     <div class="slide-footer-cta">
-                                        <a href="CARP.html" class="lecture-btn"><i class="fa-solid fa-circle-info"></i> Learn More About CARP</a>
+                                        <a href="CARP.html" class="lecture-btn">Learn More About CARP</a>
                                     </div>
                                 </div>
                             </div>
@@ -776,42 +834,70 @@
                             <!-- Slide 2: CRANE -->
                             <div class="carousel-slide">
                                 <div class="program-card">
-                                    <div class="program-card-header">
-                                        <img src="images/CRANE.png" alt="CRANE Logo" class="program-logo" />
-                                        <div>
+                                    <div class="program-card-grid">
+                                        <div class="program-logo-col">
+                                            <img src="images/CRANE.png" alt="CRANE Logo" class="program-logo" />
+                                        </div>
+                                        <div class="program-content-col">
                                             <h3><a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">Computational Research Access NEtwork (CRANE)</a></h3>
-                                            <span class="program-tag"><i class="fa-solid fa-network-wired"></i> Leadership Team</span>
+                                            <p>
+                                                As a <strong>Core Leadership Team Member</strong>, I contribute to CRANE—a virtual nationwide data science training program led by graduate and postdoctoral researchers in physics and chemistry, addressing high barriers to entry in computational research.
+                                            </p>
+                                            <p>
+                                                I develop curriculum materials and lead interactive workshops to provide a welcoming environment for underrepresented students, teach fundamental computational tools, facilitate networking, and guide early-career researchers toward computational physics and data science paths.
+                                            </p>
                                         </div>
                                     </div>
-                                    <p>
-                                        <a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">CRANE</a> is a virtual nationwide data science training program led by graduate and postdoctoral researchers in physics and chemistry, addressing high barriers to entry in computational research.
-                                    </p>
-                                    <p><strong>Core Objectives:</strong></p>
-                                    <ul class="compact-list">
-                                        <li>Provide a welcoming environment for underrepresented students to gain computational confidence.</li>
-                                        <li>Teach fundamental computational tools and advanced research algorithms.</li>
-                                        <li>Facilitate meaningful academic and industry networking opportunities.</li>
-                                        <li>Guide early-career researchers toward computational physics and data science paths.</li>
-                                    </ul>
+                                    <div class="slide-footer-cta">
+                                        <a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About CRANE</a>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Slide 3: PACE -->
                             <div class="carousel-slide">
                                 <div class="program-card">
-                                    <div class="program-card-header">
-                                        <img src="images/PACE.png" alt="PACE Logo" class="program-logo" />
-                                        <div>
+                                    <div class="program-card-grid">
+                                        <div class="program-logo-col">
+                                            <img src="images/PACE.png" alt="PACE Logo" class="program-logo" />
+                                        </div>
+                                        <div class="program-content-col">
                                             <h3><a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">Physics &amp; Astronomy Community Excellence (PACE)</a></h3>
-                                            <span class="program-tag"><i class="fa-solid fa-users-gear"></i> Co-Founder / Lead</span>
+                                            <p>
+                                                As <strong>Co-Founder and Co-Lead</strong> alongside Dr. Francisco J. Mercado during my graduate studies at UC Irvine, I helped establish PACE to provide structured, formal peer-mentorship to incoming first-year graduate students.
+                                            </p>
+                                            <p>
+                                                The program supports incoming scholars through monthly professional development workshops and dedicated 1-on-1 peer mentoring to ease the transition into graduate school.
+                                            </p>
                                         </div>
                                     </div>
-                                    <p>
-                                        <a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">PACE</a> is a peer-mentoring program co-led with <a href="http://franciscojmercado.com" target="_blank" rel="noopener noreferrer">Dr. Francisco J. Mercado</a> during my graduate studies at UC Irvine.
-                                    </p>
-                                    <p>
-                                        The initiative provides structured, formal mentorship to first-year graduate students through monthly professional development workshops and dedicated 1-on-1 peer mentoring to ease the transition into graduate school.
-                                    </p>
+                                    <div class="slide-footer-cta">
+                                        <a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About PACE</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4: Additional Contributions -->
+                            <div class="carousel-slide">
+                                <div class="program-card">
+                                    <div class="program-card-grid">
+                                        <div class="program-logo-col">
+                                            <div class="multi-logo-stack">
+                                                <i class="fa-solid fa-hands-holding-circle alt-program-icon"></i>
+                                            </div>
+                                        </div>
+                                        <div class="program-content-col">
+                                            <h3>Additional Outreach &amp; Mentorship Contributions</h3>
+                                            <p>
+                                                Beyond leading CARP, CRANE, and PACE, I actively contribute as a <strong>mentor and facilitator</strong> across several broader community initiatives:
+                                            </p>
+                                            <ul class="compact-list">
+                                                <li><strong><a href="https://www.startastro.org/" target="_blank" rel="noopener noreferrer">STARTAstro</a>:</strong> Summer research program providing research opportunities and career development for astrophysics students.</li>
+                                                <li><strong><a href="https://sites.google.com/ucsd.edu/astroreach/" target="_blank" rel="noopener noreferrer">AstroReach SD</a>:</strong> Mentorship program supporting high-school students seeking to be the first in their family to pursue a college degree.</li>
+                                                <li><strong><a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a>:</strong> Portable planetarium initiative bringing space science directly to K-12 classrooms across San Diego.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -830,11 +916,8 @@
                             <span class="dot active" data-index="0"></span>
                             <span class="dot" data-index="1"></span>
                             <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
                         </div>
-                    </div>
-                    <!-- Additional Program Contributions Sentence -->
-                    <div class="contributions-summary">
-                        In addition to these programs, I have also contributed to several other impactful initiatives, including the <a href="https://www.startastro.org/" target="_blank" rel="noopener noreferrer">STARTAstro</a> summer research program, the <a href="https://sites.google.com/ucsd.edu/astroreach/" target="_blank" rel="noopener noreferrer">AstroReach SD</a> program for high-school students seeking to be the first in their family to pursue a college degree, and the <a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a> program bringing space science directly to K-12 students in San Diego with portable planetarium shows.
                     </div>
 
                     <!-- Public Outreach & Lectures Section -->
