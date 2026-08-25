@@ -530,8 +530,9 @@
 
 
 
+
             /* =========================================================
-            RESPONSIVE SPLIT-CARD CAROUSEL LAYOUT
+            INTEREST-CARD HERO CAROUSEL (WITH OVERLAY LOGOS & SPOTLIGHTS)
             ========================================================= */
             .carousel-container {
                 position: relative;
@@ -543,7 +544,7 @@
                 display: flex;
                 overflow: hidden;
                 position: relative;
-                border-radius: 16px;
+                border-radius: 12px;
             }
 
             .carousel-slide {
@@ -562,76 +563,99 @@
                 position: relative;
             }
 
-            /* Split Card Container */
-            .split-card {
-                display: grid;
-                grid-template-columns: 260px 1fr; /* Fixed 220px brand panel, flexible text panel */
-                padding: 0 !important; /* Zero padding out the outer card so panels control inner space */
-                overflow: hidden;
+            /* Card Container Integration */
+            .hero-carousel-card {
                 margin-bottom: 0 !important;
             }
 
-            /* Left Panel: Dedicated Brand/Logo Box */
-            .card-brand-panel {
-                background: rgba(255, 255, 255, 0.03);
-                border-right: 1px solid rgba(255, 255, 255, 0.1);
+            .hero-carousel-card .interest-card-img-wrapper {
+                height: 240px; /* Elevated height for banner view */
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Background Image Zooming Effect */
+            .carousel-hero-bg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(0.7) contrast(1.1);
+                transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+
+            .hero-carousel-card:hover .carousel-hero-bg {
+                transform: scale(1.05);
+            }
+
+            /* Centered Logo Overlay with Dual-Glow Pop */
+            .carousel-logo-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 2rem 1.5rem;
-            }
-
-            .brand-logo {
-                max-width: 190px;
-                max-height: 190px;
                 width: 100%;
+                pointer-events: none;
+            }
+
+            .overlay-brand-logo {
+                max-width: 180px;
+                max-height: 120px;
                 object-fit: contain;
-                filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.3));
+                /* Drop shadow + background glow for maximum contrast over complex imagery */
+                filter: 
+                    drop-shadow(0 0 20px rgba(15, 23, 42, 0.9))
+                    drop-shadow(0 0 14px rgba(96, 165, 250, 0.6))
+                    drop-shadow(0 6px 12px rgba(0, 0, 0, 0.8));
+                transition: transform 0.3s ease, filter 0.3s ease;
             }
 
-            .brand-icon {
-                font-size: 4rem;
+            .hero-carousel-card:hover .overlay-brand-logo {
+                transform: scale(1.06);
+                filter: 
+                    drop-shadow(0 0 25px rgba(15, 23, 42, 0.95))
+                    drop-shadow(0 0 20px rgba(96, 165, 250, 0.8))
+                    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.9));
+            }
+
+            .overlay-brand-icon {
+                font-size: 4.5rem;
                 color: #60a5fa;
+                filter: 
+                    drop-shadow(0 0 16px rgba(15, 23, 42, 0.9))
+                    drop-shadow(0 0 12px rgba(96, 165, 250, 0.7));
             }
 
-            /* Right Panel: Content Description & Action CTA */
-            .card-content-panel {
-                padding: 2.25rem 3.5rem 2.25rem 2.25rem; /* Right padding accommodates navigation arrows */
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+            /* Card Content & Text Formatting */
+            .hero-carousel-card .interest-card-content {
+                padding: 2rem 2.5rem;
             }
 
-            .card-content-panel h3 {
-                font-size: 1.6rem;
-                font-weight: 700;
-                margin-top: 0;
-                margin-bottom: 1rem;
-                color: #ffffff;
+            .hero-carousel-card h4 {
+                font-size: 1.5rem;
+                margin-bottom: 0.8rem;
             }
 
-            .card-content-panel h3 a {
+            .hero-carousel-card h4 a {
                 color: #ffffff;
                 text-decoration: none;
                 transition: color 0.2s ease;
             }
 
-            .card-content-panel h3 a:hover {
+            .hero-carousel-card h4 a:hover {
                 color: #60a5fa;
             }
 
             .panel-cta {
                 display: flex;
-                justify-content: center;
-                margin-top: 1.5rem;
+                justify-content: flex-start;
+                margin-top: 1.25rem;
             }
 
-            .panel-cta .lecture-btn {
-                padding: 0.6rem 1.75rem;
-                font-size: 0.95rem;
-            }
-
-            /* Carousel Prev/Next Buttons */
+            /* Controls & Dots */
             .carousel-btn {
                 position: absolute;
                 top: 50%;
@@ -658,14 +682,14 @@
                 transform: translateY(-50%) scale(1.08);
             }
 
-            .prev-btn { left: 10px; }
-            .next-btn { right: 10px; }
+            .prev-btn { left: 12px; }
+            .next-btn { right: 12px; }
 
             .carousel-dots {
                 display: flex;
                 justify-content: center;
                 gap: 0.6rem;
-                margin-top: 1.2rem;
+                margin-top: 1.25rem;
             }
 
             .dot {
@@ -683,17 +707,11 @@
             }
 
             /* Light Mode Overrides */
-            body.light-mode .card-brand-panel {
-                background: rgba(0, 0, 0, 0.02);
-                border-right-color: rgba(0, 0, 0, 0.08);
-            }
-
-            body.light-mode .card-content-panel h3,
-            body.light-mode .card-content-panel h3 a {
+            body.light-mode .hero-carousel-card h4 a {
                 color: #1a202c !important;
             }
 
-            body.light-mode .card-content-panel h3 a:hover {
+            body.light-mode .hero-carousel-card h4 a:hover {
                 color: #2563eb !important;
             }
 
@@ -716,52 +734,29 @@
                 background: #2563eb;
             }
 
-            /* =========================================================
-            MOBILE RESPONSIVE BREAKPOINT
-            ========================================================= */
+            /* Mobile Responsiveness */
             @media screen and (max-width: 768px) {
-                /* Stack panels vertically on mobile */
-                .split-card {
-                    grid-template-columns: 1fr;
+                .hero-carousel-card .interest-card-img-wrapper {
+                    height: 180px;
                 }
 
-                .card-brand-panel {
-                    border-right: none;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                    padding: 1.5rem 1rem;
+                .overlay-brand-logo {
+                    max-width: 140px;
+                    max-height: 90px;
                 }
 
-                body.light-mode .card-brand-panel {
-                    border-bottom-color: rgba(0, 0, 0, 0.08);
+                .overlay-brand-icon {
+                    font-size: 3.5rem;
                 }
 
-                .brand-logo {
-                    max-width: 120px;
-                    max-height: 100px;
+                .hero-carousel-card .interest-card-content {
+                    padding: 1.5rem;
                 }
 
-                .brand-icon {
-                    font-size: 3rem;
-                }
-
-                .card-content-panel {
-                    padding: 1.5rem 1.25rem 3.5rem 1.25rem; /* Extra bottom padding for floating controls */
-                    text-align: center;
-                }
-
-                .compact-list {
-                    text-align: left;
-                }
-
-                .carousel-btn {
-                    top: auto;
-                    bottom: 12px;
-                    transform: none;
-                }
-
-                .prev-btn { left: 15px; }
-                .next-btn { right: 15px; }
-            }
+                .panel-cta {
+                    justify-content: center;
+    }
+}
 
 
         </style>
@@ -814,24 +809,32 @@
                         <i class="fa-solid fa-code-branch" style="margin-right: 0.75rem; color: #60a5fa;"></i>Programming &amp; Mentoring Initiatives
                     </h3>
 
+
                     <!-- Programming & Mentoring Initiatives Carousel -->
                     <div class="carousel-container">
                         <div class="carousel-track">
 
                             <!-- Slide 1: CARP -->
                             <div class="carousel-slide active">
-                                <div class="program-card split-card">
-                                    <div class="card-brand-panel">
-                                        <img src="images/CARP.png" alt="CARP Logo" class="brand-logo" />
+                                <div class="program-card interest-card hero-carousel-card">
+                                    <div class="interest-card-img-wrapper">
+                                        <!-- Dynamic Background/Program Graphic -->
+                                        <img src="images/dwarf-galaxy.jpg" alt="CARP Background" class="carousel-hero-bg" />
+                                        <span class="interest-badge"><i class="fa-solid fa-code"></i> Workshop &amp; Mentorship</span>
+                                        
+                                        <!-- Overlay Logo (Glow effect applied directly) -->
+                                        <div class="carousel-logo-overlay">
+                                            <img src="images/CARP.png" alt="CARP Logo" class="overlay-brand-logo" />
+                                        </div>
                                     </div>
-                                    <div class="card-content-panel">
-                                        <h3><a href="CARP.html">Computational Astrophysics Research Preparation (CARP) Program</a></h3>
-                                            <p>
-                                            CARP is a training and mentoring initiative that I developed as a National Science Foundation Astronomy &amp; Astrophysics Postdoctoral Fellow at UC San Diego. As the director of the CARP program I organize and lead engaging workshops tailored for community college students who aspire to transfer to a four-year university and engage in undergraduate research.
-                                            </p>
-                                            <p>
-                                            The CARP program equips prospective transfer students with essential Python programming, data analysis skills, and personalized mentorship to streamline their transition to a four-year university. To date, three CARP cohorts have completed the program, with many scholars going on to transfer to four-year institutions and participate in competitive research and internship opportunities.
-                                            </p>
+                                    <div class="interest-card-content">
+                                        <h4><a href="CARP.html">Computational Astrophysics Research Preparation (CARP) Program</a></h4>
+                                        <p>
+                                            As the <strong>Founder and Director</strong> of CARP, I developed this training initiative during my NSF Postdoctoral Fellowship at UC San Diego. I organize and lead workshops tailored for community college students transferring to four-year universities to pursue undergraduate research.
+                                        </p>
+                                        <p>
+                                            The program equips transfer scholars with essential Python programming, data analysis skills, and personalized mentorship. Three cohorts have completed the program, with many securing competitive research internships.
+                                        </p>
                                         <div class="panel-cta">
                                             <a href="CARP.html" class="lecture-btn">Learn More About CARP</a>
                                         </div>
@@ -841,26 +844,23 @@
 
                             <!-- Slide 2: CRANE -->
                             <div class="carousel-slide">
-                                <div class="program-card split-card">
-                                    <div class="card-brand-panel">
-                                        <img src="images/CRANE.png" alt="CRANE Logo" class="brand-logo" />
+                                <div class="program-card interest-card hero-carousel-card">
+                                    <div class="interest-card-img-wrapper">
+                                        <img src="images/coma-cluster.webp" alt="CRANE Background" class="carousel-hero-bg" />
+                                        <span class="interest-badge"><i class="fa-solid fa-network-wired"></i> Nationwide Access</span>
+                                        
+                                        <div class="carousel-logo-overlay">
+                                            <img src="images/CRANE.png" alt="CRANE Logo" class="overlay-brand-logo" />
+                                        </div>
                                     </div>
-                                    <div class="card-content-panel">
-                                        <h3><a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">Computational Research Access NEtwork (CRANE)</a></h3>
-
+                                    <div class="interest-card-content">
+                                        <h4><a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">Computational Research Access NEtwork (CRANE)</a></h4>
                                         <p>
-                                        CRANE is a virtual, nationwide data science training program led by a diverse team of graduate and postdoctoral researchers in physics and chemistry. CRANE addresses high barriers to entry in computational research that historically exclude underrepresented students.
+                                            As a <strong>Core Leadership Team Member</strong>, I contribute to CRANE—a virtual nationwide data science training program led by graduate and postdoctoral researchers addressing high barriers to entry in computational research.
                                         </p>
                                         <p>
-                                        As a CRANE leader, I develop curriculum materials, lead interactive workshops, and collaborate across institutions to:
+                                            I develop curriculum materials and lead interactive workshops to provide a welcoming environment for underrepresented students, teaching fundamental computational tools and guiding early-career researchers toward data science paths.
                                         </p>
-                                        <ul>
-                                        <li>Provide a welcoming environment for historically underrepresented students to learn and gain confidence in computational physics.</li>
-                                        <li>Equip students with fundamental computational tools and introduce advanced algorithms used in cutting-edge research.</li>
-                                        <li>Facilitate meaningful academic and professional networking opportunities.</li>
-                                        <li>Guide students taking their first steps toward careers in computational physics and data science.</li>
-                                        </ul>
-
                                         <div class="panel-cta">
                                             <a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About CRANE</a>
                                         </div>
@@ -870,18 +870,23 @@
 
                             <!-- Slide 3: PACE -->
                             <div class="carousel-slide">
-                                <div class="program-card split-card">
-                                    <div class="card-brand-panel">
-                                        <img src="images/PACE.png" alt="PACE Logo" class="brand-logo" />
+                                <div class="program-card interest-card hero-carousel-card">
+                                    <div class="interest-card-img-wrapper">
+                                        <img src="images/spiderweb-protocluster.webp" alt="PACE Background" class="carousel-hero-bg" />
+                                        <span class="interest-badge"><i class="fa-solid fa-user-graduate"></i> Peer Mentorship</span>
+                                        
+                                        <div class="carousel-logo-overlay">
+                                            <img src="images/PACE.png" alt="PACE Logo" class="overlay-brand-logo" />
+                                        </div>
                                     </div>
-                                    <div class="card-content-panel">
-                                        <h3><a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">Physics &amp; Astronomy Community Excellence (PACE)</a></h3>
-                                            <p>
-                                            PACE is a peer-mentoring program developed at UC Irvine by <a href='http://www.ariannalong.space'>Dr. Arianna Long</a> and <a href="https://mkrodriguezwimberly.github.io">Dr. Katy Rodriguez Wimberly</a> that I co-led alongside <a href="http://franciscojmercado.com" target="_blank" rel="noopener noreferrer">Dr. Francisco J. Mercado</a>.
-                                            </p>
-                                            <p>
-                                            The program provides structured mentorship to first-year graduate students through monthly professional development workshops and dedicated 1-on-1 mentoring to ease their transition into graduate school.
-                                            </p>
+                                    <div class="interest-card-content">
+                                        <h4><a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">Physics &amp; Astronomy Community Excellence (PACE)</a></h4>
+                                        <p>
+                                            As <strong>Co-Founder and Co-Lead</strong> during my graduate studies at UC Irvine, I helped establish PACE to provide structured peer-mentorship to incoming first-year graduate students.
+                                        </p>
+                                        <p>
+                                            The program supports incoming scholars through monthly professional development workshops and dedicated 1-on-1 peer mentoring to ease the transition into graduate school.
+                                        </p>
                                         <div class="panel-cta">
                                             <a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About PACE</a>
                                         </div>
@@ -889,21 +894,26 @@
                                 </div>
                             </div>
 
-                            <!-- Slide 4: Other Contributions -->
+                            <!-- Slide 4: Additional Contributions -->
                             <div class="carousel-slide">
-                                <div class="program-card split-card">
-                                    <div class="card-brand-panel">
-                                        <i class="fa-solid fa-hands-holding-circle brand-icon"></i>
+                                <div class="program-card interest-card hero-carousel-card">
+                                    <div class="interest-card-img-wrapper">
+                                        <img src="images/coma-cluster.webp" alt="Community Outreach" class="carousel-hero-bg" />
+                                        <span class="interest-badge"><i class="fa-solid fa-hands-holding-circle"></i> Community Outreach</span>
+                                        
+                                        <div class="carousel-logo-overlay">
+                                            <i class="fa-solid fa-hands-holding-circle overlay-brand-icon"></i>
+                                        </div>
                                     </div>
-                                    <div class="card-content-panel">
-                                        <h3>Additional Outreach &amp; Mentorship Contributions</h3>
+                                    <div class="interest-card-content">
+                                        <h4>Additional Outreach &amp; Mentorship Contributions</h4>
                                         <p>
-                                            Beyond leading CARP, CRANE, and PACE, I have also contributed to several other impactful teaching and mentoring initiatives:
-                                         </p>
+                                            Beyond leading CARP, CRANE, and PACE, I actively contribute as a <strong>mentor and facilitator</strong> across several broader community initiatives:
+                                        </p>
                                         <ul class="compact-list">
-                                            <li><strong><a href="https://www.startastro.org/" target="_blank" rel="noopener noreferrer">STARTAstro</a>:</strong> A summer bridge program at UC San Diego that provides hands-on research opportunities and career development for California community college transfer students majoring in astronomy and physics.</li>
-                                            <li><strong><a href="https://sites.google.com/ucsd.edu/astroreach/" target="_blank" rel="noopener noreferrer">AstroReach SD</a>:</strong> An educational outreach program at UC San Diego that introduces first-generation, college-bound high school students to data science and astrophysics through engaging lectures and hands-on Python coding exercises.</li>
-                                            <li><strong><a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a>:</strong> Portable planetarium program at UC San Diego that brings space science directly to K-12 classrooms across San Diego County.</li>
+                                            <li><strong><a href="https://www.startastro.org/" target="_blank" rel="noopener noreferrer">STARTAstro</a>:</strong> Summer research program providing research opportunities and career development for astrophysics students.</li>
+                                            <li><strong><a href="https://sites.google.com/ucsd.edu/astroreach/" target="_blank" rel="noopener noreferrer">AstroReach SD</a>:</strong> Mentorship program supporting high-school students seeking to be the first in their family to pursue a college degree.</li>
+                                            <li><strong><a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a>:</strong> Portable planetarium initiative bringing space science directly to K-12 classrooms across San Diego.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -927,6 +937,8 @@
                             <span class="dot" data-index="3"></span>
                         </div>
                     </div>
+
+
                     <!-- Public Outreach & Lectures Section -->
                     <h3 class="section-heading">
                         <i class="fa-solid fa-bullhorn" style="margin-right: 0.75rem; color: #60a5fa;"></i> Public Outreach &amp; Lectures
