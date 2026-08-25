@@ -527,8 +527,11 @@
                 }
             }
 
+
+
+
             /* =========================================================
-            RIGHT-ALIGNED PROMINENT LOGO & CAROUSEL LAYOUT
+            RESPONSIVE SPLIT-CARD CAROUSEL LAYOUT
             ========================================================= */
             .carousel-container {
                 position: relative;
@@ -540,7 +543,7 @@
                 display: flex;
                 overflow: hidden;
                 position: relative;
-                border-radius: 14px;
+                border-radius: 16px;
             }
 
             .carousel-slide {
@@ -559,97 +562,76 @@
                 position: relative;
             }
 
-            .carousel-container .program-card {
-                margin-bottom: 0 !important;
-                padding: 2.5rem 4rem; /* Generous side padding for arrow controls */
-            }
-
-            /* Two-Column Grid: Text on Left (1fr), Prominent Logo Box on Right (180px) */
-            .program-card-grid {
+            /* Split Card Container */
+            .split-card {
                 display: grid;
-                grid-template-columns: 1fr 180px;
-                gap: 2.5rem;
-                align-items: center;
+                grid-template-columns: 220px 1fr; /* Fixed 220px brand panel, flexible text panel */
+                padding: 0 !important; /* Zero padding out the outer card so panels control inner space */
+                overflow: hidden;
+                margin-bottom: 0 !important;
             }
 
-            .program-logo-col {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            /* Unified Bounding Box Container for Logos and Icons */
-            .logo-wrapper {
-                width: 180px;
-                height: 180px;
-                border-radius: 16px;
-                background: rgba(255, 255, 255, 0.04);
-                border: 1px solid rgba(255, 255, 255, 0.12);
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            /* Left Panel: Dedicated Brand/Logo Box */
+            .card-brand-panel {
+                background: rgba(255, 255, 255, 0.03);
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 1.25rem;
-                transition: transform 0.3s ease, border-color 0.3s ease;
+                padding: 2rem 1.5rem;
             }
 
-            .logo-wrapper:hover {
-                transform: translateY(-2px);
-                border-color: rgba(96, 165, 250, 0.4);
-            }
-
-            .program-logo {
-                max-width: 100%;
-                max-height: 100%;
+            .brand-logo {
+                max-width: 160px;
+                max-height: 160px;
+                width: 100%;
                 object-fit: contain;
+                filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.3));
             }
 
-            .alt-program-icon {
-                font-size: 4.5rem;
+            .brand-icon {
+                font-size: 4rem;
                 color: #60a5fa;
             }
 
-            .program-content-col h3 {
-                font-size: 1.65rem;
+            /* Right Panel: Content Description & Action CTA */
+            .card-content-panel {
+                padding: 2.25rem 3.5rem 2.25rem 2.25rem; /* Right padding accommodates navigation arrows */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .card-content-panel h3 {
+                font-size: 1.6rem;
                 font-weight: 700;
                 margin-top: 0;
-                margin-bottom: 0.85rem;
+                margin-bottom: 1rem;
                 color: #ffffff;
             }
 
-            .program-content-col h3 a {
+            .card-content-panel h3 a {
                 color: #ffffff;
                 text-decoration: none;
                 transition: color 0.2s ease;
             }
 
-            .program-content-col h3 a:hover {
+            .card-content-panel h3 a:hover {
                 color: #60a5fa;
             }
 
-            /* Centered CTA Button Container */
-            .slide-footer-cta {
+            .panel-cta {
                 display: flex;
                 justify-content: center;
-                margin-top: 1.75rem;
+                margin-top: 1.5rem;
             }
 
-            .slide-footer-cta .lecture-btn {
+            .panel-cta .lecture-btn {
                 padding: 0.6rem 1.75rem;
                 font-size: 0.95rem;
             }
 
-            /* Compact List Formatting */
-            .compact-list {
-                margin-top: 0.5rem;
-                padding-left: 1.25rem;
-            }
-
-            .compact-list li {
-                margin-bottom: 0.4rem;
-            }
-
-            /* Carousel Buttons & Dots */
+            /* Carousel Prev/Next Buttons */
             .carousel-btn {
                 position: absolute;
                 top: 50%;
@@ -701,18 +683,17 @@
             }
 
             /* Light Mode Overrides */
-            body.light-mode .logo-wrapper {
-                background: #ffffff;
-                border-color: rgba(0, 0, 0, 0.12);
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            body.light-mode .card-brand-panel {
+                background: rgba(0, 0, 0, 0.02);
+                border-right-color: rgba(0, 0, 0, 0.08);
             }
 
-            body.light-mode .program-content-col h3,
-            body.light-mode .program-content-col h3 a {
+            body.light-mode .card-content-panel h3,
+            body.light-mode .card-content-panel h3 a {
                 color: #1a202c !important;
             }
 
-            body.light-mode .program-content-col h3 a:hover {
+            body.light-mode .card-content-panel h3 a:hover {
                 color: #2563eb !important;
             }
 
@@ -735,29 +716,37 @@
                 background: #2563eb;
             }
 
-            /* Responsive Layout for Mobile/Tablets */
+            /* =========================================================
+            MOBILE RESPONSIVE BREAKPOINT
+            ========================================================= */
             @media screen and (max-width: 768px) {
-                .carousel-container .program-card {
-                    padding: 1.75rem 1.25rem 3.75rem 1.25rem;
+                /* Stack panels vertically on mobile */
+                .split-card {
+                    grid-template-columns: 1fr;
                 }
 
-                .program-card-grid {
-                    grid-template-columns: 1fr; /* Stacks text above logo box on small screens */
-                    gap: 1.5rem;
+                .card-brand-panel {
+                    border-right: none;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    padding: 1.5rem 1rem;
+                }
+
+                body.light-mode .card-brand-panel {
+                    border-bottom-color: rgba(0, 0, 0, 0.08);
+                }
+
+                .brand-logo {
+                    max-width: 120px;
+                    max-height: 100px;
+                }
+
+                .brand-icon {
+                    font-size: 3rem;
+                }
+
+                .card-content-panel {
+                    padding: 1.5rem 1.25rem 3.5rem 1.25rem; /* Extra bottom padding for floating controls */
                     text-align: center;
-                }
-
-                .program-logo-col {
-                    order: -1; /* Puts logo box on top for mobile screens */
-                }
-
-                .logo-wrapper {
-                    width: 140px;
-                    height: 140px;
-                }
-
-                .alt-program-icon {
-                    font-size: 3.5rem;
                 }
 
                 .compact-list {
@@ -773,8 +762,6 @@
                 .prev-btn { left: 15px; }
                 .next-btn { right: 15px; }
             }
-
-            
 
 
         </style>
@@ -827,15 +814,17 @@
                         <i class="fa-solid fa-code-branch" style="margin-right: 0.75rem; color: #60a5fa;"></i>Programming &amp; Mentoring Initiatives
                     </h3>
 
-                <!-- Programming & Mentoring Initiatives Carousel -->
-                <div class="carousel-container">
-                    <div class="carousel-track">
+                    <!-- Programming & Mentoring Initiatives Carousel -->
+                    <div class="carousel-container">
+                        <div class="carousel-track">
 
-                        <!-- Slide 1: CARP -->
-                        <div class="carousel-slide active">
-                            <div class="program-card">
-                                <div class="program-card-grid">
-                                    <div class="program-content-col">
+                            <!-- Slide 1: CARP -->
+                            <div class="carousel-slide active">
+                                <div class="program-card split-card">
+                                    <div class="card-brand-panel">
+                                        <img src="images/CARP.png" alt="CARP Logo" class="brand-logo" />
+                                    </div>
+                                    <div class="card-content-panel">
                                         <h3><a href="CARP.html">Computational Astrophysics Research Preparation (CARP) Program</a></h3>
                                         <p>
                                             As the <strong>Founder and Director</strong> of CARP, I developed this training and mentoring initiative during my NSF Astronomy &amp; Astrophysics Postdoctoral Fellowship at UC San Diego. I organize and lead engaging workshops tailored for community college students aspiring to transfer to four-year universities and pursue undergraduate research.
@@ -843,24 +832,20 @@
                                         <p>
                                             The program equips transfer scholars with essential Python programming, data analysis skills, and personalized mentorship. To date, three cohorts have completed the program, with many scholars successfully transferring and securing competitive research internships.
                                         </p>
-                                    </div>
-                                    <div class="program-logo-col">
-                                        <div class="logo-wrapper">
-                                            <img src="images/CARP.png" alt="CARP Logo" class="program-logo" />
+                                        <div class="panel-cta">
+                                            <a href="CARP.html" class="lecture-btn">Learn More About CARP</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slide-footer-cta">
-                                    <a href="CARP.html" class="lecture-btn">Learn More About CARP</a>
-                                </div>
                             </div>
-                        </div>
 
-                        <!-- Slide 2: CRANE -->
-                        <div class="carousel-slide">
-                            <div class="program-card">
-                                <div class="program-card-grid">
-                                    <div class="program-content-col">
+                            <!-- Slide 2: CRANE -->
+                            <div class="carousel-slide">
+                                <div class="program-card split-card">
+                                    <div class="card-brand-panel">
+                                        <img src="images/CRANE.png" alt="CRANE Logo" class="brand-logo" />
+                                    </div>
+                                    <div class="card-content-panel">
                                         <h3><a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">Computational Research Access NEtwork (CRANE)</a></h3>
                                         <p>
                                             As a <strong>Core Leadership Team Member</strong>, I contribute to CRANE—a virtual nationwide data science training program led by graduate and postdoctoral researchers in physics and chemistry, addressing high barriers to entry in computational research.
@@ -868,24 +853,20 @@
                                         <p>
                                             I develop curriculum materials and lead interactive workshops to provide a welcoming environment for underrepresented students, teach fundamental computational tools, facilitate networking, and guide early-career researchers toward computational physics and data science paths.
                                         </p>
-                                    </div>
-                                    <div class="program-logo-col">
-                                        <div class="logo-wrapper">
-                                            <img src="images/CRANE.png" alt="CRANE Logo" class="program-logo" />
+                                        <div class="panel-cta">
+                                            <a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About CRANE</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slide-footer-cta">
-                                    <a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About CRANE</a>
-                                </div>
                             </div>
-                        </div>
 
-                        <!-- Slide 3: PACE -->
-                        <div class="carousel-slide">
-                            <div class="program-card">
-                                <div class="program-card-grid">
-                                    <div class="program-content-col">
+                            <!-- Slide 3: PACE -->
+                            <div class="carousel-slide">
+                                <div class="program-card split-card">
+                                    <div class="card-brand-panel">
+                                        <img src="images/PACE.png" alt="PACE Logo" class="brand-logo" />
+                                    </div>
+                                    <div class="card-content-panel">
                                         <h3><a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">Physics &amp; Astronomy Community Excellence (PACE)</a></h3>
                                         <p>
                                             As <strong>Co-Founder and Co-Lead</strong> alongside Dr. Francisco J. Mercado during my graduate studies at UC Irvine, I helped establish PACE to provide structured, formal peer-mentorship to incoming first-year graduate students.
@@ -893,24 +874,20 @@
                                         <p>
                                             The program supports incoming scholars through monthly professional development workshops and dedicated 1-on-1 peer mentoring to ease the transition into graduate school.
                                         </p>
-                                    </div>
-                                    <div class="program-logo-col">
-                                        <div class="logo-wrapper">
-                                            <img src="images/PACE.png" alt="PACE Logo" class="program-logo" />
+                                        <div class="panel-cta">
+                                            <a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About PACE</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slide-footer-cta">
-                                    <a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About PACE</a>
-                                </div>
                             </div>
-                        </div>
 
-                        <!-- Slide 4: Additional Contributions -->
-                        <div class="carousel-slide">
-                            <div class="program-card">
-                                <div class="program-card-grid">
-                                    <div class="program-content-col">
+                            <!-- Slide 4: Other Contributions -->
+                            <div class="carousel-slide">
+                                <div class="program-card split-card">
+                                    <div class="card-brand-panel">
+                                        <i class="fa-solid fa-hands-holding-circle brand-icon"></i>
+                                    </div>
+                                    <div class="card-content-panel">
                                         <h3>Additional Outreach &amp; Mentorship Contributions</h3>
                                         <p>
                                             Beyond leading CARP, CRANE, and PACE, I actively contribute as a <strong>mentor and facilitator</strong> across several broader community initiatives:
@@ -921,33 +898,27 @@
                                             <li><strong><a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a>:</strong> Portable planetarium initiative bringing space science directly to K-12 classrooms across San Diego.</li>
                                         </ul>
                                     </div>
-                                    <div class="program-logo-col">
-                                        <div class="logo-wrapper">
-                                            <i class="fa-solid fa-hands-holding-circle alt-program-icon"></i>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
+
                         </div>
 
-                    </div>
+                        <!-- Controls -->
+                        <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Previous Program">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" id="carousel-next" aria-label="Next Program">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
 
-                    <!-- Carousel Controls -->
-                    <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Previous Program">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next-btn" id="carousel-next" aria-label="Next Program">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-
-                    <!-- Dots Indicators -->
-                    <div class="carousel-dots">
-                        <span class="dot active" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
-                        <span class="dot" data-index="3"></span>
+                        <!-- Indicators -->
+                        <div class="carousel-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
                     </div>
-                </div>
                     <!-- Public Outreach & Lectures Section -->
                     <h3 class="section-heading">
                         <i class="fa-solid fa-bullhorn" style="margin-right: 0.75rem; color: #60a5fa;"></i> Public Outreach &amp; Lectures
@@ -1171,7 +1142,6 @@
             });
         });
         </script>
-
 
 
     </body>
