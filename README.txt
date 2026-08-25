@@ -1,35 +1,24 @@
-Landed by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# Personal & Academic Website
+
+This repository contains the source code for my personal website hosted on GitHub Pages.
+---
+
+## Template Attribution & License
+
+This website is built upon a modified version of the **Landed** template created by **AJ** at **[HTML5 UP](https://html5up.net)**.
+
+> **Landed by HTML5 UP**  
+> [html5up.net](https://html5up.net) | [@ajlkn](https://twitter.com/ajlkn)  
+> Free for personal and commercial use under the [Creative Commons Attribution 3.0 Unported (CCA 3.0)](https://html5up.net/license) license.
+
+### Original Template Credits
+* **Demo Images:** [Unsplash](https://unsplash.com)
+* **Icons:** [Font Awesome](https://fontawesome.com)
+* **Libraries:** [jQuery](https://jquery.com), [jquery.scrollex](https://github.com/ajlkn/jquery.scrollex), [responsive-tools](https://github.com/ajlkn/responsive-tools)
 
 
-A dark, slick, modern, responsive, adjective-drenched design built around an extremely
-dynamic landing page (scroll that mofo!). Inspired by Big Picture, another design
-of mine with a similarish feel/flow, only this time I took it waaaaaay further and
-actually made it multipurpose (versus copping out and making it a one pager like I
-did last time ;) Includes multiple pages, a bunch of pre-styled elements, and all
-its Sass sources.
+---
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+## 📄 License
 
-(* = Not included)
-
-Feedback, bug reports, and comments are not only welcome, but strongly encouraged :)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+The underlying template remains under the **Creative Commons Attribution 3.0 Unported (CCA 3.0)** license. You are free to use, adapt, and build upon this code provided you maintain attribution to the original author ([HTML5 UP](https://html5up.net)).
