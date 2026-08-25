@@ -531,7 +531,7 @@
 
 
             /* =========================================================
-            RESPONSIVE SPLIT-CARD CAROUSEL LAYOUT
+            SPLIT CAROUSEL WITH OPTION 3 (ACCENT GLOW LOGO BOXES)
             ========================================================= */
             .carousel-container {
                 position: relative;
@@ -562,41 +562,62 @@
                 position: relative;
             }
 
-            /* Split Card Container */
+            /* Split Card Layout */
             .split-card {
                 display: grid;
-                grid-template-columns: 220px 1fr; /* Fixed 220px brand panel, flexible text panel */
-                padding: 0 !important; /* Zero padding out the outer card so panels control inner space */
+                grid-template-columns: 230px 1fr; /* Fixed logo panel width on desktop */
+                padding: 0 !important;
                 overflow: hidden;
                 margin-bottom: 0 !important;
             }
 
-            /* Left Panel: Dedicated Brand/Logo Box */
+            /* Brand Panel (Left Column) */
             .card-brand-panel {
-                background: rgba(255, 255, 255, 0.03);
-                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                background: rgba(255, 255, 255, 0.02);
+                border-right: 1px solid rgba(255, 255, 255, 0.08);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 padding: 2rem 1.5rem;
             }
 
+            /* Option 3: Bounding Box with Accent Glow */
+            .brand-logo-container {
+                width: 160px;
+                height: 160px;
+                background: rgba(17, 24, 39, 0.65);
+                border-radius: 20px;
+                padding: 1.25rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(96, 165, 250, 0.35);
+                box-shadow: 0 0 20px rgba(37, 99, 235, 0.18), inset 0 0 12px rgba(96, 165, 250, 0.06);
+                transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .brand-logo-container:hover {
+                transform: translateY(-3px);
+                border-color: rgba(96, 165, 250, 0.6);
+                box-shadow: 0 0 28px rgba(37, 99, 235, 0.3), inset 0 0 16px rgba(96, 165, 250, 0.1);
+            }
+
             .brand-logo {
-                max-width: 160px;
-                max-height: 160px;
-                width: 100%;
+                max-width: 100%;
+                max-height: 100%;
                 object-fit: contain;
-                filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.3));
+                filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
             }
 
             .brand-icon {
-                font-size: 4rem;
+                font-size: 4.25rem;
                 color: #60a5fa;
+                filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.4));
             }
 
-            /* Right Panel: Content Description & Action CTA */
+            /* Content Panel (Right Column) */
             .card-content-panel {
-                padding: 2.25rem 3.5rem 2.25rem 2.25rem; /* Right padding accommodates navigation arrows */
+                padding: 2.25rem 3.5rem 2.25rem 2.25rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -631,7 +652,16 @@
                 font-size: 0.95rem;
             }
 
-            /* Carousel Prev/Next Buttons */
+            .compact-list {
+                margin-top: 0.5rem;
+                padding-left: 1.25rem;
+            }
+
+            .compact-list li {
+                margin-bottom: 0.4rem;
+            }
+
+            /* Controls & Indicators */
             .carousel-btn {
                 position: absolute;
                 top: 50%;
@@ -684,8 +714,19 @@
 
             /* Light Mode Overrides */
             body.light-mode .card-brand-panel {
-                background: rgba(0, 0, 0, 0.02);
+                background: rgba(0, 0, 0, 0.015);
                 border-right-color: rgba(0, 0, 0, 0.08);
+            }
+
+            body.light-mode .brand-logo-container {
+                background: #ffffff;
+                border-color: rgba(37, 99, 235, 0.25);
+                box-shadow: 0 4px 16px rgba(37, 99, 235, 0.12);
+            }
+
+            body.light-mode .brand-logo-container:hover {
+                border-color: #2563eb;
+                box-shadow: 0 6px 20px rgba(37, 99, 235, 0.22);
             }
 
             body.light-mode .card-content-panel h3,
@@ -716,18 +757,15 @@
                 background: #2563eb;
             }
 
-            /* =========================================================
-            MOBILE RESPONSIVE BREAKPOINT
-            ========================================================= */
+            /* Mobile Breakpoint */
             @media screen and (max-width: 768px) {
-                /* Stack panels vertically on mobile */
                 .split-card {
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 1fr; /* Stacks brand header on top for mobile */
                 }
 
                 .card-brand-panel {
                     border-right: none;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
                     padding: 1.5rem 1rem;
                 }
 
@@ -735,17 +773,18 @@
                     border-bottom-color: rgba(0, 0, 0, 0.08);
                 }
 
-                .brand-logo {
-                    max-width: 120px;
-                    max-height: 100px;
+                .brand-logo-container {
+                    width: 130px;
+                    height: 130px;
+                    padding: 1rem;
                 }
 
                 .brand-icon {
-                    font-size: 3rem;
+                    font-size: 3.25rem;
                 }
 
                 .card-content-panel {
-                    padding: 1.5rem 1.25rem 3.5rem 1.25rem; /* Extra bottom padding for floating controls */
+                    padding: 1.5rem 1.25rem 3.5rem 1.25rem;
                     text-align: center;
                 }
 
@@ -762,7 +801,6 @@
                 .prev-btn { left: 15px; }
                 .next-btn { right: 15px; }
             }
-
 
         </style>
     </head>
@@ -822,16 +860,18 @@
                             <div class="carousel-slide active">
                                 <div class="program-card split-card">
                                     <div class="card-brand-panel">
-                                        <img src="images/CARP.png" alt="CARP Logo" class="brand-logo" />
+                                        <div class="brand-logo-container">
+                                            <img src="images/CARP.png" alt="CARP Logo" class="brand-logo" />
+                                        </div>
                                     </div>
                                     <div class="card-content-panel">
                                         <h3><a href="CARP.html">Computational Astrophysics Research Preparation (CARP) Program</a></h3>
-                                            <p>
-                                            <a href="CARP.html">CARP</a> is a training and mentoring initiative that I developed as a National Science Foundation Astronomy &amp; Astrophysics Postdoctoral Fellow at UC San Diego. As the director of the CARP program I organize and lead engaging workshops tailored for community college students who aspire to transfer to a four-year university and engage in undergraduate research.
-                                            </p>
-                                            <p>
-                                            The CARP program equips prospective transfer students with essential Python programming, data analysis skills, and personalized mentorship to streamline their transition to a four-year university. To date, three CARP cohorts have completed the program, with many scholars going on to transfer to four-year institutions and participate in competitive research and internship opportunities.
-                                            </p>
+                                        <p>
+                                            As the <strong>Founder and Director</strong> of CARP, I developed this training and mentoring initiative during my NSF Astronomy &amp; Astrophysics Postdoctoral Fellowship at UC San Diego. I organize and lead engaging workshops tailored for community college students aspiring to transfer to four-year universities and pursue undergraduate research.
+                                        </p>
+                                        <p>
+                                            The program equips transfer scholars with essential Python programming, data analysis skills, and personalized mentorship. To date, three cohorts have completed the program, with many scholars successfully transferring and securing competitive research internships.
+                                        </p>
                                         <div class="panel-cta">
                                             <a href="CARP.html" class="lecture-btn">Learn More About CARP</a>
                                         </div>
@@ -843,24 +883,18 @@
                             <div class="carousel-slide">
                                 <div class="program-card split-card">
                                     <div class="card-brand-panel">
-                                        <img src="images/CRANE.png" alt="CRANE Logo" class="brand-logo" />
+                                        <div class="brand-logo-container">
+                                            <img src="images/CRANE.png" alt="CRANE Logo" class="brand-logo" />
+                                        </div>
                                     </div>
                                     <div class="card-content-panel">
                                         <h3><a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">Computational Research Access NEtwork (CRANE)</a></h3>
-
                                         <p>
-                                        <a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">CRANE</a> is a virtual, nationwide data science training program led by a diverse team of graduate and postdoctoral researchers in physics and chemistry. CRANE addresses high barriers to entry in computational research that historically exclude underrepresented students.
+                                            As a <strong>Core Leadership Team Member</strong>, I contribute to CRANE—a virtual nationwide data science training program led by graduate and postdoctoral researchers in physics and chemistry, addressing high barriers to entry in computational research.
                                         </p>
                                         <p>
-                                        As a CRANE leader, I develop curriculum materials, lead interactive workshops, and collaborate across institutions to:
+                                            I develop curriculum materials and lead interactive workshops to provide a welcoming environment for underrepresented students, teach fundamental computational tools, facilitate networking, and guide early-career researchers toward computational physics and data science paths.
                                         </p>
-                                        <ul>
-                                        <li>Provide a welcoming environment for historically underrepresented students to learn and gain confidence in computational physics.</li>
-                                        <li>Equip students with fundamental computational tools and introduce advanced algorithms used in cutting-edge research.</li>
-                                        <li>Facilitate meaningful academic and professional networking opportunities.</li>
-                                        <li>Guide students taking their first steps toward careers in computational physics and data science.</li>
-                                        </ul>
-
                                         <div class="panel-cta">
                                             <a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About CRANE</a>
                                         </div>
@@ -872,15 +906,17 @@
                             <div class="carousel-slide">
                                 <div class="program-card split-card">
                                     <div class="card-brand-panel">
-                                        <img src="images/PACE.png" alt="PACE Logo" class="brand-logo" />
+                                        <div class="brand-logo-container">
+                                            <img src="images/PACE.png" alt="PACE Logo" class="brand-logo" />
+                                        </div>
                                     </div>
                                     <div class="card-content-panel">
                                         <h3><a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">Physics &amp; Astronomy Community Excellence (PACE)</a></h3>
                                         <p>
-                                        <a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">PACE</a> is a peer-mentoring program developed at UC Irvine by Arianna Long and Katy Rodriguez-Wimberly that I co-led with <a href="http://franciscojmercado.com" target="_blank" rel="noopener noreferrer">Dr. Francisco J. Mercado</a>.
+                                            As <strong>Co-Founder and Co-Lead</strong> alongside Dr. Francisco J. Mercado during my graduate studies at UC Irvine, I helped establish PACE to provide structured, formal peer-mentorship to incoming first-year graduate students.
                                         </p>
                                         <p>
-                                        The program provides structured, formal mentorship to first-year graduate students through monthly professional development workshops and dedicated 1-on-1 mentoring to ease the transition into graduate school.
+                                            The program supports incoming scholars through monthly professional development workshops and dedicated 1-on-1 peer mentoring to ease the transition into graduate school.
                                         </p>
                                         <div class="panel-cta">
                                             <a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer" class="lecture-btn">Learn More About PACE</a>
@@ -889,11 +925,13 @@
                                 </div>
                             </div>
 
-                            <!-- Slide 4: Other Contributions -->
+                            <!-- Slide 4: Additional Contributions -->
                             <div class="carousel-slide">
                                 <div class="program-card split-card">
                                     <div class="card-brand-panel">
-                                        <i class="fa-solid fa-hands-holding-circle brand-icon"></i>
+                                        <div class="brand-logo-container">
+                                            <i class="fa-solid fa-hands-holding-circle brand-icon"></i>
+                                        </div>
                                     </div>
                                     <div class="card-content-panel">
                                         <h3>Additional Outreach &amp; Mentorship Contributions</h3>
@@ -910,6 +948,23 @@
                             </div>
 
                         </div>
+
+                        <!-- Controls -->
+                        <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Previous Program">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn next-btn" id="carousel-next" aria-label="Next Program">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Indicators -->
+                        <div class="carousel-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
+                    </div>
 
                         <!-- Controls -->
                         <button class="carousel-btn prev-btn" id="carousel-prev" aria-label="Previous Program">
