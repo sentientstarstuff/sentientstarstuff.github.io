@@ -528,7 +528,7 @@
             }
 
             /* =========================================================
-            SIDE-BY-SIDE CAROUSEL & LOGO LAYOUT
+            RIGHT-ALIGNED PROMINENT LOGO & CAROUSEL LAYOUT
             ========================================================= */
             .carousel-container {
                 position: relative;
@@ -561,14 +561,14 @@
 
             .carousel-container .program-card {
                 margin-bottom: 0 !important;
-                padding: 2.5rem 3.5rem; /* Extra padding for floating arrow buttons */
+                padding: 2.5rem 4rem; /* Generous side padding for arrow controls */
             }
 
-            /* Two-Column Grid: Logo on Left, Content on Right */
+            /* Two-Column Grid: Text on Left (1fr), Prominent Logo Box on Right (180px) */
             .program-card-grid {
                 display: grid;
-                grid-template-columns: 140px 1fr;
-                gap: 2rem;
+                grid-template-columns: 1fr 180px;
+                gap: 2.5rem;
                 align-items: center;
             }
 
@@ -578,28 +578,39 @@
                 align-items: center;
             }
 
-            .program-logo {
-                width: 120px;
-                height: 120px;
-                object-fit: contain;
-                border-radius: 12px;
-                background: rgba(255, 255, 255, 0.05);
-                padding: 10px;
+            /* Unified Bounding Box Container for Logos and Icons */
+            .logo-wrapper {
+                width: 180px;
+                height: 180px;
+                border-radius: 16px;
+                background: rgba(255, 255, 255, 0.04);
                 border: 1px solid rgba(255, 255, 255, 0.12);
-                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1.25rem;
+                transition: transform 0.3s ease, border-color 0.3s ease;
+            }
+
+            .logo-wrapper:hover {
+                transform: translateY(-2px);
+                border-color: rgba(96, 165, 250, 0.4);
+            }
+
+            .program-logo {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
             }
 
             .alt-program-icon {
-                font-size: 3.5rem;
+                font-size: 4.5rem;
                 color: #60a5fa;
-                background: rgba(255, 255, 255, 0.05);
-                padding: 1.25rem;
-                border-radius: 12px;
-                border: 1px solid rgba(255, 255, 255, 0.12);
             }
 
             .program-content-col h3 {
-                font-size: 1.7rem;
+                font-size: 1.65rem;
                 font-weight: 700;
                 margin-top: 0;
                 margin-bottom: 0.85rem;
@@ -624,7 +635,7 @@
             }
 
             .slide-footer-cta .lecture-btn {
-                padding: 0.55rem 1.5rem;
+                padding: 0.6rem 1.75rem;
                 font-size: 0.95rem;
             }
 
@@ -690,11 +701,10 @@
             }
 
             /* Light Mode Overrides */
-            body.light-mode .program-logo,
-            body.light-mode .alt-program-icon {
+            body.light-mode .logo-wrapper {
                 background: #ffffff;
                 border-color: rgba(0, 0, 0, 0.12);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
             }
 
             body.light-mode .program-content-col h3,
@@ -725,16 +735,29 @@
                 background: #2563eb;
             }
 
-            /* Responsive Stacking for Mobile/Tablet */
+            /* Responsive Layout for Mobile/Tablets */
             @media screen and (max-width: 768px) {
                 .carousel-container .program-card {
-                    padding: 1.5rem 1rem 3.5rem 1rem;
+                    padding: 1.75rem 1.25rem 3.75rem 1.25rem;
                 }
 
                 .program-card-grid {
-                    grid-template-columns: 1fr; /* Stacks logo above content on small screens */
-                    gap: 1rem;
+                    grid-template-columns: 1fr; /* Stacks text above logo box on small screens */
+                    gap: 1.5rem;
                     text-align: center;
+                }
+
+                .program-logo-col {
+                    order: -1; /* Puts logo box on top for mobile screens */
+                }
+
+                .logo-wrapper {
+                    width: 140px;
+                    height: 140px;
+                }
+
+                .alt-program-icon {
+                    font-size: 3.5rem;
                 }
 
                 .compact-list {
@@ -743,7 +766,7 @@
 
                 .carousel-btn {
                     top: auto;
-                    bottom: 10px;
+                    bottom: 12px;
                     transform: none;
                 }
 
@@ -751,7 +774,7 @@
                 .next-btn { right: 15px; }
             }
 
-
+            
 
 
         </style>
@@ -812,9 +835,6 @@
                             <div class="carousel-slide active">
                                 <div class="program-card">
                                     <div class="program-card-grid">
-                                        <div class="program-logo-col">
-                                            <img src="images/CARP.png" alt="CARP Logo" class="program-logo" />
-                                        </div>
                                         <div class="program-content-col">
                                             <h3><a href="CARP.html">Computational Astrophysics Research Preparation (CARP) Program</a></h3>
                                             <p>
@@ -823,6 +843,11 @@
                                             <p>
                                                 The program equips transfer scholars with essential Python programming, data analysis skills, and personalized mentorship. To date, three cohorts have completed the program, with many scholars successfully transferring and securing competitive research internships.
                                             </p>
+                                        </div>
+                                        <div class="program-logo-col">
+                                            <div class="logo-wrapper">
+                                                <img src="images/CARP.png" alt="CARP Logo" class="program-logo" />
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="slide-footer-cta">
@@ -835,9 +860,6 @@
                             <div class="carousel-slide">
                                 <div class="program-card">
                                     <div class="program-card-grid">
-                                        <div class="program-logo-col">
-                                            <img src="images/CRANE.png" alt="CRANE Logo" class="program-logo" />
-                                        </div>
                                         <div class="program-content-col">
                                             <h3><a href="https://www.cranephysics.org" target="_blank" rel="noopener noreferrer">Computational Research Access NEtwork (CRANE)</a></h3>
                                             <p>
@@ -846,6 +868,11 @@
                                             <p>
                                                 I develop curriculum materials and lead interactive workshops to provide a welcoming environment for underrepresented students, teach fundamental computational tools, facilitate networking, and guide early-career researchers toward computational physics and data science paths.
                                             </p>
+                                        </div>
+                                        <div class="program-logo-col">
+                                            <div class="logo-wrapper">
+                                                <img src="images/CRANE.png" alt="CRANE Logo" class="program-logo" />
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="slide-footer-cta">
@@ -858,9 +885,6 @@
                             <div class="carousel-slide">
                                 <div class="program-card">
                                     <div class="program-card-grid">
-                                        <div class="program-logo-col">
-                                            <img src="images/PACE.png" alt="PACE Logo" class="program-logo" />
-                                        </div>
                                         <div class="program-content-col">
                                             <h3><a href="https://uci-pace.github.io/index.html" target="_blank" rel="noopener noreferrer">Physics &amp; Astronomy Community Excellence (PACE)</a></h3>
                                             <p>
@@ -869,6 +893,11 @@
                                             <p>
                                                 The program supports incoming scholars through monthly professional development workshops and dedicated 1-on-1 peer mentoring to ease the transition into graduate school.
                                             </p>
+                                        </div>
+                                        <div class="program-logo-col">
+                                            <div class="logo-wrapper">
+                                                <img src="images/PACE.png" alt="PACE Logo" class="program-logo" />
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="slide-footer-cta">
@@ -881,11 +910,6 @@
                             <div class="carousel-slide">
                                 <div class="program-card">
                                     <div class="program-card-grid">
-                                        <div class="program-logo-col">
-                                            <div class="multi-logo-stack">
-                                                <i class="fa-solid fa-hands-holding-circle alt-program-icon"></i>
-                                            </div>
-                                        </div>
                                         <div class="program-content-col">
                                             <h3>Additional Outreach &amp; Mentorship Contributions</h3>
                                             <p>
@@ -896,6 +920,11 @@
                                                 <li><strong><a href="https://sites.google.com/ucsd.edu/astroreach/" target="_blank" rel="noopener noreferrer">AstroReach SD</a>:</strong> Mentorship program supporting high-school students seeking to be the first in their family to pursue a college degree.</li>
                                                 <li><strong><a href="https://oirlab.ucsd.edu/planetarium.php" target="_blank" rel="noopener noreferrer">CosmicTours</a>:</strong> Portable planetarium initiative bringing space science directly to K-12 classrooms across San Diego.</li>
                                             </ul>
+                                        </div>
+                                        <div class="program-logo-col">
+                                            <div class="logo-wrapper">
+                                                <i class="fa-solid fa-hands-holding-circle alt-program-icon"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -919,7 +948,6 @@
                             <span class="dot" data-index="3"></span>
                         </div>
                     </div>
-
                     <!-- Public Outreach & Lectures Section -->
                     <h3 class="section-heading">
                         <i class="fa-solid fa-bullhorn" style="margin-right: 0.75rem; color: #60a5fa;"></i> Public Outreach &amp; Lectures
