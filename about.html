@@ -1,23 +1,6 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-
-
-    <script>
-        // Add loading block
-        document.documentElement.classList.add('theme-loading');
-
-        // Check stored theme
-        if (localStorage.getItem('theme') === 'light') {
-            document.documentElement.classList.add('light-mode');
-        }
-
-        // Unblock rendering immediately
-        document.documentElement.classList.remove('theme-loading');
-    </script>
-
-
-
         
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
@@ -44,12 +27,6 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
-
-
-            /* Temporarily hold paint until theme script resolves */
-            html.theme-loading body {
-                opacity: 0;
-            }
 
            /* --- REVAMP FOOTER --- */
             .footer-badges {
