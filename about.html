@@ -523,6 +523,29 @@
                 color: #1a202c;
                 border-color: rgba(0, 0, 0, 0.12);
             }
+
+            /* Custom Image Icons inside Hobby Cards */
+            .hobby-card .hobby-card-icon {
+                width: 2.5rem;          /* Matches FontAwesome default icon sizing */
+                height: 2.5rem;
+                object-fit: contain;
+                margin-bottom: 0.8rem;
+                display: inline-block;
+            }
+
+            /* Vertical alignment fix for flex containers inside card headers */
+            .hobby-card {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            /* Light/Dark mode glow effect (optional visual touch) */
+            .hobby-card:hover .hobby-card-icon {
+                transform: scale(1.1);
+                transition: transform 0.2s ease-in-out;
+            }
+
         </style>
     </head>
     <body>
@@ -670,7 +693,8 @@
 
                         <div class="hobby-grid">
                             <div class="hobby-card">
-                                <i class="fa-solid fa-heart"></i>
+                                <!-- Replaced fa-heart with custom PNG -->
+                                <img src="images/skateboard.png" alt="Skateboarding Icon" class="hobby-card-icon" />
                                 <h4>Skateboarding</h4>
                                 <p>My favorite way to clear my mind and push my physical limits. You can check out some of my skate clips on <a href="https://www.youtube.com/watch?v=ihaD7T9gcK4&list=PL3ejDFPVvgQHBLm1DstYt5eWw67uU0bMu&index=1" target="_blank" rel="noopener noreferrer">YouTube</a> and <a href="https://www.instagram.com/sentientstardust/" target="_blank" rel="noopener noreferrer">Instagram</a>.</p>
                             </div>
@@ -682,16 +706,14 @@
                             </div>
 
                             <div class="hobby-card">
-                                <i class="fa-solid fa-tv"></i>
+                                <!-- Replaced fa-tv with custom PNG -->
+                                <img src="images/Goku.png" alt="Goku Icon" class="hobby-card-icon" />
                                 <h4>Anime &amp; Sci-Fi</h4>
                                 <p>I love keeping up with <a href="https://anilist.co/user/sentientstarstuff/animelist">my favorite manga and anime</a>, as well as exploring fantastical worlds in sci-fi literature, TV shows, and movies. I am currently hooked on <em>One Piece</em>, and my favorite sci-fi book series is <em>The Hitchhiker's Guide to the Galaxy</em>.</p>
                             </div>
+                        </div>
+                    </section>
 
-                            <!-- <div class="hobby-card">
-                                <i class="fa-solid fa-mountain-sun"></i>
-                                <h4>Outdoors</h4>
-                                <p>Recharging through hiking, stargazing, and spending quality time outdoors with family and friends.</p>
-                            </div> -->
                         </div>
                     </section>
 
