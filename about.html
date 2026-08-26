@@ -546,6 +546,34 @@
                 transition: transform 0.2s ease-in-out;
             }
 
+            /* Force both <i> icons and <img> icons into identical inline display boxes */
+            .hobby-card i,
+            .hobby-card img.hobby-card-icon {
+                display: inline-block;
+                vertical-align: middle;
+                
+                /* Target physical box size */
+                width: 2.5rem;
+                height: 2.5rem;
+                
+                /* Force consistent spacing from the header text below */
+                margin-bottom: 0.8rem;
+            }
+
+            /* Adjust FontAwesome font size to fit the box without overflowing */
+            .hobby-card i {
+                font-size: 2.2rem;
+                line-height: 2.5rem;
+                text-align: center;
+            }
+
+            /* Fine-tune PNG fit without pushing layout boundaries */
+            .hobby-card img.hobby-card-icon {
+                object-fit: contain;
+                /* Scale individual PNGs slightly up/down without affecting surrounding layout */
+                transform: scale(1.15); 
+            }
+
         </style>
     </head>
     <body>
