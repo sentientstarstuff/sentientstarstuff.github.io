@@ -4,13 +4,18 @@
 
 
 
-        <!-- PREVENT DARK MODE FLASH (FOUT/FOUC) -->
-            <script>
-                if (localStorage.getItem('theme') === 'light') {
-                    document.documentElement.classList.add('light-mode');
-                }
-            </script>
+    <script>
+        // Add loading block
+        document.documentElement.classList.add('theme-loading');
 
+        // Check stored theme
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light-mode');
+        }
+
+        // Unblock rendering immediately
+        document.documentElement.classList.remove('theme-loading');
+    </script>
 
 
 
@@ -41,6 +46,11 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
+
+            /* Temporarily hold paint until theme script resolves */
+            html.theme-loading body {
+                opacity: 0;
+            }
 
            /* --- REVAMP FOOTER --- */
             .footer-badges {

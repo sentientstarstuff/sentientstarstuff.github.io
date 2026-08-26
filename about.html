@@ -2,13 +2,23 @@
 <html>
     <head>
 
-        <!-- PREVENT DARK MODE FLASH (FOUT/FOUC) -->
-            <script>
-                if (localStorage.getItem('theme') === 'light') {
-                    document.documentElement.classList.add('light-mode');
-                }
-            </script>
 
+    <script>
+        // Add loading block
+        document.documentElement.classList.add('theme-loading');
+
+        // Check stored theme
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('light-mode');
+        }
+
+        // Unblock rendering immediately
+        document.documentElement.classList.remove('theme-loading');
+    </script>
+
+
+
+        
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
         <script>
@@ -34,6 +44,12 @@
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
         <style>
+
+
+            /* Temporarily hold paint until theme script resolves */
+            html.theme-loading body {
+                opacity: 0;
+            }
 
            /* --- REVAMP FOOTER --- */
             .footer-badges {
@@ -567,20 +583,6 @@
             .hobby-card img[src*="skateboard"] {
                 transform: scale(1.25);
             }
-
-
-            body {
-                background-color: #0b0f19; /* Dark default */
-                color: #ffffff;
-            }
-
-            /* Ensure your light mode rules use html.light-mode */
-            html.light-mode body {
-                background-color: #ffffff;
-                color: #1a202c;
-            }
-
-
             
         </style>
     </head>
