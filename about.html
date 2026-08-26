@@ -525,28 +525,40 @@
             }
 
 
-            /* Custom Image Icons inside Hobby Cards */
-            .hobby-card .hobby-card-icon {
-                width: 2.5rem;          /* Matches FontAwesome default icon sizing */
-                height: 2.5rem;
-                object-fit: contain;
-                margin-bottom: 0.8rem;
+
+            /* Base icon sizing box */
+            .hobby-card i,
+            .hobby-card img.hobby-card-icon {
                 display: inline-block;
+                vertical-align: middle;
+                width: 3rem;
+                height: 3rem;
+                margin-bottom: 0.8rem;
             }
 
-            /* Vertical alignment fix for flex containers inside card headers */
-            .hobby-card {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
+            /* FontAwesome icon scaling */
+            .hobby-card i {
+                font-size: 2.5rem;
+                line-height: 3rem;
+                text-align: center;
             }
 
-            /* Light/Dark mode glow effect (optional visual touch) */
-            .hobby-card:hover .hobby-card-icon {
-                transform: scale(1.1);
-                transition: transform 0.2s ease-in-out;
+            /* Custom PNG adjustment: Zoom past the 2000x2000 transparent margin */
+            .hobby-card img.hobby-card-icon {
+                object-fit: contain;
+                /* Zoom in on the artwork inside the blank canvas (adjust value if needed) */
+                transform: scale(1.8); 
+                transform-origin: center;
             }
 
+            /* Individual adjustments if one image has more empty space than the other */
+            .hobby-card img[src*="Goku"] {
+                transform: scale(2.0); /* Increases Goku further without altering layout */
+            }
+
+            .hobby-card img[src*="skateboard"] {
+                transform: scale(1.7);
+            }
             
         </style>
     </head>
