@@ -1,6 +1,19 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
+
+
+
+        <!-- PREVENT DARK MODE FLASH (FOUT/FOUC) -->
+            <script>
+                if (localStorage.getItem('theme') === 'light') {
+                    document.documentElement.classList.add('light-mode');
+                }
+            </script>
+
+
+
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
         <script>
@@ -627,6 +640,21 @@
                     height: 44px !important;
                 }
             }
+
+
+
+            body {
+                background-color: #0b0f19; /* Dark default */
+                color: #ffffff;
+            }
+
+            /* Ensure your light mode rules use html.light-mode */
+            html.light-mode body {
+                background-color: #ffffff;
+                color: #1a202c;
+            }
+
+
         </style>
     </head>
     <body>
