@@ -1,1 +1,780 @@
-<!-- this page could be used to highlight recent talks -->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RY38BXSTQB"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RY38BXSTQB');
+        </script>
+        
+        <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+        <link rel="manifest" href="/images/site.webmanifest" />
+
+        <title>Presentations | Devontae C. Baxter, PhD</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+        <style>
+
+            /* --- TOP PADDING & MARGIN FIXES --- */
+            #main.wrapper {
+                padding-top: 1.5em !important;
+            }
+
+            .mentorship-container {
+                max-width: 1350px;
+                margin: 0 auto;
+                padding: 0 2.5rem 4rem 2.5rem;
+            }
+
+            .page-title {
+                font-size: 2.8rem;
+                font-weight: 800;
+                text-align: center;
+                margin-top: 0 !important;
+                margin-bottom: 0.5rem;
+                color: #ffffff;
+            }
+
+            /* --- QUOTE BOX --- */
+            .quote-box {
+                text-align: center;
+                font-style: italic;
+                font-size: 1.25rem;
+                margin: 1.5rem auto 3.5rem auto;
+                max-width: 950px;
+                padding: 1.25rem 2rem;
+                border-left: 4px solid #3b82f6;
+                background: rgba(255, 255, 255, 0.04);
+                border-radius: 0 8px 8px 0;
+                color: #e2e8f0;
+            }
+
+            .story-section {
+                margin-bottom: 4.5rem;
+            }
+
+            .story-section h3 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 1.25rem;
+                color: #ffffff;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+                padding-bottom: 0.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+            }
+
+            .story-section h3 i {
+                color: #60a5fa;
+                opacity: 0.85;
+                font-size: 0.9em;
+            }
+
+            /* --- SUMMARY STATS --- */
+            .summary-stats {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .stat-pill {
+                background: rgba(59, 130, 246, 0.15);
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                padding: 0.75rem 1.25rem;
+                border-radius: 30px;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-weight: 600;
+                font-size: 1.05rem;
+                color: #ffffff;
+                transition: all 0.3s ease;
+            }
+
+            .stat-pill:hover {
+                background: rgba(59, 130, 246, 0.25);
+                transform: translateY(-2px);
+            }
+
+            .stat-pill .number {
+                background: #3b82f6;
+                color: #fff;
+                padding: 0.2rem 0.6rem;
+                border-radius: 12px;
+                font-size: 0.95rem;
+                font-weight: 800;
+            }
+
+            /* --- MODERN GLASSMORPHISM TABLES --- */
+            .table-container {
+                overflow-x: auto;
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                margin-bottom: 3.5rem;
+            }
+
+            .table-heading {
+                padding: 1.25rem 1.5rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin: 0;
+            }
+
+            table.modern-table {
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+                min-width: 800px;
+            }
+
+            table.modern-table th, 
+            table.modern-table td {
+                padding: 1.15rem 1.5rem;
+                vertical-align: middle;
+            }
+
+            table.modern-table th {
+                background: rgba(255, 255, 255, 0.02);
+                color: #60a5fa;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 0.85rem;
+                letter-spacing: 0.5px;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            }
+
+            table.modern-table tr {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                transition: background 0.2s ease;
+            }
+
+            table.modern-table tr:last-child {
+                border-bottom: none;
+            }
+
+            table.modern-table tbody tr:hover {
+                background: rgba(255, 255, 255, 0.06);
+            }
+
+            /* --- TYPE BADGES (Invited / Contributed) --- */
+            .type-badge {
+                display: inline-block;
+                font-size: 0.75rem;
+                font-weight: 700;
+                padding: 0.25rem 0.65rem;
+                border-radius: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                white-space: nowrap;
+            }
+
+            .badge-invited {
+                background: rgba(245, 158, 11, 0.15); /* Amber */
+                color: #fcd34d;
+                border: 1px solid rgba(245, 158, 11, 0.3);
+            }
+
+            .badge-contributed {
+                background: rgba(16, 185, 129, 0.15); /* Emerald */
+                color: #6ee7b7;
+                border: 1px solid rgba(16, 185, 129, 0.3);
+            }
+
+            /* Resource Action Buttons inside Table */
+            .resource-group {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap; 
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            .resource-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: rgba(255, 255, 255, 0.1);
+                color: #ffffff !important;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                padding: 0.35rem 0.75rem;
+                border-radius: 6px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                text-decoration: none !important;
+                transition: all 0.2s ease;
+                white-space: nowrap;
+            }
+
+            .resource-btn:hover {
+                background: #3b82f6;
+                border-color: #3b82f6;
+            }
+
+            /* --- NAV TOGGLE BUTTON --- */
+            #nav ul li.nav-toggle-item {
+                display: inline-flex;
+                align-items: center;
+                margin-left: 0.5rem;
+            }
+
+            .theme-toggle-btn {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                color: #f1f5f9;
+                padding: 0.25rem 0.65rem;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                line-height: 1.5;
+            }
+
+            .theme-toggle-btn:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+
+            /* --- LIGHT MODE OVERRIDES --- */
+            body.light-mode {
+                background-color: #f4f6f9 !important;
+                color: #2e3440 !important;
+            }
+
+            body.light-mode #header {
+                background: #ffffff !important;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            body.light-mode #logo a,
+            body.light-mode #nav > ul > li > a,
+            body.light-mode #nav > ul > li > span {
+                color: #1a202c !important;
+            }
+
+            body.light-mode #nav ul li a.button.primary {
+                background-color: #2563eb !important;
+                color: #ffffff !important;
+            }
+
+            body.light-mode .theme-toggle-btn {
+                border-color: rgba(0, 0, 0, 0.2) !important;
+                color: #1a202c !important;
+            }
+
+            body.light-mode .theme-toggle-btn i.fa-sun {
+                color: #d97706 !important;
+            }
+
+            body.light-mode .page-title,
+            body.light-mode .story-section h3,
+            body.light-mode .table-heading {
+                color: #1a202c !important;
+            }
+
+            body.light-mode .story-section h3 {
+                border-bottom-color: rgba(0, 0, 0, 0.12) !important;
+            }
+
+            body.light-mode .quote-box {
+                background: rgba(0, 0, 0, 0.04) !important;
+                color: #2d3748 !important;
+            }
+
+            /* Stats Light Mode */
+            body.light-mode .stat-pill {
+                background: #ffffff;
+                border-color: rgba(37, 99, 235, 0.2);
+                color: #1a202c;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            }
+
+            body.light-mode .stat-pill:hover {
+                background: #f8fafc;
+            }
+
+            /* Table Light Mode */
+            body.light-mode .table-container {
+                background: #ffffff;
+                border-color: rgba(0, 0, 0, 0.08);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            }
+            
+            body.light-mode .table-heading {
+                background: rgba(0, 0, 0, 0.02);
+                border-bottom-color: rgba(0, 0, 0, 0.08);
+            }
+
+            body.light-mode table.modern-table th {
+                background: rgba(0, 0, 0, 0.02);
+                color: #2563eb;
+                border-bottom-color: rgba(0, 0, 0, 0.08);
+            }
+
+            body.light-mode table.modern-table tr {
+                border-bottom-color: rgba(0, 0, 0, 0.05);
+            }
+
+            body.light-mode table.modern-table tbody tr:hover {
+                background: rgba(0, 0, 0, 0.02);
+            }
+
+            body.light-mode table.modern-table td {
+                color: #2d3748;
+            }
+
+            /* Badge Light Mode */
+            body.light-mode .badge-invited {
+                background: rgba(245, 158, 11, 0.12);
+                color: #b45309;
+                border-color: rgba(245, 158, 11, 0.3);
+            }
+
+            body.light-mode .badge-contributed {
+                background: rgba(16, 185, 129, 0.12);
+                color: #047857;
+                border-color: rgba(16, 185, 129, 0.3);
+            }
+
+            body.light-mode .resource-btn {
+                background: #f1f5f9;
+                color: #1a202c !important;
+                border-color: #cbd5e1;
+            }
+
+            body.light-mode .resource-btn:hover {
+                background: #2563eb;
+                color: #ffffff !important;
+                border-color: #2563eb;
+            }
+
+            /* Footer Overrides */
+            #footer {
+                padding-top: 1.5em !important;
+                margin-top: 0 !important;
+            }
+            body.light-mode #footer {
+                background: #ffffff !important;
+                color: #2d3748 !important;
+            }
+            body.light-mode #footer .copyright {
+                color: #4a5568 !important;
+            }
+
+            /* Mobile Adjustments */
+            @media screen and (max-width: 980px) {
+                #navPanel #theme-toggle {
+                    margin: 10px 0;
+                    width: auto;
+                }
+            }
+
+            @media screen and (max-width: 736px) {
+                .mentorship-container {
+                    padding: 0 1.25rem 2rem 1.25rem;
+                }
+                .page-title {
+                    font-size: 2.2rem;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="page-wrapper">
+
+            <!-- Header Navigation -->
+            <header id="header">
+                <h1 id="logo"><a href="index.html">Devontae C. Baxter, PhD</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="current"><a href="research.html">Research</a>
+                            <ul>
+                                <li><a href="collaborations.html">Collaborations</a></li>
+                                <li><a href="presentations.html">Presentations</a></li>
+                            </ul>                        
+                        </li>
+                        <li><a href="teaching.html">Teaching</a></li>
+                        <li>
+                            <a href="mentorship.html" class="button primary">Mentorship &amp; Outreach</a>
+                            <ul>
+                                <li><a href="CARP.html">CARP Program</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-toggle-item">
+                            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                                <i class="fa-solid fa-moon" id="theme-icon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Main Content Container -->
+            <div id="main" class="wrapper style1">
+                <div class="mentorship-container">
+
+                    <!-- Page Title & Quote -->
+                    <h2 class="page-title">Presentations &amp; Talks</h2>
+
+                    <div class="quote-box">
+                        “Science is not finished until it's communicated.”
+                        <br><span style="font-size: 0.9rem; opacity: 0.85;">— Sir Mark Walport</span>
+                    </div>
+
+                    <!-- Professional Talks Section -->
+                    <section class="story-section">
+                        
+                        <!-- Summary Pills -->
+                        <div class="summary-stats">
+                            <div class="stat-pill"><span class="number">34</span> Total Presentations</div>
+                            <div class="stat-pill"><span class="number">19</span> Invited</div>
+                            <div class="stat-pill"><span class="number">15</span> Contributed</div>
+                        </div>
+
+                        <!-- TABLE 1: Colloquia / Seminars -->
+                        <div class="table-container">
+                            <h4 class="table-heading">Colloquia &amp; Seminars</h4>
+                            <table class="modern-table">
+                                <thead>
+                                    <tr>
+                                        <th>Venue &amp; Seminar</th>
+                                        <th>Term / Date</th>
+                                        <th>Type</th>
+                                        <th>Resources</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>University of Washington</strong> Colloquium</td>
+                                        <td>April 2026</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>University of Southern California</strong> CosmoLab Seminar</td>
+                                        <td>Mar 2026</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cal State Long Beach</strong> Colloquium</td>
+                                        <td>Mar 2026</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>UC San Diego</strong> CaSAS Seminar</td>
+                                        <td>Sep 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Caltech</strong> Tea Talk</td>
+                                        <td>May 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>UC Santa Cruz</strong> Flash Talk Seminars</td>
+                                        <td>Feb 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Stanford University</strong> KIPAC Tea Talk</td>
+                                        <td>Feb 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NASA Goddard</strong> Exoplanet Seminars</td>
+                                        <td>Feb 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Carnegie Science, Earth and Planet Lab</strong> Seminars</td>
+                                        <td>Feb 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Florida Tech</strong> Colloquium</td>
+                                        <td>Feb 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>UC Los Angeles</strong> Planetary Seminars</td>
+                                        <td>Feb 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>University of Chicago</strong> Exoplanet Pizza Lunch</td>
+                                        <td>Feb 2025</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vanderbilt University</strong> Colloquium</td>
+                                        <td>Oct 2024</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Washington State University</strong> Colloquium</td>
+                                        <td>Sep 2024</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td>
+                                            <div class="resource-group">
+                                                <a href="https://www.youtube.com/watch?v=TiYNzKlt5Ow" target="_blank" class="resource-btn"><i class="fa-brands fa-youtube" style="color: #ef4444;"></i> Video</a>
+                                                <a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>University of California Irvine</strong> Astronomy Seminars</td>
+                                        <td>Mar 2022</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>University of California Irvine</strong> Astro-Coffee Seminar</td>
+                                        <td>Oct 2021</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- TABLE 2: Conferences / Workshops -->
+                        <div class="table-container">
+                            <h4 class="table-heading">Conferences &amp; Workshops</h4>
+                            <table class="modern-table">
+                                <thead>
+                                    <tr>
+                                        <th>Event / Host</th>
+                                        <th>Term / Date</th>
+                                        <th>Type</th>
+                                        <th>Resources</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Southern California Exoplanet Meeting (SCEM)</strong> – Caltech</td>
+                                        <td>Sep 2025</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>AAS #245</strong> – National Harbor, MD</td>
+                                        <td>Jan 2025</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NSBP Annual Conference</strong> – Houston, TX</td>
+                                        <td>Nov 2024</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Exoplanets V</strong> – Leiden, The Netherlands</td>
+                                        <td>Jun 2024</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Extreme Solar Systems V</strong> – Christchurch, New Zealand</td>
+                                        <td>Mar 2024</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>AAS #243</strong> – New Orleans, LA</td>
+                                        <td>Jan 2024</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NSBP Annual Conference</strong> – Knoxville, TN</td>
+                                        <td>Nov 2023</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Protostars and Planets VII</strong> – Kyoto, Japan</td>
+                                        <td>Apr 2023</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>AAS #241</strong> – Seattle, WA</td>
+                                        <td>Jan 2023</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NSBP Annual Conference</strong> – Charlottesville, VA</td>
+                                        <td>Nov 2022</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Southern California Exoplanet Meeting (SCEM)</strong> – Caltech</td>
+                                        <td>Sep 2022</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Exoplanets IV</strong> – Las Vegas, NV</td>
+                                        <td>May 2022</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Exoplanet Demographics</strong> – NExScI</td>
+                                        <td>Nov 2020</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>AAS #235</strong> – Honolulu, HI</td>
+                                        <td>Jan 2020</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>AAS #233</strong> – Seattle, WA</td>
+                                        <td>Jan 2019</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Florida Tech Physics &amp; Space Science Seminars</strong> – FL</td>
+                                        <td>May 2019</td>
+                                        <td><span class="type-badge badge-contributed">Contributed</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Emerging Researchers National (ERN) Conference</strong> – Washington, D.C.</td>
+                                        <td>Feb 2019</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>NSBP Annual Conference</strong> – Columbus, OH</td>
+                                        <td>Nov 2018</td>
+                                        <td><span class="type-badge badge-invited">Invited</span></td>
+                                        <td><a href="#" class="resource-btn"><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> PDF</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </section>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+                    <li><a href="https://orcid.org/0000-0002-3928-8511" class="ai ai-orcid ai-2x" target="_blank"></a></li>
+                    <li><a href="https://github.com/dcbaxter" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/devontae-baxter/" class="icon brands alt fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="mailto:dbax@uci.edu" class="icon solid alt fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2026 Devontae C. Baxter</li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.dropotron.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- Theme Toggle Logic -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const themeBtn = document.getElementById("theme-toggle");
+                const themeIcon = document.getElementById("theme-icon");
+                const body = document.body;
+
+                function getCookie(name) {
+                    let matches = document.cookie.match(new RegExp(
+                        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                    ));
+                    return matches ? decodeURIComponent(matches[1]) : undefined;
+                }
+
+                function setCookie(name, value, days) {
+                    let expires = "";
+                    if (days) {
+                        let date = new Date();
+                        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                        expires = "; expires=" + date.toUTCString();
+                    }
+                    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+                }
+
+                function updateIcon(isLight) {
+                    if (isLight) {
+                        themeIcon.classList.remove('fa-moon');
+                        themeIcon.classList.add('fa-sun');
+                    } else {
+                        themeIcon.classList.remove('fa-sun');
+                        themeIcon.classList.add('fa-moon');
+                    }
+                }
+
+                // Check stored theme
+                const storedTheme = getCookie('theme');
+                if (storedTheme === 'light') {
+                    body.classList.add('light-mode');
+                    updateIcon(true);
+                }
+
+                themeBtn.addEventListener("click", function() {
+                    const isLight = body.classList.toggle("light-mode");
+                    setCookie("theme", isLight ? "light" : "dark", 365);
+                    updateIcon(isLight);
+                });
+            });
+        </script>
+    </body>
+</html>
