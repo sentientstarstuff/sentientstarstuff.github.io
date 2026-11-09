@@ -348,7 +348,44 @@
                 border-color: #2563eb;
             }
 
-           /* --- REDUCE TOP PADDING & MARGIN FOR FOOTER --- */
+
+
+
+            /* --- REVAMP FOOTER --- */
+            .footer-badges {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 0.6rem;
+                    margin-bottom: 2rem;
+                }
+
+            .footer-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.45rem;
+                padding: 0.4rem 0.9rem;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                color: #ffffff !important;
+                font-size: 0.88rem;
+                text-decoration: none !important;
+                transition: all 0.25 ease;
+            }
+
+            .footer-badge:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateY(-2px);
+            }
+
+            body.light-mode .footer-badge {
+                background: rgba(0, 0, 0, 0.05);
+                border-color: rgba(0, 0, 0, 0.12);
+                color: #1a202c !important;
+            }
+            
+            /* --- REDUCE TOP PADDING & MARGIN FOR FOOTER --- */
             #footer {
                 padding-top: 1.5em !important; /* Reduces the large default template padding */
                 margin-top: 0 !important;
@@ -420,6 +457,7 @@
             body.light-mode b {
                 color: #1a202c !important;
             }
+
 
 
             /* Mobile Adjustments */
