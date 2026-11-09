@@ -348,18 +348,79 @@
                 border-color: #2563eb;
             }
 
-            /* Footer Overrides */
+           /* --- REDUCE TOP PADDING & MARGIN FOR FOOTER --- */
             #footer {
-                padding-top: 1.5em !important;
+                padding-top: 1.5em !important; /* Reduces the large default template padding */
                 margin-top: 0 !important;
             }
-            body.light-mode #footer {
-                background: #ffffff !important;
+
+            #footer .footer-cta {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+
+            #footer .footer-cta h3 {
+                margin-top: 0 !important; /* Removes default browser margin above heading */
+            }
+
+
+            /* --- FOOTER LIGHT MODE OVERRIDES --- */
+            body.light-mode #footer,
+            body.light-mode #page-wrapper #footer {
+                background: #ffffff !important; /* Shorthand overrides background-image & gradients */
+                background-color: #ffffff !important;
                 color: #2d3748 !important;
             }
-            body.light-mode #footer .copyright {
-                color: #4a5568 !important;
+
+            /* Kill any template dark gradient/overlay pseudo-elements on the footer */
+            body.light-mode #footer::before,
+            body.light-mode #footer::after {
+                display: none !important;
+                background: none !important;
             }
+
+            body.light-mode #footer .footer-cta h3 {
+                color: #1a202c !important;
+            }
+
+            body.light-mode .footer-badge {
+                background: rgba(0, 0, 0, 0.05) !important;
+                border-color: rgba(0, 0, 0, 0.15) !important;
+                color: #1a202c !important;
+                box-shadow: none !important;
+            }
+
+            body.light-mode .footer-badge i {
+                color: #1a202c !important;
+                opacity: 1 !important;
+            }
+
+            body.light-mode .footer-badge:hover {
+                background: rgba(37, 99, 235, 0.12) !important;
+                border-color: rgba(37, 99, 235, 0.3) !important;
+                color: #2563eb !important;
+            }
+
+            body.light-mode .footer-badge:hover i {
+                color: #2563eb !important;
+            }
+
+            body.light-mode #footer .copyright,
+            body.light-mode #footer .copyright li {
+                color: #4a5568 !important;
+                border-color: rgba(0, 0, 0, 0.12) !important;
+            }
+
+            body.light-mode #footer .copyright a {
+                color: #2563eb !important;
+                border-bottom-color: rgba(37, 99, 235, 0.4) !important;
+            }
+            
+            body.light-mode strong,
+            body.light-mode b {
+                color: #1a202c !important;
+            }
+
 
             /* Mobile Adjustments */
             @media screen and (max-width: 980px) {
@@ -710,19 +771,43 @@
                 </div>
             </div>
 
-            <!-- Footer (Restored to exact original HTML) -->
+            <!-- Footer -->
             <footer id="footer">
-                <ul class="icons">
-                    <li><a href="mailto:dcbaxter@ucsd.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-                    <li><a href="https://twitter.com/sentientbaryons" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-                    <!-- <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-                    <li><a href="https://www.linkedin.com/in/taebaxter/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://www.instagram.com/sentientstardust/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="https://github.com/sentientstarstuff" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                    <!-- <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li> -->
-                </ul>
+                <div class="footer-cta">
+                    <h3>Let's Connect!</h3>
+                </div>
+
+                <div class="footer-badges">
+                    <!-- EMAIL  -->
+                    <a href="mailto:dcbaxter@princeton.edu" class="footer-badge">
+                        <i class="fa-solid fa-envelope"></i> Email
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/sentientstarstuff" target="_blank" rel="noopener noreferrer" class="footer-badge">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/taebaxter/" target="_blank" rel="noopener noreferrer" class="footer-badge">
+                        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/sentientbaryons" target="_blank" rel="noopener noreferrer" class="footer-badge">
+                        <i class="fa-brands fa-twitter"></i> Twitter
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/sentientstardust/" target="_blank" rel="noopener noreferrer" class="footer-badge">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                    <!-- Duolingo -->
+                    <a href="https://www.duolingo.com/profile/CosmicPrimate" target="_blank" rel="noopener noreferrer" class="footer-badge duolingo-badge">
+                        <i class="fa-brands fa-duolingo"></i> Duolingo
+                    </a>
+
+                </div>
+
                 <ul class="copyright">
-                    <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    <li>&copy; Devontae C. Baxter. All rights reserved.</li>
+                    <li>Design adapted from <a href="http://html5up.net">HTML5 UP</a></li>
                 </ul>
             </footer>
 
